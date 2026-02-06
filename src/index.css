@@ -6,55 +6,71 @@
 
 @layer base {
   :root {
-    /* Briktra Brand Colors - Construction Tech */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    /* Briktra Brand Colors - Premium Enterprise SaaS */
+    --background: 30 20% 98%;
+    --foreground: 220 20% 15%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
 
-    /* Deep blue - trust & professionalism */
-    --primary: 217 91% 50%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand Orange - Primary action color */
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Slate gray */
-    --secondary: 215 25% 20%;
-    --secondary-foreground: 210 40% 98%;
+    /* Neutral grays */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 25%;
 
-    /* Muted surfaces */
-    --muted: 215 25% 15%;
-    --muted-foreground: 215 20% 65%;
+    /* Soft muted surfaces */
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 45%;
 
-    /* Amber accent - construction safety */
-    --accent: 38 92% 50%;
-    --accent-foreground: 222 47% 6%;
+    /* Accent - Brand Orange (same as primary for consistency) */
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 25% 18%;
-    --input: 215 25% 18%;
-    --ring: 217 91% 50%;
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    --ring: 24 95% 53%;
 
     --radius: 0.75rem;
 
     /* Custom Briktra tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(217 50% 12%) 50%, hsl(222 47% 6%) 100%);
-    --card-gradient: linear-gradient(180deg, hsl(215 25% 12%) 0%, hsl(222 47% 8%) 100%);
-    --glow-primary: 0 0 60px hsl(217 91% 50% / 0.3);
-    --glow-accent: 0 0 40px hsl(38 92% 50% / 0.25);
+    --hero-gradient: linear-gradient(180deg, hsl(30 20% 98%) 0%, hsl(30 15% 95%) 100%);
+    --card-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    --glow-primary: 0 8px 32px hsl(24 95% 53% / 0.15);
+    --glow-accent: 0 4px 24px hsl(24 95% 53% / 0.12);
     
     /* Section backgrounds */
-    --section-dark: 222 47% 5%;
-    --section-medium: 222 47% 8%;
+    --section-dark: 220 20% 15%;
+    --section-medium: 220 14% 96%;
+    --section-light: 30 20% 98%;
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 220 20% 10%;
+    --foreground: 30 20% 98%;
+    
+    --card: 220 20% 12%;
+    --card-foreground: 30 20% 98%;
+    
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 14% 18%;
+    --secondary-foreground: 30 20% 90%;
+    
+    --muted: 220 14% 16%;
+    --muted-foreground: 220 10% 60%;
+    
+    --border: 220 14% 20%;
+    --input: 220 14% 20%;
   }
 }
 
@@ -96,36 +112,53 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(217 91% 70%) 100%);
+    background: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(30 100% 60%) 100%);
   }
 
   .text-gradient-accent {
     @apply bg-clip-text text-transparent;
-    background: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(38 100% 65%) 100%);
+    background: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(30 100% 60%) 100%);
   }
 
   .grid-pattern {
     background-image: 
-      linear-gradient(hsl(215 25% 18% / 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(215 25% 18% / 0.3) 1px, transparent 1px);
+      linear-gradient(hsl(220 14% 88% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 14% 88% / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   .feature-card {
-    @apply relative overflow-hidden rounded-xl border border-border/50 p-6;
-    background: var(--card-gradient);
+    @apply relative overflow-hidden rounded-xl border border-border bg-card p-6;
     transition: all 0.3s ease;
   }
 
   .feature-card:hover {
-    @apply border-primary/50;
-    box-shadow: var(--glow-primary);
+    @apply border-primary/30 shadow-lg;
     transform: translateY(-4px);
   }
 
   .section-divider {
     @apply h-px w-full;
-    background: linear-gradient(90deg, transparent, hsl(215 25% 25%), transparent);
+    background: linear-gradient(90deg, transparent, hsl(220 14% 85%), transparent);
+  }
+
+  /* Premium card elevation */
+  .premium-card {
+    @apply bg-card rounded-2xl border border-border/50;
+    box-shadow: 
+      0 1px 3px hsl(220 14% 90% / 0.5),
+      0 4px 12px hsl(220 14% 90% / 0.25);
+  }
+
+  .premium-card:hover {
+    box-shadow: 
+      0 4px 12px hsl(220 14% 85% / 0.5),
+      0 8px 24px hsl(24 95% 53% / 0.08);
+  }
+
+  /* Workflow connector line */
+  .workflow-connector {
+    @apply h-0.5 flex-1 bg-gradient-to-r from-primary/50 via-primary to-primary/50;
   }
 }
 

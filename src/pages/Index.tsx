@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
-import WhyBriktra from "@/components/WhyBriktra";
-import Countdown from "@/components/Countdown";
+import BuiltForField from "@/components/BuiltForField";
+import WorkflowVisualization from "@/components/WorkflowVisualization";
+import WhoUsesBriktra from "@/components/WhoUsesBriktra";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -12,8 +14,10 @@ const Index = () => {
       <main>
         <Hero />
         <Features />
-        <WhyBriktra />
-        <Countdown />
+        <BuiltForField />
+        <WorkflowVisualization />
+        <WhoUsesBriktra />
+        <CTA />
       </main>
       <Footer />
     </div>
