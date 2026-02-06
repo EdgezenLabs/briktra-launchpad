@@ -1,35 +1,105 @@
-import { Construction } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import briktraLogo from "@/assets/briktra-logo.svg";
 
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary glow-primary">
-            <Construction className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="font-display text-xl font-bold text-foreground">
-            Briktra
-          </span>
-        </div>
-        <nav className="hidden items-center gap-6 md:flex">
-          <a href="#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+        <a href="/" className="flex items-center gap-2">
+          <img 
+            src={briktraLogo} 
+            alt="Briktra Logo" 
+            className="h-8 w-auto"
+          />
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center gap-8 md:flex">
+          <a href="#features" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
             Features
           </a>
-          <a href="#why" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <a href="#why" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
             Why Briktra
           </a>
-          <a href="#notify" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Get Notified
+          <a href="#workflow" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+            How It Works
+          </a>
+          <a href="#users" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+            Who Uses
           </a>
         </nav>
-        <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/50 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent"></span>
-            Coming Soon
-          </span>
+
+        {/* CTA Buttons */}
+        <div className="hidden items-center gap-3 md:flex">
+          <Button variant="ghost" size="sm" className="text-sm font-medium">
+            Start Free Trial
+          </Button>
+          <Button variant="default" size="sm" className="text-sm font-semibold">
+            Request Demo
+          </Button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6 text-foreground" />
+          ) : (
+            <Menu className="h-6 w-6 text-foreground" />
+          )}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-border bg-background">
+          <nav className="container mx-auto flex flex-col gap-4 px-4 py-6">
+            <a 
+              href="#features" 
+              className="text-base font-medium text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Features
+            </a>
+            <a 
+              href="#why" 
+              className="text-base font-medium text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Why Briktra
+            </a>
+            <a 
+              href="#workflow" 
+              className="text-base font-medium text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              How It Works
+            </a>
+            <a 
+              href="#users" 
+              className="text-base font-medium text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Who Uses
+            </a>
+            <div className="flex flex-col gap-3 pt-4 border-t border-border">
+              <Button variant="outline" className="w-full">
+                Start Free Trial
+              </Button>
+              <Button variant="default" className="w-full">
+                Request Demo
+              </Button>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
