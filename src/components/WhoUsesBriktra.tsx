@@ -38,7 +38,7 @@ const WhoUsesBriktra = () => {
             For Your Team
           </span>
           <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-            Who Uses <span className="text-gradient">Briktra</span>
+            Who Uses <span className="text-foreground">Briktra</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Designed for every role in your construction organization.

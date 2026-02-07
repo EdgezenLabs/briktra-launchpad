@@ -1,6 +1,7 @@
 import { ArrowRight, Play, Wifi, Globe, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Countdown from "./Countdown";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ const Hero = () => {
         {/* Main headline */}
         <h1 className="mb-6 max-w-4xl animate-fade-in font-display text-4xl font-bold leading-tight text-foreground opacity-0 md:text-5xl lg:text-6xl xl:text-7xl" style={{ animationDelay: "0.2s" }}>
           Mobile-First ERP for{" "}
-          <span className="text-gradient">Construction Companies</span>{" "}
+          <span className="text-foreground">Construction Companies</span>{" "}
           and Contractors
         </h1>
 
@@ -43,7 +44,7 @@ const Hero = () => {
         <p className="mb-10 max-w-2xl animate-fade-in text-lg text-muted-foreground opacity-0 md:text-xl" style={{ animationDelay: "0.3s" }}>
           Manage projects, labour, materials, vendors, and expenses — built for real construction site conditions with offline capability and multilingual support.
         </p>
-
+        
         {/* CTA Buttons */}
         <div className="mb-12 flex flex-col items-center gap-4 animate-fade-in opacity-0 sm:flex-row" style={{ animationDelay: "0.4s" }}>
           <Button variant="default" size="xl" className="group min-w-[180px]">
@@ -56,6 +57,10 @@ const Hero = () => {
           </Button>
         </div>
 
+        <div className="mb-12 flex justify-center animate-fade-in opacity-0" style={{ animationDelay: "0.45s" }}>
+          <Countdown />
+        </div>
+        
         {/* Key highlights */}
         <div className="mb-16 flex flex-wrap items-center justify-center gap-6 animate-fade-in opacity-0" style={{ animationDelay: "0.5s" }}>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -85,7 +90,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="premium-card group relative overflow-hidden rounded-2xl p-1 md:-translate-y-4 transition-all duration-300 hover:shadow-xl">
+          <div className="premium-card group relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:shadow-xl">
             <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
               <div className="text-center p-6">
                 <div className="mx-auto mb-3 h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">

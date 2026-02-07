@@ -63,7 +63,7 @@ const Features = () => {
           </span>
           <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
             Everything You Need to{" "}
-            <span className="text-gradient">Run Construction Sites</span>
+            <span className="text-foreground">Run Construction Sites</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             A complete ERP solution designed specifically for the unique challenges of construction management.

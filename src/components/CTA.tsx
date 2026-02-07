@@ -1,6 +1,8 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Countdown from "@/components/Countdown";
+
 
 const CTA = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +32,7 @@ const CTA = () => {
                 
                 <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl">
                   Ready to Transform Your{" "}
-                  <span className="text-gradient">Construction Operations?</span>
+                  <span className="text-foreground">Construction Operations?</span>
                 </h2>
                 
                 <p className="mb-8 text-lg text-muted-foreground">
@@ -69,7 +71,6 @@ const CTA = () => {
                 <p className="mt-4 text-sm text-muted-foreground">
                   Join 500+ construction professionals waiting for launch
                 </p>
-
                 {/* CTA buttons */}
                 <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                   <Button variant="default" size="lg" className="group min-w-[160px]">
