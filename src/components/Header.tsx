@@ -35,13 +35,33 @@ const Header = () => {
         </nav>
 
         {/* CTA Buttons */}
-        <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm" className="text-sm font-medium">
-            Start Free Trial
-          </Button>
-          <Button variant="default" size="sm" className="text-sm font-semibold">
+        <div className="hidden items-center gap-4 md:flex">
+
+          {/* Request Demo - Secondary */}
+          <Button
+            variant="outline"
+            size="sm"
+            className="px-6 py-2 text-sm font-semibold 
+                      rounded-xl border-2 
+                      transition-all duration-300 
+                      hover:bg-primary/5 hover:scale-105"
+          >
             Request Demo
           </Button>
+
+          {/* Start Free Trial - Linked to App */}
+          <Button
+            variant="default"
+            size="sm"
+            className="px-7 py-2 text-sm font-bold 
+                      rounded-xl shadow-md 
+                      transition-all duration-300 
+                      hover:scale-105 hover:shadow-lg"
+            asChild
+          >
+            <a href="/app/">Start Free Trial</a>
+          </Button>
+
         </div>
 
         {/* Mobile Menu Button */}

@@ -46,14 +46,33 @@ const Hero = () => {
         </p>
         
         {/* CTA Buttons */}
-        <div className="mb-12 flex flex-col items-center gap-4 animate-fade-in opacity-0 sm:flex-row" style={{ animationDelay: "0.4s" }}>
-          <Button variant="default" size="xl" className="group min-w-[180px]">
+        <div
+          className="mb-14 flex flex-col items-center gap-6 
+                    animate-fade-in opacity-0 sm:flex-row"
+          style={{ animationDelay: "0.4s" }}
+        >
+          {/* Request Demo - Secondary */}
+          <Button
+            variant="outline"
+            size="xl"
+            className="px-10 py-6 text-lg font-semibold 
+                      rounded-2xl border-2 
+                      transition-all duration-300 
+                      hover:bg-primary/5 hover:scale-105"
+          >
             Request Demo
-            <ArrowRight className="transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button variant="outline" size="xl" className="group min-w-[180px]">
-            <Play className="h-4 w-4" />
-            Start Free Trial
+
+          {/* Start Free Trial - Primary (Linked to App) */}
+          <Button
+            size="xl"
+            className="px-12 py-6 text-lg font-bold 
+                      rounded-2xl shadow-xl 
+                      transition-all duration-300 
+                      hover:scale-110 hover:shadow-2xl"
+            asChild
+          >
+            <a href="/app/">Start Free Trial</a>
           </Button>
         </div>
 
@@ -61,22 +80,30 @@ const Hero = () => {
           <Countdown />
         </div>
         
-        {/* Key highlights */}
-        <div className="mb-16 flex flex-wrap items-center justify-center gap-6 animate-fade-in opacity-0" style={{ animationDelay: "0.5s" }}>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Wifi className="h-4 w-4 text-primary" />
-            <span>Works Offline</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Globe className="h-4 w-4 text-primary" />
-            <span>Multilingual</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Smartphone className="h-4 w-4 text-primary" />
-            <span>Mobile-First</span>
+        {/* Launch Highlights */}
+        <div 
+          className="mb-20 flex flex-col items-center gap-6 text-center 
+                    animate-fade-in opacity-0"
+          style={{ animationDelay: "0.5s" }}
+        >
+          <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+            Built for the Field.
+          </h3>
+
+          <div className="flex flex-wrap items-center justify-center gap-10 mt-4">
+            <span className="text-xl md:text-2xl font-semibold text-primary">
+              Mobile-First Experience
+            </span>
+
+            <span className="hidden md:block text-2xl font-bold text-muted-foreground">
+              •
+            </span>
+
+            <span className="text-xl md:text-2xl font-semibold text-primary">
+              Multilingual Support
+            </span>
           </div>
         </div>
-
         {/* App preview mockups */}
         <div className="mt-8 grid w-full max-w-5xl grid-cols-1 gap-6 animate-fade-in opacity-0 md:grid-cols-3" style={{ animationDelay: "0.6s" }}>
           <div className="premium-card group relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:shadow-xl">

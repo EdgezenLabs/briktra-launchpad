@@ -57,17 +57,24 @@ const Features = () => {
     <section id="features" className="relative bg-secondary/30 py-24">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section header */}
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+        <div className="mx-auto mb-20 max-w-3xl text-center">
+
+          {/* FEATURES Heading - Same font style, bigger */}
+          <h2 className="mb-6 font-display text-5xl md:text-6xl font-bold text-foreground">
             Features
-          </span>
-          <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-            Everything You Need to{" "}
-            <span className="text-foreground">Run Construction Sites</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            A complete ERP solution designed specifically for the unique challenges of construction management.
+
+          {/* Sub Heading - Smaller */}
+          <h3 className="mb-4 font-display text-2xl md:text-3xl font-semibold text-foreground">
+            Everything You Need to Run Construction Sites
+          </h3>
+
+          {/* Description - Smaller */}
+          <p className="text-base md:text-lg text-muted-foreground">
+            A complete ERP solution designed specifically for the unique
+            challenges of construction management.
           </p>
+
         </div>
 
         {/* Features grid */}

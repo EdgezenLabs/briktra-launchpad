@@ -72,14 +72,33 @@ const CTA = () => {
                   Join 500+ construction professionals waiting for launch
                 </p>
                 {/* CTA buttons */}
-                <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                  <Button variant="default" size="lg" className="group min-w-[160px]">
+                <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
+
+                  {/* Request Demo - Secondary */}
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="min-w-[180px] px-8 py-5 text-base font-semibold 
+                              rounded-2xl border-2 
+                              transition-all duration-300 
+                              hover:bg-primary/5 hover:scale-105"
+                  >
                     Request Demo
-                    <ArrowRight className="transition-transform group-hover:translate-x-1" />
                   </Button>
-                  <Button variant="outline" size="lg" className="min-w-[160px]">
-                    Start Free Trial
+
+                  {/* Start Free Trial - Linked to App */}
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="min-w-[200px] px-10 py-5 text-base font-bold 
+                              rounded-2xl shadow-lg 
+                              transition-all duration-300 
+                              hover:scale-110 hover:shadow-2xl"
+                    asChild
+                  >
+                    <a href="/app/">Start Free Trial</a>
                   </Button>
+
                 </div>
               </div>
             </div>
