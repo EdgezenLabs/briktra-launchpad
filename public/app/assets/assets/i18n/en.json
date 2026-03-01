@@ -1,0 +1,2524 @@
+{
+  "app": {
+    "title": "Briktra",
+    "tagline": "Construction ERP Solution"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {name}!",
+    "quick_actions": {
+      "add_projects": "Add Projects",
+      "add_employees": "Add Employees",
+      "add_attendance": "Add Attendance",
+      "add_suppliers": "Add Suppliers",
+      "bills": "Bills",
+      "tap_attendance": "Tap to Attendance",
+      "salary_report": "Salary Report",
+      "stock_management": "Stock Management",
+      "wallet": "Wallet",
+      "employees": "Employees",
+      "projects": "Projects"
+    },
+    "sections": {
+      "active_projects": "Active Projects",
+      "ongoing_projects": "Ongoing Projects",
+      "projects": "All Projects",
+      "current_features": "Current Features:",
+      "progress": "Progress"
+    },
+    "tier": {
+      "free_trial": "Free Trial",
+      "upgrade": "Upgrade",
+      "trial_expired": "Trial expired. Upgrade to continue using all features.",
+      "features": {
+        "project": "1 Project",
+        "dashboard_access": "Dashboard Access",
+        "basic_support": "Basic Support",
+        "trial_days": "30-day Trial"
+      }
+    },
+    "feature_coming_soon": "Feature coming soon"
+  },
+  "auth": {
+    "welcome": {
+      "part_one": "Let's ",
+      "highlight": "Connect"
+    },
+    "fields": {
+      "username": "Username",
+      "password": "Password",
+      "email": "Email",
+      "email_or_phone": "Email/Phone Number",
+      "phone": "Phone",
+      "old_password": "Old Password",
+      "new_password": "New Password",
+      "confirm_password": "Confirm New Password",
+      "full_name": "Full Name",
+      "org_name": "Organization Name",
+      "phone_no": "Phone Number",
+      "promo_code": "Promo code"
+    },
+    "hints": {
+      "phone_number": "9876543210"
+    },
+    "buttons": {
+      "login": "Login",
+      "register": "Register",
+      "send_otp": "Send OTP",
+      "verify": "Verify",
+      "resend_otp": "Resend OTP",
+      "reset_password": "Send Reset OTP",
+      "sign_up": "Sign Up",
+      "logout": "Logout"
+    },
+    "links": {
+      "forgot_password": "Forgot Password?",
+      "login_with_otp": "Login with OTP",
+      "already_have_account": "Already have an account?",
+      "no_account": "Don't have an account? "
+    },
+    "titles": {
+      "register_screen": "Briktra — Register",
+      "create_password": "Create New Password",
+      "logout_confirm": "Logout"
+    },
+    "subtitles": {
+      "register_screen": "Join Briktra to manage your construction projects"
+    },
+    "messages": {
+      "password_instructions": "Your new password must be different from previous used passwords.",
+      "logout_confirm": "Are you sure you want to logout?",
+      "login_success": "Login successful",
+      "login_failed": "Login failed",
+      "otp_sent": "OTP sent successfully",
+      "account_activated": "Account activated successfully. Please login.",
+      "logged_in_biometrics": "Logged in with biometrics",
+      "biometric_failed": "Biometric authentication failed",
+      "session_restoration_failed": "Session restoration failed. Please login with password.",
+      "logged_out": "Logged out",
+      "password_change_success": "Password changed successfully",
+      "password_reset_success": "Password reset successfully",
+      "password_reset_otp_sent": "Password reset OTP sent successfully",
+      "language_updated": "Language preference updated successfully",
+      "language_update_failed": "Failed to update language preference"
+    },
+    "success": {
+      "otp_sent": "OTP sent successfully",
+      "reset_otp_sent": "Reset OTP sent successfully",
+      "registration_complete": "Registration successful! Please login."
+    },
+    "forgot_password": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email to receive a reset OTP",
+      "email_placeholder": "Enter your email",
+      "send_button": "Send Reset OTP",
+      "back_to_login": "Back to Login",
+      "success": "Reset OTP sent successfully",
+      "error": "Failed to send OTP"
+    },
+    "reset_password": {
+      "title": "Reset Password",
+      "subtitle": "Create your new password",
+      "new_password": "New Password",
+      "confirm_password": "Confirm New Password",
+      "submit": "Reset Password",
+      "success": "Password reset successfully",
+      "passwords_dont_match": "Passwords don't match",
+      "too_short": "Password must be at least 6 characters"
+    },
+    "validation": {
+      "username_required": "Please enter email or phone number",
+      "password_required": "Please enter password",
+      "phone_required": "Phone number is required",
+      "phone_invalid": "Phone number must be 10 digits",
+      "email_required": "Email is required",
+      "invalid_email": "Invalid email format",
+      "full_name_required": "Full name is required",
+      "org_name_required": "Organization name is required",
+      "password_too_short": "Password must be at least 6 characters",
+      "confirm_password_required": "Please confirm your password",
+      "passwords_dont_match": "Passwords do not match",
+      "otp_required": "Please enter complete 6-digit OTP"
+    },
+    "strength": {
+      "label": "Strength",
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong"
+    },
+    "biometric": {
+      "prompt_title": "Enable Biometric Login?",
+      "prompt_content": "You can enable fingerprint/face recognition for faster login. Would you like to set it up in your profile?",
+      "later": "Later",
+      "go_to_profile": "Go to Profile"
+    },
+    "otp_activation": {
+      "title": "Activate Account",
+      "heading": "Activate Your Account",
+      "subtitle": "Enter the 6-digit code sent to",
+      "activate_button": "Activate Account",
+      "resend_button": "Resend OTP",
+      "back_to_login": "Back to Login"
+    },
+    "otp": {
+      "resend_wait": "Please wait {seconds} seconds before resending"
+    },
+    "otp_login": {
+      "title": "OTP Login",
+      "heading": "Login with OTP",
+      "subtitle": "Enter your email or phone to receive OTP",
+      "enter_code": "Enter the 6-digit code we sent you",
+      "destination_label": "Email or Phone",
+      "destination_hint": "Enter your email or phone number",
+      "destination_required": "Please enter email or phone",
+      "send_otp": "Send OTP",
+      "login_button": "Login",
+      "resend_otp": "Resend OTP",
+      "back_to_normal_login": "Back to Password Login",
+      "errors": {
+        "account_not_found_email": "No account found with this email address. Please register first.",
+        "account_not_found_phone": "No account found with this phone number. Please register first.",
+        "account_not_activated": "Your account hasn't been activated yet. Please complete your registration.",
+        "database_disconnected": "Connection lost. Please check your internet and try again.",
+        "too_many_attempts": "Too many attempts. Please wait a few minutes before trying again.",
+        "server_error": "We couldn't process your request. Please try again."
+      }
+    },
+    "change_password": {
+      "title": "Change Password",
+      "subtitle": "Secure Your Account",
+      "instructions": "Enter your old password and a new secure password.",
+      "old_password": "Old Password",
+      "new_password": "New Password",
+      "confirm_password": "Confirm New Password",
+      "required": "Password is required",
+      "too_short": "Password must be at least 6 characters",
+      "different": "New password must be different from old password",
+      "submit": "Update Password",
+      "success": "Password changed successfully",
+      "passwords_dont_match": "Passwords don't match"
+    }
+  },
+  "attendance": {
+    "title": "Attendance",
+    "navigation": {
+      "title": "Attendance"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "add_attendance": "Add Attendance",
+      "mark_others": "Mark Others"
+    },
+    "mark_attendance": "Mark Attendance",
+    "view_records": "View Records",
+    "manage": "Manage",
+    "stats": {
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "overall": "Overall"
+    },
+    "fields": {
+      "date": "Date",
+      "project_select": "Select Project"
+    },
+    "options": {
+      "full_day": "Full Day",
+      "half_day": "Half Day"
+    },
+    "types": {
+      "full": "Full",
+      "half": "Half"
+    },
+    "buttons": {
+      "mark": "Mark Attendance",
+      "mark_bulk": "Mark Attendance (Bulk)",
+      "retry_location": "Retry Location"
+    },
+    "states": {
+      "no_data": "No attendance data",
+      "no_employees": "No employees found"
+    },
+    "location": {
+      "disabled_title": "Location Service Disabled",
+      "required_title": "Location Required",
+      "warning_title": "Location Warning"
+    },
+    "location_disabled": "Location Service Disabled",
+    "location_required": "Location Required",
+    "location_warning": "Location Warning",
+    "location_disabled_message": "Location services are disabled. On web browsers, location may not be available. You can still mark attendance without location data.",
+    "location_required_message": "Could not get your location. This might be due to:\n\n• Browser location permission denied\n• Location timeout (browser issue)\n• Running on HTTP instead of HTTPS\n\nLocation is mandatory to mark attendance. Please grant location permission and try again.",
+    "location_warning_message": "You are {distance} away from the project site. Please ensure you are at the correct location.",
+    "location_retry_message": "GPS location is required to mark attendance.\n\nDo you want to retry getting your location?",
+    "select_project": "Select Project",
+    "full_day": "Full Day",
+    "half_day": "Half Day",
+    "full": "Full",
+    "half": "Half",
+    "no_data": "No attendance data",
+    "location_disabled_employee_message": "Location services are disabled. Please enable them to mark attendance.",
+    "open_settings": "Open Settings",
+    "far_from_location": "Far from Project Location",
+    "far_from_location_message": "You are {distance} km away from the project location.\n\nAre you sure you want to mark attendance?",
+    "yes_mark_attendance": "Yes, Mark Attendance",
+    "location_required_snackbar": "Location is required to mark attendance. Please enable location.",
+    "confirm_logout": "Confirm Logout",
+    "confirm_logout_message": "Are you sure you want to log out?",
+    "retry_location": "Retry Location",
+    "errors": {
+      "select_project": "Please select a project",
+      "select_users": "Please select at least one user"
+    },
+    "select_all": "Select All",
+    "all_marked": "All assigned employees have marked attendance today",
+    "no_workers": "No workers present for this period",
+    "no_data_label": "No attendance data",
+    "select_project_label": "Select Project",
+    "retry": "Retry",
+    "today": "Today",
+    "this_week": "This Week",
+    "this_month": "This Month",
+    "this_year": "This Year",
+    "custom_range": "Custom Range",
+    "select_period": "Select a period to view attendance report",
+    "view_today_report": "View Today's Report",
+    "location_verified": "Location Verified",
+    "not_in_project_location": "You are not in the project location",
+    "distance_from_project": "Distance from project:",
+    "allowed_radius": "Allowed radius: {radius}",
+    "confirm_attendance_location": "Are you sure you want to mark attendance from this location?",
+    "confirm_anyway": "Confirm Anyway",
+    "gross": "Gross",
+    "advance": "Advance",
+    "daily_attendance": "Daily Attendance",
+    "mark_as_paid": "Mark as Paid",
+    "payment_mode": "Payment Mode"
+  },
+  "project": {
+    "navigation": {
+      "dashboard": "Dashboard"
+    },
+    "actions": {
+      "add": "Add Project",
+      "update": "Update Project",
+      "create": "Create Project",
+      "create_unit": "Create Unit",
+      "update_unit": "Update Unit"
+    },
+    "fields": {
+      "name": "Project Name",
+      "client": "Client",
+      "budget": "Budget Amount",
+      "percent_complete": "Percent Complete (%)",
+      "status": "Status",
+      "supervisor":"Supervisor",
+      "supervisor_placeholder":"Select Supervisor",
+      "start_date": "Start Date",
+      "start_date_placeholder": "Select start date",
+      "end_date": "End Date",
+      "end_date_placeholder": "Select end date (Optional)",
+      "project_location":"Project Location",
+      "project_type":"Project Type",
+      "project_type_options":{
+        "apartment":"Apartment",
+        "building":"Building"
+      }
+    },
+    "status_options": {
+      "ongoing": "Ongoing",
+      "completed": "Completed",
+      "on_hold": "On Hold",
+      "cancelled": "Cancelled",
+      "active": "Active"
+    },
+    "filters": {
+      "by_status": "Filter by status"
+    },
+    "dialogs": {
+      "delete_title": "Delete Project",
+      "delete_message": "Are you sure you want to delete \"{name}\"?"
+    },
+    "states": {
+      "no_projects": "No ongoing projects found.",
+      "loading": "Loading project..."
+    },
+    "validation": {
+      "name_required": "Project name is required",
+      "start_date_required": "Start date is required"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "labour": "Labour",
+      "expense": "Expense",
+      "suppliers": "Suppliers",
+      "daily": "Daily"
+    },
+    "overview": {
+      "title": "Project Details",
+      "name": "Name",
+      "budget": "Budget",
+      "status": "Status",
+      "start_date": "Start Date"
+    },
+    "labour": {
+      "sections": {
+        "electrical": "Electrical Labours",
+        "plumbing": "Plumbing Labours",
+        "tiles": "Tiles Labours",
+        "painting": "Painting Labours",
+        "general": "General Labours"
+      },
+      "assign": "Assign",
+      "assigned_users": "Assigned Users",
+      "no_users": "No users assigned",
+      "success": "Users assigned successfully",
+      "error": "Failed to assign users",
+      "confirm_remove": "Do you want remove that employee name from this project?",
+      "bulk_remove": "Bulk Remove",
+      "select_all": "Select All",
+      "remove_success": "Employee removed successfully",
+      "remove_error": "Failed to remove employee"
+    },
+    "expense": {
+      "title": "Expenses",
+      "add": "Add Expense",
+      "no_expenses": "No expenses found",
+      "total": "Total Expenses",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "category": "Category",
+      "calculation": {
+        "title": "Expense Calculation",
+        "calculate": "Calculate",
+        "calculate_expense": "Calculate Expense",
+        "preview": "Preview Calculation",
+        "item_type": "Item Type",
+        "item_amount": "Amount",
+        "tax_rate": "Tax Rate (%)",
+        "quantity": "Quantity",
+        "add_item": "Add Item",
+        "remove_item": "Remove Item",
+        "subtotal": "Subtotal",
+        "tax_total": "Tax Total",
+        "discount": "Discount",
+        "adjustments": "Adjustments",
+        "total": "Total Amount",
+        "currency": "Currency",
+        "rounding": "Rounding Mode",
+        "rounding_nearest": "Nearest",
+        "rounding_floor": "Floor",
+        "rounding_ceil": "Ceiling",
+        "calculate_success": "Calculation completed successfully",
+        "calculate_error": "Failed to calculate expense",
+        "persist_success": "Expense saved successfully",
+        "persist_error": "Failed to save expense",
+        "validation_error": "Expense validation failed",
+        "validate_success": "Expense is valid",
+        "validation_violations": "Violations: {violations}",
+        "calculating": "Calculating...",
+        "persisting": "Saving expense...",
+        "batch_calculate": "Batch Calculate",
+        "batch_calculate_success": "Batch calculation completed. {count} records processed",
+        "batch_calculate_error": "Batch calculation failed for some records",
+        "no_items": "Please add at least one expense item",
+        "invalid_amount": "Invalid amount",
+        "invalid_tax_rate": "Tax rate must be between 0 and 100",
+        "invalid_quantity": "Invalid quantity",
+        "max_amount_exceeded": "Amount exceeds maximum allowed",
+        "reference": "Reference",
+        "create_transaction": "Create Transaction",
+        "item_details": "Item Details"
+      }
+    },
+    "suppliers_tab": {
+      "title": "Project Suppliers",
+      "add": "Add Supplier",
+      "no_suppliers": "No suppliers found"
+    },
+    "daily": {
+      "title": "Daily Updates",
+      "add": "Add Update",
+      "no_updates": "No updates found"
+    },
+    "breadcrumbs": {
+      "projects": "Projects"
+    },
+    "success": {
+      "created": "Project created successfully",
+      "updated": "Project updated successfully",
+      "sub_project_created": "Sub project created successfully"
+    },
+    "errors": {
+      "load_failed": "Failed to load project"
+    }
+  },
+  "employee": {
+    "navigation": {
+      "title": "Employees"
+    },
+    "forms": {
+      "add_title": "Add Employee",
+      "reactivate_prompt": "This account was previously deleted. Would you like to reactivate it with the current details?",
+      "reactivate_button": "Reactivate"
+    },
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "role": "Role",
+      "phone": "Phone Number",
+      "search": "Search employees",
+      "employee_types": "Employee Types *"
+    },
+    "hints": {
+      "employee_types": "Select employee types (e.g., Electrical, Plumbing)"
+    },
+    "filters": {
+      "by_role": "Filter by role",
+      "all_roles": "All Roles"
+    },
+    "buttons": {
+      "create": "Create Employee"
+    },
+    "roles": {
+      "supervisor": "Supervisor",
+      "manager": "Manager",
+      "employee": "Employee",
+      "accountant": "Accountant",
+      "tiles": "Tiles",
+      "tenant_admin": "Tenant Admin"
+    },
+    "wage": {
+      "title": "Wage Configuration",
+      "title_optional": "Wage Configuration (Optional)",
+      "amount": "Wage Amount (₹)",
+      "amount_required": "Wage Amount (₹) *",
+      "type_required": "Wage Type *",
+      "effective_date": "Effective Date *",
+      "types": {
+        "daily": "Daily",
+        "hourly": "Hourly",
+        "monthly": "Monthly",
+        "fixed": "Fixed"
+      }
+    },
+    "success": {
+      "contact_imported": "Contact imported successfully"
+    },
+    "errors": {
+      "no_tenant_context": "No tenant context available. Please log in with a tenant user to manage employees.",
+      "pick_contact": "Error picking contact",
+      "contact_permission": "Permission denied to access contacts"
+    },
+    "validation": {
+      "name_required": "Enter a name",
+      "name_alt": "Name required",
+      "password_required": "Enter a password",
+      "password_min_length": "Password must be at least 6 characters",
+      "email_required": "Enter an email",
+      "phone_invalid": "Phone must be 10-15 digits",
+      "id_required": "Either email or phone number is required",
+      "types_required": "At least one employee type is required",
+      "wage_required": "Wage amount is required"
+    },
+    "actions": {
+      "import_contacts": "Import from Contacts"
+    },
+    "states": {
+      "no_employees": "No employees found for this tenant."
+    },
+    "contact_picker": {
+      "title": "Select Contact (Demo)"
+    }
+  },
+  "supplier": {
+    "title": "Suppliers",
+    "fields": {
+      "name": "Supplier Name",
+      "address": "Address",
+      "mobile": "Mobile Number",
+      "email": "Email",
+      "gst": "GST Number",
+      "type": "Supplier Type"
+    },
+    "buttons": {
+      "create": "Create Supplier",
+      "update": "Update Supplier",
+      "attach": "Attach",
+      "import_contacts": "Import from Contacts",
+      "select_contact": "Select Contact"
+    },
+    "hints": {
+      "phone": "e.g., 9876543210",
+      "email": "supplier@example.com",
+      "gst": "e.g., 27AABCT1332L1Z5",
+      "import_phone": "Tap the contacts icon above to import from your phone",
+      "import_web": "Tap contacts icon to use demo contacts (Web mode)"
+    },
+    "validation": {
+      "name_required": "Supplier name is required",
+      "address_required": "Address is required",
+      "mobile_required": "Mobile number is required",
+      "mobile_invalid": "Invalid mobile number. Must be 10 digits and start with 6-9",
+      "email_invalid": "Please enter a valid email",
+      "gst_length": "GST number must be exactly 15 characters",
+      "gst_invalid": "Invalid GST structure or PAN status code",
+      "type_required": "Please select a supplier type"
+    },
+    "sections": {
+      "location": "Supplier Location (Optional)"
+    },
+    "dialogs": {
+      "delete_title": "Delete Supplier",
+      "delete_message": "Are you sure you want to delete \"{name}\"?"
+    },
+    "success": {
+      "created": "Supplier created successfully",
+      "updated": "Supplier updated successfully",
+      "deleted": "Supplier deleted successfully"
+    },
+    "errors": {
+      "delete_failed": "Failed to delete supplier"
+    },
+    "states": {
+      "no_suppliers": "No suppliers found."
+    },
+    "bills": {
+      "dialog_add": "Add Bill",
+      "dialog_edit": "Edit Bill",
+      "fields": {
+        "amount": "Amount *",
+        "status": "Status *"
+      },
+      "validation": {
+        "amount_required": "Please enter amount",
+        "amount_invalid": "Please enter a valid amount"
+      },
+      "success": {
+        "created": "Bill created successfully",
+        "updated": "Bill updated successfully"
+      },
+      "errors": {
+        "file_open": "Could not open bill file"
+      },
+      "states": {
+        "no_bills": "No bills found."
+      },
+      "actions": {
+        "add_first": "Add First Bill"
+      }
+    }
+  },
+  "tenant": {
+    "title": "Tenants",
+    "navigation": {
+      "details": "Tenant Details",
+      "admins": "Tenant Admins"
+    },
+    "fields": {
+      "name": "Tenant Name",
+      "name_hint": "Enter tenant name",
+      "description": "Description",
+      "created_at": "Created At",
+      "tenant_id": "Tenant ID"
+    },
+    "validation": {
+      "name_required": "Tenant name is required",
+      "name_min_length": "Name must be at least 3 characters",
+      "select_tenant": "Select a tenant"
+    },
+    "messages": {
+      "tenant_not_found": "Tenant not found",
+      "no_admins_found": "No tenant admins found",
+      "delete_confirmation": "Are you sure you want to delete \"{name}\"? This action cannot be undone."
+    },
+    "actions": {
+      "create_first_admin": "Create First Tenant Admin",
+      "create_admin": "Create Tenant Admin"
+    },
+    "admins": "Tenant Admins",
+    "create_first": "Create First Tenant",
+    "no_tenants": "No tenants found",
+    "delete_tenant": "Delete Tenant"
+  },
+  "profile": {
+    "sections": {
+      "information": "Profile Information"
+    },
+    "fields": {
+      "phone": "Phone",
+      "name": "Name",
+      "email": "Email"
+    },
+    "tooltips": {
+      "edit": "Edit",
+      "cancel": "Cancel"
+    },
+    "security": "Security",
+    "biometric_login": "Biometric Login",
+    "biometric_subtitle": "Use Fingerprint or Face ID to log in",
+    "company_details": "Company Details",
+    "company_name": "Company Name",
+    "company_name_hint": "e.g., ABC Construction Ltd",
+    "gst_number": "GST Number",
+    "gst_hint": "e.g., 27AABCT1332L1Z5",
+    "gst_helper": "Optional - 15 characters",
+    "company_location": "Company Location",
+    "hide_map": "Hide Map",
+    "select_location": "Select Location",
+    "update_profile": "Update Profile",
+    "messages": {
+      "user_id_not_found": "User ID not found",
+      "data_load_error": "Failed to load user data: {error}",
+      "upload_no_files": "Upload response does not contain files",
+      "upload_key_missing": "S3 key missing in upload response",
+      "pic_update_success": "Profile picture updated successfully",
+      "pic_upload_error": "Failed to upload image: {error}",
+      "update_success": "Profile updated successfully",
+      "update_failed": "Update failed: {error}",
+      "company_update_success": "Company details updated successfully",
+      "biometric_enabled": "Biometric login enabled successfully",
+      "biometric_enable_failed": "Failed to enable biometric: {error}",
+      "biometric_disabled": "Biometric login disabled",
+      "biometric_disable_failed": "Failed to disable biometric: {error}",
+      "logout_confirm": "Are you sure you want to log out?",
+      "logout_success": "Logged out successfully",
+      "logout_error": "Logout error: {error}"
+    },
+    "validation": {
+      "company_name_required": "Please enter company name",
+      "gst_length": "GST number must be exactly 15 characters",
+      "gst_invalid": "Invalid GST structure or PAN status code",
+      "name_required": "Name required",
+      "phone_required": "Phone required",
+      "location_label": "Location",
+      "no_location_set": "No location set"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "No notifications",
+    "mark_all_read": "Mark all as read",
+    "clear_all": "Clear all",
+    "default_title": "Notification",
+    "ok": "OK",
+    "messages": {
+      "load_error": "Failed to load notifications",
+      "mark_all_read_success": "All notifications marked as read",
+      "clear_success": "Notifications cleared"
+    },
+    "types": {
+      "new_bill": "New Bill Uploaded",
+      "daily_note": "New Daily Note",
+      "general": "General Notification"
+    },
+    "download_success": "File Downloaded Successfully",
+    "tap_to_open": "{fileName} downloaded. Tap to open.",
+    "idle_title": "Still there?",
+    "idle_body": "Check your dashboard for the latest project updates."
+  },
+  "broadcaster": {
+    "title": "Broadcaster",
+    "tab_compose": "Compose",
+    "tab_history": "History",
+    "super_admin": {
+      "title": "Broadcast History",
+      "create_new": "Create New",
+      "no_history": "No broadcast history",
+      "all_users": "All Users",
+      "all_roles": "All Roles",
+      "all_tiers": "All Tiers",
+      "compose_title": "Create Custom Broadcast",
+      "targeting_title": "Targeting Filters",
+      "select_roles": "Select User Roles",
+      "select_tiers": "Select Tiers (SuperAdmin Only)",
+      "compose_notification": "Compose Notification",
+      "title_label": "Title",
+      "title_hint": "Enter catchy title...",
+      "message_label": "Message",
+      "message_hint": "Type your message here...",
+      "preview_label": "Live Preview",
+      "send_now": "Send Now",
+      "sending": "Sending...",
+      "success_title": "Success!",
+      "success_message": "Notification sent successfully.",
+      "required": "Required",
+      "title_placeholder": "Title Placeholder",
+      "message_placeholder": "Message body will appear here as you type..."
+    },
+    "composition": {
+      "title": "Compose Notification",
+      "targeting_title": "Targeting Filters",
+      "field_title_label": "Title",
+      "field_title_hint": "Enter catchy title...",
+      "field_body_label": "Message",
+      "field_body_hint": "Type your message here...",
+      "preview_label": "Live Preview",
+      "send_button": "Send Now"
+    },
+    "filters": {
+      "all": "All",
+      "target_roles": "Target Roles",
+      "target_tiers": "Target Tiers (SuperAdmin Only)"
+    },
+    "roles": {
+      "all": "All",
+      "tenant_admin": "Tenant Admin",
+      "manager": "Manager",
+      "supervisor": "Supervisor",
+      "employee": "Employee"
+    },
+    "tiers": {
+      "all": "All",
+      "free": "Free",
+      "extended_free": "Extended Free",
+      "pro": "Pro",
+      "enterprise": "Enterprise"
+    },
+    "messages": {
+      "sent_success_title": "Success!",
+      "sent_success_body": "Notification sent successfully.",
+      "empty_history": "No broadcasts sent yet.",
+      "field_required": "This field is required"
+    }
+  },
+  "tier": {
+    "names": {
+      "free": "Free Trial",
+      "basic": "Basic",
+      "pro": "Pro"
+    },
+    "dialogs": {
+      "upgrade_required": "Upgrade Required",
+      "access_denied": "Access Denied",
+      "contact_support": "Contact Support"
+    },
+    "status": {
+      "current_plan": "Current Plan: "
+    },
+    "badges": {
+      "current": "CURRENT"
+    },
+    "buttons": {
+      "upgrade_now": "Upgrade Now",
+      "maybe_later": "Maybe Later",
+      "contact_sales": "Contact Sales",
+      "restart_app": "Restart App"
+    },
+    "messages": {
+      "choose_plan": "Choose the plan that fits your needs",
+      "upgrade_to": "Upgrade to {tierName}",
+      "upgrade_description": "You are about to upgrade to {tierName} plan.",
+      "upgrade_immediate": "This will immediately unlock all features for this tier.",
+      "demo_note": "Note: This is a demo. In production, this would integrate with a payment gateway.",
+      "access_denied": "You do not have permission to access this feature."
+    },
+    "features": {
+      "bills_upgrade": "Bills management is available in Basic and Pro plans.",
+      "suppliers_upgrade": "Supplier management is available in Pro plan only.",
+      "reports_upgrade": "Advanced reporting is available in Pro plan only.",
+      "employees_upgrade": "Employee management is available in Pro plan only."
+    },
+    "limits": {
+      "project_count": "Current limit: {limit} project{plural}",
+      "unlimited_projects": "Upgrade to Basic or Pro plan for unlimited projects."
+    },
+    "support": {
+      "upgrade_contact": "Please contact our support team to upgrade your plan.\n\nEmail: support@briktra.com",
+      "general_contact": "This feature is not available in your current plan. Please contact our support team to upgrade.\n\nEmail: support@briktra.com"
+    },
+    "trial": {
+      "expiring_title": "Trial Expiring Soon!",
+      "expires_tomorrow": "Your free trial expires tomorrow!\nContact our support team to continue using all features.",
+      "expires_days": "Your free trial expires in {days} days!\nContact our support team to continue using all features.",
+      "support_message": "Your trial is expiring soon. Please contact our support team to maintain access to all features.\n\nEmail: support@briktra.com",
+      "trial_ends_in": "Trial Ends In:",
+      "days": "Days",
+      "hours": "Hours",
+      "mins": "Mins",
+      "secs": "Secs"
+    },
+    "expired": {
+      "title": "Plan Expired",
+      "tag": "Expired",
+      "subtitle": "Your free trial has expired.\nContact our support team to continue using Briktra.",
+      "assistance": "Need immediate assistance? Copy the email above and\nsend us a message describing your situation."
+    },
+    "contacts": {
+      "sales_email": "sales@briktra.com",
+      "sales_phone": "+1 (555) 123-4567",
+      "support_email": "support@briktra.com",
+      "general_email": "contact@briktra.com",
+      "sales_info": "For custom plans or enterprise pricing, please contact our sales team:"
+    },
+    "labels": {
+      "email_support": "Email Support",
+      "general_contact": "General Contact"
+    },
+    "states": {
+      "processing_upgrade": "Processing upgrade..."
+    },
+    "success": {
+      "upgraded": "Successfully upgraded to {tierName}!",
+      "copied_clipboard": "{text} copied to clipboard"
+    }
+  },
+  "expired_plan": {
+    "title": "Plan Expired",
+    "subtitle": "Your free trial has expired.\nContact our support team to continue using Briktra.",
+    "contact_support": "Contact Support",
+    "email_support": "Email Support",
+    "general_contact": "General Contact",
+    "support_email": "support@briktra.com",
+    "contact_email": "contact@briktra.com",
+    "copied": "{text} copied to clipboard",
+    "logout": "Logout"
+  },
+  "expense": {
+    "forms": {
+      "add_title": "Add Expense"
+    },
+    "fields": {
+      "project": "Project",
+      "supplier": "Supplier",
+      "bill": "Bill",
+      "amount": "Amount",
+      "description": "Description (Optional)"
+    },
+    "buttons": {
+      "add": "Add Expense"
+    },
+    "validation": {
+      "amount_required": "Amount is required"
+    },
+    "success": {
+      "added": "Expense added successfully"
+    },
+    "stats": {
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
+    }
+  },
+  "navigation": {
+    "screens": {
+      "dashboard": "Dashboard",
+      "projects": "Projects",
+      "create_project": "Create Project",
+      "bills": "Bills",
+      "suppliers": "Suppliers",
+      "reports": "Reports",
+      "employees": "Employees",
+      "attendance": "Attendance"
+    },
+    "bottom": {
+      "home": "Home",
+      "launch": "Launch",
+      "reports": "Reports",
+      "profile": "Profile"
+    },
+    "drawer": {
+      "profile": "Profile",
+      "change_password": "Change Password",
+      "contact_support": "Contact Support",
+      "logout": "Logout",
+      "trial_warning": {
+        "expired": "Trial expired. Contact support.",
+        "days_left": "{days} days left in trial.",
+        "contact": "Contact"
+      },
+      "coming_soon": "Coming Soon",
+      "upgrade_required": "Upgrade Required"
+    }
+  },
+  "common": {
+    "transactions": "transactions",
+    "units": "units",
+    "items": "items",
+    "description": "Description",
+    "buttons": {
+      "cancel": "Cancel",
+      "ok": "OK",
+      "done": "Done",
+      "close": "Close",
+      "delete": "Delete",
+      "save": "Save",
+      "edit": "Edit",
+      "add": "Add",
+      "update": "Update",
+      "create": "Create",
+      "retry": "Retry",
+      "back": "Back",
+      "go_back": "Go Back",
+      "later": "Later",
+      "yes": "Yes",
+      "no": "No",
+      "save_changes": "Save Changes",
+      "refresh": "Refresh",
+      "submit": "Submit"
+    },
+    "states": {
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "warning": "Warning",
+      "info": "Information",
+      "no_data": "No data available",
+      "no_results": "No results found"
+    },
+    "tooltips": {
+      "back": "Back",
+      "logout": "Logout"
+    },
+    "fields": {
+      "amount": "Amount",
+      "description": "Description",
+      "description_optional": "Description (Optional)",
+      "full_name": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "project": "Project",
+      "no_description": "No description"
+    },
+    "errors": {
+      "valid_amount": "Enter valid amount"
+    },
+    "back": "Back",
+    "logout": "Logout",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
+    "save": "Save",
+    "save_changes": "Save Changes",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "error": "Error",
+    "warning": "Warning",
+    "success": "Success",
+    "loading": "Loading...",
+    "no_data": "No data available",
+    "no_results": "No results found",
+    "close": "Close",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "update": "Update",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "upgrade_required": "Upgrade Required",
+    "profile_updated": "Profile updated successfully",
+    "update_failed": "Update failed:",
+    "no_location": "No location set",
+    "failed_to_load": "Failed to load user data:",
+    "profile_picture_updated": "Profile picture updated successfully",
+    "failed_to_upload": "Failed to upload image:",
+    "view_all": "View All",
+    "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
+    "retry": "Retry"
+  },
+  "validation": {
+    "required": "Required",
+    "email": {
+      "invalid": "Enter a valid email",
+      "required": "Enter an email"
+    },
+    "name": {
+      "required": "Enter a name"
+    },
+    "password": {
+      "required": "Enter a password"
+    },
+    "mobile": {
+      "invalid": "Invalid mobile number"
+    },
+    "amount": {
+      "required": "Please enter amount",
+      "invalid": "Please enter a valid amount"
+    }
+  },
+  "greetings": {
+    "morning": "Good Morning",
+    "afternoon": "Good Afternoon",
+    "evening": "Good Evening",
+    "welcome": "Welcome, {name}!"
+  },
+  "language_selection": {
+    "title": "Select Your Language",
+    "subtitle": "Choose the language you're most comfortable with",
+    "button": "Change Language",
+    "next": "Next",
+    "languages": {
+      "en": "English",
+      "hi": "हिंदी",
+      "ta": "தமிழ்"
+    }
+  },
+  "settings": {
+    "language": "Language Preference",
+    "change_password": "Change Password",
+    "logout": "Logout"
+  },
+  "error": {
+    "login": {
+      "invalid_credentials": "Invalid email or password",
+      "account_inactive": "Your account has not been activated yet. Please verify your email.",
+      "account_locked": "Your account has been locked. Contact support."
+    },
+    "register": {
+      "user_exists": "This email is already registered",
+      "invalid_email": "Please enter a valid email address",
+      "invalid_phone": "Please enter a valid phone number",
+      "password_weak": "Password must be at least 8 characters with mixed case and numbers",
+      "passwords_not_match": "Passwords don't match",
+      "terms_required": "You must accept the terms and conditions"
+    },
+    "otp": {
+      "invalid": "The code you entered is incorrect",
+      "expired": "The code has expired. Please request a new one.",
+      "account_verified": "Your account is already verified"
+    },
+    "auth": {
+      "invalid_token": "Your session has expired. Please log in again.",
+      "missing_token": "Authentication required",
+      "invalid_bearer": "Invalid token format",
+      "account_deleted": "Your account deleted contact your Admin"
+    },
+    "user": {
+      "not_found": "User not found",
+      "already_exists": "User already exists",
+      "permission_denied": "You don't have permission to access this resource",
+      "cannot_delete_self": "You cannot delete your own account",
+      "account_already_deleted": "Account already deleted by our end."
+    },
+    "tenant": {
+      "not_found": "Organization not found",
+      "already_exists": "Organization already exists",
+      "invalid_tier": "Invalid subscription tier"
+    },
+    "project": {
+      "not_found": "Project not found",
+      "already_exists": "Project already exists",
+      "cannot_delete_active": "Cannot delete active projects",
+      "limit_reached": "Project limit reached, Please upgrad your plan"
+    },
+    "supplier": {
+      "not_found": "Supplier not found",
+      "already_exists": "Supplier already exists"
+    },
+    "bill": {
+      "not_found": "Bill not found",
+      "already_paid": "This bill has already been paid",
+      "invalid_amount": "Invalid amount"
+    },
+    "expense": {
+      "not_found": "Expense not found"
+    },
+    "attendance": {
+      "already_marked": "Attendance already marked for this date",
+      "limit_exceeded": "Daily attendance limit reached",
+      "future_date": "Cannot mark attendance for future dates",
+      "invalid_time": "Invalid check in/out time"
+    },
+    "upload": {
+      "invalid_file_type": "File type not allowed. Allowed types: PDF, DOC, DOCX, JPG, PNG",
+      "file_too_large": "File size exceeds maximum limit of 50MB",
+      "upload_failed": "File upload failed",
+      "no_file_selected": "Please select a file"
+    },
+    "email": {
+      "send_failed": "Failed to send email. Please try again later.",
+      "invalid_address": "Invalid email address"
+    },
+    "password": {
+      "incorrect": "Current password is incorrect",
+      "change_failed": "Failed to change password"
+    },
+    "validation": {
+      "required": "{field} is required",
+      "invalid": "{field} is invalid",
+      "min_length": "{field} must be at least {length} characters",
+      "max_length": "{field} must not exceed {length} characters",
+      "already_exists": "Value already exists"
+    },
+    "network": {
+      "error": "Network error. Please check your connection.",
+      "timeout": "Request timed out. Please try again."
+    },
+    "server": {
+      "internal_error": "Internal server error. Please try again later.",
+      "service_unavailable": "Service temporarily unavailable",
+      "not_found": "Resource not found"
+    }
+  },
+  "success": {
+    "login": "Logged in successfully",
+    "logout": "Logged out successfully",
+    "registered": "Registration successful. Please verify your email.",
+    "email_verified": "Email verified successfully",
+    "password_reset": "Password reset successfully",
+    "password_changed": "Password changed successfully",
+    "created": "{entity} created successfully",
+    "updated": "{entity} updated successfully",
+    "deleted": "{entity} deleted successfully",
+    "marked_paid": "Bill marked as paid",
+    "attendance_marked": "Attendance marked successfully",
+    "file_uploaded": "File uploaded successfully",
+    "settings_saved": "Settings saved successfully",
+    "operation_success": "Operation completed successfully"
+  },
+  "message": {
+    "confirm_delete": "Are you sure? This action cannot be undone.",
+    "loading": "Loading...",
+    "no_data": "No data available",
+    "search_no_results": "No results found"
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "network": "Network error. Please check your internet connection.",
+    "session_expired": "Your session has expired. Please login again.",
+    "permission_denied": "You don't have permission to perform this action.",
+    "not_found": "Resource not found.",
+    "server_error": "Server error. Please try again later.",
+    "timeout": "Request timeout. Please try again.",
+    "invalid_input": "Invalid data provided. Please check your inputs.",
+    "file_too_large": "File size too large. Maximum 10MB per file allowed.",
+    "upload_failed": "Upload failed. Please try again.",
+    "daily_limit_reached": "Daily limit reached! You've uploaded 5 files today. Try again tomorrow.",
+    "daily_limit_warning": "You have {existing} files today. Only {remaining} more allowed.",
+    "too_many_files": "Maximum 5 files per day allowed, but you selected {count}.",
+    "tenant_not_found": "Tenant not found. Please re-login.",
+    "project_not_found": "Project not found.",
+    "user_not_found": "User not found."
+  },
+  "daily_uploads": {
+    "title": "Daily Uploads",
+    "upload_button": "Upload Photos",
+    "uploading": "Uploading...",
+    "no_uploads": "No photos yet. Upload site photos daily.",
+    "upload_success": "{count} photo(s) uploaded! ({used}/5 used, {remaining} remaining today)",
+    "daily_limit_info": "{count}/5 files uploaded today",
+    "remaining_slots": "{remaining} slots remaining",
+    "date_label": "Date: {date}",
+    "files_count": "{count} files",
+    "delete_title": "Delete Photo",
+    "delete_confirmation": "Are you sure you want to delete this photo? This action cannot be undone.",
+    "deleting": "Deleting photo...",
+    "deleted_success": "Photo deleted successfully",
+    "image_picker": {
+      "photo": "Take a photo",
+      "gallery": "Choose from gallery"
+    },
+    "viewer": {
+      "title": "Image View",
+      "load_error": "Failed to load image"
+    },
+    "filters": {
+      "select_date_range": "Select Date Range",
+      "start_date": "Start Date",
+      "end_date": "End Date",
+      "to": "to",
+      "clear": "Clear filter",
+      "showing_range": "Showing {start} to {end}",
+      "showing_from": "From {start}",
+      "showing_until": "Until {end}"
+    }
+  },
+  "bills": {
+    "title": "Bill",
+    "management_title": "Bills Management",
+    "suppliers_title": "Suppliers",
+    "filters": "Filters",
+    "status": "Status",
+    "type": "Type",
+    "all": "All",
+    "actions": "Actions",
+    "bill_number": "Bill Number",
+    "add_bill": "Add Bill",
+    "pending": "Pending",
+    "approved": "Approved",
+    "paid": "Paid",
+    "rejected": "Rejected",
+    "overdue": "Overdue",
+    "cancelled": "Cancelled",
+    "delete_bill": "Delete Bill",
+    "approve": "Approve",
+    "reject": "Reject",
+    "mark_as_paid": "Mark as Paid",
+    "edit": "Edit",
+    "view_document": "View Document",
+    "delete": "Delete",
+    "create_first": "Create First Bill",
+    "attach": "Attach",
+    "are_you_sure": "Are you sure you want to delete this bill?",
+    "cancel": "Cancel",
+    "edit_bill": "Edit Bill",
+    "create_bill": "Create Bill",
+    "bill_name_label": "Bill Name / Description",
+    "bill_name_hint": "e.g., Cement supply - Block A",
+    "supplier": "Supplier *",
+    "amount": "Amount *",
+    "bill_type": "Bill Type *",
+    "attachment": "Attachment",
+    "select_file": "Select File",
+    "change_file": "Change File",
+    "capture_camera": "Capture with Camera",
+    "pick_gallery": "Pick from Gallery/Storage",
+    "read_error": "Could not read file data",
+    "update_success": "Bill updated successfully",
+    "create_success": "Bill created successfully",
+    "update_fail": "Failed to update bill",
+    "create_fail": "Failed to create bill",
+    "select_supplier_error": "Please select a supplier",
+    "enter_amount_error": "Please enter amount",
+    "invalid_amount_error": "Please enter a valid amount",
+    "select_type_error": "Please select bill type",
+    "select_status_error": "Please select status",
+    "selected": "Selected",
+    "current_attached": "Current: File attached",
+    "no_file": "No file selected",
+    "unknown_supplier": "Unknown Supplier",
+    "unknown_project": "Unknown Project",
+    "download_fail": "Failed to download document",
+    "delete_fail": "Failed to delete bill",
+    "clear": "Clear",
+    "apply": "Apply",
+    "select_project": "Select Project",
+    "all_projects": "All Projects",
+    "all_suppliers": "All Suppliers",
+    "supplier_title": "Supplier",
+    "no_bills": "No bills found",
+    "no_match": "No bills match filters",
+    "document": "Document",
+    "downloading_pdf": "Downloading PDF...",
+    "loading_image": "Loading Bill Image...",
+    "no_document": "No bill copy added",
+    "retry": "Retry",
+    "no_projects_error": "No projects available. Please create a project first.",
+    "no_document_url_error": "No document URL returned",
+    "error_viewing": "Error viewing bill",
+    "delete_confirm": "Are you sure you want to delete bill \"{number}\"?",
+    "update_confirm": "Are you sure you want to {action} bill \"{number}\"?",
+    "messages": {
+      "delete_success": "Bill deleted successfully",
+      "render_error": "Failed to render image content"
+    },
+    "titles": {
+      "pdf_viewer": "Bill Document (PDF)",
+      "management": "Bills Management",
+      "view_bill": "View Bill"
+    },
+    "tooltips": {
+      "create": "Create Bill",
+      "mark_paid": "Mark as Paid",
+      "edit": "Edit",
+      "view_doc": "View Document",
+      "delete": "Delete"
+    },
+    "bill_types": {
+      "raw_material": "Raw Material",
+      "tiles_marble": "Tiles & Marble",
+      "electrical_plumbing_materials": "Electrical & Plumbing",
+      "paint_chemicals": "Paint & Chemicals",
+      "equipment_machinery": "Equipment & Machinery",
+      "transport_logistics": "Transport & Logistics",
+      "tools_rental": "Tools Rental",
+      "others": "Others",
+      "transport": "Transport"
+    },
+    "all_types": "All Types",
+    "filter_by_type": "Filter by Bill Type",
+    "render_error": "Failed to render image: {error}",
+    "add_first": "Add First Bill",
+    "bill_details": "Bill Details"
+  },
+  "payroll": {
+    "title": "Payroll Management",
+    "salary_and_payroll": "Salary & Payroll",
+    "calculate": "Calculate",
+    "calculating": "Calculating...",
+    "download": "Download",
+    "calculate_payroll": "Calculate Payroll",
+    "filter_by_period": "Filter by Period",
+    "current_week": "Current Week",
+    "current_month": "Current Month",
+    "custom_date": "Custom Date",
+    "custom_range": "Custom Range",
+    "select_all": "Select All",
+    "select_all_employees": "Select All Employees",
+    "make_payment": "Make Payment",
+    "employees": "Employees:",
+    "total_amount": "Total Amount:",
+    "confirm_payment": "Confirm Payment",
+    "select_at_least_one": "Please select at least one payroll",
+    "select_payment_mode": "Please select a payment mode",
+    "payment_success": "Payment processed successfully",
+    "confirm": "Confirm",
+    "detail_title": "Payroll Details",
+    "export_pdf": "Export PDF",
+    "auto_generate": "Auto-Generate Payroll",
+    "auto_generated_ready": "Payroll has been automatically generated and is ready for viewing.",
+    "mark_as_paid": "Mark as Paid",
+    "paid": "Paid",
+    "pending": "Pending",
+    "advance": "Advance",
+    "deducted": "deducted",
+    "gross_salary": "Gross Salary",
+    "net_salary": "Net Salary",
+    "deductions": "Deductions",
+    "advance_deduction": "Advance Deduction",
+    "present_days": "Present Days",
+    "wage_rate": "Wage Rate",
+    "search_employee_name": "Search employee name...",
+    "calculate_employee_salaries": "Calculate employee salaries based on attendance records and predefined wage structures.",
+    "calculate_employee_salary": "Calculate employee salary based on attendance",
+    "no_payroll_calculated": "No Payroll Calculated",
+    "click_calculate_to_generate": "Click \"Calculate\" to generate payroll",
+    "draft": "Draft",
+    "finalized": "Finalized",
+    "record": "record",
+    "records": "records",
+    "adv": "Adv",
+    "messages": {
+      "payment_marked": "Payment marked successfully",
+      "invalid_record": "Invalid payroll record",
+      "failed_mark_payment": "Failed to mark payment",
+      "payroll_generated": "Payroll generated successfully",
+      "select_employees": "Please select at least one employee",
+      "select_period": "Please select a period"
+    },
+    "validation": {
+      "select_project": "Please select a project",
+      "select_employee": "Please select an employee",
+      "invalid_amount": "Please enter a valid amount"
+    }
+  },
+  "labour": {
+    "title": "Labour",
+    "electrical": "Electrical",
+    "plumbing": "Plumbing",
+    "tiles": "Tiles",
+    "painting": "Painting",
+    "general": "General",
+    "daily": "Daily",
+    "hourly": "Hourly",
+    "monthly": "Monthly",
+    "fixed": "Fixed",
+    "add_new_labour": "Add New Labour",
+    "no_users_found": "No users found for this role",
+    "assign": "Assign",
+    "smart_assign": "Smart Assign",
+    "management": "Labour Management",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "phone_number": "Phone Number",
+    "employee_types": "Employee Types *",
+    "employee_types_hint": "Select employee types (e.g., Electrical, Plumbing)",
+    "employee_types_required": "At least one employee type is required",
+    "wage_configuration": "Wage Configuration",
+    "wage_amount": "Wage Amount (₹) *",
+    "wage_type": "Wage Type *",
+    "effective_date": "Effective Date *",
+    "import_from_contacts": "Import from Contacts",
+    "name_required": "Name is required"
+  },
+  "employees": {
+    "title": "Employees",
+    "details": "Employee Details",
+    "new_advance": "New Advance Request",
+    "no_advances": "No salary advances found",
+    "add_advance": "Add Salary Advance",
+    "no_projects": "No projects available",
+    "no_employees": "No employees found",
+    "search_employees": "Search employees...",
+    "advances": {
+      "add_advance": "Add Advance",
+      "project": "Project",
+      "select_employee": "Select Employee",
+      "advance_date": "Advance Date",
+      "amount": "Amount",
+      "payment_status": "Payment Status",
+      "reason_optional": "Reason (Optional)",
+      "select_employee_error": "Please select an employee",
+      "valid_amount": "Please enter a valid amount",
+      "enter_amount": "Enter Amount",
+      "enter_reason": "Enter Reason (Optional)",
+      "reason_hint": "Enter reason for advance...",
+      "status": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "messages": {
+        "advance_added": "Advance added successfully",
+        "advance_updated": "Advance updated successfully",
+        "advance_deleted": "Advance deleted successfully"
+      }
+    }
+  },
+  "suppliers": {
+    "title": "Suppliers",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add_supplier": "Add Supplier",
+    "delete_supplier": "Delete Supplier",
+    "create_first": "Create First Supplier"
+  },
+  "projects": {
+    "title": "Projects",
+    "list": {
+      "title": "Projects",
+      "no_projects": "No projects available at the moment",
+      "add_project": "Add Project",
+      "delete_title": "Delete Project",
+      "delete_message": "Are you sure you want to delete \"{name}\"?",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "delete_success": "Project deleted successfully",
+      "delete_error": "Failed to delete project: {error}",
+      "filter_by_status": "Filter by status"
+    },
+    "all_statuses": "All statuses",
+    "active": "Active",
+    "completed": "Completed",
+    "on_hold": "On Hold",
+    "cancelled": "Cancelled",
+    "add_project": "Add Project",
+    "edit_project": "Edit Project",
+    "delete_project": "Delete Project",
+    "view_bills": "View Bills",
+    "details": "Project Details",
+    "delete_confirm": "Are you sure you want to delete this project?",
+    "delete_confirm_message": "Are you sure you want to delete \"{name}\"?",
+    "not_found": "Project not found",
+    "error_message": "Error: {error}",
+    "add_unit": "Add Unit",
+    "apartment_units": "Apartment Units",
+    "units_count": "{count} units",
+    "no_units_yet": "No apartment units yet",
+    "tap_add_unit": "Tap \"Add Unit\" to create apartment units",
+    "select_labour_type": "Select Labour Type",
+    "employee_types": "Employee Types *",
+    "employee_types_hint": "Select employee types (e.g., Electrical, Plumbing)",
+    "error": "Error",
+    "electrical": "Electrical",
+    "plumbing": "Plumbing",
+    "tiles": "Tiles",
+    "painting": "Painting",
+    "general": "General"
+  },
+
+  "advances": {
+    "title": "Add Advance",
+    "labels": {
+      "project": "Project",
+      "select_employee": "Select Employee",
+      "date": "Advance Date",
+      "amount": "Amount",
+      "reason_optional": "Reason (Optional)"
+    },
+    "hints": {
+      "search_employees": "Search employees...",
+      "amount": "0",
+      "reason": "Enter reason for advance..."
+    },
+    "errors": {
+      "select_employee": "Please select an employee",
+      "invalid_amount": "Please enter a valid amount"
+    },
+    "validation": {
+      "amount_required": "Please enter amount",
+      "amount_invalid": "Please enter valid amount"
+    },
+    "buttons": {
+      "create": "Create Advance"
+    },
+    "empty": {
+      "no_employees": "No employees found"
+    }
+  },
+  "wages": {
+    "title": "Set Employee Wage",
+    "labels": {
+      "employee": "Employee",
+      "amount": "Wage Amount *",
+      "wage_type": "Wage Type *",
+      "effective_from": "Effective From *",
+      "phone_optional": "Phone Number (Optional)",
+      "email_optional": "Email (Optional)"
+    },
+    "hints": {
+      "enter_amount": "Enter wage amount",
+      "phone": "Enter phone number",
+      "email": "Enter email address"
+    },
+    "types": {
+      "daily": "Daily Wage",
+      "hourly": "Hourly Wage",
+      "fixed": "Fixed Wage"
+    },
+    "validation": {
+      "amount_required": "Wage amount is required",
+      "amount_invalid": "Please enter a valid amount greater than 0",
+      "amount_exceeded": "Wage amount cannot exceed 999999.99",
+      "phone_length": "Phone number must be 10-15 digits",
+      "phone_format": "Phone number must contain only digits",
+      "email_invalid": "Please enter a valid email address"
+    },
+    "buttons": {
+      "create": "Create Wage"
+    }
+  },
+  "assigned_projects": {
+    "buttons": {
+      "retry": "Retry",
+      "refresh": "Refresh",
+      "view_attendance": "View Attendance"
+    },
+    "empty": {
+      "no_projects": "No assigned projects found."
+    },
+    "headers": {
+      "parent_projects": "Parent Projects ({count})",
+      "sub_projects": "Sub Projects ({count})"
+    },
+    "labels": {
+      "unnamed_project": "Unnamed Project"
+    }
+  },
+  "company": {
+    "title": {
+      "first_time": "Complete Company Profile",
+      "edit": "Company Details"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "skip": "Skip",
+      "continue": "Continue to Dashboard",
+      "save": "Save Changes",
+      "hide_map": "Hide Map",
+      "select_location": "Select Location on Map"
+    },
+    "validation": {
+      "gst_or_location": "Please provide at least GST number or company location",
+      "company_name_required": "Please enter company name",
+      "gst_length": "GST number must be exactly 15 characters",
+      "gst_format": "Invalid GST number format"
+    },
+    "messages": {
+      "updated": "Company details updated successfully"
+    },
+    "dialogs": {
+      "skip": {
+        "title": "Skip Company Profile?",
+        "content": "You can always update your company profile later from the settings."
+      }
+    },
+    "info": {
+      "complete_profile": "Complete your company profile to unlock all features"
+    },
+    "headers": {
+      "information": "Company Information",
+      "location": "Company Location"
+    },
+    "labels": {
+      "company_name": "Company Name *",
+      "gst": "GST Number"
+    },
+    "hints": {
+      "company_name": "e.g., ABC Construction Ltd",
+      "gst": "e.g., 27AABCT1332L1Z5"
+    },
+    "helpers": {
+      "gst": "Optional - 15 characters"
+    },
+    "descriptions": {
+      "pin_location": "Pin your company headquarters on the map"
+    },
+    "status": {
+      "location_set": "Location set: {coordinates}",
+      "no_location": "No location set"
+    }
+  },
+  "create_project": {
+    "labels": {
+      "apartment": "Apartment",
+      "building": "Building"
+    }
+  },
+  "project_detail": {
+    "details_header": "Project Details",
+    "budget": "Budget",
+    "status": "Status",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "location": "Location",
+    "completed_date": "Completed Date",
+    "not_set": "Not set",
+    "not_specified": "Not specified",
+    "progress": "Project Progress",
+    "unlock": "Unlock to change",
+    "lock": "Lock/Reset",
+    "modules_header": "Project Modules",
+    "dialogs": {
+      "delete": {
+        "title": "Delete Project",
+        "content": "Are you sure you want to delete \"{name}\"?",
+        "buttons": {
+          "cancel": "Cancel",
+          "delete": "Delete"
+        }
+      }
+    },
+    "modules": {
+      "labour": {
+        "title": "Labour Management",
+        "desc": "Manage workers assigned to this project"
+      },
+      "attendance": {
+        "title": "Attendance",
+        "desc": "Manage employee attendance records"
+      },
+      "expenses": {
+        "title": "Expenses",
+        "desc": "Track project expenses and bills"
+      },
+      "salary": {
+        "title": "Salary & Payroll",
+        "desc": "Manage employee salaries and payments"
+      },
+      "advances": {
+        "title": "Advances",
+        "desc": "Track employee salary advances"
+      },
+      "suppliers": {
+        "title": "Suppliers",
+        "desc": "Manage suppliers and their bills"
+      },
+      "bills": {
+        "title": "Bills",
+        "desc": "Manage all project bills and payments"
+      },
+      "daily_updates": {
+        "title": "Daily Updates",
+        "desc": "View daily site photos and progress"
+      },
+      "daily_notes": {
+        "title": "Daily Notes",
+        "desc": "Project activity feed and team discussions"
+      },
+      "document_wallet": {
+        "title": "Document Wallet",
+        "desc": "Project documents and company files"
+      }
+    }
+  },
+  "employee_attendance_tap": {
+    "dialogs": {
+      "location_disabled": {
+        "title": "Location Service Disabled",
+        "content": "Please enable location services to mark attendance.",
+        "buttons": {
+          "cancel": "Cancel",
+          "open_settings": "Open Settings"
+        }
+      },
+      "mark_attendance": {
+        "title": "Mark Attendance"
+      }
+    },
+    "buttons": {
+      "full_day": "Full Day",
+      "half_day": "Half Day"
+    },
+    "hints": {
+      "choose_project": "Choose a project"
+    },
+    "tabs": {
+      "mark": "Mark",
+      "stats": "Attendance Stats",
+      "advances": "Advances",
+      "salary": "Salary"
+    },
+    "mark": {
+      "select_project": "Select Project",
+      "no_assigned_projects": "No projects are assigned to you. Please contact your management.",
+      "attendance_type": "Attendance Type",
+      "select_attendance_type": "Select Attendance Type",
+      "limit_reached": " (Limit Reached)",
+      "already_marked": "You have already marked {count} day(s) for this project today.",
+      "location_captured": "Location Captured",
+      "capturing_location": "Capturing Location...",
+      "location_not_available": "Location Not Available",
+      "retry_location": "Tap to retry or enable GPS",
+      "assigned_project": "Assigned Project",
+      "select_type": "Select Type",
+      "tap_to_mark": "TAP TO\nMARK\nATTENDANCE",
+      "today_label": "Today: {date}"
+    },
+    "stats": {
+      "no_data": "No attendance stats found",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "overall": "Overall"
+    },
+    "advances": {
+      "no_data": "No salary advances found",
+      "no_status_data": "No {status} advances found",
+      "reason_label": "Reason:",
+      "total_outstanding": "Total Outstanding Advance",
+      "filters": {
+        "all": "All",
+        "pending": "Pending",
+        "paid": "Paid"
+      }
+    },
+    "salary": {
+      "title": "Salary Statement",
+      "period": "Period",
+      "current_week": "Current Week",
+      "current_month": "Current Month",
+      "custom_range": "Custom Range",
+      "start_date": "Start Date",
+      "end_date": "End Date",
+      "select_date": "Select date",
+      "select_dates": "Please select start and end dates",
+      "retry": "Retry",
+      "no_data": "No paid salaries for {period}",
+      "payments": "Payments",
+      "records": "Payment Records"
+    }
+  },
+  "employees_screen": {
+    "title": "Employees",
+    "dialogs": {
+      "delete": {
+        "title": "Delete Employee",
+        "content": "Are you sure you want to delete {name}?",
+        "buttons": {
+          "cancel": "Cancel",
+          "delete": "Delete"
+        }
+      },
+      "select_contact": {
+        "title": "Select Contact (Demo)"
+      }
+    },
+    "buttons": {
+      "retry": "Retry",
+      "delete": "Delete"
+    },
+    "success": {
+      "deleted": "Employee deleted successfully"
+    },
+    "errors": {
+      "delete_failed": "Failed to delete employee: {error}"
+    },
+    "wage_types": {
+      "daily": "Daily",
+      "hourly": "Hourly",
+      "monthly": "Monthly",
+      "fixed": "Fixed"
+    }
+  },
+  "employee_detail": {
+    "title": "Employee Details",
+    "edit_employee": "Edit Employee",
+    "tabs": {
+      "info": "Information",
+      "wages": "Wages",
+      "advances": "Advances"
+    },
+    "advances": {
+      "new_request": "New Advance Request",
+      "no_data": "No salary advances found",
+      "add_title": "Add Salary Advance"
+    },
+    "sections": {
+      "account": "Account Information",
+      "tier": "Tier Information",
+      "wage_info": "Wage Information",
+      "attendance_stats": "Attendance Stats",
+      "current_wage": "Current Wage",
+      "basic_wage": "Current Basic Wage",
+      "wage_type": "Wage Type",
+      "effective_from": "Effective From"
+    },
+    "buttons": {
+      "update": "Update"
+    },
+    "fields": {
+      "id": "ID",
+      "username": "Username",
+      "email": "Email",
+      "phone": "Phone Number",
+      "role": "Role",
+      "tier": "Tier",
+      "days_remaining": "Days Remaining",
+      "trial_start": "Trial Start",
+      "trial_end": "Trial End",
+      "amount": "Amount",
+      "description_optional": "Description (Optional)",
+      "full_name": "Full Name",
+      "project": "Project"
+    },
+    "dialogs": {
+      "no_projects": "No projects available",
+      "edit_title": "Edit Employee",
+      "create": "Create",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "errors": {
+      "valid_amount": "Enter valid amount",
+      "name_empty": "Name cannot be empty",
+      "phone_invalid": "Phone number must be exactly 10 digits",
+      "update_failed": "Failed to update: {error}"
+    },
+    "success": {
+      "updated": "Employee updated successfully"
+    },
+    "wage_types": {
+      "daily": "Daily",
+      "hourly": "Hourly",
+      "monthly": "Monthly",
+      "fixed": "Fixed",
+      "weekly": "Weekly"
+    }
+  },
+  "create_supplier": {
+    "buttons": {
+      "select_contact": "Select Contact",
+      "cancel": "Cancel"
+    },
+    "hints": {
+      "phone": "e.g., 9876543210",
+      "email": "supplier@example.com",
+      "gst": "e.g., 27AABCT1332L1Z5"
+    }
+  },
+
+  "tenant_detail": {
+    "title": "Tenant Details",
+    "errors": {
+      "generic": "Error: {error}"
+    },
+    "buttons": {
+      "retry": "Retry"
+    },
+    "empty": {
+      "not_found": "Tenant not found"
+    },
+    "dialogs": {
+      "delete": {
+        "title": "Delete Tenant",
+        "content": "Are you sure you want to delete this tenant?",
+        "buttons": {
+          "cancel": "Cancel",
+          "delete": "Delete"
+        }
+      }
+    }
+  },
+  "tenant_admin": {
+    "buttons": {
+      "logout": "Logout"
+    }
+  },
+  "tenant_admins": {
+    "title": "Tenant Admins",
+    "errors": {
+      "generic": "Error: {error}"
+    },
+    "buttons": {
+      "retry": "Retry",
+      "create_first": "Create First Tenant Admin",
+      "cancel": "Cancel",
+      "create": "Create Tenant Admin"
+    },
+    "empty": {
+      "no_admins": "No tenant admins found"
+    }
+  },
+  "tenants_list": {
+    "title": "Tenants",
+    "errors": {
+      "generic": "Error: {error}"
+    },
+    "buttons": {
+      "retry": "Retry",
+      "create_first": "Create First Tenant",
+      "edit": "Edit"
+    },
+    "empty": {
+      "no_tenants": "No tenants found"
+    }
+  },
+  "daily_notes": {
+    "title": "Daily Notes",
+    "no_notes": "No project updates yet. Share progress, photos or documents.",
+    "add_note_placeholder": "Add a note or update...",
+    "today": "Today",
+    "yesterday": "Yesterday"
+  },
+  "reports": {
+    "title": "Project Reports",
+    "download_tooltip": "Download Report",
+    "tabs": {
+      "profitability": "Profitability",
+      "manpower": "Manpower",
+      "salaries": "Salaries",
+      "stock": "Stock"
+    },
+    "select_project": "Select Project",
+    "no_projects": "No projects available",
+    "no_data": "No data available for this project",
+    "select_project_prompt": "Select a project to view reports",
+    "profitability": {
+      "net_profit": "Net Profit",
+      "profitable": "Project is profitable",
+      "loss": "Project is in loss",
+      "profit_margin": "Profit Margin",
+      "financial_summary": "Financial Summary",
+      "total_income": "Total Income",
+      "total_expenses": "Total Expenses",
+      "net_result": "Net Result",
+      "expense_breakdown": "Expense Breakdown"
+    },
+    "expense_stats": {
+      "total_expenses": "Total Expenses",
+      "credit": "Credit",
+      "debit": "Debit",
+      "net": "Net",
+      "profit": "Profit",
+      "loss": "Loss",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
+    },
+    "manpower": {
+      "total_mandays": "Total Man-Days",
+      "total_workers": "Total Workers",
+      "daily_trend": "Daily Man-Days Trend",
+      "worker_distribution": "Worker Distribution",
+      "days": "days"
+    },
+    "salaries": {
+      "total_net_salary": "Total Net Salary",
+      "subtitle": "Across all workers for this project",
+      "cost_breakdown": "Cost Breakdown",
+      "gross_salary": "Gross Salary",
+      "advance_deductions": "Advance Deductions",
+      "net_payable": "Net Payable",
+      "worker_salaries": "Worker Salaries"
+    },
+    "categories": {
+      "raw_material": "Raw Materials",
+      "tiles_marble": "Tiles & Marble",
+      "electrical": "Electrical",
+      "plumbing": "Plumbing",
+      "paints": "Paints",
+      "hardware": "Hardware",
+      "miscellaneous": "Miscellaneous",
+      "salary": "Salary",
+      "material": "Material",
+      "labour": "Labour",
+      "advance": "Advance",
+      "transport": "Transport",
+      "equipment": "Equipment",
+      "equipment_rental": "Equipment Rental",
+      "sub contractor": "Sub Contractor",
+      "designer": "Designer",
+      "food and travel": "Food and Travel",
+      "office_supplies": "Office Supplies",
+      "cement": "Cement",
+      "roofing materials": "Roofing Materials",
+      "tiles": "Tiles",
+      "bricks & blocks": "Bricks & Blocks",
+      "sand": "Sand"
+    },
+    "download": {
+      "success": "Report downloaded: {fileName}",
+      "error": "Error downloading report: {error}"
+    },
+    "filter": {
+      "sub_project": "Filter by Sub-Project (Optional)",
+      "all_including_sub": "All (Including Sub-Projects)",
+      "shared_main_only": "Shared/Main Project Only"
+    },
+    "stock": {
+      "inventory_overview": "Inventory Overview",
+      "items_suffix": "{count} items",
+      "total_value": "Total Value",
+      "total_quantity": "Total Quantity",
+      "avg_value": "Avg Value",
+      "low_stock": "Low Stock",
+      "out_of_stock": "Out of Stock",
+      "movement_trend": "Stock Movement Trend",
+      "category_distribution": "Category Distribution",
+      "top_consumed": "Top Consumed Materials",
+      "stock_health": "Stock Health Overview",
+      "healthy": "Healthy",
+      "no_transactions": "No transactions in selected period",
+      "no_materials": "No materials found",
+      "no_consumption": "No consumption data",
+      "stock_in": "Stock In",
+      "stock_out": "Stock Out"
+    }
+  },
+  "stock": {
+    "warehouse_management": "Warehouse Stock Management",
+    "management_title": "Stock Management",
+    "management_description": "Manage stock allocation and usage",
+    "tabs": {
+      "all_stock": "All Stock",
+      "low_stock": "Low Stock",
+      "out_of_stock": "Out of Stock",
+      "summary": "Summary"
+    },
+    "add_material": "Add Material",
+    "edit_material_title": "Edit Material",
+    "add_material_title": "Add Material",
+    "update_material_button": "Update Material",
+    "filter_category": "Filter by Category",
+    "all_categories": "All Categories",
+    "clear_all": "Clear All",
+    "search_materials": "Search materials...",
+    "no_materials_matching": "No materials found matching \"{query}\"",
+    "no_materials_yet": "No materials yet",
+    "all_stock_healthy": "All stock levels are healthy!",
+    "total_materials": "Total Materials",
+    "active": "Active",
+    "top_used_materials": "Top Used Materials",
+    "current_stock": "Current Stock",
+    "material_name": "Material Name *",
+    "description": "Description",
+    "category": "Category *",
+    "unit": "Unit *",
+    "max_stock_level": "Max Stock Level",
+    "unit_price_rupees": "Unit Price (₹)",
+    "project_location": "Project Location",
+    "select_project_location": "Select project location",
+    "no_project_warehouse": "No Project (Warehouse)",
+    "material_not_found": "Material not found",
+    "quick_action": "Quick Action",
+    "add_stock_action": "Add Stock",
+    "remove_stock": "Remove Stock",
+    "edit_material": "Edit Material",
+    "delete_material": "Delete Material",
+    "min_stock_level": "Min Stock Level",
+    "unit_price": "Unit Price",
+    "current_quantity": "Current Quantity",
+    "stock_in": "Stock In",
+    "stock_out": "Stock Out",
+    "allocated_to": "Allocated to {project}",
+    "allocated_successfully": "Stock allocated successfully",
+    "allocate": "Allocate",
+    "no_stock_allocated": "No stock allocated to this project",
+    "detail": {
+      "material_details": "Material Details",
+      "overview": "Overview",
+      "transactions": "Transactions",
+      "in_stock": "In Stock",
+      "out_of_stock": "Out of Stock",
+      "low_stock_status": "Low Stock",
+      "material_information": "Material Information",
+      "stock_levels": "Stock Levels",
+      "pricing_information": "Pricing Information",
+      "transaction_summary": "Transaction Summary",
+      "name": "Name",
+      "category": "Category",
+      "unit": "Unit",
+      "description_label": "Description",
+      "location": "Location",
+      "status": "Status",
+      "inactive": "Inactive",
+      "current": "Current",
+      "minimum": "Minimum",
+      "maximum": "Maximum",
+      "total_value": "Total Value",
+      "no_transactions_yet": "No transactions yet",
+      "add_first_transaction": "Add First Transaction",
+      "error_loading_data": "Error loading data: {error}",
+      "material_data_not_loaded": "Material data not loaded",
+      "name_required": "Name is required",
+      "save_changes": "Save Changes",
+      "stock_allocated_to_project": "Stock allocated to {project}",
+      "quantity_unit": "Quantity ({unit})",
+      "unit_price_optional": "Unit Price (Optional)",
+      "reference_optional": "Reference (Optional)",
+      "notes_optional": "Notes (Optional)"
+    },
+    "validation": {
+      "valid_quantity": "Please enter a valid quantity",
+      "select_project": "Please select a project",
+      "insufficient_stock": "Insufficient stock",
+      "enter_quantity": "Please enter quantity",
+      "enter_reason": "Please enter reason",
+      "select_material": "Please select a material",
+      "enter_material_name": "Please enter material name",
+      "select_category": "Please select a category",
+      "select_unit": "Please select a unit"
+    },
+    "messages": {
+      "stock_added": "Stock added successfully",
+      "stock_removed": "Stock removed successfully",
+      "material_updated": "Material updated successfully",
+      "material_deleted": "Material deleted successfully",
+      "material_created": "Material created successfully"
+    },
+    "dialogs": {
+      "add_stock_title": "Add Stock",
+      "remove_stock_title": "Remove Stock",
+      "edit_material_title": "Edit Material",
+      "enter_quantity_label": "Enter Quantity",
+      "reason_label": "Reason (Optional)",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "project_label": "Project",
+      "project_optional": "Project (Optional)",
+      "flat_unit_optional": "Flat/Unit (Optional)",
+      "select_flat_hint": "Select flat for material allocation",
+      "select_flat_for_usage": "Select flat for material usage",
+      "warehouse_no_flat": "Warehouse (No specific flat)",
+      "no_specific_flat": "No specific flat",
+      "allocate_to_flat_helper": "Allocate to specific flat or leave empty for warehouse",
+      "track_to_flat_helper": "Track material to specific flat",
+      "available_stock": "Available: {quantity} {unit}",
+      "select_project_hint": "Select project",
+      "material_data_not_loaded": "Material data not loaded"
+    },
+    "reports": {
+      "title": "Stock Reports",
+      "inventory_overview": "Inventory Overview",
+      "total_value": "Total Value",
+      "total_quantity": "Total Quantity",
+      "avg_value": "Avg Value",
+      "low_stock": "Low Stock",
+      "stock_movement": "Stock Movement Trend",
+      "category_distribution": "Category Distribution",
+      "top_consumed": "Top Consumed Materials",
+      "stock_health": "Stock Health Overview",
+      "healthy": "Healthy",
+      "no_transactions": "No transactions in selected period",
+      "no_materials": "No materials found",
+      "no_consumption": "No consumption data"
+    }
+  },
+  "project_tabs": {
+    "attendance": {
+      "tab_mark": "Mark Attendance",
+      "tab_view": "View Records",
+      "tab_manage": "Manage",
+      "tab_mark_others": "Mark Others",
+      "mark_your_attendance": "Mark Your Attendance",
+      "mark_employee_attendance": "Mark Employee Attendance",
+      "mark_others_attendance": "Mark Others' Attendance",
+      "mark_attendance": "Mark Attendance",
+      "attendance_report": "Attendance Report",
+      "view_records_by_period": "View attendance records by period",
+      "present_workers": "Present Workers",
+      "manpower_days": "Manpower Days",
+      "present_workers_count": "Present Workers ({count})",
+      "select_date": "Select Date",
+      "present_today": "Present Today",
+      "absent_employees_mark_below": "Absent Employees ({count}) - Mark their attendance below",
+      "absent": "Absent",
+      "select_all_count": "Select All ({count})",
+      "deselect_all_count": "Deselect All ({count})",
+      "full_day": "Full Day",
+      "half_day": "Half Day",
+      "select_all": "Select All",
+      "clear_selection": "Clear Selection",
+      "today": "Today",
+      "this_week": "This Week",
+      "this_month": "This Month",
+      "this_year": "This Year",
+      "custom_range": "Custom Range",
+      "all_marked": "All assigned employees have marked attendance today",
+      "all_employees_marked": "All employees have marked attendance today",
+      "no_workers": "No workers present for this period",
+      "confirm_attendance": "Confirm Attendance",
+      "already_marked": "Attendance Already Marked",
+      "select_period_to_view": "Select a period to view attendance report",
+      "select_period_instruction": "Select a period to view attendance report",
+      "view_today_report": "View Today's Report",
+      "view_todays_report": "View Today's Report",
+      "retry": "Retry",
+      "mark_count_present": "Mark {count} Present",
+      "attendance_marked": "Attendance Marked",
+      "count_employees_marked": "{count} employee{plural} marked as {status}",
+      "time_label": "Time: {time}",
+      "location_verified": "Location: Verified",
+      "ok": "OK",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "large_date_range": "Large Date Range",
+      "export_days_warning": "You are exporting {days} days of data. This may take a while. Continue?",
+      "continue": "Continue",
+      "pdf_ready": "PDF Ready",
+      "view_pdf": "View PDF",
+      "unable_to_save_pdf": "Unable to save file to device. Would you like to print or view the PDF instead?",
+      "attendance_already_marked_for_today": "Attendance already marked for today"
+    },
+    "expense": {
+      "delete_expense": "Delete Expense",
+      "confirm_delete_manual": "Are you sure you want to delete this manual expense?",
+      "delete_confirm": "Delete",
+      "cancel": "Cancel"
+    },
+    "stock": {
+      "tab_allocated": "Allocated Stock",
+      "tab_usage_history": "Usage History",
+      "used": "Used",
+      "category": "Category",
+      "allocate_stock": "Allocate Stock to Project",
+      "allocate_stock_button": "Allocate Stock",
+      "no_stock": "No stock items available",
+      "select_material": "Select Material",
+      "choose_material": "Choose material",
+      "flat_unit_optional": "Flat/Unit (Optional)",
+      "select_flat_to_track": "Select a flat to track material for that specific unit",
+      "quantity": "Quantity",
+      "enter_quantity": "Enter quantity",
+      "available_stock": "Available: {quantity} {unit}",
+      "notes_optional": "Notes (Optional)",
+      "add_notes_allocation": "Add any notes about this allocation",
+      "cancel": "Cancel",
+      "allocated_to_flat": "Allocated to flat - {flat}",
+      "used_in_project": "Used in project: {project}",
+      "project_general_no_flat": "Project General (No specific flat)"
+    },
+    "advances": {
+      "title": "Advances",
+      "mark_as_paid": "Mark as Paid",
+      "mark_paid": "Mark Paid",
+      "mark_paid_confirm": "Mark advance of {} for ₹{} as paid?",
+      "remove_subtitle": "Remove this advance request",
+      "delete_advance": "Delete Advance",
+      "confirm_delete": "Are you sure you want to delete this advance?",
+      "no_advances": "No advances found"
+    },
+    "labour": {
+      "view_bills": "View Bills",
+      "calculate": "Calculate",
+      "calculate_payroll": "Calculate Payroll",
+      "current_week": "Current Week",
+      "current_month": "Current Month",
+      "custom_date": "Custom Date",
+      "smart_assign": "Smart Assign",
+      "add_new_labour": "Add New Labour",
+      "assign": "Assign",
+      "add_labour": "Add Labour",
+      "no_employees_available": "No employees available",
+      "wage_types": {
+        "daily": "Daily",
+        "hourly": "Hourly",
+        "monthly": "Monthly",
+        "fixed": "Fixed"
+      }
+    },
+    "salary": {
+      "confirm_payment": "Confirm Payment",
+      "payment_processed": "Payment processed successfully",
+      "select_payroll": "Please select at least one payroll",
+      "select_payment_mode": "Please select a payment mode"
+    },
+    "daily_notes": {
+      "edit_note": "Edit Note",
+      "delete_note": "Delete Note",
+      "delete_confirm_message": "Are you sure you want to delete this note?",
+      "pdf_error": "PDF Error: {error}",
+      "done": "Done"
+    },
+    "suppliers": {
+      "view_bills": "View Bills"
+    }
+  },
+  "sub_project": {
+    "title": "Sub-Project Dashboard",
+    "add_expense_soon": "Add Expense (Coming soon)",
+    "add_bill_soon": "Add Bill (Coming soon)",
+    "comparison_report": "Sub-Project Comparison Report",
+    "metrics": {
+      "all": "All Metrics",
+      "expenses_only": "Expenses Only",
+      "bills_only": "Bills Only",
+      "stock_only": "Stock Only"
+    },
+    "no_comparison_data": "No comparison data available",
+    "sub_project_label": "Sub-Project",
+    "select_sub_project": "Select Sub-Project"
+  },
+  "admin": {
+    "logout": "Logout",
+    "promo_codes": "Promo Codes",
+    "delete_promo": "Delete Promo Code",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "tenant_admin": "Tenant Administration",
+    "super_admin": "Super Admin Panel",
+    "user_management": "User Management",
+    "system_settings": "System Settings"
+  },
+  "common": {
+    "transactions": "transactions",
+    "units": "units",
+    "items": "items",
+    "description": "Description",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "update": "Update",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "loading": "Loading...",
+    "no_data": "No data available",
+    "retry": "Retry",
+    "close": "Close",
+    "selected": "selected",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "export": "Export",
+    "import": "Import",
+    "download": "Download",
+    "upload": "Upload",
+    "coming_soon": "Coming Soon",
+    "view_all": "View All",
+    "ok": "OK",
+    "update": "Update"
+  },
+  "document_wallet": {
+    "title": "Document Wallet",
+    "upload_document": "Upload Document",
+    "document_type": "Document Type",
+    "view_access": "View Access",
+    "select_file": "Select File",
+    "company": "Company",
+    "projects": "Projects",
+    "all_projects": "All Projects",
+    "select_project": "Select Project",
+    "properties": "Properties",
+    "share": "Share",
+    "download_open": "Download / Open",
+    "edit_type": "Edit Type",
+    "edit_access": "Edit Access",
+    "delete_permanently": "Delete Permanently",
+    "try_again": "Try Again",
+    "type_updated": "Document type updated successfully"
+  },
+  "daily_notes": {
+    "title": "Daily Notes"
+  },
+  "daily_updates": {
+    "title": "Daily Updates",
+    "select_date_range": "Select Date Range",
+    "showing": "Showing"
+  },
+  "suppliers": {
+    "view_bills": "View Bills"
+  },
+  "sectors": {
+    "electrical": "Electrical",
+    "plumbing": "Plumbing",
+    "tiles": "Tiles",
+    "painting": "Painting",
+    "general": "General",
+    "others": "Others"
+  },
+  "payment_modes": {
+    "cash": "Cash",
+    "bank_transfer": "Bank Transfer",
+    "cheque": "Cheque",
+    "upi": "UPI"
+  },
+  "expenses": {
+    "title": "Expenses",
+    "detail_title": "Expense Details",
+    "filter_by": "Filter by",
+    "total": "Total Expenses",
+    "category": "Category",
+    "deductions": "Deductions",
+    "add_expense": "Add Expense",
+    "edit_expense": "Edit Expense",
+    "name": "Expense Name",
+    "amount": "Amount",
+    "type": "Expense Type",
+    "date": "Date",
+    "description_optional": "Description (Optional)",
+    "create": "Create Expense",
+    "update": "Update Expense",
+    "name_required": "Name is required",
+    "amount_required": "Amount is required",
+    "valid_number": "Enter a valid number",
+    "amount_positive": "Amount must be greater than zero",
+    "failed_to_load": "Failed to load expense",
+    "not_found": "Expense not found",
+    "auto": {
+      "consolidated_salary_payment": "Consolidated Salary Payment",
+      "salary_paid_for": "Salary paid for {count} employees"
+    }
+  },
+  "expense_stats": {
+    "total_expenses": "Total Expenses",
+    "credit": "Credit",
+    "debit": "Debit",
+    "net": "Net",
+    "profit": "Profit",
+    "loss": "Loss",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "location_warning": "Location Warning",
+    "location_far_warning": "You are {distance} away from the project location",
+    "location_far_confirm": "You are {distance} away from the project location. Do you still want to mark attendance?",
+    "mark_anyway": "Mark Anyway",
+    "errors": {
+      "not_assigned": "You can only mark attendance for your assigned projects",
+      "select_project": "Please select a project"
+    }
+  },
+  "employee_detail": {
+    "title": "Employee Details",
+    "tabs": {
+      "info": "Info",
+      "projects": "Projects Assigned",
+      "wages": "Wages",
+      "advances": "Advances",
+      "salary": "Salary"
+    },
+    "projects": {
+      "assigned_title": "Assigned Projects",
+      "no_projects": "No projects assigned to this employee.",
+      "assign_button": "Assign Projects",
+      "remove_confirm": "Are you sure you want to remove this project?",
+      "assign_dialog_title": "Assign Projects",
+      "search_projects": "Search projects...",
+      "assign_success": "Projects assigned successfully",
+      "remove_success": "Project removed successfully"
+    },
+    "errors": {
+      "name_empty": "Name cannot be empty",
+      "phone_invalid": "Enter target 10 digit phone number"
+    },
+    "success": {
+      "updated": "Employee updated successfully"
+    }
+  }
+}

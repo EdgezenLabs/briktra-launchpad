@@ -1,0 +1,2385 @@
+{
+  "app": {
+    "title": "ब्रिकत्रा",
+    "tagline": "निर्माण ईआरपी समाधान"
+  },
+  "dashboard": {
+    "title": "डैशबोर्ड",
+    "welcome": "स्वागत है, {name}!",
+    "quick_actions": {
+      "add_projects": "प्रोजेक्ट जोड़ें",
+      "add_employees": "कर्मचारी जोड़ें",
+      "add_attendance": "उपस्थिति जोड़ें",
+      "add_suppliers": "आपूर्तिकर्ता जोड़ें",
+      "bills": "बिल",
+      "tap_attendance": "उपस्थिति के लिए टैप करें",
+      "salary_report": "वेतन रिपोर्ट",
+      "stock_management": "स्टॉक प्रबंधन",
+      "wallet": "वॉलेट",
+      "employees": "कर्मचारी",
+      "projects": "प्रोजेक्ट"
+    },
+    "sections": {
+      "active_projects": "सक्रिय प्रोजेक्ट",
+      "ongoing_projects": "चल रहे प्रोजेक्ट",
+      "projects": "सभी प्रोजेक्ट",
+      "current_features": "वर्तमान सुविधाएँ:",
+      "progress": "प्रगति"
+    },
+    "tier": {
+      "free_trial": "मुफ्त ट्रायल",
+      "upgrade": "अपग्रेड",
+      "trial_expired": "ट्रायल समाप्त। सभी सुविधाओं का उपयोग जारी रखने के लिए अपग्रेड करें।",
+      "features": {
+        "project": "1 प्रोजेक्ट",
+        "dashboard_access": "डैशबोर्ड एक्सेस",
+        "basic_support": "बेसिक सपोर्ट",
+        "trial_days": "30-दिन ट्रायल"
+      }
+    },
+    "feature_coming_soon": "सुविधा जल्द ही आ रही है"
+  },
+  "auth": {
+    "welcome": {
+      "part_one": "आइए ",
+      "highlight": "जुड़ें"
+    },
+    "fields": {
+      "username": "उपयोगकर्ता नाम",
+      "password": "पासवर्ड",
+      "email": "ईमेल",
+      "phone": "फोन",
+      "old_password": "पुराना पासवर्ड",
+      "new_password": "नया पासवर्ड",
+      "confirm_password": "नया पासवर्ड पुष्टि करें",
+      "full_name": "पूरा नाम",
+      "org_name": "संगठन का नाम",
+      "phone_no": "फोन नंबर",
+      "promo_code": "प्रोमो कोड"
+    },
+    "hints": {
+      "phone_number": "9876543210"
+    },
+    "buttons": {
+      "login": "लॉगिन",
+      "register": "रजिस्टर",
+      "send_otp": "ओटीपी भेजें",
+      "verify": "सत्यापित करें",
+      "resend_otp": "ओटीपी फिर से भेजें",
+      "reset_password": "रीसेट ओटीपी भेजें",
+      "sign_up": "साइन अप करें",
+      "logout": "लॉगआउट"
+    },
+    "links": {
+      "forgot_password": "पासवर्ड भूल गए?",
+      "login_with_otp": "ओटीपी के साथ लॉगिन",
+      "already_have_account": "पहले से खाता है?",
+      "no_account": "खाता नहीं है? "
+    },
+    "titles": {
+      "register_screen": "ब्रिकत्रा — रजिस्टर",
+      "create_password": "नया पासवर्ड बनाएं",
+      "logout_confirm": "लॉगआउट"
+    },
+    "subtitles": {
+      "register_screen": "अपने निर्माण प्रोजेक्ट्स को प्रबंधित करने के लिए ब्रिकत्रा से जुड़ें"
+    },
+    "messages": {
+      "password_instructions": "आपका नया पासवर्ड पुराने उपयोग किए गए पासवर्ड से अलग होना चाहिए।",
+      "logout_confirm": "क्या आप वाकई लॉगआउट करना चाहते हैं?",
+      "login_success": "लॉगिन सफल",
+      "login_failed": "लॉगिन विफल",
+      "otp_sent": "ओटीपी सफलतापूर्वक भेजा गया",
+      "account_activated": "खाता सफलतापूर्वक सक्रिय हो गया। कृपया लॉगिन करें।",
+      "logged_in_biometrics": "बायोमेट्रिक्स के साथ लॉगिन किया गया",
+      "biometric_failed": "बायोमेट्रिक प्रमाणीकरण विफल",
+      "session_restoration_failed": "सत्र बहाली विफल। कृपया पासवर्ड के साथ लॉगिन करें।",
+      "logged_out": "लॉग आउट किया गया",
+      "password_change_success": "पासवर्ड सफलतापूर्वक बदल गया",
+      "password_reset_success": "पासवर्ड सफलतापूर्वक रीसेट हो गया",
+      "password_reset_otp_sent": "पासवर्ड रीसेट ओटीपी सफलतापूर्वक भेजा गया",
+      "language_updated": "भाषा वरीयता सफलतापूर्वक अपडेट की गई",
+      "language_update_failed": "भाषा वरीयता अपडेट करने में विफल"
+    },
+    "success": {
+      "otp_sent": "ओटीपी सफलतापूर्वक भेजा गया",
+      "reset_otp_sent": "रीसेट ओटीपी सफलतापूर्वक भेजा गया",
+      "registration_complete": "पंजीकरण सफल! कृपया लॉगिन करें."
+    },
+    "forgot_password": {
+      "title": "पासवर्ड भूल गए",
+      "subtitle": "रीसेट ओटीपी प्राप्त करने के लिए अपना ईमेल दर्ज करें",
+      "email_placeholder": "अपना ईमेल दर्ज करें",
+      "send_button": "रीसेट ओटीपी भेजें",
+      "back_to_login": "लॉगिन पर वापस जाएं",
+      "success": "रीसेट ओटीपी सफलतापूर्वक भेजा गया",
+      "error": "ओटीपी भेजने में विफल"
+    },
+    "reset_password": {
+      "title": "पासवर्ड रीसेट करें",
+      "subtitle": "अपना नया पासवर्ड बनाएं",
+      "new_password": "नया पासवर्ड",
+      "confirm_password": "नया पासवर्ड पुष्टि करें",
+      "submit": "पासवर्ड रीसेट करें",
+      "success": "पासवर्ड सफलतापूर्वक रीसेट किया गया",
+      "passwords_dont_match": "पासवर्ड मेल नहीं खाते",
+      "too_short": "पासवर्ड कम से कम 6 अक्षर का होना चाहिए"
+    },
+    "validation": {
+      "username_required": "कृपया ईमेल या फोन नंबर दर्ज करें",
+      "password_required": "कृपया पासवर्ड दर्ज करें",
+      "phone_required": "फोन नंबर आवश्यक है",
+      "phone_invalid": "फोन नंबर 10 अंकों का होना चाहिए",
+      "email_required": "ईमेल आवश्यक है",
+      "invalid_email": "अमान्य ईमेल प्रारूप",
+      "full_name_required": "पूरा नाम आवश्यक है",
+      "org_name_required": "संगठन का नाम आवश्यक है",
+      "password_too_short": "पासवर्ड कम से कम 6 अक्षर का होना चाहिए",
+      "confirm_password_required": "कृपया अपने पासवर्ड की पुष्टि करें",
+      "passwords_dont_match": "पासवर्ड मेल नहीं खाते",
+      "otp_required": "कृपया पूरा 6-अंकीय ओटीपी दर्ज करें"
+    },
+    "strength": {
+      "label": "शक्ति",
+      "weak": "कमजोर",
+      "medium": "मध्यम",
+      "strong": "मजबूत"
+    },
+    "biometric": {
+      "prompt_title": "बायोमेट्रिक लॉगिन सक्षम करें?",
+      "prompt_content": "आप तेज़ लॉगिन के लिए फिंगरप्रिंट/चेहरा पहचान को सक्षम कर सकते हैं। क्या आप इसे अपनी प्रोफाइल में सेट करना चाहेंगे?",
+      "later": "बाद में",
+      "go_to_profile": "प्रोफाइल पर जाएं"
+    },
+    "otp_activation": {
+      "title": "खाता सक्रिय करें",
+      "heading": "अपना खाता सक्रिय करें",
+      "subtitle": "भेजा गया 6 अंकों का कोड दर्ज करें",
+      "activate_button": "खाता सक्रिय करें",
+      "resend_button": "ओटीपी पुनः भेजें",
+      "back_to_login": "लॉगिन पर वापस जाएं"
+    },
+    "otp": {
+      "resend_wait": "पुनः भेजने से पहले कृपया {seconds} सेकंड प्रतीक्षा करें"
+    },
+    "otp_login": {
+      "title": "ओटीपी लॉगिन",
+      "heading": "ओटीपी से लॉगिन करें",
+      "subtitle": "ओटीपी प्राप्त करने के लिए अपना ईमेल या फोन दर्ज करें",
+      "enter_code": "हमने आपको भेजा 6 अंकों का कोड दर्ज करें",
+      "destination_label": "ईमेल या फोन",
+      "destination_hint": "अपना ईमेल या फोन नंबर दर्ज करें",
+      "destination_required": "कृपया ईमेल या फोन दर्ज करें",
+      "send_otp": "ओटीपी भेजें",
+      "login_button": "लॉगिन करें",
+      "resend_otp": "ओटीपी पुनः भेजें",
+      "back_to_normal_login": "सामान्य लॉगिन पर वापस जाएं",
+      "errors": {
+        "account_not_found_email": "इस ईमेल पते वाला कोई खाता नहीं मिला। कृपया पहले पंजीकरण करें।",
+        "account_not_found_phone": "इस फोन नंबर वाला कोई खाता नहीं मिला। कृपया पहले पंजीकरण करें।",
+        "account_not_activated": "आपका खाता अभी तक सक्रिय नहीं हुआ है। कृपया अपना पंजीकरण पूरा करें।",
+        "database_disconnected": "कनेक्शन टूट गया। कृपया अपना इंटरनेट जांचें और पुनः प्रयास करें।",
+        "too_many_attempts": "बहुत सारे प्रयास। पुनः प्रयास करने से पहले कृपया कुछ मिनट प्रतीक्षा करें।",
+        "server_error": "हम आपके अनुरोध को संसाधित नहीं कर सके। कृपया पुनः प्रयास करें।"
+      }
+    },
+    "change_password": {
+      "title": "पासवर्ड बदलें",
+      "subtitle": "नया पासवर्ड बनाएं",
+      "instructions": "आपका नया पासवर्ड पुराने उपयोग किए गए पासवर्ड से अलग होना चाहिए।",
+      "old_password": "पुराना पासवर्ड",
+      "new_password": "नया पासवर्ड",
+      "confirm_password": "नया पासवर्ड पुष्टि करें",
+      "submit": "पासवर्ड बदलें",
+      "success": "पासवर्ड सफलतापूर्वक बदला गया",
+      "required": "आवश्यक",
+      "too_short": "कम से कम 6 अक्षर होने चाहिए",
+      "different": "नया पासवर्ड पुराने पासवर्ड से अलग होना चाहिए",
+      "passwords_dont_match": "पासवर्ड मेल नहीं खाते"
+    }
+  },
+  "attendance": {
+    "navigation": {
+      "title": "उपस्थिति"
+    },
+    "tabs": {
+      "overview": "अवलोकन",
+      "add_attendance": "उपस्थिति जोड़ें",
+      "mark_others": "अन्य को चिह्नित करें"
+    },
+    "fields": {
+      "date": "दिनांक",
+      "project_select": "प्रोजेक्ट चुनें"
+    },
+    "options": {
+      "full_day": "पूरा दिन",
+      "half_day": "आधा दिन"
+    },
+    "types": {
+      "full": "पूर्ण",
+      "half": "आधा"
+    },
+    "buttons": {
+      "mark": "उपस्थिति चिह्नित करें",
+      "mark_bulk": "उपस्थिति चिह्नित करें (बल्क)",
+      "retry_location": "स्थान फिर से कोशिश करें"
+    },
+    "states": {
+      "no_data": "कोई उपस्थिति डेटा नहीं",
+      "no_employees": "कोई कर्मचारी नहीं मिला"
+    },
+    "location": {
+      "disabled_title": "स्थान सेवा निष्क्रिय",
+      "required_title": "स्थान आवश्यक",
+      "warning_title": "स्थान चेतावनी"
+    },
+    "location_disabled": "स्थान सेवा निष्क्रिय",
+    "location_required": "स्थान आवश्यक",
+    "location_warning": "स्थान चेतावनी",
+    "location_disabled_message": "स्थान सेवाएं निष्क्रिय हैं। वेब ब्राउज़र पर, स्थान उपलब्ध नहीं हो सकता है। आप अभी भी स्थान डेटा के बिना उपस्थिति चिह्नित कर सकते हैं।",
+    "location_required_message": "आपका स्थान प्राप्त नहीं हो सका। यह निम्न कारणों से हो सकता है:\n\n• ब्राउज़र स्थान अनुमति अस्वीकृत\n• स्थान समय समाप्त (ब्राउज़र समस्या)\n• HTTPS के बजाय HTTP पर चल रहा है\n\nउपस्थिति चिह्नित करने के लिए स्थान अनिवार्य है। कृपया स्थान अनुमति दें और पुनः प्रयास करें।",
+    "location_warning_message": "आप प्रोजेक्ट स्थल से {distance} दूर हैं। कृपया सुनिश्चित करें कि आप सही स्थान पर हैं।",
+    "location_retry_message": "उपस्थिति चिह्नित करने के लिए GPS स्थान आवश्यक है।\n\nक्या आप अपना स्थान प्राप्त करने का पुनः प्रयास करना चाहते हैं?",
+    "select_project": "प्रोजेक्ट चुनें",
+    "full_day": "पूरा दिन",
+    "half_day": "आधा दिन",
+    "full": "पूर्ण",
+    "half": "आधा",
+    "no_data": "कोई उपस्थिति डेटा नहीं",
+    "location_disabled_employee_message": "स्थान सेवाएं निष्क्रिय हैं। उपस्थिति चिह्नित करने के लिए कृपया उन्हें सक्षम करें।",
+    "open_settings": "सेटिंग्स खोलें",
+    "far_from_location": "प्रोजेक्ट स्थान से दूर",
+    "far_from_location_message": "आप प्रोजेक्ट स्थान से {distance} किमी दूर हैं।\n\nक्या आप वाकई उपस्थिति चिह्नित करना चाहते हैं?",
+    "yes_mark_attendance": "हां, उपस्थिति चिह्नित करें",
+    "location_required_snackbar": "उपस्थिति चिह्नित करने के लिए स्थान आवश्यक है। कृपया स्थान सक्षम करें।",
+    "confirm_logout": "लॉगआउट की पुष्टि करें",
+    "confirm_logout_message": "क्या आप वाकई लॉगआउट करना चाहते हैं?",
+    "retry_location": "स्थान फिर से कोशिश करें",
+    "errors": {
+      "select_project": "कृपया एक प्रोजेक्ट चुनें",
+      "select_users": "कृपया कम से कम एक उपयोगकर्ता चुनें"
+    },
+    "gross": "सकल",
+    "advance": "अग्रिम",
+    "daily_attendance": "दैनिक उपस्थिति",
+    "mark_as_paid": "भुगतान किया गया चिह्नित करें",
+    "payment_mode": "भुगतान विधि"
+  },
+  "project": {
+    "navigation": {
+      "dashboard": "डैशबोर्ड"
+    },
+    "actions": {
+      "add": "प्रोजेक्ट जोड़ें",
+      "update": "प्रोजेक्ट अपडेट करें",
+      "create": "प्रोजेक्ट बनाएं",
+      "create_unit": "यूनिट बनाएं",
+      "update_unit": "यूनिट अपडेट करें"
+    },
+    "fields": {
+      "name": "प्रोजेक्ट नाम",
+      "client": "ग्राहक",
+      "budget": "बजट राशि",
+      "percent_complete": "पूर्ण प्रतिशत (%)",
+      "supervisor":"मैनेजर",
+      "supervisor_placeholder":"मैनेजर चुनें",
+      "status": "स्थिति",
+      "start_date": "प्रारंभ दिनांक",
+      "start_date_placeholder": "प्रारंभ दिनांक चुनें",
+      "end_date": "अंतिम दिनांक",
+      "end_date_placeholder": "अंतिम दिनांक चुनें (विकल्पिक)",
+      "project_location":"विस्तार",
+      "project_type":"विस्तार विभाजन",
+      "project_type_options":{
+        "apartment":"अपर्टमेंट",
+        "building":"बिलिंग"
+      }
+    },
+    "filters": {
+      "by_status": "स्थिति के अनुसार फ़िल्टर"
+    },
+    "dialogs": {
+      "delete_title": "प्रोजेक्ट हटाएं",
+      "delete_message": "क्या आप वाकई \"{name}\" को हटाना चाहते हैं?"
+    },
+    "states": {
+      "no_projects": "कोई चल रहे प्रोजेक्ट नहीं मिले।",
+      "loading": "प्रोजेक्ट लोड हो रहा है..."
+    },
+    "validation": {
+      "name_required": "प्रोजेक्ट नाम आवश्यक है",
+      "start_date_required": "प्रारंभ तिथि आवश्यक है"
+    },
+    "status_options": {
+      "active": "सक्रिय",
+      "ongoing": "जारी",
+      "completed": "पूर्ण",
+      "on_hold": "रोकी गई",
+      "cancelled": "रद्द"
+    },
+    "tabs": {
+      "overview": "अवलोकन",
+      "labour": "श्रम",
+      "expense": "व्यय",
+      "suppliers": "आपूर्तिकर्ता",
+      "bills": "बिल",
+      "daily": "दैनिक"
+    },
+    "overview": {
+      "title": "प्रोजेक्ट विवरण",
+      "name": "नाम",
+      "budget": "बजट",
+      "status": "स्थिति",
+      "start_date": "प्रारंभ तिथि"
+    },
+    "labour": {
+      "sections": {
+        "electrical": "विद्युत मजदूर",
+        "plumbing": "नलसाजी मजदूर",
+        "tiles": "टाइल्स मजदूर",
+        "painting": "पेंटिंग मजदूर",
+        "general": "सामान्य मजदूर"
+      },
+      "assign": "असाइन करें",
+      "assigned_users": "असाइन किए गए उपयोगकर्ता",
+      "no_users": "कोई उपयोगकर्ता असाइन नहीं",
+      "success": "उपयोगकर्ता सफलतापूर्वक असाइन किए गए",
+      "error": "उपयोगकर्ताओं को असाइन करने में विफल",
+      "confirm_remove": "क्या आप इस प्रोजेक्ट से उस कर्मचारी का नाम हटाना चाहते हैं?",
+      "bulk_remove": "एक साथ हटाएं",
+      "select_all": "सभी चुनें",
+      "remove_success": "कर्मचारी को सफलतापूर्वक हटा दिया गया",
+      "remove_error": "कर्मचारी को हटाने में विफल"
+    },
+    "expense": {
+      "title": "व्यय",
+      "add": "व्यय जोड़ें",
+      "no_expenses": "कोई व्यय नहीं मिला",
+      "total": "कुल व्यय",
+      "description": "विवरण",
+      "amount": "राशि",
+      "date": "तारीख",
+      "category": "श्रेणी",
+      "calculation": {
+        "title": "व्यय गणना",
+        "calculate": "गणना करें",
+        "calculate_expense": "व्यय की गणना करें",
+        "preview": "गणना का पूर्वावलोकन",
+        "item_type": "वस्तु प्रकार",
+        "item_amount": "राशि",
+        "tax_rate": "कर दर (%)",
+        "quantity": "मात्रा",
+        "add_item": "वस्तु जोड़ें",
+        "remove_item": "वस्तु हटाएं",
+        "subtotal": "उप-कुल",
+        "tax_total": "कर कुल",
+        "discount": "छूट",
+        "adjustments": "समायोजन",
+        "total": "कुल राशि",
+        "currency": "मुद्रा",
+        "rounding": "गोलाई मोड",
+        "rounding_nearest": "निकटतम",
+        "rounding_floor": "नीचे",
+        "rounding_ceil": "ऊपर",
+        "calculate_success": "गणना सफलतापूर्वक पूर्ण",
+        "calculate_error": "व्यय की गणना विफल",
+        "persist_success": "व्यय सफलतापूर्वक सहेजा गया",
+        "persist_error": "व्यय सहेजने में विफल",
+        "validation_error": "व्यय सत्यापन विफल",
+        "validate_success": "व्यय मान्य है",
+        "validation_violations": "उल्लंघन: {violations}",
+        "calculating": "गणना की जा रही है...",
+        "persisting": "व्यय सहेजा जा रहा है...",
+        "batch_calculate": "बैच गणना करें",
+        "batch_calculate_success": "बैच गणना पूर्ण। {count} रिकॉर्ड प्रसंस्कृत किए गए",
+        "batch_calculate_error": "कुछ रिकॉर्ड के लिए बैच गणना विफल",
+        "no_items": "कृपया कम से कम एक व्यय वस्तु जोड़ें",
+        "invalid_amount": "अमान्य राशि",
+        "invalid_tax_rate": "कर दर 0 से 100 के बीच होनी चाहिए",
+        "invalid_quantity": "अमान्य मात्रा",
+        "max_amount_exceeded": "राशि अधिकतम अनुमत से अधिक है",
+        "reference": "संदर्भ",
+        "create_transaction": "लेनदेन बनाएं",
+        "item_details": "वस्तु विवरण"
+      }
+    },
+    "suppliers_tab": {
+      "title": "प्रोजेक्ट आपूर्तिकर्ता",
+      "add": "आपूर्तिकर्ता जोड़ें",
+      "no_suppliers": "कोई आपूर्तिकर्ता नहीं मिला"
+    },
+    "daily": {
+      "title": "दैनिक अपडेट",
+      "add": "अपडेट जोड़ें",
+      "no_updates": "कोई अपडेट नहीं मिला"
+    },
+    "breadcrumbs": {
+      "projects": "प्रोजेक्ट"
+    },
+    "success": {
+      "created": "प्रोजेक्ट सफलतापूर्वक बनाया गया",
+      "updated": "प्रोजेक्ट सफलतापूर्वक अपडेट किया गया",
+      "sub_project_created": "उप-प्रोजेक्ट सफलतापूर्वक बनाया गया"
+    },
+    "errors": {
+      "load_failed": "प्रोजेक्ट लोड करने में विफल"
+    }
+  },
+
+  "employee": {
+    "navigation": {
+      "title": "कर्मचारी"
+    },
+    "forms": {
+      "add_title": "कर्मचारी जोड़ें",
+      "reactivate_prompt": "यह खाता पहले हटा दिया गया था। क्या आप इसे वर्तमान विवरण के साथ फिर से सक्रिय करना चाहेंगे?",
+      "reactivate_button": "फिर से सक्रिय करें"
+    },
+    "fields": {
+      "name": "नाम",
+      "email": "ईमेल",
+      "password": "पासवर्ड",
+      "role": "भूमिका",
+      "phone": "फोन नंबर",
+      "search": "कर्मचारी खोजें",
+      "employee_types": "कर्मचारी प्रकार *"
+    },
+    "hints": {
+      "employee_types": "कर्मचारी प्रकार चुनें (जैसे, इलेक्ट्रिकल, प्लंबिंग)"
+    },
+    "filters": {
+      "by_role": "भूमिका के अनुसार फ़िल्टर करें",
+      "all_roles": "सभी भूमिकाएं"
+    },
+    "buttons": {
+      "create": "कर्मचारी बनाएं"
+    },
+    "roles": {
+      "supervisor": "पर्यवेक्षक",
+      "manager": "प्रबंधक",
+      "employee": "कर्मचारी",
+      "accountant": "लेखाकार",
+      "tiles": "टाइल्स",
+      "tenant_admin": "टेनेंट व्यवस्थापक"
+    },
+    "wage": {
+      "title": "वेतन विन्यास",
+      "title_optional": "वेतन विन्यास (वैकल्पिक)",
+      "amount": "वेतन राशि (₹)",
+      "amount_required": "वेतन राशि (₹) *",
+      "type_required": "वेतन प्रकार *",
+      "effective_date": "प्रभावी तिथि *",
+      "types": {
+        "daily": "दैनिक",
+        "hourly": "प्रति घंटा",
+        "monthly": "मासिक",
+        "fixed": "निश्चित"
+      }
+    },
+    "success": {
+      "contact_imported": "संपर्क सफलतापूर्वक आयात किया गया"
+    },
+    "errors": {
+      "no_tenant_context": "कोई टेनेंट संदर्भ उपलब्ध नहीं। कृपया कर्मचारी प्रबंधन के लिए टेनेंट उपयोगकर्ता के साथ लॉगिन करें।",
+      "pick_contact": "संपर्क चुनने में त्रुटि",
+      "contact_permission": "संपर्क एक्सेस करने की अनुमति नहीं दी गई"
+    },
+    "validation": {
+      "name_required": "नाम दर्ज करें",
+      "name_alt": "नाम आवश्यक",
+      "password_required": "पासवर्ड दर्ज करें",
+      "password_min_length": "पासवर्ड कम से कम 6 अक्षर का होना चाहिए",
+      "email_required": "ईमेल दर्ज करें",
+      "phone_invalid": "फोन 10-15 अंकों का होना चाहिए",
+      "id_required": "ईमेल या फोन नंबर में से किसी एक की आवश्यकता है",
+      "types_required": "कम से कम एक कर्मचारी प्रकार आवश्यक है",
+      "wage_required": "वेतन राशि आवश्यक है"
+    },
+    "actions": {
+      "import_contacts": "संपर्क से आयात करें"
+    },
+    "states": {
+      "no_employees": "इस टेनेंट के लिए कोई कर्मचारी नहीं मिला।"
+    },
+    "contact_picker": {
+      "title": "संपर्क चुनें (डेमो)"
+    }
+  },
+  "employee_detail": {
+    "title": "कर्मचारी विवरण",
+    "tabs": {
+      "info": "जानकारी",
+      "projects": "असाइन किए गए प्रोजेक्ट",
+      "wages": "वेतन",
+      "advances": "एडवांस",
+      "salary": "पगार"
+    },
+    "projects": {
+      "assigned_title": "असाइन किए गए प्रोजेक्ट",
+      "no_projects": "इस कर्मचारी को कोई प्रोजेक्ट असाइन नहीं किया गया है।",
+      "assign_button": "प्रोजेक्ट असाइन करें",
+      "remove_confirm": "क्या आप वाकई इस प्रोजेक्ट को हटाना चाहते हैं?",
+      "assign_dialog_title": "प्रोजेक्ट असाइन करें",
+      "search_projects": "प्रोजेक्ट खोजें...",
+      "assign_success": "प्रोजेक्ट सफलतापूर्वक असाइन किए गए",
+      "remove_success": "प्रोजेक्ट सफलतापूर्वक हटा दिया गया"
+    },
+    "errors": {
+      "name_empty": "नाम खाली नहीं हो सकता",
+      "phone_invalid": "10 अंकों का फोन नंबर दर्ज करें"
+    },
+    "success": {
+      "updated": "कर्मचारी सफलतापूर्वक अपडेट किया गया"
+    }
+  },
+  "supplier": {
+    "title": "आपूर्तिकर्ता",
+    "fields": {
+      "name": "आपूर्तिकर्ता नाम",
+      "address": "पता",
+      "mobile": "मोबाइल नंबर",
+      "email": "ईमेल",
+      "gst": "जीएसटी नंबर",
+      "type": "आपूर्तिकर्ता प्रकार"
+    },
+    "buttons": {
+      "create": "आपूर्तिकर्ता बनाएं",
+      "update": "आपूर्तिकर्ता अपडेट करें",
+      "attach": "संलग्न करें",
+      "import_contacts": "संपर्क से आयात करें",
+      "select_contact": "संपर्क चुनें"
+    },
+    "hints": {
+      "phone": "जैसे, 9876543210",
+      "email": "supplier@example.com",
+      "gst": "जैसे, 27AABCT1332L1Z5",
+      "import_phone": "अपने फोन से आयात करने के लिए ऊपर दिए गए संपर्क आइकन पर टैप करें",
+      "import_web": "डेमो संपर्कों का उपयोग करने के लिए संपर्क आइकन पर टैप करें (वेब मोड)"
+    },
+    "validation": {
+      "name_required": "आपूर्तिकर्ता नाम आवश्यक है",
+      "address_required": "पता आवश्यक है",
+      "mobile_required": "मोबाइल नंबर आवश्यक है",
+      "mobile_invalid": "अमान्य मोबाइल नंबर। 10 अंक होना चाहिए और 6-9 से शुरू होना चाहिए",
+      "email_invalid": "कृपया एक मान्य ईमेल दर्ज करें",
+      "gst_length": "जीएसटी नंबर ठीक 15 अक्षर का होना चाहिए",
+      "gst_invalid": "अमान्य जीएसटी संरचना या पैन स्थिति कोड",
+      "type_required": "कृपया आपूर्तिकर्ता प्रकार चुनें"
+    },
+    "sections": {
+      "location": "आपूर्तिकर्ता स्थान (वैकल्पिक)"
+    },
+    "dialogs": {
+      "delete_title": "सप्लायर हटाएं",
+      "delete_message": "क्या आप वाकई हटाना चाहते हैं \"{name}\"?"
+    },
+    "success": {
+      "created": "आपूर्तिकर्ता सफलतापूर्वक बनाया गया",
+      "updated": "आपूर्तिकर्ता सफलतापूर्वक अपडेट किया गया",
+      "deleted": "आपूर्तिकर्ता सफलतापूर्वक हटा दिया गया"
+    },
+    "errors": {
+      "delete_failed": "आपूर्तिकर्ता हटाने में विफल"
+    },
+    "states": {
+      "no_suppliers": "कोई आपूर्तिकर्ता नहीं मिला।"
+    },
+    "bills": {
+      "dialog_add": "बिल जोड़ें",
+      "dialog_edit": "बिल संपादित करें",
+      "fields": {
+        "amount": "राशि *",
+        "status": "स्थिति *"
+      },
+      "validation": {
+        "amount_required": "कृपया राशि दर्ज करें",
+        "amount_invalid": "कृपया एक मान्य राशि दर्ज करें"
+      },
+      "success": {
+        "created": "बिल सफलतापूर्वक बनाया गया",
+        "updated": "बिल सफलतापूर्वक अपडेट किया गया"
+      },
+      "errors": {
+        "file_open": "बिल फ़ाइल नहीं खोली जा सकी"
+      },
+      "states": {
+        "no_bills": "कोई बिल नहीं मिला।"
+      },
+      "actions": {
+        "add_first": "पहला बिल जोड़ें"
+      }
+    }
+  },
+  "tenant": {
+    "title": "किरायेदार",
+    "navigation": {
+      "details": "टेनेंट विवरण",
+      "admins": "टेनेंट व्यवस्थापक"
+    },
+    "fields": {
+      "name": "टेनेंट नाम",
+      "name_hint": "टेनेंट नाम दर्ज करें",
+      "description": "विवरण",
+      "created_at": "निर्माण तिथि",
+      "tenant_id": "टेनेंट आईडी"
+    },
+    "validation": {
+      "name_required": "टेनेंट नाम आवश्यक है",
+      "name_min_length": "नाम कम से कम 3 अक्षर का होना चाहिए",
+      "select_tenant": "एक टेनेंट चुनें"
+    },
+    "messages": {
+      "tenant_not_found": "टेनेंट नहीं मिला",
+      "no_admins_found": "कोई टेनेंट व्यवस्थापक नहीं मिला",
+      "delete_confirmation": "क्या आप वाकई \"{name}\" को हटाना चाहते हैं? यह क्रिया वापस नहीं ली जा सकती।"
+    },
+    "actions": {
+      "create_first_admin": "पहला टेनेंट व्यवस्थापक बनाएं",
+      "create_admin": "टेनेंट व्यवस्थापक बनाएं"
+    },
+    "create_first": "पहला किरायेदार बनाएं",
+    "no_tenants": "कोई किरायेदार नहीं मिला",
+    "delete_tenant": "किरायेदार हटाएं"
+  },
+  "profile": {
+    "sections": {
+      "information": "प्रोफ़ाइल जानकारी"
+    },
+    "fields": {
+      "phone": "फोन",
+      "name": "नाम",
+      "email": "ईमेल"
+    },
+    "tooltips": {
+      "edit": "संपादित करें",
+      "cancel": "रद्द करें"
+    },
+    "security": "सुरक्षा",
+    "biometric_login": "बायोमेट्रिक लॉगिन",
+    "biometric_subtitle": "लॉगिन करने के लिए फिंगरप्रिंट या फेस आईडी का उपयोग करें",
+    "company_details": "कंपनी विवरण",
+    "company_name": "कंपनी का नाम",
+    "company_name_hint": "उदा., एबीसी कंस्ट्रक्शन लिमिटेड",
+    "gst_number": "जीएसटी नंबर",
+    "gst_hint": "उदा., 27AABCT1332L1Z5",
+    "gst_helper": "वैकल्पिक - 15 वर्ण",
+    "company_location": "कंपनी का स्थान",
+    "hide_map": "नक्शा छुपाएं",
+    "select_location": "स्थान चुनें",
+    "update_profile": "प्रोफ़ाइल अपडेट करें",
+    "messages": {
+      "user_id_not_found": "उपयोगकर्ता आईडी नहीं मिली",
+      "data_load_error": "उपयोगकर्ता डेटा लोड करने में विफल: {error}",
+      "upload_no_files": "अपलोड प्रतिक्रिया में फ़ाइलें नहीं हैं",
+      "upload_key_missing": "अपलोड प्रतिक्रिया में S3 कुंजी गायब है",
+      "pic_update_success": "प्रोफ़ाइल चित्र सफलतापूर्वक अपडेट किया गया",
+      "pic_upload_error": "छवि अपलोड करने में विफल: {error}",
+      "update_success": "प्रोफ़ाइल सफलतापूर्वक अपडेट की गई",
+      "update_failed": "अपडेट विफल: {error}",
+      "company_update_success": "कंपनी विवरण सफलतापूर्वक अपडेट किया गया",
+      "biometric_enabled": "बायोमेट्रिक लॉगिन सफलतापूर्वक सक्षम किया गया",
+      "biometric_enable_failed": "बायोमेट्रिक सक्षम करने में विफल: {error}",
+      "biometric_disabled": "बायोमेट्रिक लॉगिन अक्षम",
+      "biometric_disable_failed": "बायोमेट्रिक अक्षम करने में विफल: {error}",
+      "logout_confirm": "क्या आप वाकई लॉगआउट करना चाहते हैं?",
+      "logout_success": "सफलतापूर्वक लॉगआउट किया गया",
+      "logout_error": "लॉगआउट त्रुटि: {error}"
+    },
+    "validation": {
+      "company_name_required": "कृपया कंपनी का नाम दर्ज करें",
+      "gst_length": "जीएसटी नंबर बिल्कुल 15 वर्णों का होना चाहिए",
+      "gst_invalid": "अमान्य जीएसटी संरचना या पैन स्थिति कोड",
+      "name_required": "नाम आवश्यक",
+      "phone_required": "फ़ोन आवश्यक",
+      "location_label": "स्थान",
+      "no_location_set": "कोई स्थान सेट नहीं है"
+    }
+  },
+  "notifications": {
+    "title": "सूचनाएं",
+    "empty": "कोई सूचना नहीं है",
+    "mark_all_read": "सभी को पढ़ा हुआ चिह्नित करें",
+    "clear_all": "सभी साफ़ करें",
+    "default_title": "सूचना",
+    "ok": "ठीक है",
+    "messages": {
+      "load_error": "सूचनाएं लोड करने में विफल",
+      "mark_all_read_success": "सभी सूचनाओं को पढ़ा हुआ चिह्नित किया गया",
+      "clear_success": "सूचनाएं साफ़ कर दी गईं"
+    },
+    "types": {
+      "new_bill": "नया बिल अपलोड किया गया",
+      "daily_note": "नया दैनिक नोट",
+      "general": "सामान्य सूचना"
+    },
+    "download_success": "फ़ाइल सफलतापूर्वक डाउनलोड हो गई",
+    "tap_to_open": "{fileName} डाउनलोड हो गया। खोलने के लिए टैप करें।",
+    "idle_title": "अभी भी वहीं हैं?",
+    "idle_body": "नवीनतम प्रोजेक्ट अपडेट के लिए अपना डैशबोर्ड देखें।"
+  },
+  "broadcaster": {
+    "title": "ब्रॉडकास्टर",
+    "tab_compose": "बनाएं",
+    "tab_history": "इतिहास",
+    "super_admin": {
+      "title": "ब्रॉडकास्ट इतिहास",
+      "create_new": "नया बनाएं",
+      "no_history": "कोई ब्रॉडकास्ट इतिहास नहीं",
+      "all_users": "सभी उपयोगकर्ता",
+      "all_roles": "सभी भूमिकाएं",
+      "all_tiers": "सभी स्तर",
+      "compose_title": "कस्टम ब्रॉडकास्ट बनाएं",
+      "targeting_title": "लक्ष्य फ़िल्टर",
+      "select_roles": "उपयोगकर्ता भूमिकाएं चुनें",
+      "select_tiers": "स्तर चुनें (केवल सुपर एडमिन के लिए)",
+      "compose_notification": "सूचना बनाएं",
+      "title_label": "शीर्षक",
+      "title_hint": "आकर्षक शीर्षक दर्ज करें...",
+      "message_label": "संदेश",
+      "message_hint": "अपना संदेश यहाँ टाइप करें...",
+      "preview_label": "लाइव पूर्वावलोकन",
+      "send_now": "अभी भेजें",
+      "sending": "भेजा जा रहा है...",
+      "success_title": "सफलता!",
+      "success_message": "सूचना सफलतापूर्वक भेजी गई।",
+      "required": "आवश्यक",
+      "title_placeholder": "शीर्षक प्लेसहोल्डर",
+      "message_placeholder": "जैसे ही आप टाइप करेंगे संदेश यहां दिखाई देगा..."
+    },
+    "composition": {
+      "title": "सूचना बनाएं",
+      "targeting_title": "लक्ष्य फ़िल्टर",
+      "field_title_label": "शीर्षक",
+      "field_title_hint": "आकर्षक शीर्षक दर्ज करें...",
+      "field_body_label": "संदेश",
+      "field_body_hint": "अपना संदेश यहाँ टाइप करें...",
+      "preview_label": "लाइव पूर्वावलोकन",
+      "send_button": "अभी भेजें"
+    },
+    "filters": {
+      "all": "सभी",
+      "target_roles": "लक्ष्य भूमिकाएं",
+      "target_tiers": "लक्ष्य स्तर (केवल सुपर एडमिन के लिए)"
+    },
+    "roles": {
+      "all": "सभी",
+      "tenant_admin": "टेनेंट व्यवस्थापक",
+      "manager": "प्रबंधक",
+      "supervisor": "पर्यवेक्षक",
+      "employee": "कर्मचारी"
+    },
+    "tiers": {
+      "all": "सभी",
+      "free": "मुफ़्त",
+      "extended_free": "विस्तारित मुफ़्त",
+      "pro": "प्रो",
+      "enterprise": "एंटरप्राइज़"
+    },
+    "messages": {
+      "sent_success_title": "सफलता!",
+      "sent_success_body": "सूचना सफलतापूर्वक भेजी गई।",
+      "empty_history": "अभी तक कोई ब्रॉडकास्ट नहीं भेजा गया है।",
+      "field_required": "यह फ़ील्ड आवश्यक है"
+    }
+  },
+  "tier": {
+    "names": {
+      "free": "मुफ्त ट्रायल",
+      "basic": "बेसिक",
+      "pro": "प्रो"
+    },
+    "dialogs": {
+      "upgrade_required": "अपग्रेड आवश्यक",
+      "access_denied": "पहुंच अस्वीकृत",
+      "contact_support": "सहायता से संपर्क करें"
+    },
+    "status": {
+      "current_plan": "वर्तमान योजना: "
+    },
+    "badges": {
+      "current": "वर्तमान"
+    },
+    "buttons": {
+      "upgrade_now": "अभी अपग्रेड करें",
+      "maybe_later": "शायद बाद में",
+      "contact_sales": "बिक्री से संपर्क करें",
+      "restart_app": "ऐप पुनः आरंभ करें"
+    },
+    "messages": {
+      "choose_plan": "अपनी आवश्यकताओं के अनुसार योजना चुनें",
+      "upgrade_to": "{tierName} में अपग्रेड करें",
+      "upgrade_description": "आप {tierName} योजना में अपग्रेड करने वाले हैं।",
+      "upgrade_immediate": "यह तुरंत इस स्तर की सभी सुविधाओं को अनलॉक कर देगा।",
+      "demo_note": "नोट: यह एक डेमो है। प्रोडक्शन में, यह पेमेंट गेटवे के साथ एकीकृत होगा।",
+      "access_denied": "आपको इस सुविधा तक पहुंचने की अनुमति नहीं है।"
+    },
+    "features": {
+      "bills_upgrade": "बिल प्रबंधन बेसिक और प्रो योजनाओं में उपलब्ध है।",
+      "suppliers_upgrade": "आपूर्तिकर्ता प्रबंधन केवल प्रो योजना में उपलब्ध है।",
+      "reports_upgrade": "उन्नत रिपोर्टिंग केवल प्रो योजना में उपलब्ध है।",
+      "employees_upgrade": "कर्मचारी प्रबंधन केवल प्रो योजना में उपलब्ध है।"
+    },
+    "limits": {
+      "project_count": "वर्तमान सीमा: {limit} प्रोजेक्ट{plural}",
+      "unlimited_projects": "असीमित प्रोजेक्ट के लिए बेसिक या प्रो योजना में अपग्रेड करें।"
+    },
+    "support": {
+      "upgrade_contact": "कृपया अपनी योजना को अपग्रेड करने के लिए हमारी सहायता टीम से संपर्क करें।\n\nईमेल: support@briktra.com",
+      "general_contact": "यह सुविधा आपकी वर्तमान योजना में उपलब्ध नहीं है। कृपया अपग्रेड के लिए हमारी सहायता टीम से संपर्क करें।\n\nईमेल: support@briktra.com"
+    },
+    "trial": {
+      "expiring_title": "ट्रायल जल्द ही समाप्त हो रहा है!",
+      "expires_tomorrow": "आपका मुफ्त ट्रायल कल समाप्त हो जाएगा!\nसभी सुविधाओं का उपयोग जारी रखने के लिए हमारी सहायता टीम से संपर्क करें।",
+      "expires_days": "आपका मुफ्त ट्रायल {days} दिनों में समाप्त हो जाएगा!\nसभी सुविधाओं का उपयोग जारी रखने के लिए हमारी सहायता टीम से संपर्क करें।",
+      "support_message": "आपका ट्रायल जल्द ही समाप्त हो रहा है। सभी सुविधाओं तक पहुंच बनाए रखने के लिए कृपया हमारी सहायता टीम से संपर्क करें।\n\nईमेल: support@briktra.com",
+      "trial_ends_in": "ट्रायल समाप्त होने में शेष:",
+      "days": "दिन",
+      "hours": "घंटे",
+      "mins": "मिनट",
+      "secs": "सेकंड"
+    },
+    "expired": {
+      "title": "योजना समाप्त",
+      "tag": "समाप्त",
+      "subtitle": "आपका मुफ्त ट्रायल समाप्त हो गया है।\nब्रिकत्रा का उपयोग जारी रखने के लिए हमारी सहायता टीम से संपर्क करें।",
+      "assistance": "तत्काल सहायता चाहिए? ऊपर दिए गए ईमेल को कॉपी करें और\nअपनी स्थिति का वर्णन करते हुए हमें एक संदेश भेजें।"
+    },
+    "contacts": {
+      "sales_email": "sales@briktra.com",
+      "sales_phone": "+1 (555) 123-4567",
+      "support_email": "support@briktra.com",
+      "general_email": "contact@briktra.com",
+      "sales_info": "कस्टम योजनाओं या एंटरप्राइज़ मूल्य निर्धारण के लिए, कृपया हमारी बिक्री टीम से संपर्क करें:"
+    },
+    "labels": {
+      "email_support": "ईमेल सहायता",
+      "general_contact": "सामान्य संपर्क"
+    },
+    "states": {
+      "processing_upgrade": "अपग्रेड प्रक्रिया में..."
+    },
+    "success": {
+      "upgraded": "सफलतापूर्वक {tierName} में अपग्रेड किया गया!",
+      "copied_clipboard": "{text} क्लिपबोर्ड में कॉपी किया गया"
+    }
+  },
+  "expired_plan": {
+    "title": "योजना समाप्त हो गई",
+    "subtitle": "आपका निःशुल्क ट्रायल समाप्त हो गया है।\nब्रिकत्रा का उपयोग जारी रखने के लिए हमारी सहायता टीम से संपर्क करें।",
+    "contact_support": "सहायता से संपर्क करें",
+    "email_support": "ईमेल सहायता",
+    "general_contact": "सामान्य संपर्क",
+    "support_email": "support@briktra.com",
+    "contact_email": "contact@briktra.com",
+    "copied": "{text} क्लिपबोर्ड पर कॉपी किया गया",
+    "logout": "लॉगआउट"
+  },
+  "expense": {
+    "forms": {
+      "add_title": "व्यय जोड़ें"
+    },
+    "fields": {
+      "project": "प्रोजेक्ट",
+      "supplier": "आपूर्तिकर्ता",
+      "bill": "बिल",
+      "amount": "राशि",
+      "description": "विवरण (वैकल्पिक)"
+    },
+    "buttons": {
+      "add": "व्यय जोड़ें"
+    },
+    "validation": {
+      "amount_required": "राशि आवश्यक है"
+    },
+    "success": {
+      "added": "व्यय सफलतापूर्वक जोड़ा गया"
+    },
+    "stats": {
+      "daily": "दैनिक",
+      "weekly": "साप्ताहिक",
+      "monthly": "मासिक"
+    }
+  },
+  "navigation": {
+    "screens": {
+      "dashboard": "डैशबोर्ड",
+      "projects": "प्रोजेक्ट्स",
+      "create_project": "प्रोजेक्ट बनाएं",
+      "bills": "बिल्स",
+      "suppliers": "आपूर्तिकर्ता",
+      "reports": "रिपोर्ट्स",
+      "employees": "कर्मचारी",
+      "attendance": "उपस्थिति"
+    },
+    "bottom": {
+      "home": "होम",
+      "launch": "लॉन्च",
+      "profile": "प्रोफ़ाइल"
+    },
+    "drawer": {
+      "profile": "प्रोफ़ाइल",
+      "change_password": "पासवर्ड बदलें",
+      "contact_support": "सहायता से संपर्क करें",
+      "logout": "लॉगआउट",
+      "trial_warning": {
+        "expired": "आपका ट्रायल समाप्त हो गया है। सभी सुविधाएँ देखने के लिए अपग्रेड करें।",
+        "days_left": "{days} दिन शेष",
+        "contact": "हमसे संपर्क करें"
+      }
+    }
+  },
+  "common": {
+    "buttons": {
+      "cancel": "रद्द करें",
+      "ok": "ठीक है",
+      "done": "हो गया",
+      "close": "बंद करें",
+      "delete": "हटाएं",
+      "save": "सेव करें",
+      "edit": "संपादित करें",
+      "add": "जोड़ें",
+      "update": "अपडेट करें",
+      "create": "बनाएं",
+      "retry": "फिर कोशिश करें",
+      "back": "वापस",
+      "go_back": "वापस जाएं",
+      "later": "बाद में"
+    },
+    "states": {
+      "loading": "लोड हो रहा है...",
+      "error": "त्रुटि",
+      "success": "सफलता",
+      "warning": "चेतावनी",
+      "info": "जानकारी"
+    },
+    "tooltips": {
+      "back": "वापस",
+      "logout": "लॉगआउट"
+    },
+    "fields": {
+      "no_description": "कोई विवरण नहीं"
+    }
+  },
+  "validation": {
+    "required": "आवश्यक",
+    "email": {
+      "invalid": "एक मान्य ईमेल दर्ज करें",
+      "required": "एक ईमेल दर्ज करें"
+    },
+    "name": {
+      "required": "एक नाम दर्ज करें"
+    },
+    "password": {
+      "required": "एक पासवर्ड दर्ज करें"
+    },
+    "mobile": {
+      "invalid": "अमान्य मोबाइल नंबर"
+    },
+    "amount": {
+      "required": "कृपया राशि दर्ज करें",
+      "invalid": "कृपया एक मान्य राशि दर्ज करें"
+    }
+  },
+  "greetings": {
+    "morning": "शुभ प्रभात",
+    "afternoon": "शुभ दोपहर",
+    "evening": "शुभ संध्या",
+    "welcome": "स्वागत है, {name}!"
+  },
+  "language_selection": {
+    "title": "अपनी भाषा चुनें",
+    "subtitle": "कृपया वह भाषा चुनें जिसे आप आसानी से पढ़ और समझ सकते हैं",
+    "next": "आगे",
+    "languages": {
+      "en": "English",
+      "hi": "हिंदी",
+      "ta": "தமிழ்"
+    }
+  },
+  "settings": {
+    "language": "भाषा वरीयता",
+    "change_password": "पासवर्ड बदलें",
+    "logout": "लॉगआउट"
+  },
+  "error": {
+    "login": {
+      "invalid_credentials": "अमान्य ईमेल या पासवर्ड",
+      "account_inactive": "आपका खाता अभी सक्रिय नहीं हुआ है। कृपया अपने ईमेल को सत्यापित करें।",
+      "account_locked": "आपका खाता लॉक कर दिया गया है। सहायता से संपर्क करें।"
+    },
+    "register": {
+      "user_exists": "यह ईमेल पहले से पंजीकृत है",
+      "invalid_email": "कृपया एक मान्य ईमेल पता दर्ज करें",
+      "invalid_phone": "कृपया एक मान्य फोन नंबर दर्ज करें",
+      "password_weak": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए जिसमें बड़े और छोटे अक्षर और संख्याएं हों",
+      "passwords_not_match": "पासवर्ड मेल नहीं खाते",
+      "terms_required": "आपको नियम और शर्तें स्वीकार करनी होंगी"
+    },
+    "otp": {
+      "invalid": "आपने जो कोड दर्ज किया वह गलत है",
+      "expired": "कोड की समय सीमा समाप्त हो गई है। कृपया एक नया अनुरोध करें।",
+      "account_verified": "आपका खाता पहले से सत्यापित है"
+    },
+    "auth": {
+      "invalid_token": "आपका सत्र समाप्त हो गया है। कृपया फिर से लॉगिन करें।",
+      "missing_token": "प्रमाणीकरण आवश्यक है",
+      "invalid_bearer": "अमान्य टोकन प्रारूप",
+      "account_deleted": "आपका खाता हटा दिया गया है, अपने व्यवस्थापक से संपर्क करें"
+    },
+    "user": {
+      "not_found": "उपयोगकर्ता नहीं मिला",
+      "already_exists": "उपयोगकर्ता पहले से मौजूद है",
+      "permission_denied": "आपके पास इस संसाधन तक पहुंचने की अनुमति नहीं है",
+      "cannot_delete_self": "आप अपना खुद का खाता नहीं हटा सकते",
+      "account_already_deleted": "खाता पहले ही हमारे छोर से हटा दिया गया है।"
+    },
+    "tenant": {
+      "not_found": "संगठन नहीं मिला",
+      "already_exists": "संगठन पहले से मौजूद है",
+      "invalid_tier": "अमान्य सदस्यता स्तर"
+    },
+    "project": {
+      "not_found": "परियोजना नहीं मिली",
+      "already_exists": "परियोजना पहले से मौजूद है",
+      "cannot_delete_active": "सक्रिय परियोजनाओं को हटाया नहीं जा सकता",
+      "limit_reached": "Project limit reached, Please upgrad your plan"
+    },
+    "supplier": {
+      "not_found": "आपूर्तिकर्ता नहीं मिला",
+      "already_exists": "आपूर्तिकर्ता पहले से मौजूद है"
+    },
+    "bill": {
+      "not_found": "बिल नहीं मिला",
+      "already_paid": "यह बिल पहले ही भुगतान किया जा चुका है",
+      "invalid_amount": "अमान्य राशि"
+    },
+    "expense": {
+      "not_found": "व्यय नहीं मिला"
+    },
+    "attendance": {
+      "already_marked": "इस तारीख के लिए उपस्थिति पहले ही अंकित की जा चुकी है",
+      "future_date": "भविष्य की तारीखों के लिए उपस्थिति अंकित नहीं की जा सकती",
+      "invalid_time": "अमान्य चेक इन/आउट समय"
+    },
+    "upload": {
+      "invalid_file_type": "फ़ाइल प्रकार की अनुमति नहीं है। अनुमत प्रकार: PDF, DOC, DOCX, JPG, PNG",
+      "file_too_large": "फ़ाइल का आकार अधिकतम सीमा 50MB से अधिक है",
+      "upload_failed": "फ़ाइल अपलोड विफल रहा",
+      "no_file_selected": "कृपया एक फ़ाइल चुनें"
+    },
+    "email": {
+      "send_failed": "ईमेल भेजने में विफल। कृपया बाद में पुनः प्रयास करें।",
+      "invalid_address": "अमान्य ईमेल पता"
+    },
+    "password": {
+      "incorrect": "वर्तमान पासवर्ड गलत है",
+      "change_failed": "पासवर्ड बदलने में विफल"
+    },
+    "validation": {
+      "required": "{field} आवश्यक है",
+      "invalid": "{field} अमान्य है",
+      "min_length": "{field} कम से कम {length} अक्षरों का होना चाहिए",
+      "max_length": "{field} {length} अक्षरों से अधिक नहीं होना चाहिए"
+    },
+    "network": {
+      "error": "नेटवर्क त्रुटि। कृपया अपना कनेक्शन जांचें।",
+      "timeout": "अनुरोध समय समाप्त। कृपया पुनः प्रयास करें।"
+    },
+    "server": {
+      "internal_error": "आंतरिक सर्वर त्रुटि। कृपया बाद में पुनः प्रयास करें।",
+      "service_unavailable": "सेवा अस्थायी रूप से अनुपलब्ध",
+      "not_found": "संसाधन नहीं मिला"
+    }
+  },
+  "success": {
+    "login": "सफलतापूर्वक लॉग इन किया गया",
+    "logout": "सफलतापूर्वक लॉग आउट किया गया",
+    "registered": "पंजीकरण सफल। कृपया अपने ईमेल को सत्यापित करें।",
+    "email_verified": "ईमेल सफलतापूर्वक सत्यापित",
+    "password_reset": "पासवर्ड सफलतापूर्वक रीसेट किया गया",
+    "password_changed": "पासवर्ड सफलतापूर्वक बदल दिया गया",
+    "created": "{entity} सफलतापूर्वक बनाया गया",
+    "updated": "{entity} सफलतापूर्वक अपडेट किया गया",
+    "deleted": "{entity} सफलतापूर्वक हटाया गया",
+    "marked_paid": "बिल भुगतान के रूप में चिह्नित",
+    "attendance_marked": "उपस्थिति सफलतापूर्वक अंकित",
+    "file_uploaded": "फ़ाइल सफलतापूर्वक अपलोड की गई",
+    "settings_saved": "सेटिंग्स सहेजी गईं",
+    "operation_success": "कार्य सफलतापूर्वक पूर्ण हुआ"
+  },
+  "message": {
+    "confirm_delete": "क्या आप निश्चित हैं? यह कार्रवाई पूर्ववत नहीं की जा सकती।",
+    "loading": "लोड हो रहा है...",
+    "no_data": "कोई डेटा उपलब्ध नहीं",
+    "search_no_results": "कोई परिणाम नहीं मिला"
+  },
+  "errors": {
+    "generic": "एक त्रुटि हुई। कृपया पुनः प्रयास करें।",
+    "network": "नेटवर्क त्रुटि। कृपया अपना इंटरनेट कनेक्शन जांचें।",
+    "session_expired": "आपका सत्र समाप्त हो गया है। कृपया पुनः लॉगिन करें।",
+    "permission_denied": "आपको यह कार्रवाई करने की अनुमति नहीं है।",
+    "not_found": "संसाधन नहीं मिला।",
+    "server_error": "सर्वर त्रुटि। कृपया बाद में पुनः प्रयास करें।",
+    "timeout": "अनुरोध समय समाप्त। कृपया पुनः प्रयास करें।",
+    "invalid_input": "अमान्य डेटा प्रदान किया गया। कृपया अपना इनपुट जांचें।",
+    "file_too_large": "फ़ाइल का आकार बहुत बड़ा है। प्रति फ़ाइल अधिकतम 10MB की अनुमति है।",
+    "upload_failed": "अपलोड विफल। कृपया पुनः प्रयास करें।",
+    "daily_limit_reached": "दैनिक सीमा पहुंच गई! आपने आज 5 फ़ाइलें अपलोड की हैं। कल पुनः प्रयास करें।",
+    "daily_limit_warning": "आपके पास आज {existing} फ़ाइलें हैं। केवल {remaining} और अनुमति है।",
+    "too_many_files": "प्रति दिन अधिकतम 5 फ़ाइलों की अनुमति है, लेकिन आपने {count} चुनी हैं।",
+    "tenant_not_found": "किरायेदार नहीं मिला। कृपया पुनः लॉगिन करें।",
+    "project_not_found": "परियोजना नहीं मिली।",
+    "user_not_found": "उपयोगकर्ता नहीं मिला।"
+  },
+  "daily_uploads": {
+    "title": "दैनिक अपलोड",
+    "upload_button": "फ़ोटो अपलोड करें",
+    "uploading": "अपलोड हो रहा है...",
+    "no_uploads": "अभी तक कोई फोटो नहीं। साइट फोटो दैनिक अपलोड करें।",
+    "upload_success": "{count} फोटो अपलोड की गईं! ({used}/5 उपयोग, आज {remaining} शेष)",
+    "daily_limit_info": "आज {count}/5 फ़ाइलें अपलोड की गईं",
+    "remaining_slots": "{remaining} स्लॉट शेष",
+    "date_label": "तारीख: {date}",
+    "files_count": "{count} फ़ाइलें",
+    "delete_title": "फोटो हटाएं",
+    "delete_confirmation": "क्या आप इस फोटो को हटाना चाहते हैं? यह कार्य पूर्ववत नहीं किया जा सकता।",
+    "deleting": "फोटो हटाया जा रहा है...",
+    "deleted_success": "फोटो सफलतापूर्वक हटा दिया गया",
+    "image_picker": {
+      "photo": "फोटो लें",
+      "gallery": "गैलरी से चुनें"
+    },
+    "viewer": {
+      "title": "फोटो देखें",
+      "load_error": "फोटो लोड करने में विफल"
+    },
+    "filters": {
+      "select_date_range": "तारीख सीमा चुनें",
+      "start_date": "प्रारंभ तिथि",
+      "end_date": "अंतिम तिथि",
+      "to": "से",
+      "clear": "फ़िल्टर हटाएं",
+      "showing_range": "{start} से {end} तक दिखा रहा है",
+      "showing_from": "{start} से दिखा रहा है",
+      "showing_until": "{end} तक दिखा रहा है"
+    }
+  },
+
+  "bills": {
+    "title": "बिल",
+    "management_title": "बिल प्रबंधन",
+    "suppliers_title": "आपूर्तिकर्ता",
+    "filters": "फ़िल्टर",
+    "status": "स्थिति",
+    "type": "प्रकार",
+    "all": "सभी",
+    "actions": "कार्य",
+    "bill_number": "बिल संख्या",
+    "add_bill": "बिल जोड़ें",
+    "pending": "लंबित",
+    "approved": "अनुमोदित",
+    "paid": "भुगतान किया गया",
+    "rejected": "अस्वीकृत",
+    "delete_bill": "बिल हटाएं",
+    "approve": "अनुमोदन करें",
+    "reject": "अस्वीकार करें",
+    "mark_as_paid": "भुगतान किए गए के रूप में चिन्हित करें",
+    "edit": "संपादित करें",
+    "view_document": "दस्तावेज़ देखें",
+    "delete": "हटाएं",
+    "create_first": "पहला बिल बनाएं",
+    "attach": "संलग्न करें",
+    "are_you_sure": "क्या आप वाकई इस बिल को हटाना चाहते हैं?",
+    "cancel": "रद्द करें",
+    "edit_bill": "बिल संपादित करें",
+    "create_bill": "बिल बनाएं",
+    "bill_name_label": "बिल नाम / विवरण",
+    "bill_name_hint": "जैसे, सीमेंट आपूर्ति - ब्लॉक ए",
+    "supplier": "आपूर्तिकर्ता *",
+    "amount": "राशि *",
+    "bill_type": "बिल का प्रकार *",
+    "attachment": "अनुलग्नक",
+    "select_file": "फ़ाइल चुनें",
+    "change_file": "फ़ाइल बदलें",
+    "capture_camera": "कैमरे से फोटो लें",
+    "pick_gallery": "गैलरी से चुनें",
+    "read_error": "फ़ाइल डेटा नहीं पढ़ा जा सका",
+    "update_success": "बिल सफलतापूर्वक अपडेट किया गया",
+    "create_success": "बिल सफलतापूर्वक बनाया गया",
+    "update_fail": "बिल अपडेट करने में विफल",
+    "create_fail": "बिल बनाने में विफल",
+    "select_supplier_error": "कृपया आपूर्तिकर्ता चुनें",
+    "enter_amount_error": "कृपया राशि दर्ज करें",
+    "invalid_amount_error": "कृपया मान्य राशि दर्ज करें",
+    "select_type_error": "कृपया बिल प्रकार चुनें",
+    "select_status_error": "कृपया स्थिति चुनें",
+    "selected": "चयनित",
+    "current_attached": "वर्तमान: फ़ाइल संलग्न है",
+    "no_file": "कोई फ़ाइल चयनित नहीं है",
+    "unknown_supplier": "अज्ञात आपूर्तिकर्ता",
+    "unknown_project": "अज्ञात प्रोजेक्ट",
+    "download_fail": "दस्तावेज़ डाउनलोड करने में विफल",
+    "delete_fail": "बिल हटाने में विफल",
+    "clear": "साफ़ करें",
+    "apply": "लागू करें",
+    "select_project": "प्रोजेक्ट चुनें",
+    "all_projects": "सभी प्रोजेक्ट",
+    "all_suppliers": "सभी आपूर्तिकर्ता",
+    "supplier_title": "आपूर्तिकर्ता",
+    "no_bills": "कोई बिल नहीं मिला",
+    "no_match": "कोई बिल फिल्टर से मेल नहीं खाता",
+    "document": "दस्तावेज़",
+    "downloading_pdf": "PDF डाउनलोड हो रहा है...",
+    "loading_image": "बिल फोटो लोड हो रही है...",
+    "no_document": "कोई बिल कॉपी नहीं जोड़ी गई",
+    "retry": "पुनः प्रयास करें",
+    "no_projects_error": "कोई प्रोजेक्ट उपलब्ध नहीं है। कृपया पहले एक प्रोजेक्ट बनाएं।",
+    "no_document_url_error": "कोई दस्तावेज़ URL नहीं मिला",
+    "error_viewing": "बिल देखने में त्रुटि",
+    "delete_confirm": "क्या आप वाकई बिल \"{number}\" को हटाना चाहते हैं?",
+    "update_confirm": "क्या आप वाकई बिल \"{number}\" को {action} करना चाहते हैं?",
+    "messages": {
+      "delete_success": "बिल सफलतापूर्वक हटा दिया गया",
+      "render_error": "फोटो दिखाने में विफल"
+    },
+    "titles": {
+      "pdf_viewer": "बिल दस्तावेज़ (PDF)",
+      "management": "बिल प्रबंधन",
+      "view_bill": "बिल देखें"
+    },
+    "tooltips": {
+      "create": "बिल बनाएं",
+      "mark_paid": "भुगतान किया गया चिन्हित करें",
+      "edit": "संपादित करें",
+      "view_doc": "दस्तावेज़ देखें",
+      "delete": "हटाएं"
+    },
+    "bill_types": {
+      "raw_material": "कच्चा माल",
+      "tiles_marble": "टाइल्स और मार्बल",
+      "electrical_plumbing_materials": "इलेक्ट्रिकल और प्लंबिंग",
+      "paint_chemicals": "पेंट और रसायन",
+      "equipment_machinery": "उपकरण और मशीनरी",
+      "transport_logistics": "परिवहन और रसद",
+      "tools_rental": "उपकरण किराया",
+      "others": "अन्य",
+      "transport": "परिवहन"
+    },
+    "all_types": "सभी प्रकार",
+    "filter_by_type": "बिल प्रकार से फ़िल्टर करें",
+    "render_error": "छवि प्रदर्शित करने में विफल: {error}",
+    "add_first": "पहला बिल जोड़ें",
+    "bill_details": "बिल विवरण",
+    "overdue": "बकाया",
+    "cancelled": "रद्द किया गया"
+  },
+  "payroll": {
+    "title": "पेरोल प्रबंधन",
+    "salary_and_payroll": "वेतन और पेरोल",
+    "calculate": "गणना करें",
+    "download": "डाउनलोड करें",
+    "export_pdf": "PDF निर्यात करें",
+    "auto_generate": "स्वतः-जेनरेट पेरोल",
+    "auto_generated_ready": "पेरोल स्वचालित रूप से जेनरेट किया गया है और देखने के लिए तैयार है।",
+    "calculate_payroll": "पेरोल की गणना करें",
+    "filter_by_period": "अवधि के आधार पर फ़िल्टर करें",
+    "current_week": "वर्तमान सप्ताह",
+    "current_month": "वर्तमान माह",
+    "custom_date": "कस्टम तारीख",
+    "custom_range": "कस्टम रेंज",
+    "select_all": "सभी का चयन करें",
+    "make_payment": "भुगतान करें",
+    "employees": "कर्मचारी:",
+    "total_amount": "कुल राशि:",
+    "confirm_payment": "भुगतान की पुष्टि करें",
+    "select_at_least_one": "कृपया कम से कम एक पेरोल का चयन करें",
+    "select_payment_mode": "कृपया भुगतान का तरीका चुनें",
+    "payment_success": "भुगतान सफलतापूर्वक संसाधित किया गया",
+    "confirm": "पुष्टि करें",
+    "detail_title": "पेरोल विवरण",
+    "calculating": "गणना हो रही है...",
+    "advance": "अग्रिम",
+    "deducted": "कटौती की गई",
+    "mark_as_paid": "भुगतान के रूप में चिह्नित करें",
+    "paid": "भुगतान किया गया",
+    "pending": "लंबित",
+    "gross_salary": "सकल वेतन",
+    "net_salary": "शुद्ध वेतन",
+    "deductions": "कटौती",
+    "advance_deduction": "अग्रिम कटौती",
+    "present_days": "उपस्थित दिन",
+    "wage_rate": "वेतन दर",
+    "search_employee_name": "कर्मचारी का नाम खोजें...",
+    "calculate_employee_salaries": "उपस्थिति के आधार पर कर्मचारी वेतन की गणना करें...",
+    "calculate_employee_salary": "उपस्थिति के आधार पर कर्मचारी का वेतन गणना करें",
+    "select_all_employees": "सभी कर्मचारियों का चयन करें",
+    "no_payroll_calculated": "कोई पेरोल गणना नहीं की गई",
+    "click_calculate_to_generate": "पेरोल जेनरेट करने के लिए \"गणना करें\" पर क्लिक करें",
+    "draft": "मसौदा",
+    "finalized": "अंतिम",
+    "record": "रिकॉर्ड",
+    "records": "रिकॉर्ड",
+    "adv": "अग्रिम"
+  },
+  "expense_stats": {
+    "total_expenses": "कुल खर्च",
+    "credit": "जमा",
+    "debit": "खर्च",
+    "net": "शुद्ध",
+    "profit": "लाभ",
+    "loss": "हानि",
+    "daily": "दैनिक",
+    "weekly": "साप्ताहिक",
+    "monthly": "मासिक"
+  },
+  "labour": {
+    "title": "श्रम",
+    "electrical": "विद्युत",
+    "plumbing": "नलसाजी",
+    "tiles": "टाइलें",
+    "painting": "चित्रकारी",
+    "general": "सामान्य",
+    "daily": "दैनिक",
+    "hourly": "प्रति घंटा",
+    "monthly": "मासिक",
+    "fixed": "निश्चित",
+    "add_new_labour": "नया श्रम जोड़ें",
+    "no_users_found": "इस भूमिका के लिए कोई उपयोगकर्ता नहीं मिला",
+    "assign": "असाइन करें",
+    "smart_assign": "स्मार्ट असाइन",
+    "management": "श्रम प्रबंधन",
+    "name": "नाम",
+    "email": "ईमेल",
+    "role": "भूमिका",
+    "phone_number": "फ़ोन नंबर",
+    "employee_types": "कर्मचारी प्रकार *",
+    "employee_types_hint": "कर्मचारी प्रकार चुनें",
+    "employee_types_required": "कम से कम एक कर्मचारी प्रकार अनिवार्य है",
+    "wage_configuration": "वेतन संरचना",
+    "wage_amount": "वेतन राशि (₹) *",
+    "wage_type": "वेतन प्रकार *",
+    "effective_date": "प्रभावी तारीख *",
+    "import_from_contacts": "संपर्कों से आयात करें",
+    "name_required": "नाम आवश्यक है"
+  },
+  "employees": {
+    "title": "कर्मचारी",
+    "details": "कर्मचारी विवरण",
+    "new_advance": "नया अग्रिम अनुरोध",
+    "no_advances": "कोई वेतन अग्रिम नहीं मिला",
+    "add_advance": "वेतन अग्रिम जोड़ें",
+    "no_projects": "कोई परियोजना उपलब्ध नहीं है",
+    "no_employees": "कोई कर्मचारी नहीं मिला",
+    "search_employees": "कर्मचारियों को खोजें...",
+    "advances": {
+      "add_advance": "अग्रिम जोड़ें",
+      "select_employee": "कृपया एक कर्मचारी चुनें",
+      "valid_amount": "कृपया एक वैध राशि दर्ज करें",
+      "enter_amount": "राशि दर्ज करें",
+      "enter_reason": "कारण दर्ज करें (वैकल्पिक)",
+      "reason_hint": "अग्रिम का कारण दर्ज करें...",
+      "project": "परियोजना",
+      "advance_date": "अग्रिम तिथि",
+      "amount": "राशि",
+      "payment_status": "भुगतान स्थिति",
+      "reason_optional": "कारण (वैकल्पिक)",
+      "select_employee_error": "कृपया एक कर्मचारी चुनें",
+      "status": {
+        "pending": "लंबित",
+        "paid": "भुगतान किया गया",
+        "approved": "स्वीकृत",
+        "rejected": "अस्वीकृत"
+      },
+      "messages": {
+        "advance_added": "अग्रिम सफलतापूर्वक जोड़ा गया",
+        "advance_updated": "अग्रिम सफलतापूर्वक अपडेट किया गया",
+        "advance_deleted": "अग्रिम सफलतापूर्वक हटाया गया"
+      }
+    }
+  },
+  "suppliers": {
+    "title": "आपूर्तिकर्ता",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "add_supplier": "आपूर्तिकर्ता जोड़ें",
+    "delete_supplier": "आपूर्तिकर्ता हटाएं",
+    "create_first": "पहला आपूर्तिकर्ता बनाएं"
+  },
+  "projects": {
+    "title": "परियोजनाएं",
+    "list": {
+      "title": "परियोजनाएं",
+      "no_projects": "फिलहाल कोई परियोजना उपलब्ध नहीं है",
+      "add_project": "परियोजना जोड़ें",
+      "delete_title": "परियोजना हटाएं",
+      "delete_message": "क्या आप वाकई \"{name}\" को हटाना चाहते हैं?",
+      "cancel": "रद्द करें",
+      "delete": "हटाएं",
+      "delete_success": "परियोजना सफलतापूर्वक हटा दी गई",
+      "delete_error": "परियोजना हटाने में विफल: {error}",
+      "filter_by_status": "स्थिति के आधार पर फ़िल्टर करें"
+    },
+    "all_statuses": "सभी स्थितियां",
+    "active": "सक्रिय",
+    "completed": "पूर्ण",
+    "on_hold": "रोक",
+    "cancelled": "रद्द",
+    "add_project": "परियोजना जोड़ें",
+    "edit_project": "परियोजना संपादित करें",
+    "delete_project": "परियोजना हटाएं",
+    "view_bills": "बिल देखें",
+    "details": "परियोजना विवरण",
+    "delete_confirm": "क्या आप वाकई इस परियोजना को हटाना चाहते हैं?",
+    "delete_confirm_message": "क्या आप वाकई \"{name}\" को हटाना चाहते हैं?",
+    "not_found": "परियोजना नहीं मिली",
+    "error_message": "त्रुटि: {error}",
+    "add_unit": "इकाई जोड़ें",
+    "apartment_units": "अपार्टमेंट इकाइयाँ",
+    "units_count": "{count} इकाइयाँ",
+    "no_units_yet": "अभी तक कोई अपार्टमेंट इकाई नहीं",
+    "tap_add_unit": "अपार्टमेंट इकाइयाँ बनाने के लिए \"इकाई जोड़ें\" पर टैप करें",
+    "select_labour_type": "श्रमिक प्रकार चुनें",
+    "employee_types": "कर्मचारी प्रकार *",
+    "employee_types_hint": "कर्मचारी प्रकार चुनें (जैसे, विद्युत, नलसाजी)",
+    "error": "त्रुटि",
+    "electrical": "विद्युत",
+    "plumbing": "नलसाजी",
+    "tiles": "टाइलें",
+    "painting": "चित्रकारी",
+    "general": "सामान्य"
+  },
+
+
+
+  "advances": {
+    "title": "अग्रिम राशि जोड़ें",
+    "labels": {
+      "project": "परियोजना",
+      "select_employee": "कर्मचारी चुनें",
+      "date": "अग्रिम तिथि",
+      "amount": "राशि",
+      "reason_optional": "कारण (वैकल्पिक)"
+    },
+    "hints": {
+      "search_employees": "कर्मचारी खोजें...",
+      "amount": "0",
+      "reason": "अग्रिम का कारण दर्ज करें..."
+    },
+    "errors": {
+      "select_employee": "कृपया एक कर्मचारी चुनें",
+      "invalid_amount": "कृपया मान्य राशि दर्ज करें"
+    },
+    "validation": {
+      "amount_required": "कृपया राशि दर्ज करें",
+      "amount_invalid": "कृपया मान्य राशि दर्ज करें"
+    },
+    "buttons": {
+      "create": "अग्रिम बनाएं"
+    },
+    "empty": {
+      "no_employees": "कोई कर्मचारी नहीं मिला"
+    }
+  },
+  "wages": {
+    "title": "कर्मचारी मजदूरी निर्धारित करें",
+    "labels": {
+      "employee": "कर्मचारी",
+      "amount": "मजदूरी राशि *",
+      "wage_type": "मजदूरी प्रकार *",
+      "effective_from": "प्रभावी तिथि *",
+      "phone_optional": "फ़ोन नंबर (वैकल्पिक)",
+      "email_optional": "ईमेल (वैकल्पिक)"
+    },
+    "hints": {
+      "enter_amount": "मजदूरी राशि दर्ज करें",
+      "phone": "फ़ोन नंबर दर्ज करें",
+      "email": "ईमेल पता दर्ज करें"
+    },
+    "types": {
+      "daily": "दैनिक मजदूरी",
+      "hourly": "प्रति घंटा मजदूरी",
+      "fixed": "निश्चित मजदूरी"
+    },
+    "validation": {
+      "amount_required": "मजदूरी राशि आवश्यक है",
+      "amount_invalid": "कृपया 0 से अधिक मान्य राशि दर्ज करें",
+      "amount_exceeded": "मजदूरी राशि 999999.99 से अधिक नहीं हो सकती",
+      "phone_length": "फ़ोन नंबर 10-15 अंकों का होना चाहिए",
+      "phone_format": "फ़ोन नंबर में केवल अंक होने चाहिए",
+      "email_invalid": "कृपया मान्य ईमेल पता दर्ज करें"
+    },
+    "buttons": {
+      "create": "मजदूरी बनाएं"
+    }
+  },
+  "assigned_projects": {
+    "buttons": {
+      "retry": "पुनः प्रयास करें",
+      "refresh": "रीफ़्रेश करें",
+      "view_attendance": "उपस्थिति देखें"
+    },
+    "empty": {
+      "no_projects": "कोई आवंटित परियोजना नहीं मिली।"
+    },
+    "headers": {
+      "parent_projects": "मूल परियोजनाएं ({count})",
+      "sub_projects": "उप परियोजनाएं ({count})"
+    },
+    "labels": {
+      "unnamed_project": "अनाम परियोजना"
+    }
+  },
+  "company": {
+    "title": {
+      "first_time": "कंपनी प्रोफाइल पूर्ण करें",
+      "edit": "कंपनी विवरण"
+    },
+    "buttons": {
+      "cancel": "रद्द करें",
+      "skip": "छोड़ें",
+      "continue": "डैशबोर्ड पर जाएं",
+      "save": "परिवर्तन सहेजें",
+      "hide_map": "मानचित्र छुपाएं",
+      "select_location": "मानचित्र पर स्थान चुनें"
+    },
+    "validation": {
+      "gst_or_location": "कृपया कम से कम जीएसटी नंबर या कंपनी स्थान प्रदान करें",
+      "company_name_required": "कृपया कंपनी का नाम दर्ज करें",
+      "gst_length": "जीएसटी नंबर बिल्कुल 15 अक्षरों का होना चाहिए",
+      "gst_format": "अमान्य जीएसटी नंबर प्रारूप"
+    },
+    "messages": {
+      "updated": "कंपनी विवरण सफलतापूर्वक अपडेट किया गया"
+    },
+    "dialogs": {
+      "skip": {
+        "title": "कंपनी प्रोफाइल छोड़ें?",
+        "content": "आप सेटिंग्स से बाद में कभी भी अपनी कंपनी प्रोफाइल अपडेट कर सकते हैं।"
+      }
+    },
+    "info": {
+      "complete_profile": "सभी सुविधाओं को अनलॉक करने के लिए अपनी कंपनी प्रोफाइल पूर्ण करें"
+    },
+    "headers": {
+      "information": "कंपनी जानकारी",
+      "location": "कंपनी स्थान"
+    },
+    "labels": {
+      "company_name": "कंपनी का नाम *",
+      "gst": "जीएसटी नंबर"
+    },
+    "hints": {
+      "company_name": "उदा., एबीसी कंस्ट्रक्शन लिमिटेड",
+      "gst": "उदा., 27AABCT1332L1Z5"
+    },
+    "helpers": {
+      "gst": "वैकल्पिक - 15 अक्षर"
+    },
+    "descriptions": {
+      "pin_location": "मानचित्र पर अपने कंपनी मुख्यालय को पिन करें"
+    },
+    "status": {
+      "location_set": "स्थान सेट: {coordinates}",
+      "no_location": "कोई स्थान सेट नहीं"
+    }
+  },
+  "create_project": {
+    "labels": {
+      "apartment": "अपार्टमेंट",
+      "building": "भवन"
+    }
+  },
+  "project_detail": {
+    "details_header": "परियोजना विवरण",
+    "budget": "बजट",
+    "status": "स्थिति",
+    "start_date": "प्रारंभ तिथि",
+    "end_date": "अंतिम तिथि",
+    "location": "स्थान",
+    "completed_date": "पूर्ण होने की तिथि",
+    "not_set": "निर्धारित नहीं",
+    "not_specified": "निर्दिष्ट नहीं",
+    "progress": "परियोजना प्रगति",
+    "unlock": "बदलने के लिए अनलॉक करें",
+    "lock": "लॉक/रीसेट",
+    "modules_header": "परियोजना मॉड्यूल",
+    "dialogs": {
+      "delete": {
+        "title": "परियोजना हटाएं",
+        "content": "क्या आप वाकई \"{name}\" को हटाना चाहते हैं?",
+        "buttons": {
+          "cancel": "रद्द करें",
+          "delete": "हटाएं"
+        }
+      }
+    },
+    "modules": {
+      "labour": {
+        "title": "श्रमिक प्रबंधन",
+        "desc": "इस परियोजना में लगे श्रमिकों का प्रबंधन करें"
+      },
+      "attendance": {
+        "title": "उपस्थिति",
+        "desc": "कर्मचारी उपस्थिति रिकॉर्ड का प्रबंधन करें"
+      },
+      "expenses": {
+        "title": "खर्च",
+        "desc": "परियोजना खर्चों और बिलों को ट्रैक करें"
+      },
+      "salary": {
+        "title": "वेतन और पेरोल",
+        "desc": "कर्मचारी वेतन और भुगतान का प्रबंधन करें"
+      },
+      "advances": {
+        "title": "अग्रिम",
+        "desc": "कर्मचारी वेतन अग्रिमों को ट्रैक करें"
+      },
+      "suppliers": {
+        "title": "आपूर्तिकर्ता",
+        "desc": "आपूर्तिकर्ताओं और उनके बिलों का प्रबंधन करें"
+      },
+      "bills": {
+        "title": "बिल",
+        "desc": "सभी परियोजना बिलों और भुगतानों का प्रबंधन करें"
+      },
+      "daily_updates": {
+        "title": "दैनिक अपडेट",
+        "desc": "दैनिक साइट फ़ोटो और प्रगति देखें"
+      },
+      "daily_notes": {
+        "title": "दैनिक नोट्स",
+        "desc": "परियोजना गतिविधि फ़ीड और टीम चर्चाएं"
+      },
+      "document_wallet": {
+        "title": "दस्तावेज़ वॉलेट",
+        "desc": "परियोजना दस्तावेज़ और कंपनी फ़ाइलें"
+      }
+    }
+  },
+  "employee_attendance_tap": {
+    "dialogs": {
+      "location_disabled": {
+        "title": "स्थान सेवा अक्षम",
+        "content": "उपस्थिति दर्ज करने के लिए कृपया स्थान सेवाएं सक्षम करें।",
+        "buttons": {
+          "cancel": "रद्द करें",
+          "open_settings": "सेटिंग्स खोलें"
+        }
+      },
+      "mark_attendance": {
+        "title": "उपस्थिति दर्ज करें"
+      }
+    },
+    "buttons": {
+      "full_day": "पूरा दिन",
+      "half_day": "आधा दिन"
+    },
+    "hints": {
+      "choose_project": "एक परियोजना चुनें"
+    },
+    "tabs": {
+      "mark": "उपस्थिति",
+      "stats": "उपस्थिति आंकड़े",
+      "advances": "अग्रिम",
+      "salary": "वेतन"
+    },
+    "mark": {
+      "select_project": "प्रोजेक्ट चुनें",
+      "no_assigned_projects": "आपको कोई प्रोजेक्ट असाइन नहीं किया गया है। कृपया अपने प्रबंधन से संपर्क करें।",
+      "attendance_type": "उपस्थिति प्रकार",
+      "select_attendance_type": "उपस्थिति प्रकार चुनें",
+      "limit_reached": " (सीमा पूरी)",
+      "already_marked": "आपने आज इस प्रोजेक्ट के लिए पहले ही {count} दिन चिह्नित कर लिए हैं।",
+      "location_captured": "स्थान प्राप्त किया",
+      "capturing_location": "स्थान प्राप्त किया जा रहा है...",
+      "location_not_available": "स्थान उपलब्ध नहीं",
+      "retry_location": "पुनः प्रयास करने के लिए टैप करें या GPS सक्षम करें",
+      "assigned_project": "असाइन किया गया प्रोजेक्ट",
+      "select_type": "प्रकार चुनें",
+      "tap_to_mark": "उपस्थिति दर्ज\nकरने के लिए\nटैप करें",
+      "today_label": "आज: {date}"
+    },
+    "stats": {
+      "no_data": "कोई उपस्थिति आंकड़े नहीं मिले",
+      "weekly": "साप्ताहिक",
+      "monthly": "मासिक",
+      "yearly": "वार्षिक",
+      "overall": "कुल"
+    },
+    "advances": {
+      "no_data": "कोई वेतन अग्रिम नहीं मिला",
+      "no_status_data": "कोई {status} अग्रिम नहीं मिला",
+      "reason_label": "कारण:",
+      "total_outstanding": "कुल बकाया अग्रिम",
+      "filters": {
+        "all": "सभी",
+        "pending": "लंबित",
+        "paid": "भुगतान किया गया"
+      }
+    },
+    "salary": {
+      "title": "वेतन विवरण",
+      "period": "अवधि",
+      "current_week": "इस सप्ताह",
+      "current_month": "इस महीने",
+      "custom_range": "कस्टम अवधि",
+      "start_date": "प्रारंभ तिथि",
+      "end_date": "अंतिम तिथि",
+      "select_date": "तारीख चुनें",
+      "select_dates": "कृपया प्रारंभ और अंतिम तिथि चुनें",
+      "retry": "पुनः प्रयास करें",
+      "no_data": "{period} के लिए कोई भुगतान किया गया वेतन नहीं मिला",
+      "payments": "भुगतान",
+      "records": "कुल भुगतान रिकॉर्ड"
+    }
+  },
+  "employees_screen": {
+    "title": "कर्मचारी",
+    "dialogs": {
+      "delete": {
+        "title": "कर्मचारी हटाएं",
+        "content": "क्या आप वाकई {name} को हटाना चाहते हैं?",
+        "buttons": {
+          "cancel": "रद्द करें",
+          "delete": "हटाएं"
+        }
+      },
+      "select_contact": {
+        "title": "संपर्क चुनें (डेमो)"
+      }
+    },
+    "buttons": {
+      "retry": "पुनः प्रयास करें",
+      "delete": "हटाएं"
+    },
+    "success": {
+      "deleted": "कर्मचारी सफलतापूर्वक हटा दिया गया"
+    },
+    "errors": {
+      "delete_failed": "कर्मचारी हटाने में विफल: {error}"
+    },
+    "wage_types": {
+      "daily": "दैनिक",
+      "hourly": "प्रति घंटा",
+      "monthly": "मासिक",
+      "fixed": "निश्चित"
+    }
+  },
+  "employee_detail": {
+    "title": "कर्मचारी विवरण",
+    "edit_employee": "कर्मचारी संपादित करें",
+    "tabs": {
+      "info": "जानकारी",
+      "wages": "मजदूरी",
+      "advances": "अग्रिम"
+    },
+    "advances": {
+      "new_request": "नया अग्रिम अनुरोध",
+      "no_data": "कोई वेतन अग्रिम नहीं मिला",
+      "add_title": "वेतन अग्रिम जोड़ें"
+    },
+    "sections": {
+      "account": "खाता जानकारी",
+      "tier": "स्तर की जानकारी",
+      "wage_info": "मजदूरी की जानकारी",
+      "attendance_stats": "उपस्थिति आंकड़े",
+      "current_wage": "वर्तमान मजदूरी",
+      "basic_wage": "वर्तमान मूल मजदूरी",
+      "wage_type": "मजदूरी प्रकार",
+      "effective_from": "से प्रभावी"
+    },
+    "buttons": {
+      "update": "अपडेट करें"
+    },
+    "fields": {
+      "id": "आईडी",
+      "username": "उपयोगकर्ता नाम",
+      "email": "ईमेल",
+      "phone": "फोन नंबर",
+      "role": "भूमिका",
+      "tier": "स्तर",
+      "days_remaining": "शेष दिन",
+      "trial_start": "ट्रायल प्रारंभ",
+      "trial_end": "ट्रायल समाप्त",
+      "amount": "राशि",
+      "description_optional": "विवरण (वैकल्पिक)",
+      "full_name": "पूरा नाम",
+      "project": "परियोजना"
+    },
+    "dialogs": {
+      "no_projects": "कोई परियोजना उपलब्ध नहीं",
+      "edit_title": "कर्मचारी संपादित करें",
+      "create": "बनाएं",
+      "save": "सहेजें",
+      "cancel": "रद्द करें"
+    },
+    "errors": {
+      "valid_amount": "मान्य राशि दर्ज करें",
+      "name_empty": "नाम खाली नहीं हो सकता",
+      "phone_invalid": "फ़ोन नंबर ठीक 10 अंकों का होना चाहिए",
+      "update_failed": "अपडेट करने में विफल: {error}"
+    },
+    "success": {
+      "updated": "कर्मचारी सफलतापूर्वक अपडेट किया गया"
+    },
+    "wage_types": {
+      "daily": "दैनिक",
+      "hourly": "प्रति घंटा",
+      "monthly": "मासिक",
+      "fixed": "निश्चित",
+      "weekly": "साप्ताहिक"
+    }
+  },
+  "create_supplier": {
+    "buttons": {
+      "select_contact": "संपर्क चुनें",
+      "cancel": "रद्द करें"
+    },
+    "hints": {
+      "phone": "उदा., 9876543210",
+      "email": "supplier@example.com",
+      "gst": "उदा., 27AABCT1332L1Z5"
+    }
+  },
+
+  "tenant_detail": {
+    "title": "किरायेदार विवरण",
+    "errors": {
+      "generic": "त्रुटि: {error}"
+    },
+    "buttons": {
+      "retry": "पुनः प्रयास करें"
+    },
+    "empty": {
+      "not_found": "किरायेदार नहीं मिला"
+    },
+    "dialogs": {
+      "delete": {
+        "title": "किरायेदार हटाएं",
+        "content": "क्या आप इस किरायेदार को हटाना चाहते हैं?",
+        "buttons": {
+          "cancel": "रद्द करें",
+          "delete": "हटाएं"
+        }
+      }
+    }
+  },
+  "tenant_admin": {
+    "buttons": {
+      "logout": "लॉगआउट"
+    }
+  },
+  "tenant_admins": {
+    "title": "किरायेदार प्रशासक",
+    "errors": {
+      "generic": "त्रुटि: {error}"
+    },
+    "buttons": {
+      "retry": "पुनः प्रयास करें",
+      "create_first": "पहला किरायेदार प्रशासक बनाएं",
+      "cancel": "रद्द करें",
+      "create": "किरायेदार प्रशासक बनाएं"
+    },
+    "empty": {
+      "no_admins": "कोई किरायेदार प्रशासक नहीं मिला"
+    }
+  },
+  "tenants_list": {
+    "title": "किरायेदार",
+    "errors": {
+      "generic": "त्रुटि: {error}"
+    },
+    "buttons": {
+      "retry": "पुनः प्रयास करें",
+      "create_first": "पहला किरायेदार बनाएं",
+      "edit": "संपादित करें"
+    },
+    "empty": {
+      "no_tenants": "कोई किरायेदार नहीं मिला"
+    }
+  },
+  "reports": {
+    "title": "प्रोजेक्ट रिपोर्ट",
+    "download_tooltip": "रिपोर्ट डाउनलोड करें",
+    "tabs": {
+      "profitability": "लाभप्रदता",
+      "manpower": "मैनपावर",
+      "salaries": "वेतन",
+      "stock": "स्टॉक"
+    },
+    "select_project": "प्रोजेक्ट चुनें",
+    "no_projects": "कोई प्रोजेक्ट उपलब्ध नहीं",
+    "no_data": "इस प्रोजेक्ट के लिए कोई डेटा उपलब्ध नहीं",
+    "select_project_prompt": "रिपोर्ट देखने के लिए एक प्रोजेक्ट चुनें",
+    "profitability": {
+      "net_profit": "शुद्ध लाभ",
+      "profitable": "प्रोजेक्ट लाभ में है",
+      "loss": "प्रोजेक्ट नुकसान में है",
+      "profit_margin": "लाभ मार्जिन",
+      "financial_summary": "वित्तीय सारांश",
+      "total_income": "कुल आय",
+      "total_expenses": "कुल व्यय",
+      "net_result": "शुद्ध परिणाम",
+      "expense_breakdown": "व्यय विवरण"
+    },
+    "manpower": {
+      "total_mandays": "कुल कार्य-दिवस",
+      "total_workers": "कुल कर्मचारी",
+      "daily_trend": "दैनिक कार्य-दिवस प्रवृत्ति",
+      "worker_distribution": "कर्मचारी वितरण",
+      "days": "दिन"
+    },
+    "salaries": {
+      "total_net_salary": "कुल शुद्ध वेतन",
+      "subtitle": "इस प्रोजेक्ट के सभी कर्मचारियों के लिए",
+      "cost_breakdown": "लागत विवरण",
+      "gross_salary": "सकल वेतन",
+      "advance_deductions": "अग्रिम कटौती",
+      "net_payable": "शुद्ध देय",
+      "worker_salaries": "कर्मचारी वेतन"
+    },
+    "categories": {
+      "raw_material": "कच्चा माल",
+      "tiles_marble": "टाइल्स और मार्बल",
+      "electrical": "इलेक्ट्रिकल",
+      "plumbing": "प्लंबिंग",
+      "paints": "पेंट्स",
+      "hardware": "हार्डवेयर",
+      "miscellaneous": "विविध",
+      "salary": "वेतन",
+      "material": "सामग्री",
+      "labour": "लेबर",
+      "advance": "अग्रिम",
+      "transport": "परिवहन",
+      "equipment": "उपकरण",
+      "equipment_rental": "उपकरण किराया",
+      "sub contractor": "उप ठेकेदार",
+      "designer": "डिज़ाइनर",
+      "food and travel": "खाना और यात्रा",
+      "office_supplies": "कार्यालय आपूर्ति",
+      "cement": "सीमेंट",
+      "roofing materials": "छत सामग्री",
+      "tiles": "टाइल्स",
+      "bricks & blocks": "ईंट और ब्लॉक",
+      "sand": "रेत"
+    },
+    "download": {
+      "success": "रिपोर्ट डाउनलोड की गई: {fileName}",
+      "error": "रिपोर्ट डाउनलोड करने में त्रुटि: {error}"
+    },
+    "filter": {
+      "sub_project": "उप-परियोजना द्वारा फ़िल्टर करें (वैकल्पिक)",
+      "all_including_sub": "सभी (उप-परियोजनाओं सहित)",
+      "shared_main_only": "साझा/मुख्य परियोजना केवल"
+    },
+    "stock": {
+      "inventory_overview": "सूची अवलोकन",
+      "items_suffix": "{count} आइटम",
+      "total_value": "कुल मूल्य",
+      "total_quantity": "कुल मात्रा",
+      "avg_value": "औसत मूल्य",
+      "low_stock": "कम स्टॉक",
+      "out_of_stock": "स्टॉक खत्म",
+      "movement_trend": "स्टॉक गतिविधि प्रवृत्ति",
+      "category_distribution": "श्रेणी वितरण",
+      "top_consumed": "सर्वाधिक उपयुक्त सामग्री",
+      "stock_health": "स्टॉक स्वास्थ्य अवलोकन",
+      "healthy": "स्वस्थ",
+      "no_transactions": "चयनित अवधि में कोई लेनदेन नहीं",
+      "no_materials": "कोई सामग्री नहीं मिली",
+      "no_consumption": "उपयोग डेटा उपलब्ध नहीं",
+      "stock_in": "स्टॉक आवक",
+      "stock_out": "स्टॉक निकास"
+    }
+  },
+  "stock": {
+    "warehouse_management": "गोदाम स्टॉक प्रबंधन",
+    "management_title": "स्टॉक प्रबंधन",
+    "management_description": "स्टॉक आवंटन और उपयोग का प्रबंधन करें",
+    "tabs": {
+      "all_stock": "सभी स्टॉक",
+      "low_stock": "कम स्टॉक",
+      "out_of_stock": "स्टॉक खत्म",
+      "summary": "सारांश"
+    },
+    "add_material": "सामग्री जोड़ें",
+    "edit_material_title": "सामग्री संपादित करें",
+    "add_material_title": "सामग्री जोड़ें",
+    "update_material_button": "सामग्री अपडेट करें",
+    "filter_category": "श्रेणी के अनुसार फ़िल्टर करें",
+    "all_categories": "सभी श्रेणियां",
+    "clear_all": "सभी साफ़ करें",
+    "search_materials": "सामग्री खोजें...",
+    "no_materials_matching": "\"{query}\" से मेल खाती कोई सामग्री नहीं मिली",
+    "no_materials_yet": "अभी तक कोई सामग्री नहीं",
+    "all_stock_healthy": "सभी स्टॉक स्तर स्वस्थ हैं!",
+    "total_materials": "कुल सामग्रियां",
+    "active": "सक्रिय",
+    "top_used_materials": "सबसे अधिक उपयोग की गई सामग्रियां",
+    "current_stock": "वर्तमान स्टॉक",
+    "material_name": "सामग्री नाम *",
+    "description": "विवरण",
+    "category": "श्रेणी *",
+    "unit": "इकाई *",
+    "max_stock_level": "अधिकतम स्टॉक स्तर",
+    "unit_price_rupees": "इकाई मूल्य (₹)",
+    "project_location": "परियोजना स्थान",
+    "select_project_location": "परियोजना स्थान चुनें",
+    "no_project_warehouse": "कोई परियोजना नहीं (गोदाम)",
+    "material_not_found": "सामग्री नहीं मिली",
+    "quick_action": "त्वरित क्रिया",
+    "add_stock_action": "स्टॉक जोड़ें",
+    "remove_stock": "स्टॉक हटाएं",
+    "edit_material": "सामग्री संपादित करें",
+    "delete_material": "सामग्री हटाएं",
+    "min_stock_level": "न्यूनतम स्टॉक स्तर",
+    "unit_price": "इकाई मूल्य",
+    "current_quantity": "वर्तमान मात्रा",
+    "stock_in": "स्टॉक इन",
+    "stock_out": "स्टॉक आउट",
+    "allocated_to": "{project} को आवंटित",
+    "allocated_successfully": "स्टॉक सफलतापूर्वक आवंटित किया गया",
+    "allocate": "आवंटित करें",
+    "no_stock_allocated": "इस परियोजना को कोई स्टॉक आवंटित नहीं",
+    "detail": {
+      "material_details": "सामग्री विवरण",
+      "overview": "अवलोकन",
+      "transactions": "लेनदेन",
+      "in_stock": "स्टॉक में",
+      "out_of_stock": "स्टॉक खत्म",
+      "low_stock_status": "कम स्टॉक",
+      "material_information": "सामग्री जानकारी",
+      "stock_levels": "स्टॉक स्तर",
+      "pricing_information": "मूल्य निर्धारण जानकारी",
+      "transaction_summary": "लेनदेन सारांश",
+      "name": "नाम",
+      "category": "श्रेणी",
+      "unit": "इकाई",
+      "description_label": "विवरण",
+      "location": "स्थान",
+      "status": "स्थिति",
+      "inactive": "निष्क्रिय",
+      "current": "वर्तमान",
+      "minimum": "न्यूनतम",
+      "maximum": "अधिकतम",
+      "total_value": "कुल मूल्य",
+      "no_transactions_yet": "अभी तक कोई लेनदेन नहीं",
+      "add_first_transaction": "पहला लेनदेन जोड़ें",
+      "error_loading_data": "डेटा लोड करने में त्रुटि: {error}",
+      "material_data_not_loaded": "सामग्री डेटा लोड नहीं हुआ",
+      "name_required": "नाम आवश्यक है",
+      "save_changes": "परिवर्तन सहेजें",
+      "stock_allocated_to_project": "{project} को स्टॉक आवंटित किया गया",
+      "quantity_unit": "मात्रा ({unit})",
+      "unit_price_optional": "इकाई मूल्य (वैकल्पिक)",
+      "reference_optional": "संदर्भ (वैकल्पिक)",
+      "notes_optional": "नोट्स (वैकल्पिक)"
+    },
+    "validation": {
+      "valid_quantity": "कृपया मान्य मात्रा दर्ज करें",
+      "select_project": "कृपया एक परियोजना चुनें",
+      "insufficient_stock": "अपर्याप्त स्टॉक",
+      "enter_quantity": "कृपया मात्रा दर्ज करें",
+      "enter_reason": "कृपया कारण दर्ज करें",
+      "select_material": "कृपया एक सामग्री चुनें",
+      "enter_material_name": "कृपया सामग्री नाम दर्ज करें",
+      "select_category": "कृपया एक श्रेणी चुनें",
+      "select_unit": "कृपया एक इकाई चुनें"
+    },
+    "messages": {
+      "stock_added": "स्टॉक सफलतापूर्वक जोड़ा गया",
+      "stock_removed": "स्टॉक सफलतापूर्वक हटाया गया",
+      "material_updated": "सामग्री सफलतापूर्वक अपडेट की गई",
+      "material_deleted": "सामग्री सफलतापूर्वक हटाई गई",
+      "material_created": "सामग्री सफलतापूर्वक बनाई गई"
+    },
+    "dialogs": {
+      "add_stock_title": "स्टॉक जोड़ें",
+      "remove_stock_title": "स्टॉक हटाएं",
+      "edit_material_title": "सामग्री संपादित करें",
+      "enter_quantity_label": "मात्रा दर्ज करें",
+      "reason_label": "कारण (वैकल्पिक)",
+      "confirm": "पुष्टि करें",
+      "cancel": "रद्द करें",
+      "project_label": "परियोजना",
+      "project_optional": "परियोजना (वैकल्पिक)",
+      "flat_unit_optional": "फ्लैट/इकाई (वैकल्पिक)",
+      "select_flat_hint": "सामग्री आवंटन के लिए फ्लैट चुनें",
+      "select_flat_for_usage": "सामग्री उपयोग के लिए फ्लैट चुनें",
+      "warehouse_no_flat": "गोदाम (कोई विशिष्ट फ्लैट नहीं)",
+      "no_specific_flat": "कोई विशिष्ट फ्लैट नहीं",
+      "allocate_to_flat_helper": "विशिष्ट फ्लैट को आवंटित करें या गोदाम के लिए खाली छोड़ें",
+      "track_to_flat_helper": "विशिष्ट फ्लैट पर सामग्री को ट्रैक करें",
+      "available_stock": "उपलब्ध: {quantity} {unit}",
+      "select_project_hint": "परियोजना चुनें",
+      "material_data_not_loaded": "सामग्री डेटा लोड नहीं हुआ"
+    },
+    "reports": {
+      "title": "स्टॉक रिपोर्ट",
+      "inventory_overview": "इन्वेंटरी अवलोकन",
+      "total_value": "कुल मूल्य",
+      "total_quantity": "कुल मात्रा",
+      "avg_value": "औसत मूल्य",
+      "low_stock": "कम स्टॉक",
+      "stock_movement": "स्टॉक मूवमेंट ट्रेंड",
+      "category_distribution": "श्रेणी वितरण",
+      "top_consumed": "सर्वाधिक उपयोग की गई सामग्री",
+      "stock_health": "स्टॉक स्वास्थ्य अवलोकन",
+      "healthy": "स्वस्थ",
+      "no_transactions": "चयनित अवधि में कोई लेनदेन नहीं",
+      "no_materials": "कोई सामग्री नहीं मिली",
+      "no_consumption": "कोई उपभोग डेटा नहीं"
+    }
+  },
+  "project_tabs": {
+    "attendance": {
+      "tab_mark": "उपस्थिति अंकित करें",
+      "tab_view": "रिकॉर्ड देखें",
+      "tab_manage": "प्रबंधित करें",
+      "tab_mark_others": "अन्य को अंकित करें",
+      "mark_your_attendance": "अपनी उपस्थिति अंकित करें",
+      "mark_employee_attendance": "कर्मचारी उपस्थिति अंकित करें",
+      "mark_others_attendance": "अन्य की उपस्थिति अंकित करें",
+      "mark_attendance": "उपस्थिति अंकित करें",
+      "attendance_report": "उपस्थिति रिपोर्ट",
+      "view_records_by_period": "अवधि के अनुसार उपस्थिति रिकॉर्ड देखें",
+      "present_workers": "उपस्थित कर्मचारी",
+      "manpower_days": "श्रमशक्ति दिन",
+      "present_workers_count": "उपस्थित कर्मचारी ({count})",
+      "select_date": "तिथि चुनें",
+      "present_today": "आज उपस्थित",
+      "absent_employees_mark_below": "अनुपस्थित कर्मचारी ({count}) - नीचे उनकी उपस्थिति अंकित करें",
+      "absent": "अनुपस्थित",
+      "select_all_count": "सभी चुनें ({count})",
+      "deselect_all_count": "सभी चयन हटाएं ({count})",
+      "full_day": "पूर्ण दिन",
+      "half_day": "आधा दिन",
+      "select_all": "सभी चुनें",
+      "clear_selection": "चयन साफ़ करें",
+      "today": "आज",
+      "this_week": "यह सप्ताह",
+      "this_month": "यह महीना",
+      "this_year": "यह वर्ष",
+      "custom_range": "कस्टम रेंज",
+      "all_marked": "सभी नियुक्त कर्मचारियों ने आज उपस्थिति अंकित की है",
+      "all_employees_marked": "सभी कर्मचारियों ने आज उपस्थिति अंकित की है",
+      "no_workers": "इस अवधि के लिए कोई कर्मचारी उपस्थित नहीं",
+      "confirm_attendance": "उपस्थिति पुष्टि करें",
+      "already_marked": "उपस्थिति पहले ही अंकित कर दी गई है",
+      "select_period_to_view": "उपस्थिति रिपोर्ट देखने के लिए एक अवधि चुनें",
+      "select_period_instruction": "उपस्थिति रिपोर्ट देखने के लिए एक अवधि चुनें",
+      "view_today_report": "आज की रिपोर्ट देखें",
+      "view_todays_report": "आज की रिपोर्ट देखें",
+      "retry": "पुनः प्रयास करें",
+      "mark_count_present": "{count} को उपस्थित अंकित करें",
+      "attendance_marked": "उपस्थिति अंकित की गई",
+      "count_employees_marked": "{count} कर्मचारी{plural} को {status} के रूप में अंकित किया गया",
+      "time_label": "समय: {time}",
+      "location_verified": "स्थान: सत्यापित",
+      "ok": "ठीक है",
+      "cancel": "रद्द करें",
+      "confirm": "पुष्टि करें",
+      "large_date_range": "बड़ी तिथि सीमा",
+      "export_days_warning": "आप {days} दिनों का डेटा निर्यात कर रहे हैं। इसमें कुछ समय लग सकता है। जारी रखें?",
+      "continue": "जारी रखें",
+      "pdf_ready": "PDF तैयार है",
+      "view_pdf": "PDF देखें",
+      "unable_to_save_pdf": "डिवाइस में फ़ाइल सहेजने में असमर्थ। क्या आप PDF को प्रिंट या देखना चाहेंगे?",
+      "attendance_already_marked_for_today": "आज के लिए उपस्थिति पहले ही अंकित कर दी गई है",
+      "not_in_project_location": "आप परियोजना स्थान पर नहीं हैं",
+      "distance_from_project": "परियोजना से दूरी:",
+      "allowed_radius": "अनुमत त्रिज्या: {radius}",
+      "confirm_attendance_location": "क्या आप इस स्थान से उपस्थिति अंकित करना चाहते हैं?",
+      "confirm_anyway": "फिर भी पुष्टि करें"
+    },
+    "expense": {
+      "delete_expense": "व्यय हटाएं",
+      "confirm_delete_manual": "क्या आप वाकई इस मैन्युअल व्यय को हटाना चाहते हैं?",
+      "delete_confirm": "हटाएं",
+      "cancel": "रद्द करें"
+    },
+    "stock": {
+      "tab_allocated": "आवंटित स्टॉक",
+      "tab_usage_history": "उपयोग इतिहास",
+      "used": "उपयोग किया गया",
+      "category": "श्रेणी",
+      "allocate_stock": "परियोजना को स्टॉक आवंटित करें",
+      "allocate_stock_button": "स्टॉक आवंटित करें",
+      "no_stock": "कोई स्टॉक आइटम उपलब्ध नहीं",
+      "select_material": "सामग्री चुनें",
+      "choose_material": "सामग्री चुनें",
+      "flat_unit_optional": "फ्लैट/इकाई (वैकल्पिक)",
+      "select_flat_to_track": "उस विशिष्ट इकाई के लिए सामग्री को ट्रैक करने के लिए एक फ्लैट चुनें",
+      "quantity": "मात्रा",
+      "enter_quantity": "मात्रा दर्ज करें",
+      "available_stock": "उपलब्ध: {quantity} {unit}",
+      "notes_optional": "नोट्स (वैकल्पिक)",
+      "add_notes_allocation": "इस आवंटन के बारे में कोई नोट्स जोड़ें",
+      "cancel": "रद्द करें",
+      "allocated_to_flat": "फ्लैट को आवंटित - {flat}",
+      "used_in_project": "परियोजना में उपयोग: {project}",
+      "project_general_no_flat": "परियोजना सामान्य (कोई विशिष्ट फ्लैट नहीं)"
+    },
+    "advances": {
+      "title": "अग्रिम",
+      "mark_as_paid": "भुगतान किया गया के रूप में चिह्नित करें",
+      "mark_paid": "भुगतान चिह्नित करें",
+      "mark_paid_confirm": "{} के ₹{} के अग्रिम को भुगतान किया गया के रूप में चिह्नित करें?",
+      "remove_subtitle": "इस अग्रिम अनुरोध को हटाएं",
+      "delete_advance": "अग्रिम हटाएं",
+      "confirm_delete": "क्या आप वाकई इस अग्रिम को हटाना चाहते हैं?",
+      "no_advances": "कोई अग्रिम नहीं मिला"
+    },
+    "labour": {
+      "view_bills": "बिल देखें",
+      "calculate": "गणना करें",
+      "calculate_payroll": "वेतन गणना करें",
+      "current_week": "वर्तमान सप्ताह",
+      "current_month": "वर्तमान महीना",
+      "custom_date": "कस्टम तिथि",
+      "smart_assign": "स्मार्ट असाइन",
+      "add_new_labour": "नया श्रमिक जोड़ें",
+      "assign": "असाइन करें",
+      "add_labour": "श्रमिक जोड़ें",
+      "no_employees_available": "कोई कर्मचारी उपलब्ध नहीं",
+      "wage_types": {
+        "daily": "दैनिक",
+        "hourly": "प्रति घंटा",
+        "monthly": "मासिक",
+        "fixed": "निर्धारित"
+      }
+    },
+    "salary": {
+      "confirm_payment": "भुगतान पुष्टि करें",
+      "payment_processed": "भुगतान सफलतापूर्वक प्रोसेस किया गया",
+      "select_payroll": "कृपया कम से कम एक वेतन चुनें",
+      "select_payment_mode": "कृपया भुगतान मोड चुनें"
+    },
+    "daily_notes": {
+      "edit_note": "नोट संपादित करें",
+      "delete_note": "नोट हटाएं",
+      "delete_confirm_message": "क्या आप वाकई इस नोट को हटाना चाहते हैं?",
+      "pdf_error": "PDF त्रुटि: {error}",
+      "done": "हो गया"
+    },
+    "suppliers": {
+      "view_bills": "बिल देखें"
+    }
+  },
+  "sub_project": {
+    "title": "उप-परियोजना डैशबोर्ड",
+    "add_expense_soon": "व्यय जोड़ें (जल्द आ रहा है)",
+    "add_bill_soon": "बिल जोड़ें (जल्द आ रहा है)",
+    "comparison_report": "उप-परियोजना तुलना रिपोर्ट",
+    "metrics": {
+      "all": "सभी मेट्रिक्स",
+      "expenses_only": "केवल व्यय",
+      "bills_only": "केवल बिल",
+      "stock_only": "केवल स्टॉक"
+    },
+    "no_comparison_data": "कोई तुलना डेटा उपलब्ध नहीं",
+    "sub_project_label": "उप-परियोजना",
+    "select_sub_project": "उप-परियोजना चुनें"
+  },
+  "admin": {
+    "logout": "लॉग आउट",
+    "promo_codes": "प्रोमो कोड",
+    "delete_promo": "प्रोमो कोड हटाएं",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "tenant_admin": "किरायेदार प्रशासन",
+    "super_admin": "सुपर एडमिन पैनल",
+    "user_management": "उपयोगकर्ता प्रबंधन",
+    "system_settings": "सिस्टम सेटिंग्स"
+  },
+  "common": {
+    "transactions": "लेनदेन",
+    "units": "इकाइयां",
+    "items": "आइटम",
+    "description": "विवरण",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "confirm": "पुष्टि करें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "add": "जोड़ें",
+    "update": "अपडेट करें",
+    "back": "वापस",
+    "next": "अगला",
+    "finish": "समाप्त",
+    "loading": "लोड हो रहा है...",
+    "no_data": "कोई डेटा उपलब्ध नहीं",
+    "retry": "पुनः प्रयास करें",
+    "close": "बंद करें",
+    "selected": "चयनित",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "sort": "क्रमबद्ध करें",
+    "export": "निर्यात",
+    "import": "आयात",
+    "download": "डाउनलोड",
+    "upload": "अपलोड",
+    "coming_soon": "जल्द आ रहा है",
+    "view_all": "सभी देखें",
+    "ok": "ठीक है",
+    "update": "अपडेट करें"
+  },
+  "document_wallet": {
+    "title": "दस्तावेज़ वॉलेट",
+    "upload_document": "दस्तावेज़ अपलोड करें",
+    "document_type": "दस्तावेज़ प्रकार",
+    "view_access": "एक्सेस देखें",
+    "select_file": "फ़ाइल चुनें",
+    "company": "कंपनी",
+    "projects": "परियोजनाएं",
+    "all_projects": "सभी परियोजनाएं",
+    "select_project": "परियोजना चुनें",
+    "properties": "गुण",
+    "share": "साझा करें",
+    "download_open": "डाउनलोड / खोलें",
+    "edit_type": "प्रकार संपादित करें",
+    "edit_access": "एक्सेस संपादित करें",
+    "delete_permanently": "स्थायी रूप से हटाएं",
+    "try_again": "फिर से प्रयास करें",
+    "type_updated": "दस्तावेज़ प्रकार सफलतापूर्वक अपडेट किया गया"
+  },
+  "expenses": {
+    "title": "खर्च",
+    "detail_title": "खर्च विवरण",
+    "filter_by": "विल्तर करें",
+    "total": "कुल खर्च",
+    "category": "श्रेणी",
+    "deductions": "कटौती",
+    "add_expense": "खर्च जोड़ें",
+    "edit_expense": "खर्च संपादित करें",
+    "name": "खर्च का नाम",
+    "amount": "राशि",
+    "type": "खर्च प्रकार",
+    "date": "तारीख",
+    "description_optional": "विवरण (वैकल्पिक)",
+    "create": "खर्च बनाएं",
+    "update": "खर्च अपडेट करें",
+    "name_required": "नाम आवश्यक है",
+    "amount_required": "राशि आवश्यक है",
+    "valid_number": "सही संख्या दर्ज करें",
+    "amount_positive": "राशि शून्य से अधिक होनी चाहिए",
+    "failed_to_load": "खर्च लोड करने में विफल",
+    "not_found": "खर्च नहीं मिला",
+    "auto": {
+      "consolidated_salary_payment": "संयुक्त वेतन भुगतान",
+      "salary_paid_for": "{count} कर्मचारियों को वेतन भुगतान"
+    },
+    "location_warning": "स्थान चेतावनी",
+    "location_far_warning": "आप परियोजना स्थान से {distance} दूर हैं",
+    "location_far_confirm": "आप परियोजना स्थान से {distance} दूर हैं। क्या आप अभी भी उपस्थिति दर्ज करना चाहते हैं?",
+    "mark_anyway": "फिर भी दर्ज करें",
+    "errors": {
+      "not_assigned": "आप केवल अपनी असाइन की गई परियोजनाओं के लिए उपस्थिति दर्ज कर सकते हैं",
+      "select_project": "कृपया एक परियोजना चुनें"
+    }
+  }
+}
