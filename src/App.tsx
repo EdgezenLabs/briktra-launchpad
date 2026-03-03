@@ -13,9 +13,16 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* 
+            Avoid catching the /app/ route in the SPA router. 
+            When navigating to /app/, we want the browser to load the static files from the public folder.
+          */}
+          <Route path="/app/*" element={null} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
