@@ -11,10 +11,10 @@ const ContactUs = () => {
           <p className="mb-8 text-lg text-muted-foreground">
             Have questions or need assistance? Reach out to our team directly.
           </p>
-          
+
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
             {/* Sunil Email */}
-            <a 
+            <a
               href="mailto:sunil.jas@edgezenlabs.com"
               className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary hover:shadow-md sm:w-1/2"
             >
@@ -26,9 +26,9 @@ const ContactUs = () => {
                 <p className="text-sm text-muted-foreground transition-colors group-hover:text-primary">sunil.jas@edgezenlabs.com</p>
               </div>
             </a>
-            
+
             {/* Sujith Email */}
-            <a 
+            <a
               href="mailto:sujith@edgezenlabs.com"
               className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary hover:shadow-md sm:w-1/2"
             >
@@ -36,7 +36,7 @@ const ContactUs = () => {
                 <Mail className="h-6 w-6" />
               </div>
               <div className="text-center">
-                <p className="font-semibold text-foreground">Sujith</p>
+                <p className="font-semibold text-foreground">Sujith Padmini</p>
                 <p className="text-sm text-muted-foreground transition-colors group-hover:text-primary">sujith@edgezenlabs.com</p>
               </div>
             </a>
