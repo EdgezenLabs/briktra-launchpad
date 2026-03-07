@@ -5,6 +5,7 @@ import BuiltForField from "@/components/BuiltForField";
 import WorkflowVisualization from "@/components/WorkflowVisualization";
 import WhoUsesBriktra from "@/components/WhoUsesBriktra";
 import CTA from "@/components/CTA";
+import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <WorkflowVisualization />
         <WhoUsesBriktra />
         <CTA />
+        <ContactUs />
       </main>
       <Footer />
     </div>
