@@ -66,12 +66,25 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {currentYear} Briktra – All rights reserved
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground md:gap-6">
+            <a href="/privacy-policy" className="transition-colors hover:text-foreground">
               Privacy Policy
             </a>
-            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Terms of Service
+            <span className="hidden md:inline">|</span>
+            <a href="/terms" className="transition-colors hover:text-foreground">
+              Terms
+            </a>
+            <span className="hidden md:inline">|</span>
+            <a href="/refund-policy" className="transition-colors hover:text-foreground">
+              Refund Policy
+            </a>
+            <span className="hidden md:inline">|</span>
+            <a href="/#contact" className="transition-colors hover:text-foreground">
+              Contact
+            </a>
+            <span className="hidden md:inline">|</span>
+            <a href="/#why" className="transition-colors hover:text-foreground">
+              About
             </a>
           </div>
         </div>
