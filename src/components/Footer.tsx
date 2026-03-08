@@ -1,4 +1,5 @@
 import { Twitter, Linkedin, Instagram, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import briktraLogo from "@/assets/briktra-logo.svg";
 
 const Footer = () => {
@@ -10,13 +11,13 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           {/* Brand */}
           <div className="flex flex-col items-center gap-3 md:items-start">
-            <a href="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <img 
                 src={briktraLogo} 
                 alt="Briktra Logo" 
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground">
               Mobile-First ERP for Construction
             </p>
@@ -24,16 +25,16 @@ const Footer = () => {
 
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <a href="#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <a href="/#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Features
             </a>
-            <a href="#why" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <a href="/#why" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Why Briktra
             </a>
-            <a href="#workflow" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <a href="/#workflow" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               How It Works
             </a>
-            <a href="#users" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <a href="/#users" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Who Uses
             </a>
           </div>
@@ -67,17 +68,17 @@ const Footer = () => {
             © {currentYear} Briktra – All rights reserved
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground md:gap-6">
-            <a href="/privacy-policy" className="transition-colors hover:text-foreground">
+            <Link to="/privacy-policy" className="transition-colors hover:text-foreground">
               Privacy Policy
-            </a>
+            </Link>
             <span className="hidden md:inline">|</span>
-            <a href="/terms" className="transition-colors hover:text-foreground">
+            <Link to="/terms" className="transition-colors hover:text-foreground">
               Terms
-            </a>
+            </Link>
             <span className="hidden md:inline">|</span>
-            <a href="/refund-policy" className="transition-colors hover:text-foreground">
+            <Link to="/refund-policy" className="transition-colors hover:text-foreground">
               Refund Policy
-            </a>
+            </Link>
             <span className="hidden md:inline">|</span>
             <a href="/#contact" className="transition-colors hover:text-foreground">
               Contact
