@@ -59,17 +59,17 @@ const Features = () => {
         {/* Section header */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
 
-          {/* FEATURES Heading - Same font style, bigger */}
-          <h2 className="mb-6 font-display text-5xl md:text-6xl font-bold text-foreground">
+          {/* Section Marker */}
+          <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             Features
+          </span>
+
+          {/* Main Title */}
+          <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+            Everything You Need to Run Construction Sites
           </h2>
 
-          {/* Sub Heading - Smaller */}
-          <h3 className="mb-4 font-display text-2xl md:text-3xl font-semibold text-foreground">
-            Everything You Need to Run Construction Sites
-          </h3>
-
-          {/* Description - Smaller */}
+          {/* Description */}
           <p className="text-base md:text-lg text-muted-foreground">
             A complete ERP solution designed specifically for the unique
             challenges of construction management.

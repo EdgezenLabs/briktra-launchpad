@@ -8,18 +8,23 @@ const Footer = () => {
   return (
     <footer className="border-t border-border bg-card py-12">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-          {/* Brand */}
-          <div className="flex flex-col items-center gap-3 md:items-start">
-            <Link to="/" className="flex items-center gap-2">
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row align-top">
+          {/* Brand & Contact */}
+          <div className="flex flex-col items-center gap-3 md:items-start max-w-xs text-center md:text-left">
+            <Link to="/" className="flex items-center gap-2 mb-2">
               <img 
                 src={briktraLogo} 
                 alt="Briktra Logo" 
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="text-sm text-muted-foreground">
-              Mobile-First ERP for Construction
+            
+            <p className="text-sm font-semibold text-foreground">
+              Edgezen Labs
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Madurai, Tamilnadu, India<br />
+              <a href="mailto:support@briktra.com" className="transition-colors hover:text-primary">support@briktra.com</a>
             </p>
           </div>
 

@@ -35,8 +35,7 @@ const Terms = () => {
               <h2 className="text-2xl font-semibold mb-3">5. Contact Information</h2>
               <p>For any questions regarding these terms, please contact us at:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
-                <li>Email: sunil.jas@edgezenlabs.com</li>
-                <li>Email: sujith@edgezenlabs.com</li>
+                <li>Email: support@briktra.com</li>
               </ul>
             </section>
           </div>
