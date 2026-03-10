@@ -11,10 +11,10 @@ import {
   FileText
 } from "lucide-react";
 
-import dashboardImg from "@/assets/dashboard-ss.jpg";
-import projectTopImg from "@/assets/project-top-ss.jpg";
-import projectModules1Img from "@/assets/project-modules-1-ss.jpg";
-import projectModules2Img from "@/assets/project-modules-2-ss.jpg";
+import dashboardImg from "@/assets/dashboard-v2.png";
+import projectTopImg from "@/assets/project-top-v2.png";
+import projectModules1Img from "@/assets/project-modules-1-v2.png";
+import projectModules2Img from "@/assets/project-modules-2-v4.png";
 
 const AppShowcase = () => {
   return (
@@ -91,7 +91,6 @@ const AppShowcase = () => {
             <div className="relative w-[280px] md:w-[320px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl shrink-0 p-1">
               {/* Screen */}
               <div className="relative h-[600px] md:h-[650px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={dashboardImg}
                   alt="Dashboard Interface"
@@ -127,7 +126,6 @@ const AppShowcase = () => {
 
             <div className="relative w-[280px] md:w-[320px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl shrink-0 p-1">
               <div className="relative h-[600px] md:h-[650px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={projectTopImg}
                   alt="Project Overview Interface"
@@ -205,7 +203,6 @@ const AppShowcase = () => {
             {/* Back Screen (Modules 2 - Scrolled down) */}
             <div className="absolute right-0 md:right-4 top-4 md:top-8 z-10 w-[240px] md:w-[300px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl transition-transform duration-500 hover:scale-[1.02] hover:z-30 p-1">
               <div className="relative h-[480px] md:h-[600px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={projectModules2Img}
                   alt="Project Modules Interface Page 2"
@@ -217,7 +214,6 @@ const AppShowcase = () => {
             {/* Front Screen (Modules 1 - Top) */}
             <div className="absolute left-0 lg:-left-8 top-12 z-20 w-[240px] md:w-[300px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl transition-transform duration-500 hover:scale-[1.02] p-1">
               <div className="relative h-[480px] md:h-[600px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={projectModules1Img}
                   alt="Project Modules Interface Page 1"
