@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Countdown from "./Countdown";
 
-import heroMobileImg from "@/assets/hero-mobile.png";
+import heroMobileImg from "@/assets/hero-mobile-v3.png";
 import heroWebImg from "@/assets/hero-web.png";
 import heroReportsImg from "@/assets/hero-reports.png";
+import briktraLogo from "@/assets/briktra-logo.svg";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -30,6 +31,23 @@ const Hero = () => {
 
       <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-64px)] flex-col items-center justify-center px-4 py-20 text-center md:px-6">
         
+        {/* Massive Bursting Logo Area */}
+        <div className="group mb-12 animate-fade-in opacity-0 relative flex flex-col items-center justify-center" style={{ animationDelay: "0.05s" }}>
+          <div className="relative flex items-center justify-center h-28 w-64 md:h-36 md:w-80">
+            {/* Massive bursting radial glow */}
+            <div className="absolute inset-[-40%] rounded-full bg-gradient-to-tr from-primary via-orange-500 to-amber-300 blur-3xl opacity-50 animate-pulse group-hover:opacity-80 group-hover:scale-110 transition-all duration-700"></div>
+            
+            {/* The Logo Container floating inside the blast */}
+            <div className="relative z-10 w-full h-full p-4 md:p-6 rounded-3xl bg-white border border-border shadow-2xl group-hover:scale-105 group-hover:-translate-y-4 group-hover:shadow-[0_0_40px_rgba(0,0,0,0.2)] transition-all duration-500 flex items-center justify-center">
+              <img 
+                src={briktraLogo} 
+                alt="Briktra" 
+                className="h-full w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Uniform Badge */}
         <div
           className="mx-auto mb-6 max-w-3xl text-center animate-fade-in opacity-0"

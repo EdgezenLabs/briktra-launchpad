@@ -95,9 +95,9 @@ const Footer = () => {
               Contact
             </a>
             <span className="hidden md:inline">|</span>
-            <a href="/#why" className="transition-colors hover:text-foreground">
-              About
-            </a>
+            <Link to="/about-us" className="transition-colors hover:text-foreground">
+              About Us
+            </Link>
           </div>
         </div>
       </div>
