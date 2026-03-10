@@ -1,30 +1,35 @@
-import { FolderKanban, Users, Package, Wallet, FileBarChart, ChevronRight } from "lucide-react";
+import { Building2, Users, Wallet, Briefcase, FileBarChart, ChevronRight, ListTodo, ClipboardList, HardHat, ShoppingCart, Banknote, PieChart } from "lucide-react";
 
 const workflowSteps = [
   {
-    icon: FolderKanban,
-    title: "Project",
-    description: "Create and manage projects",
+    icon: ClipboardList,
+    title: "Setup Projects",
+    description: "Create projects, define roles, and set budgets & milestones.",
   },
   {
     icon: Users,
-    title: "Labour",
-    description: "Assign workforce",
+    title: "Onboard Labour",
+    description: "Register workers, set wages, and manage daily attendance.",
   },
   {
-    icon: Package,
-    title: "Materials",
-    description: "Track inventory",
+    icon: HardHat,
+    title: "Site Updates",
+    description: "Log daily work progress, machinery usage, and incidents.",
   },
   {
-    icon: Wallet,
-    title: "Expenses",
-    description: "Monitor costs",
+    icon: ShoppingCart,
+    title: "Procurement",
+    description: "Track material requests, supplier invoices, and inventory.",
   },
   {
-    icon: FileBarChart,
-    title: "Reports",
-    description: "Generate insights",
+    icon: Banknote,
+    title: "Approvals & Pay",
+    description: "Approve advances, calculate salaries, and settle vendor bills.",
+  },
+  {
+    icon: PieChart,
+    title: "Live Analytics",
+    description: "Instant insights into cost overruns and overall project health.",
   },
 ];
 
@@ -34,69 +39,44 @@ const WorkflowVisualization = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section header */}
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="mb-6 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-lg md:text-xl font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <ListTodo className="h-5 w-5 md:h-6 md:w-6" />
             How It Works
           </span>
-          <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="mb-6 font-display text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
             Simple ERP Workflow
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground">
             A streamlined flow that connects all aspects of your construction operations.
           </p>
         </div>
 
-        {/* Workflow visualization - Desktop */}
-        <div className="hidden lg:flex items-center justify-center gap-2 max-w-5xl mx-auto">
-          {workflowSteps.map((step, index) => (
-            <div key={step.title} className="flex items-center">
-              {/* Step card */}
-              <div className="premium-card group flex flex-col items-center p-6 text-center min-w-[160px] transition-all duration-300 hover:border-primary/30">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                  <step.icon className="h-7 w-7" />
+        {/* Workflow steps vertical layout for mobile, grid for desktop */}
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {workflowSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="group relative flex flex-col items-center rounded-3xl border-2 border-border bg-card p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-xl"
+              >
+                {/* Step Number Badge */}
+                <div className="absolute -top-4 -right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-lg font-bold text-primary-foreground shadow-lg transition-transform duration-300 group-hover:scale-110 z-10">
+                  {index + 1}
                 </div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-1">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {step.description}
-                </p>
-              </div>
-              
-              {/* Connector arrow */}
-              {index < workflowSteps.length - 1 && (
-                <div className="flex items-center px-2">
-                  <ChevronRight className="h-6 w-6 text-primary" />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
 
-        {/* Workflow visualization - Mobile/Tablet */}
-        <div className="lg:hidden grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {workflowSteps.map((step, index) => (
-            <div
-              key={step.title}
-              className="premium-card group flex items-center gap-4 p-5 transition-all duration-300 hover:border-primary/30"
-            >
-              <div className="flex-shrink-0">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                  <step.icon className="h-6 w-6" />
+                <div className="mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground shadow-inner">
+                  <step.icon className="h-10 w-10" />
                 </div>
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-primary">Step {index + 1}</span>
-                </div>
-                <h3 className="font-display text-base font-semibold text-foreground">
+                
+                <h3 className="mb-3 font-display text-2xl font-bold text-foreground">
                   {step.title}
                 </h3>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

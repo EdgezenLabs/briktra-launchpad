@@ -1,4 +1,4 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Countdown from "@/components/Countdown";
@@ -25,7 +25,8 @@ const CTA = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5"></div>
 
               <div className="relative z-10">
-                <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                <span className="mb-6 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-lg md:text-xl font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                  <Rocket className="h-5 w-5 md:h-6 md:w-6" />
                   Launching Soon
                 </span>
 

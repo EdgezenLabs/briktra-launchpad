@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
@@ -6,13 +6,14 @@ const Pricing = () => {
     <section id="pricing" className="py-24 bg-card/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-            Clear Pricing
+          <span className="mb-6 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-lg md:text-xl font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <Tag className="h-5 w-5 md:h-6 md:w-6" />
+            Pricing
           </span>
-          <h2 className="font-display text-3xl font-bold md:text-4xl mb-4">
+          <h2 className="mb-6 font-display text-4xl font-bold md:text-5xl lg:text-6xl">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Choose the plan that fits your construction business. No hidden fees or surprise charges.
           </p>
         </div>
@@ -68,8 +69,8 @@ const Pricing = () => {
             <ul className="space-y-4 mb-8 flex-1">
               {[
                 "Everything in Starter",
-                "Advanced material & vendor management",
-                "Offline capability",
+                "Advanced contracts & vendor management",
+                "Role-based access controls",
                 "Multilingual support",
                 "Unlimited projects",
                 "Priority 24/7 support"

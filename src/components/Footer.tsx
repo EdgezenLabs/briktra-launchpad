@@ -33,6 +33,9 @@ const Footer = () => {
             <a href="/#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Features
             </a>
+            <a href="/#app-showcase" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              Inside the App
+            </a>
             <a href="/#why" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Why Briktra
             </a>
@@ -40,7 +43,10 @@ const Footer = () => {
               How It Works
             </a>
             <a href="/#users" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Who Uses
+              For Teams
+            </a>
+            <a href="/#pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              Pricing
             </a>
           </div>
 

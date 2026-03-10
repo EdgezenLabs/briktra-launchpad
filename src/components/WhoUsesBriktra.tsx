@@ -1,4 +1,4 @@
-import { HardHat, Compass, Briefcase, ShoppingCart, Calculator } from "lucide-react";
+import { HardHat, Compass, Briefcase, ShoppingCart, Calculator, UsersRound } from "lucide-react";
 
 const userRoles = [
   {
@@ -34,13 +34,14 @@ const WhoUsesBriktra = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section header */}
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="mb-6 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-lg md:text-xl font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <UsersRound className="h-5 w-5 md:h-6 md:w-6" />
             For Your Team
           </span>
-          <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="mb-6 font-display text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
             Who Uses <span className="text-foreground">Briktra</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground">
             Designed for every role in your construction organization.
           </p>
         </div>

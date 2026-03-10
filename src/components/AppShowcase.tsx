@@ -27,8 +27,8 @@ const AppShowcase = () => {
 
         {/* Section Header */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="mb-4 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-            <Smartphone className="h-4 w-4" />
+          <span className="mb-6 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-lg md:text-xl font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <Smartphone className="h-5 w-5 md:h-6 md:w-6" />
             Inside The App
           </span>
           <h2 className="mb-6 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
@@ -88,9 +88,10 @@ const AppShowcase = () => {
             </div>
 
             {/* CSS Mobile Frame */}
-            <div className="relative w-[280px] md:w-[320px] rounded-[3rem] border-[10px] border-foreground bg-foreground shadow-2xl shrink-0">
+            <div className="relative w-[280px] md:w-[320px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl shrink-0 p-1">
               {/* Screen */}
               <div className="relative h-[600px] md:h-[650px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={dashboardImg}
                   alt="Dashboard Interface"
@@ -124,8 +125,9 @@ const AppShowcase = () => {
               </div>
             </div>
 
-            <div className="relative w-[280px] md:w-[320px] rounded-[3rem] border-[10px] border-foreground bg-foreground shadow-2xl shrink-0">
+            <div className="relative w-[280px] md:w-[320px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl shrink-0 p-1">
               <div className="relative h-[600px] md:h-[650px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={projectTopImg}
                   alt="Project Overview Interface"
@@ -201,8 +203,9 @@ const AppShowcase = () => {
             </div>
 
             {/* Back Screen (Modules 2 - Scrolled down) */}
-            <div className="absolute right-0 md:right-4 top-4 md:top-8 z-10 w-[240px] md:w-[300px] rounded-[3rem] border-[10px] border-foreground bg-foreground shadow-2xl transition-transform duration-500 hover:scale-[1.02] hover:z-30">
+            <div className="absolute right-0 md:right-4 top-4 md:top-8 z-10 w-[240px] md:w-[300px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl transition-transform duration-500 hover:scale-[1.02] hover:z-30 p-1">
               <div className="relative h-[480px] md:h-[600px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={projectModules2Img}
                   alt="Project Modules Interface Page 2"
@@ -212,8 +215,9 @@ const AppShowcase = () => {
             </div>
 
             {/* Front Screen (Modules 1 - Top) */}
-            <div className="absolute left-0 lg:-left-8 top-12 z-20 w-[240px] md:w-[300px] rounded-[3rem] border-[10px] border-foreground bg-foreground shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+            <div className="absolute left-0 lg:-left-8 top-12 z-20 w-[240px] md:w-[300px] rounded-[2.5rem] border-[4px] border-zinc-700 bg-zinc-800 shadow-2xl transition-transform duration-500 hover:scale-[1.02] p-1">
               <div className="relative h-[480px] md:h-[600px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-zinc-800 rounded-b-xl z-20"></div>
                 <img
                   src={projectModules1Img}
                   alt="Project Modules Interface Page 1"

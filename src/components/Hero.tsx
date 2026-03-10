@@ -1,7 +1,11 @@
-import { ArrowRight, Play, Wifi, Globe, Smartphone } from "lucide-react";
+import { Play, Wifi, Globe, Smartphone, HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Countdown from "./Countdown";
+
+import heroMobileImg from "@/assets/hero-mobile.png";
+import heroWebImg from "@/assets/hero-web.png";
+import heroReportsImg from "@/assets/hero-reports.png";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -25,20 +29,21 @@ const Hero = () => {
       <div className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-primary/8 blur-[100px]"></div>
 
       <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-64px)] flex-col items-center justify-center px-4 py-20 text-center md:px-6">
-        {/* Badge */}
+        
+        {/* Uniform Badge */}
         <div
-          className="mb-6 animate-fade-in opacity-0"
+          className="mx-auto mb-6 max-w-3xl text-center animate-fade-in opacity-0"
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-primary"></span>
+          <span className="mb-6 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-lg md:text-xl font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <HardHat className="h-5 w-5 md:h-6 md:w-6" />
             Construction ERP Platform
           </span>
         </div>
 
         {/* Main headline */}
         <h1
-          className="mb-6 max-w-4xl animate-fade-in font-display text-4xl font-bold leading-tight text-foreground opacity-0 md:text-5xl lg:text-6xl xl:text-7xl"
+          className="mb-6 max-w-4xl animate-fade-in font-display text-4xl font-bold leading-tight text-foreground opacity-0 md:text-5xl lg:text-7xl"
           style={{ animationDelay: "0.2s" }}
         >
           Mobile-First ERP for{" "}
@@ -52,7 +57,7 @@ const Hero = () => {
           style={{ animationDelay: "0.3s" }}
         >
           Manage projects, labour, materials, vendors, and expenses — built for
-          real construction site conditions with offline capability and
+          real construction site conditions with live cloud sync and
           multilingual support.
         </p>
 
@@ -100,12 +105,12 @@ const Hero = () => {
                     animate-fade-in opacity-0"
           style={{ animationDelay: "0.5s" }}
         >
-          <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground">
             Built for the Field.
           </h3>
 
           <div className="flex flex-wrap items-center justify-center gap-10 mt-4">
-            <span className="text-xl md:text-2xl font-semibold text-primary">
+            <span className="text-xl md:text-2xl font-bold text-primary">
               Mobile-First Experience
             </span>
 
@@ -113,57 +118,60 @@ const Hero = () => {
               •
             </span>
 
-            <span className="text-xl md:text-2xl font-semibold text-primary">
+            <span className="text-xl md:text-2xl font-bold text-primary">
               Multilingual Support
             </span>
           </div>
         </div>
-        {/* App preview mockups */}
+        
+        {/* App preview mockups with Real Screenshots */}
         <div
-          className="mt-8 grid w-full max-w-5xl grid-cols-1 gap-6 animate-fade-in opacity-0 md:grid-cols-3"
+          className="mt-8 grid w-full max-w-6xl grid-cols-1 gap-8 animate-fade-in opacity-0 md:grid-cols-3"
           style={{ animationDelay: "0.6s" }}
         >
-          <div className="premium-card group relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:shadow-xl">
-            <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
-              <div className="text-center p-6">
-                <div className="mx-auto mb-3 h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <span className="text-3xl">📱</span>
-                </div>
-                <p className="text-sm font-semibold text-foreground">
+          {/* Mobile App */}
+          <div className="premium-card group relative overflow-hidden rounded-3xl p-1 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 border-2 border-border hover:border-primary/50 bg-card">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-background mb-4 text-center">
+              <img src={heroMobileImg} alt="Mobile App" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+              <div className="absolute bottom-4 left-0 right-0 px-4">
+                <p className="text-xl font-bold text-foreground mb-1">
                   Mobile App
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  For site supervisors
+                <p className="text-sm font-medium text-muted-foreground">
+                  For site supervisors on the go
                 </p>
               </div>
             </div>
           </div>
-          <div className="premium-card group relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:shadow-xl">
-            <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
-              <div className="text-center p-6">
-                <div className="mx-auto mb-3 h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <span className="text-3xl">💻</span>
-                </div>
-                <p className="text-sm font-semibold text-foreground">
+
+          {/* Web Dashboard */}
+          <div className="premium-card group relative overflow-hidden rounded-3xl p-1 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 border-2 border-border hover:border-primary/50 bg-card md:-translate-y-6">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-background mb-4 text-center">
+              <img src={heroWebImg} alt="Web Dashboard" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+              <div className="absolute bottom-4 left-0 right-0 px-4">
+                <p className="text-xl font-bold text-foreground mb-1">
                   Web Dashboard
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Complete control center
+                <p className="text-sm font-medium text-muted-foreground">
+                  Complete 12-module control center
                 </p>
               </div>
             </div>
           </div>
-          <div className="premium-card group relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:shadow-xl">
-            <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
-              <div className="text-center p-6">
-                <div className="mx-auto mb-3 h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <span className="text-3xl">📊</span>
-                </div>
-                <p className="text-sm font-semibold text-foreground">
+
+          {/* Real-time Reports */}
+          <div className="premium-card group relative overflow-hidden rounded-3xl p-1 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 border-2 border-border hover:border-primary/50 bg-card">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-background mb-4 text-center">
+              <img src={heroReportsImg} alt="Real-time Reports" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+              <div className="absolute bottom-4 left-0 right-0 px-4">
+                <p className="text-xl font-bold text-foreground mb-1">
                   Real-time Reports
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Analytics & insights
+                <p className="text-sm font-medium text-muted-foreground">
+                  Live budget and site analytics
                 </p>
               </div>
             </div>
@@ -172,7 +180,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
     </section>
   );
 };

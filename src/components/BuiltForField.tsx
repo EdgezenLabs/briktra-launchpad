@@ -1,10 +1,10 @@
-import { WifiOff, HardHat, Zap, Languages } from "lucide-react";
+import { Cloud, HardHat, Zap, Languages, CheckCircle } from "lucide-react";
 
 const differentiators = [
   {
-    icon: WifiOff,
-    title: "Works Offline",
-    description: "Full functionality in low-network construction sites. Data syncs automatically when connection is restored.",
+    icon: Cloud,
+    title: "Real-time Cloud Sync",
+    description: "Every entry from the field is instantly synced to the cloud, ensuring management has live data at all times.",
   },
   {
     icon: HardHat,
@@ -19,7 +19,7 @@ const differentiators = [
   {
     icon: Languages,
     title: "Multilingual Usability",
-    description: "Interface available in Hindi, Tamil, Telugu, and more for seamless adoption by field teams.",
+    description: "Interface available in English, Hindi, Tamil, and more for seamless adoption by field teams.",
   },
 ];
 
@@ -29,13 +29,14 @@ const BuiltForField = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section header */}
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="mb-6 flex items-center justify-center gap-2 mx-auto w-fit rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-lg md:text-xl font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <CheckCircle className="h-5 w-5 md:h-6 md:w-6" />
             Why Briktra
           </span>
-          <h2 className="mb-4 font-display text-3xl font-bold text-background md:text-4xl lg:text-5xl">
+          <h2 className="mb-6 font-display text-4xl font-bold text-background md:text-5xl lg:text-6xl">
             Built for the Field
           </h2>
-          <p className="text-lg text-background/70">
+          <p className="text-lg md:text-xl text-background/70">
             Unlike office software adapted for construction, Briktra is purpose-built for real site conditions.
           </p>
         </div>

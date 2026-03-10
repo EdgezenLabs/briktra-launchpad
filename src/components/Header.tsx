@@ -23,6 +23,12 @@ const Header = () => {
             Features
           </a>
           <a
+            href="#app-showcase"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Inside the App
+          </a>
+          <a
             href="#why"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
@@ -38,7 +44,13 @@ const Header = () => {
             href="#users"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Who Uses
+            For Teams
+          </a>
+          <a
+            href="#pricing"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Pricing
           </a>
         </nav>
 
@@ -96,6 +108,13 @@ const Header = () => {
               Features
             </a>
             <a
+              href="#app-showcase"
+              className="text-base font-medium text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Inside the App
+            </a>
+            <a
               href="#why"
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
@@ -114,7 +133,14 @@ const Header = () => {
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Who Uses
+              For Teams
+            </a>
+            <a
+              href="#pricing"
+              className="text-base font-medium text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pricing
             </a>
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
               <Button variant="outline" className="w-full">
