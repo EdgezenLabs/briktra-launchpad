@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import briktraLogo from "@/assets/briktra-logo.svg";
+import { Link } from "react-router-dom";
 import Countdown from "./Countdown";
 
 const Header = () => {
@@ -10,44 +11,44 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <a href="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src={briktraLogo} alt="Briktra Logo" className="h-8 w-auto" />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           <a
-            href="#features"
+            href="/#features"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Features
           </a>
           <a
-            href="#app-showcase"
+            href="/#app-showcase"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Inside the App
           </a>
           <a
-            href="#why"
+            href="/#why"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Why Briktra
           </a>
           <a
-            href="#workflow"
+            href="/#workflow"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             How It Works
           </a>
           <a
-            href="#users"
+            href="/#users"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             For Teams
           </a>
           <a
-            href="#pricing"
+            href="/#pricing"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Pricing
@@ -101,52 +102,52 @@ const Header = () => {
         <div className="md:hidden border-t border-border bg-background">
           <nav className="container mx-auto flex flex-col gap-4 px-4 py-6">
             <a
-              href="#features"
+              href="/#features"
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               Features
             </a>
             <a
-              href="#app-showcase"
+              href="/#app-showcase"
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               Inside the App
             </a>
             <a
-              href="#why"
+              href="/#why"
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               Why Briktra
             </a>
             <a
-              href="#workflow"
+              href="/#workflow"
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               How It Works
             </a>
             <a
-              href="#users"
+              href="/#users"
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               For Teams
             </a>
             <a
-              href="#pricing"
+              href="/#pricing"
               className="text-base font-medium text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
             </a>
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
-              <Button variant="outline" className="w-full">
-                Start Free Trial
+              <Button variant="default" className="w-full" asChild>
+                <a href="/app/index.html" onClick={() => setMobileMenuOpen(false)}>Start Free Trial</a>
               </Button>
-              <Button variant="default" className="w-full">
+              <Button variant="outline" className="w-full">
                 Request Demo
               </Button>
             </div>
