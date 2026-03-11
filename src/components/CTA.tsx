@@ -79,18 +79,6 @@ const CTA = () => {
                 </p>
                 {/* CTA buttons */}
                 <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-                  {/* Request Demo - Secondary */}
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="min-w-[180px] px-8 py-5 text-base font-semibold 
-                              rounded-2xl border-2 
-                              transition-all duration-300 
-                              hover:bg-primary/5 hover:scale-105"
-                  >
-                    Request Demo
-                  </Button>
-
                   {/* Start Free Trial - Linked to App */}
                   <Button
                     variant="default"

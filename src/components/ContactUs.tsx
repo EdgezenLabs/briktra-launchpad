@@ -16,35 +16,7 @@ const ContactUs = () => {
             Have questions or need assistance? Reach out to our team directly.
           </p>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {/* Sunil Email */}
-            <a
-              href="mailto:sunil.jas@edgezenlabs.com"
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary hover:shadow-md justify-center"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                <Mail className="h-6 w-6" />
-              </div>
-              <div className="text-center">
-                <p className="font-semibold text-foreground text-lg">Sunil Jas</p>
-                <p className="text-sm text-muted-foreground transition-colors group-hover:text-primary mt-1">sunil.jas@edgezenlabs.com</p>
-              </div>
-            </a>
-
-            {/* Sujith Email */}
-            <a
-              href="mailto:sujith@edgezenlabs.com"
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary hover:shadow-md justify-center"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                <Mail className="h-6 w-6" />
-              </div>
-              <div className="text-center">
-                <p className="font-semibold text-foreground text-lg">Sujith Padmini</p>
-                <p className="text-sm text-muted-foreground transition-colors group-hover:text-primary mt-1">sujith@edgezenlabs.com</p>
-              </div>
-            </a>
-
+          <div className="max-w-md mx-auto">
             {/* Headquarters & Support */}
             <div className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary hover:shadow-md">
               <div className="flex flex-col items-center gap-2">

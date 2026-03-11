@@ -57,18 +57,6 @@ const Header = () => {
 
         {/* CTA Buttons */}
         <div className="hidden items-center gap-4 md:flex">
-          {/* Request Demo - Secondary */}
-          <Button
-            variant="outline"
-            size="sm"
-            className="px-6 py-2 text-sm font-semibold 
-                      rounded-xl border-2 
-                      transition-all duration-300 
-                      hover:bg-primary/5 hover:scale-105"
-          >
-            Request Demo
-          </Button>
-
           {/* Start Free Trial - Linked to App */}
           <Button
             variant="default"
@@ -146,9 +134,6 @@ const Header = () => {
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
               <Button variant="default" className="w-full" asChild>
                 <a href="/app/index.html" onClick={() => setMobileMenuOpen(false)}>Start Free Trial</a>
-              </Button>
-              <Button variant="outline" className="w-full">
-                Request Demo
               </Button>
             </div>
           </nav>

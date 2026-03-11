@@ -210,13 +210,11 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* Contact info directly from about us */}
+        {/* Contact info */}
         <section className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-2xl font-bold mb-6">Get in Touch with EdgeZen Labs</h2>
+          <h2 className="text-2xl font-bold mb-6">Get in Touch with Us</h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-lg text-muted-foreground">
-            <a href="mailto:edgezenlabs@gmail.com" className="hover:text-primary transition-colors hover:underline">edgezenlabs@gmail.com</a>
-            <span className="hidden md:inline">•</span>
-            <span>9176738389 | 8680890318</span>
+            <a href="mailto:support@briktra.com" className="hover:text-primary transition-colors hover:underline">support@briktra.com</a>
           </div>
         </section>
 

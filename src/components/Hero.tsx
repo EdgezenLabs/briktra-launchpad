@@ -85,18 +85,6 @@ const Hero = () => {
                     animate-fade-in opacity-0 sm:flex-row"
           style={{ animationDelay: "0.4s" }}
         >
-          {/* Request Demo - Secondary */}
-          <Button
-            variant="outline"
-            size="xl"
-            className="px-10 py-6 text-lg font-semibold 
-                      rounded-2xl border-2 
-                      transition-all duration-300 
-                      hover:bg-primary/5 hover:scale-105"
-          >
-            Request Demo
-          </Button>
-
           {/* Start Free Trial - Primary (Linked to App) */}
           <Button
             size="xl"

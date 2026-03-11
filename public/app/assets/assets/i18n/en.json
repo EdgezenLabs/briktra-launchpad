@@ -11,6 +11,7 @@
             "add_employees": "Add Employees",
             "add_attendance": "Add Attendance",
             "add_suppliers": "Add Suppliers",
+            "add_contractors": "Contractors",
             "bills": "Bills",
             "tap_attendance": "Tap to Attendance",
             "salary_report": "Salary Report",
@@ -693,6 +694,45 @@
             }
         }
     },
+    "contractor": {
+        "title": "Contractors",
+        "fields": {
+            "name": "Contractor Name",
+            "mobile": "Mobile Number",
+            "email": "Email",
+            "gst": "GST Number",
+            "type": "Contractor Type"
+        },
+        "buttons": {
+            "create": "Create Contractor",
+            "update": "Update Contractor"
+        },
+        "validation": {
+            "name_required": "Contractor name is required",
+            "mobile_required": "Mobile number is required",
+            "email_invalid": "Please enter a valid email",
+            "gst_length": "GST number must be exactly 15 characters",
+            "gst_invalid": "Invalid GST structure or PAN status code",
+            "type_required": "Please select a contractor type"
+        },
+        "sections": {
+            "location": "Contractor Location (Optional)"
+        },
+        "dialogs": {
+            "delete_message": "Are you sure you want to delete \"{name}\"?"
+        },
+        "success": {
+            "created": "Contractor created successfully",
+            "updated": "Contractor updated successfully",
+            "deleted": "Contractor deleted successfully"
+        },
+        "errors": {
+            "delete_failed": "Failed to delete contractor"
+        },
+        "states": {
+            "no_contractors": "No contractors found."
+        }
+    },
     "tenant": {
         "title": "Tenants",
         "navigation": {
@@ -1001,6 +1041,7 @@
             "home": "Home",
             "launch": "Launch",
             "reports": "Reports",
+            "contractors": "Contractors",
             "stock": "Stock",
             "profile": "Profile"
         },
@@ -2729,5 +2770,44 @@
             "consolidated_salary_payment": "Consolidated Salary Payment",
             "salary_paid_for": "Salary paid for {count} employees"
         }
+    },
+    "contract": {
+        "title": "Contracts",
+        "manage": "Manage Contracts",
+        "add": "Add Contract",
+        "edit": "Edit Contract",
+        "delete": "Delete Contract",
+        "fields": {
+            "project": "Project",
+            "sub_project": "Sub-Project",
+            "contractor": "Contractor",
+            "amount": "Amount",
+            "type": "Contract Type",
+            "status": "Status"
+        },
+        "types": {
+            "labour_material": "Labour & Material",
+            "labour_only": "Labour Only",
+            "material_only": "Material Only",
+            "other": "Other"
+        },
+        "status": {
+            "active": "Active",
+            "completed": "Completed",
+            "cancelled": "Cancelled",
+            "on_hold": "On Hold"
+        },
+        "success": {
+            "created": "Contract created successfully",
+            "updated": "Contract updated successfully",
+            "deleted": "Contract deleted successfully"
+        },
+        "errors": {
+            "load_failed": "Failed to load contracts",
+            "create_failed": "Failed to create contract",
+            "update_failed": "Failed to update contract",
+            "delete_failed": "Failed to delete contract"
+        },
+        "project_tab": "Contracts"
     }
 }
