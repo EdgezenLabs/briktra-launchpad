@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   ArrowLeft,
@@ -220,6 +222,25 @@ const AppShowcase = () => {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Explore More CTA */}
+        <div className="mt-20 flex flex-col items-center justify-center p-12 rounded-[3rem] bg-gradient-to-br from-primary/10 via-background to-primary/5 border border-primary/20 text-center relative overflow-hidden group">
+          <div className="absolute top-0 right-0 h-32 w-32 bg-primary/10 blur-3xl rounded-full"></div>
+          <div className="relative z-10">
+            <h3 className="text-3xl font-display font-bold mb-4">Want to See More?</h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              We've only scratched the surface. Explore our full suite of 12 integrated modules in an interactive, step-by-step tour.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="xl" className="rounded-2xl px-10 py-6 font-bold shadow-xl shadow-primary/20 group hover:scale-105 transition-transform" asChild>
+                <Link to="/explore">
+                  Experience the Interactive Field Tour
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

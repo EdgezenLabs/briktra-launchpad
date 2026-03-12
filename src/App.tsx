@@ -9,6 +9,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import RefundPolicy from "./pages/RefundPolicy";
 import AboutUs from "./pages/AboutUs";
+import ModuleExplore from "./pages/ModuleExplore";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/terms" element={<Terms />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/explore" element={<ModuleExplore />} />
           {/* 
             Avoid catching the /app/ route in the SPA router. 
             When navigating to /app/, we want the browser to load the static files from the public folder.
