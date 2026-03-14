@@ -1,10 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Users, Lightbulb, Target, ArrowRight, Shield, Activity, Smartphone, Gamepad2 } from "lucide-react";
 
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="About EdgeZen Labs"
+        description="Learn about EdgeZen Labs, the innovators behind Briktra Construction ERP. Our mission is to engineer digital excellence for construction companies."
+        canonical="https://briktra.com/about-us"
+      />
       <Header />
       
       <main className="pt-24 pb-16 md:pt-32 md:pb-24">

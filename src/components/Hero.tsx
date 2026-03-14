@@ -41,7 +41,7 @@ const Hero = () => {
             <div className="relative z-10 w-full h-full p-4 md:p-6 rounded-3xl bg-white border border-border shadow-2xl group-hover:scale-105 group-hover:-translate-y-4 group-hover:shadow-[0_0_40px_rgba(0,0,0,0.2)] transition-all duration-500 flex items-center justify-center">
               <img 
                 src={briktraLogo} 
-                alt="Briktra" 
+                alt="Briktra logo - Mobile-First Construction ERP" 
                 className="h-full w-full object-contain"
               />
             </div>
@@ -138,7 +138,7 @@ const Hero = () => {
           {/* Mobile App */}
           <div className="premium-card group relative overflow-hidden rounded-3xl p-1 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 border-2 border-border hover:border-primary/50 bg-card">
             <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-background mb-4 text-center">
-              <img src={heroMobileImg} alt="Mobile App" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
+              <img src={heroMobileImg} alt="Briktra Mobile App Interface for construction site supervisors" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
               <div className="absolute bottom-4 left-0 right-0 px-4">
                 <p className="text-xl font-bold text-foreground mb-1">
@@ -154,7 +154,7 @@ const Hero = () => {
           {/* Web Dashboard */}
           <div className="premium-card group relative overflow-hidden rounded-3xl p-1 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 border-2 border-border hover:border-primary/50 bg-card md:-translate-y-6">
             <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-background mb-4 text-center">
-              <img src={heroWebImg} alt="Web Dashboard" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
+              <img src={heroWebImg} alt="Briktra Web Dashboard Interface for construction company management" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
               <div className="absolute bottom-4 left-0 right-0 px-4">
                 <p className="text-xl font-bold text-foreground mb-1">
@@ -170,7 +170,7 @@ const Hero = () => {
           {/* Real-time Reports */}
           <div className="premium-card group relative overflow-hidden rounded-3xl p-1 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 border-2 border-border hover:border-primary/50 bg-card">
             <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-background mb-4 text-center">
-              <img src={heroReportsImg} alt="Real-time Reports" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
+              <img src={heroReportsImg} alt="Real-time construction project reports and analytics in Briktra" className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
               <div className="absolute bottom-4 left-0 right-0 px-4">
                 <p className="text-xl font-bold text-foreground mb-1">

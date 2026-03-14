@@ -95,7 +95,7 @@ const AppShowcase = () => {
               <div className="relative h-[600px] md:h-[650px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
                 <img
                   src={dashboardImg}
-                  alt="Dashboard Interface"
+                  alt="Briktra Mobile Dashboard showing project overview and active stats"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -130,7 +130,7 @@ const AppShowcase = () => {
               <div className="relative h-[600px] md:h-[650px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
                 <img
                   src={projectTopImg}
-                  alt="Project Overview Interface"
+                  alt="Construction project details view in Briktra mobile app"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -207,7 +207,7 @@ const AppShowcase = () => {
               <div className="relative h-[480px] md:h-[600px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
                 <img
                   src={projectModules2Img}
-                  alt="Project Modules Interface Page 2"
+                  alt="Modular structure of Briktra ERP - Attendance, Payroll, and Expenses modules"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -218,7 +218,7 @@ const AppShowcase = () => {
               <div className="relative h-[480px] md:h-[600px] w-full overflow-hidden rounded-[2.2rem] bg-card border border-border/10">
                 <img
                   src={projectModules1Img}
-                  alt="Project Modules Interface Page 1"
+                  alt="Briktra ERP Modules - Labour Management and Contracts overview"
                   className="w-full h-full object-cover object-top"
                 />
               </div>

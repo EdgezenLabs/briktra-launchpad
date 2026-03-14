@@ -28,6 +28,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const TrendingUpIcon = ({ className }: { className?: string }) => (
   <svg className={className} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
@@ -190,6 +191,11 @@ const ModuleExplore = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
+      <SEO 
+        title="Interactive Product Suite Tour"
+        description="Explore the 12 core modules of Briktra ERP. See how our interactive product suite manages your construction workforce and operations."
+        canonical="https://briktra.com/explore"
+      />
       <Header />
       
       <main className="pt-24 pb-32">
