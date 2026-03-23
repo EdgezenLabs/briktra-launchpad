@@ -7,10 +7,10 @@
         "title": "Dashboard",
         "welcome": "Welcome, {name}!",
         "quick_actions": {
-            "add_projects": "Projects",
-            "add_employees": "Employees",
-            "add_attendance": "Attendance",
-            "add_suppliers": "Suppliers",
+            "add_projects": "Add Projects",
+            "add_employees": "Add Employees",
+            "add_attendance": "Add Attendance",
+            "add_suppliers": "Add Suppliers",
             "add_contractors": "Contractors",
             "bills": "Bills",
             "tap_attendance": "Tap to Attendance",
@@ -545,7 +545,8 @@
             "employee_types": "Employee Types *"
         },
         "hints": {
-            "employee_types": "Select employee types (e.g., Electrical, Plumbing)"
+            "employee_types": "Select employee types (e.g., Electrical, Plumbing)",
+            "id_required_hint": "Mobile number or email is required to identify this contractor."
         },
         "filters": {
             "by_role": "Filter by role",
@@ -1576,7 +1577,8 @@
             "select_employee": "Please select an employee",
             "invalid_amount": "Please enter a valid amount",
             "select_at_least_one": "Please select at least one employee",
-            "start_date_after_end": "Start date cannot be after end date"
+            "start_date_after_end": "Start date cannot be after end date",
+            "select_both_dates": "Please select both start and end dates for custom range"
         }
     },
     "labour": {
@@ -2292,6 +2294,26 @@
             "success": "Report downloaded: {fileName}",
             "error": "Error downloading report: {error}"
         },
+        "pdf": {
+            "financial_summary": "Financial Summary",
+            "total_income": "Total Income",
+            "total_expenses": "Total Expenses",
+            "net_result": "Net Result",
+            "expense_breakdown": "Expense Breakdown",
+            "total": "Total",
+            "category": "Category",
+            "amount": "Amount",
+            "percentage": "Percentage",
+            "manpower": "Manpower",
+            "name": "Name",
+            "total_man_days": "Total Man-Days",
+            "salaries": "Salaries",
+            "wage_type": "Wage Type",
+            "wage_amount": "Wage Amount",
+            "man_days": "Man-Days",
+            "net_payable": "Net Payable",
+            "no_data": "No data available in selected reports."
+        },
         "filter": {
             "sub_project": "Filter by Sub-Project (Optional)",
             "all_including_sub": "All (Including Sub-Projects)",
@@ -2539,8 +2561,6 @@
             "select_flat_to_track": "Select a flat to track material for that specific unit",
             "quantity": "Quantity",
             "enter_quantity": "Enter quantity",
-            "transportation_cost": "Transportation Cost",
-            "enter_transportation_cost": "Enter transportation cost (amount)",
             "available_stock": "Available: {quantity} {unit}",
             "notes_optional": "Notes (Optional)",
             "add_notes_allocation": "Add any notes about this allocation",
