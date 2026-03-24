@@ -105162,7 +105162,7 @@ A.NQ.prototype={
 j(a){return"ApiException("+A.p(this.a)+"): "+this.b},
 $ic8:1}
 A.ax3.prototype={
-aFr(){var s=A.ue(A.c3N("http://localhost:8002",B.wN,"application/json",B.wN,B.ov,B.wN))
+aFr(){var s=A.ue(A.c3N("https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa",B.wN,"application/json",B.wN,B.ov,B.wN))
 this.e=s
 s=s.a5d$
 s.E(s,new A.a9i(new A.ax5(this),new A.ax6(),new A.ax7(),null,null,null))
