@@ -32,8 +32,8 @@
   <title>Briktra</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- Cashfree Payments JS SDK (required for web checkout) -->
-  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+  <!-- Cashfree web checkout helper — must load before Flutter bootstrap -->
+  <script src="cashfree_checkout.js"></script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
