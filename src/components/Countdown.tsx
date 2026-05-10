@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-const launchDate = new Date("2026-04-01T00:00:00"); // change launch date
+const launchDate = new Date("2026-07-01T00:00:00");
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState(
-    launchDate.getTime() - new Date().getTime()
+    Math.max(0, launchDate.getTime() - new Date().getTime())
   );
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(launchDate.getTime() - new Date().getTime());
+      setTimeLeft(Math.max(0, launchDate.getTime() - new Date().getTime()));
     }, 1000);
 
     return () => clearInterval(timer);

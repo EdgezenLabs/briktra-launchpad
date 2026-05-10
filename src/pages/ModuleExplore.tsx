@@ -267,6 +267,13 @@ const ModuleExplore = () => {
                      </div>
 
                      <div className="relative h-[580px] w-full bg-zinc-950 rounded-[2.8rem] overflow-hidden border border-white/5 flex flex-col">
+                        {/* Preview Overlay Badge */}
+                        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md">
+                          <p className="text-[10px] font-bold text-primary tracking-widest uppercase flex items-center gap-1.5">
+                            <LockIcon className="h-2.5 w-2.5" />
+                            Preview Mode
+                          </p>
+                        </div>
                         
                         {/* Fake UI Structure */}
                         <div className="p-6 pt-10 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
@@ -334,10 +341,15 @@ const ModuleExplore = () => {
                       })}
                    </div>
 
-                   <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                      <Button size="lg" className="rounded-xl px-8" asChild>
-                        <a href="/app/index.html">Start Free Trial</a>
-                      </Button>
+                   <div className="pt-4 space-y-4">
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button size="lg" className="rounded-xl px-8 shadow-lg shadow-primary/20 hover:scale-105 transition-all" asChild>
+                          <a href="/app/index.html">Start Free Trial</a>
+                        </Button>
+                      </div>
+                      <p className="text-xs text-muted-foreground italic">
+                        * You are viewing a feature snapshot. Get full access to all <span className="text-primary font-bold">12 live modules</span> and <span className="text-primary font-bold">real-time site synchronization</span> by starting your trial.
+                      </p>
                    </div>
                 </div>
 

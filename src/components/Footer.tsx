@@ -1,4 +1,3 @@
-import { Twitter, Linkedin, Instagram, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import briktraLogo from "@/assets/briktra-logo.svg";
 
@@ -50,24 +49,6 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Social links */}
-          <div className="flex items-center gap-3">
-            {[
-              { icon: Twitter, href: "#", label: "Twitter" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Instagram, href: "#", label: "Instagram" },
-              { icon: Mail, href: "#", label: "Email" },
-            ].map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-all hover:border-primary hover:text-primary"
-              >
-                <social.icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </div>
 
         {/* Divider */}
