@@ -23,12 +23,26 @@ import {
   Globe,
   FileText,
   CalendarDays,
-  CreditCard
+  CreditCard,
+  LayoutGrid,
+  LucideIcon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import attendanceImg from "@/assets/mobile/Screenshot_20260520-212405.png";
+import billsImg from "@/assets/mobile/Screenshot_20260520-214846.png";
+import projectDetailsImg from "@/assets/mobile/Screenshot_20260520-220037.png";
+import unitImg from "@/assets/mobile/Screenshot_20260520-220045.png";
+import labourImg from "@/assets/mobile/Screenshot_20260521-004712.jpg";
+import contractsImg from "@/assets/mobile/Screenshot_20260521-005633.jpg";
+import suppliersImg from "@/assets/mobile/Screenshot_20260520-214548.png";
+import updatesImg from "@/assets/mobile/Screenshot_20260520-213428.png";
+import walletImg from "@/assets/mobile/Screenshot_20260520-213356.png";
+import stockImg from "@/assets/mobile/Screenshot_20260520-212806.png";
+import salaryImg from "@/assets/mobile/Screenshot_20260520-212521.png";
+import advancesImg from "@/assets/mobile/Screenshot_20260520-212531.png";
 
 const TrendingUpIcon = ({ className }: { className?: string }) => (
   <svg className={className} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
@@ -42,8 +56,24 @@ const LanguagesIcon = ({ className }: { className?: string }) => (
   <svg className={className} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg>
 );
 
+interface ModuleFeature {
+  name: string;
+  detail: string;
+  icon: LucideIcon;
+}
+
+interface Module {
+  id: string;
+  title: string;
+  category: string;
+  icon: LucideIcon;
+  description: string;
+  features: ModuleFeature[];
+  image?: string;
+}
+
 // All 12 modules exactly from Features.tsx
-const modules = [
+const modules: Module[] = [
   {
     id: "labour",
     title: "Labour Management",
@@ -53,7 +83,8 @@ const modules = [
     features: [
       { name: "Worker Profiles", detail: "Detailed history of skills, projects, and performance.", icon: UserCheck },
       { name: "Assignment", detail: "Easily allot workforce to specific project sites.", icon: ClipboardList }
-    ]
+    ],
+    image: labourImg
   },
   {
     id: "contracts",
@@ -64,29 +95,32 @@ const modules = [
     features: [
       { name: "Agreement Tracking", detail: "Digital repository for all vendor and labour contracts.", icon: FileText },
       { name: "Term Management", detail: "Monitor compliance with agreed construction milestones.", icon: CalendarDays }
-    ]
+    ],
+    image: contractsImg
   },
   {
-    id: "attendance",
-    title: "Attendance Tracking",
+    id: "milestones",
+    title: "Milestone Tracking",
     category: "Workforce",
-    icon: UserCheck,
-    description: "Record and monitor daily employee and labour attendance seamlessly.",
+    icon: CalendarDays,
+    description: "Set start and end dates to visualize project progress and prevent critical delays.",
     features: [
-      { name: "Daily Logs", detail: "Seamless marking of attendance for ground-level teams.", icon: MapPin },
-      { name: "Real-time Sync", detail: "Instant visibility for the head office on site presence.", icon: Zap }
-    ]
+      { name: "Progress Visuals", detail: "Real-time percentage completion for every project phase.", icon: PieChart },
+      { name: "Deadline Alerts", detail: "Automatic notifications for upcoming project milestones.", icon: Zap }
+    ],
+    image: projectDetailsImg
   },
   {
-    id: "expenses",
-    title: "Expenses & Bills",
+    id: "units",
+    title: "Unit Management",
     category: "Financials",
-    icon: Wallet,
-    description: "Track all project expenses and process bills accurately in one place.",
+    icon: LayoutGrid,
+    description: "Track sales and construction status for every individual plot or apartment unit.",
     features: [
-      { name: "Digital Bills", detail: "Capture and categorize site receipts instantly.", icon: Camera },
-      { name: "Category Audit", detail: "Detailed breakdown of where funds are being utilized.", icon: PieChart }
-    ]
+      { name: "Inventory Map", detail: "Visual breakdown of sold, blocked, and available units.", icon: MapPin },
+      { name: "Unit History", detail: "Detailed logs of construction and payment milestones per unit.", icon: FileText }
+    ],
+    image: unitImg
   },
   {
     id: "salary",
@@ -97,7 +131,8 @@ const modules = [
     features: [
       { name: "Disbursement", detail: "Automated calculation based on attendance logs.", icon: Wallet },
       { name: "Pay History", detail: "Secure record-keeping of every transaction.", icon: ShieldCheck }
-    ]
+    ],
+    image: salaryImg
   },
   {
     id: "advances",
@@ -108,7 +143,8 @@ const modules = [
     features: [
       { name: "Advance Log", detail: "Track loans given to labour or site staff.", icon: FileText },
       { name: "Auto-Deduct", detail: "System-wide sync for deduction during final payroll.", icon: Zap }
-    ]
+    ],
+    image: advancesImg
   },
   {
     id: "suppliers",
@@ -119,7 +155,8 @@ const modules = [
     features: [
       { name: "Vendor Database", detail: "Unified list of all material partners and rates.", icon: Globe },
       { name: "Billing Hub", detail: "Streamlined reconciliation of delivery notes and invoices.", icon: FileText }
-    ]
+    ],
+    image: suppliersImg
   },
   {
     id: "updates",
@@ -130,7 +167,8 @@ const modules = [
     features: [
       { name: "Site Photography", detail: "Upload visual proof of daily construction progress.", icon: Camera },
       { name: "Activity Log", detail: "Daily diary of materials used and work completed.", icon: ClipboardList }
-    ]
+    ],
+    image: updatesImg
   },
   {
     id: "wallet",
@@ -141,40 +179,44 @@ const modules = [
     features: [
       { name: "Digital Storage", detail: "No more lost blueprints or trade licenses.", icon: ShieldCheck },
       { name: "One-Tap Share", detail: "Quickly export docs for audits or banking.", icon: Zap }
-    ]
+    ],
+    image: walletImg
   },
   {
-    id: "roles",
-    title: "Role-Based Logins",
+    id: "attendance-mgmt",
+    title: "Attendance Management",
     category: "Governance",
-    icon: ShieldCheck,
-    description: "Custom app access for Admins, Managers, Supervisors, and Employees.",
+    icon: UserCheck,
+    description: "Digitally mark and track employee attendance with geo-tagging and site-specific records.",
     features: [
-      { name: "Access Control", detail: "Strict permissions based on organizational hierarchy.", icon: LockIcon },
-      { name: "Activity Audit", detail: "Track who performed what action inside the ERP.", icon: ClipboardList }
-    ]
+      { name: "Bulk Attendance", detail: "Mark attendance for entire teams with just a few taps.", icon: Users },
+      { name: "Geo-tagging", detail: "Verify site presence with location-stamped attendance logs.", icon: MapPin }
+    ],
+    image: attendanceImg
   },
   {
-    id: "multilingual",
-    title: "Multilingual Interface",
+    id: "bills-mgmt",
+    title: "Bills Management",
     category: "Governance",
-    icon: Globe,
-    description: "Switch seamlessly between English, Tamil, and Hindi for ground-level teams.",
+    icon: FileText,
+    description: "Manage and verify all material bills and site expenses with detailed status tracking.",
     features: [
-      { name: "Vernacular UI", detail: "Lowering adoption barriers for site supervisors.", icon: LanguagesIcon },
-      { name: "Region Native", detail: "Localized report generation in multiple languages.", icon: FileText }
-    ]
+      { name: "Status Tracking", detail: "Easily monitor pending, verified, and paid bills.", icon: PieChart },
+      { name: "Vendor Sync", detail: "Reconcile bills directly with supplier and material records.", icon: Building2 }
+    ],
+    image: billsImg
   },
   {
-    id: "milestones",
-    title: "Milestone Tracking",
+    id: "stock",
+    title: "Stock Management",
     category: "Operations",
-    icon: CalendarDays,
-    description: "Set start and end dates to visualize progress and prevent delays.",
+    icon: Package,
+    description: "Keep track of materials and inventory levels across all your project sites.",
     features: [
-      { name: "Project Health", detail: "Visual indicators for on-track vs delayed tasks.", icon: TrendingUpIcon },
-      { name: "Phase Control", detail: "Granular control over specific building stages.", icon: Layers }
-    ]
+      { name: "Inventory Tracking", detail: "Real-time monitoring of material usage and stock levels.", icon: Layers },
+      { name: "Material Requests", detail: "Digital requests for new materials from the procurement team.", icon: Package }
+    ],
+    image: stockImg
   }
 ];
 
@@ -266,50 +308,63 @@ const ModuleExplore = () => {
                         <current.icon className="h-[400px] w-[400px] text-white" />
                      </div>
 
-                     <div className="relative h-[580px] w-full bg-zinc-950 rounded-[2.8rem] overflow-hidden border border-white/5 flex flex-col">
-                        {/* Preview Overlay Badge */}
-                        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md">
+                      <div className="relative h-[580px] w-full bg-zinc-950 rounded-[2.8rem] overflow-hidden border border-white/5 flex flex-col">
+                        {/* Preview Overlay Badge - Moved to bottom to avoid hiding screen headers */}
+                        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md">
                           <p className="text-[10px] font-bold text-primary tracking-widest uppercase flex items-center gap-1.5">
                             <LockIcon className="h-2.5 w-2.5" />
                             Preview Mode
                           </p>
                         </div>
                         
-                        {/* Fake UI Structure */}
-                        <div className="p-6 pt-10 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
-                           <div className="h-4 w-24 bg-zinc-800 rounded"></div>
-                           <div className="h-8 w-8 rounded-full bg-primary/20 border border-primary/20"></div>
-                        </div>
+                        {current.image ? (
+                          <div className="absolute inset-0">
+                            <img 
+                              src={current.image} 
+                              alt={current.title} 
+                              className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                          </div>
+                        ) : (
+                          <>
+                            {/* Fake UI Structure */}
+                            <div className="p-6 pt-10 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
+                               <div className="h-4 w-24 bg-zinc-800 rounded"></div>
+                               <div className="h-8 w-8 rounded-full bg-primary/20 border border-primary/20"></div>
+                            </div>
 
-                        <div className="flex-1 p-6 space-y-6">
-                           <div className="h-12 w-full bg-zinc-800/50 rounded-xl flex items-center px-4">
-                              <current.icon className="h-5 w-5 text-primary mr-3" />
-                              <div className="h-2 w-32 bg-zinc-700/50 rounded"></div>
-                           </div>
-                           
-                           <div className="grid grid-cols-2 gap-4">
-                              <div className="h-32 bg-zinc-900 border border-white/5 rounded-2xl flex flex-col justify-end p-4">
-                                 <div className="h-1.5 w-1/2 bg-zinc-800 rounded mb-2"></div>
-                                 <div className="h-3 w-full bg-primary/20 rounded"></div>
-                              </div>
-                              <div className="h-32 bg-zinc-900 border border-white/5 rounded-2xl flex flex-col justify-end p-4">
-                                 <div className="h-1.5 w-2/3 bg-zinc-800 rounded mb-2"></div>
-                                 <div className="h-3 w-full bg-zinc-800 rounded"></div>
-                              </div>
-                           </div>
+                            <div className="flex-1 p-6 space-y-6">
+                               <div className="h-12 w-full bg-zinc-800/50 rounded-xl flex items-center px-4">
+                                  <current.icon className="h-5 w-5 text-primary mr-3" />
+                                  <div className="h-2 w-32 bg-zinc-700/50 rounded"></div>
+                               </div>
+                               
+                               <div className="grid grid-cols-2 gap-4">
+                                  <div className="h-32 bg-zinc-900 border border-white/5 rounded-2xl flex flex-col justify-end p-4">
+                                     <div className="h-1.5 w-1/2 bg-zinc-800 rounded mb-2"></div>
+                                     <div className="h-3 w-full bg-primary/20 rounded"></div>
+                                  </div>
+                                  <div className="h-32 bg-zinc-900 border border-white/5 rounded-2xl flex flex-col justify-end p-4">
+                                     <div className="h-1.5 w-2/3 bg-zinc-800 rounded mb-2"></div>
+                                     <div className="h-3 w-full bg-zinc-800 rounded"></div>
+                                  </div>
+                               </div>
 
-                           <div className="h-40 bg-primary/5 border border-primary/20 rounded-2xl flex flex-col items-center justify-center p-6 border-dashed group-hover:bg-primary/10 transition-colors">
-                              <span className="text-xl font-bold text-primary/40 text-center mb-1 uppercase tracking-tighter leading-none italic">{current.title}</span>
-                              <span className="text-[9px] font-black text-primary/50 tracking-[0.2em]">TOUCH TO ADVANCE</span>
-                           </div>
+                               <div className="h-40 bg-primary/5 border border-primary/20 rounded-2xl flex flex-col items-center justify-center p-6 border-dashed group-hover:bg-primary/10 transition-colors">
+                                  <span className="text-xl font-bold text-primary/40 text-center mb-1 uppercase tracking-tighter leading-none italic">{current.title}</span>
+                                  <span className="text-[9px] font-black text-primary/50 tracking-[0.2em]">TOUCH TO ADVANCE</span>
+                               </div>
 
-                           <div className="space-y-2">
-                              {Array.from({length: 4}).map((_, i) => (
-                                <div key={i} className="h-2 w-full bg-zinc-900/50 rounded"></div>
-                              ))}
-                           </div>
-                        </div>
-                     </div>
+                               <div className="space-y-2">
+                                  {Array.from({length: 4}).map((_, i) => (
+                                    <div key={i} className="h-2 w-full bg-zinc-900/50 rounded"></div>
+                                  ))}
+                               </div>
+                            </div>
+                          </>
+                        )}
+                      </div>
                    </div>
                    <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/30">Tap to cycle through all 12 modules</p>
                 </div>

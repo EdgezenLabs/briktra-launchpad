@@ -29,7 +29,7 @@ const Pricing = () => {
               </div>
               <p className="text-muted-foreground">Perfect for individual contractors and small site operations.</p>
             </div>
-            
+
             <ul className="space-y-4 mb-8 flex-1">
               {[
                 "Basic project management",
@@ -46,7 +46,7 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            
+
             <Button className="w-full rounded-xl py-6" variant="outline" asChild>
               <a href="#notify">Get Started</a>
             </Button>
@@ -65,7 +65,7 @@ const Pricing = () => {
               </div>
               <p className="text-muted-foreground">Advanced features for growing construction companies and agencies.</p>
             </div>
-            
+
             <ul className="space-y-4 mb-8 flex-1">
               {[
                 "Everything in Starter",
@@ -83,7 +83,7 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            
+
             <Button className="w-full rounded-xl py-6" asChild>
               <a href="/app/index.html">Start Free Trial</a>
             </Button>

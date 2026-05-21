@@ -52,7 +52,7 @@ const BuiltForField = () => {
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
                 <item.icon className="h-8 w-8" />
               </div>
-              
+
               {/* Content */}
               <h3 className="mb-3 font-display text-xl font-semibold text-background">
                 {item.title}

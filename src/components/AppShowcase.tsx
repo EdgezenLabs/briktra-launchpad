@@ -13,10 +13,10 @@ import {
   FileText
 } from "lucide-react";
 
-import dashboardImg from "@/assets/dashboard-v2.png";
-import projectTopImg from "@/assets/project-top-v2.png";
-import projectModules1Img from "@/assets/project-modules-1-v2.png";
-import projectModules2Img from "@/assets/project-modules-2-v4.png";
+import dashboardImg from "@/assets/mobile/Screenshot_20260520-235732.png";
+import projectTopImg from "@/assets/mobile/Screenshot_20260520-220037.png";
+import projectModules1Img from "@/assets/mobile/Screenshot_20260521-003925.jpg";
+import projectModules2Img from "@/assets/mobile/Screenshot_20260521-003929.jpg";
 
 const AppShowcase = () => {
   return (
@@ -111,18 +111,18 @@ const AppShowcase = () => {
             {/* Floating Pill - Top Left */}
             <div className="absolute -left-2 top-20 z-20 flex animate-float items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-xl md:-left-12" style={{ animationDelay: '0.5s' }}>
               <div>
-                <p className="font-display font-bold text-foreground">Live Budgets</p>
-                <p className="text-xs text-muted-foreground">Track budget allocations</p>
+                <p className="font-display font-bold text-foreground">Site Awareness</p>
+                <p className="text-xs text-muted-foreground">Contextual project details</p>
               </div>
               <ArrowRight className="h-5 w-5 text-primary" />
             </div>
 
             {/* Floating Pill - Bottom Right */}
             <div className="absolute -right-2 bottom-40 z-20 flex animate-float items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-xl md:-right-12" style={{ animationDelay: '1.5s' }}>
-              <ArrowLeft className="h-5 w-5 text-destructive" />
+              <ArrowLeft className="h-5 w-5 text-primary" />
               <div>
-                <p className="font-display font-bold text-destructive">Smart Alerts</p>
-                <p className="text-xs text-muted-foreground">No room for forgetting</p>
+                <p className="font-display font-bold text-foreground">Module Insights</p>
+                <p className="text-xs text-muted-foreground">Deep dive into project data</p>
               </div>
             </div>
 
@@ -149,7 +149,7 @@ const AppShowcase = () => {
             <ul className="space-y-4 pt-4">
               {[
                 { icon: Wallet, text: "Live financial budget tracking" },
-                { icon: Zap, text: "Automated smart warning alerts" },
+                { icon: Zap, text: "Detailed project timelines" },
                 { icon: CheckCircle2, text: "Granular location & date tracking" },
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-foreground">
@@ -194,12 +194,21 @@ const AppShowcase = () => {
           {/* Right Visual - Dual Screens */}
           <div className="relative flex-1 flex justify-center w-full min-h-[600px] pt-10">
             {/* Floating Pill - Top Left */}
-            <div className="absolute left-0 md:left-4 top-0 z-30 flex animate-float items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-xl shrink-0">
+            <div className="absolute left-0 md:left-4 -top-8 z-30 flex animate-float items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-xl shrink-0">
               <ArrowRight className="h-5 w-5 text-primary rotate-45" />
               <div>
-                <p className="font-display font-bold text-foreground">12 Core Modules</p>
-                <p className="text-xs text-muted-foreground whitespace-nowrap">Everything in one place</p>
+                <p className="font-display font-bold text-foreground">12 Integrated Modules</p>
+                <p className="text-xs text-muted-foreground whitespace-nowrap">The complete field toolkit</p>
               </div>
+            </div>
+
+            {/* Floating Pill - Bottom Right */}
+            <div className="absolute right-0 md:-right-8 bottom-4 z-30 flex animate-float items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-xl shrink-0" style={{ animationDelay: '2s' }}>
+              <div>
+                <p className="font-display font-bold text-foreground">Unit Management</p>
+                <p className="text-xs text-muted-foreground whitespace-nowrap">Track every apartment and plot</p>
+              </div>
+              <ArrowLeft className="h-5 w-5 text-primary -rotate-45" />
             </div>
 
             {/* Back Screen (Modules 2 - Scrolled down) */}

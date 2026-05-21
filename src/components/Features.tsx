@@ -26,14 +26,14 @@ const features = [
     description: "Create, manage, and track all contractor agreements and terms.",
   },
   {
-    icon: UserCheck,
-    title: "Attendance Tracking",
-    description: "Record and monitor daily employee and labour attendance seamlessly.",
+    icon: CalendarDays,
+    title: "Milestone Tracking",
+    description: "Set start and end dates to visualize progress and prevent project delays.",
   },
   {
-    icon: Wallet,
-    title: "Expenses & Bills",
-    description: "Track all project expenses and process bills accurately in one place.",
+    icon: LayoutGrid,
+    title: "Unit Management",
+    description: "Track sales and construction status for every individual plot or apartment unit.",
   },
   {
     icon: Briefcase,
@@ -48,7 +48,7 @@ const features = [
   {
     icon: Building2,
     title: "Supplier Relations",
-    description: "Maintain supplier databases and manage complex material billing.",
+    description: "Maintain supplier databases and manage material billing.",
   },
   {
     icon: Newspaper,
@@ -61,19 +61,19 @@ const features = [
     description: "Securely store and share all vital project and company documents.",
   },
   {
-    icon: ShieldCheck,
-    title: "Role-Based Logins",
-    description: "Custom app access for Admins, Managers, Supervisors, and Employees.",
+    icon: UserCheck,
+    title: "Attendance Management",
+    description: "Digitally mark and track employee attendance with geo-tagging.",
   },
   {
-    icon: Globe,
-    title: "Multilingual Interface",
-    description: "Switch seamlessly between English, Tamil, and Hindi for ground-level teams.",
+    icon: FileText,
+    title: "Bills Management",
+    description: "Manage and verify material bills and site expenses with status tracking.",
   },
   {
-    icon: CalendarDays,
-    title: "Milestone Tracking",
-    description: "Set start and end dates to visualize progress and prevent delays.",
+    icon: LayoutGrid, // Stock use Package usually, but I'll use LayoutGrid or check ModuleExplore
+    title: "Stock Management",
+    description: "Keep track of materials and inventory levels across all your project sites.",
   },
 ];
 

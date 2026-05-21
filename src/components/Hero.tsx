@@ -76,22 +76,22 @@ const Hero = () => {
         >
           Manage projects, labour, materials, vendors, and expenses — built for
           real construction site conditions with live cloud sync and
-          multilingual support.
+          advanced module management.
         </p>
 
         {/* CTA Buttons */}
         <div
           className="mb-14 flex flex-col items-center gap-6 
-                    animate-fade-in opacity-0 sm:flex-row"
+          animate-fade-in opacity-0 sm:flex-row"
           style={{ animationDelay: "0.4s" }}
         >
           {/* Start Free Trial - Primary (Linked to App) */}
           <Button
             size="xl"
             className="px-12 py-6 text-lg font-bold 
-                      rounded-2xl shadow-xl 
-                      transition-all duration-300 
-                      hover:scale-110 hover:shadow-2xl"
+            rounded-2xl shadow-xl 
+            transition-all duration-300 
+            hover:scale-110 hover:shadow-2xl"
             asChild
           >
             <a href="/app/index.html">Start Free Trial</a>
@@ -108,7 +108,7 @@ const Hero = () => {
         {/* Launch Highlights */}
         <div
           className="mb-20 flex flex-col items-center gap-6 text-center 
-                    animate-fade-in opacity-0"
+          animate-fade-in opacity-0"
           style={{ animationDelay: "0.5s" }}
         >
           <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground">
@@ -125,7 +125,7 @@ const Hero = () => {
             </span>
 
             <span className="text-xl md:text-2xl font-bold text-primary">
-              Multilingual Support
+              Professional Cloud ERP
             </span>
           </div>
         </div>
