@@ -1,7 +1,7 @@
 import { ArrowRight, Mail, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import Countdown from "@/components/Countdown";
+
 
 const CTA = () => {
   const [email, setEmail] = useState("");

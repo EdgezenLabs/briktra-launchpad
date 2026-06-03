@@ -1,7 +1,7 @@
 import { Play, Wifi, Globe, Smartphone, HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import Countdown from "./Countdown";
+
 
 import heroMobileImg from "@/assets/hero-mobile-v3.png";
 import heroWebImg from "@/assets/hero-web.png";
@@ -98,12 +98,7 @@ const Hero = () => {
           </Button>
         </div>
 
-        <div
-          className="mb-12 flex justify-center animate-fade-in opacity-0"
-          style={{ animationDelay: "0.45s" }}
-        >
-          <Countdown />
-        </div>
+
 
         {/* Launch Highlights */}
         <div

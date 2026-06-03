@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import briktraLogo from "@/assets/briktra-logo.svg";
 import { Link } from "react-router-dom";
-import Countdown from "./Countdown";
+
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
