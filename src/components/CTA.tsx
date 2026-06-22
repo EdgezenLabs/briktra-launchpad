@@ -79,7 +79,7 @@ const CTA = () => {
                 </p>
                 {/* CTA buttons */}
                 <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-                  {/* Start Free Trial - Linked to App */}
+                  {/* Login to Briktra - Linked to App */}
                   <Button
                     variant="default"
                     size="lg"
@@ -89,7 +89,7 @@ const CTA = () => {
                               hover:scale-110 hover:shadow-2xl"
                     asChild
                   >
-                    <a href="/app/index.html">Start Free Trial</a>
+                    <a href="/app/index.html">Login to Briktra</a>
                   </Button>
                 </div>
               </div>

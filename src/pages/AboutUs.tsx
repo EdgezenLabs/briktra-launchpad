@@ -157,7 +157,7 @@ const AboutUs = () => {
                 </div>
                 <ArrowRight className="h-6 w-6 text-primary transition-colors transform group-hover:translate-x-1" />
               </div>
-              <p className="text-muted-foreground">Construction & Contractor ERP. Field-optimized mobile platform for projects, labour, materials, vendors. Offline-first & multilingual.</p>
+              <p className="text-muted-foreground">Construction & Contractor ERP. Field-optimized mobile platform for projects, labour, materials, vendors. Cloud-connected & multilingual.</p>
             </a>
 
             {/* Expeniqo */}

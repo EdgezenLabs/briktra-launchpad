@@ -84,7 +84,6 @@ const pricingData: Record<PlanKey, PricingPlan> = {
       "AI Smart Assign to Project",
       "Portfolio & Profitability Reports",
       "Export Reports (PDF / Excel)",
-      "Offline Mode & Data Sync",
       "Broadcast Notifications",
       "Priority Email & Chat Support",
     ],
@@ -240,7 +239,6 @@ const detailedFeatures: FeatureCategory[] = [
     items: [
       { name: "Multi-language support (EN / HI / TA)", starter: true, pro: true, premium: true },
       { name: "Responsive / PWA web app", starter: true, pro: true, premium: true },
-      { name: "Offline mode & sync", starter: false, pro: true, premium: true },
       { name: "Dark mode", starter: true, pro: true, premium: true },
     ]
   },
@@ -279,7 +277,7 @@ const Features = () => (
     <div className="flex flex-col items-center text-center px-4 border-t md:border-t-0 md:border-l border-border/50 pt-6 md:pt-0">
       <Cloud className="w-8 h-8 mb-4 text-blue-500" />
       <h4 className="font-semibold mb-2">Work Anywhere</h4>
-      <p className="text-xs text-muted-foreground">Mobile, Web & Offline - manage your projects on the go.</p>
+      <p className="text-xs text-muted-foreground">Mobile & Web - manage your projects on the go.</p>
     </div>
     <div className="flex flex-col items-center text-center px-4 border-t md:border-t-0 md:border-l border-border/50 pt-6 md:pt-0">
       <Heart className="w-8 h-8 mb-4 text-orange-500" />
@@ -462,8 +460,9 @@ const Pricing = () => {
                 <Button 
                   className={`w-full py-6 rounded-xl font-semibold text-base transition-colors ${plan.popular ? 'bg-[#ff6b00] hover:bg-[#e66000] text-white shadow-lg shadow-orange-500/25' : `border-${plan.color}-500 text-${plan.color}-600 hover:bg-${plan.color}-50 hover:text-${plan.color}-700`}`}
                   variant={plan.popular ? 'default' : 'outline'}
+                  asChild
                 >
-                  Start Free Trial
+                  <a href="/app/index.html">Login to Briktra</a>
                 </Button>
                 <p className="text-xs text-center text-slate-400 mt-3">No credit card required</p>
               </div>

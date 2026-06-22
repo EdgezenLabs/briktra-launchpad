@@ -11,7 +11,7 @@ interface SEOProps {
 
 const SEO = ({
   title = "Briktra - Mobile-First ERP for Construction Companies",
-  description = "Briktra is the leading mobile-first ERP designed for construction companies. Manage projects, labour, materials, vendors, and expenses with offline-first capabilities and multilingual support.",
+  description = "Briktra is the leading mobile-first ERP designed for construction companies. Manage projects, labour, materials, vendors, and expenses with advanced real-time tracking and multilingual support.",
   canonical = "https://briktra.com",
   ogType = "website",
   ogImage = "https://briktra.com/briktra-favicon.svg",

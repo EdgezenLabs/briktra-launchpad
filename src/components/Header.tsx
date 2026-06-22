@@ -57,7 +57,7 @@ const Header = () => {
 
         {/* CTA Buttons */}
         <div className="hidden items-center gap-4 md:flex">
-          {/* Start Free Trial - Linked to App */}
+          {/* Login to Briktra - Linked to App */}
           <Button
             variant="default"
             size="sm"
@@ -67,7 +67,7 @@ const Header = () => {
                       hover:scale-105 hover:shadow-lg"
             asChild
           >
-            <a href="/app/index.html">Start Free Trial</a>
+            <a href="/app/index.html">Login to Briktra</a>
           </Button>
         </div>
 
@@ -133,7 +133,7 @@ const Header = () => {
             </a>
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
               <Button variant="default" className="w-full" asChild>
-                <a href="/app/index.html" onClick={() => setMobileMenuOpen(false)}>Start Free Trial</a>
+                <a href="/app/index.html" onClick={() => setMobileMenuOpen(false)}>Login to Briktra</a>
               </Button>
             </div>
           </nav>

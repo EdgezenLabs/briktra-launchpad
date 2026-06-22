@@ -7,6 +7,9 @@
     "title": "டாஷ்போர்டு",
     "welcome": "வரவேற்கிறோம், {name}!",
     "quick_actions": {
+      "new_project": "புதிய திட்டம்",
+      "new_project_subtitle": "புதிய கட்டுமான திட்டம் உருவாக்கு",
+      "my_projects": "என் திட்டங்கள்",
       "add_projects": "திட்டங்கள் சேர்க்க",
       "add_employees": "நிர்வாகிகள் சேர்க்க",
       "add_attendance": "வருகை சேர்க்க",
@@ -20,10 +23,46 @@
       "employees": "பணியாளர்கள்",
       "projects": "திட்டங்கள்"
     },
+    "role_tasks": {
+      "mark_attendance": "வருகை பதிவு செய்க",
+      "mark_attendance_today": "இன்று பணியாளர்களின் வருகை",
+      "mark_attendance_team": "உங்கள் குழுவிற்கான வருகை பதிவு செய்க",
+      "mark_now": "இப்போது பதிவு செய்க",
+      "log_expense": "செலவு பதிவு செய்க",
+      "log_expense_subtitle": "விரைவாக தள செலவு பதிவு செய்க",
+      "log_expense_button": "செலவு பதிவு செய்க",
+      "my_projects": "என் திட்டங்கள்",
+      "my_projects_subtitle": "செயலில் திட்ப நிலையை பார்க்க",
+      "open_projects": "திட்டங்களை திறக்க",
+      "projects": "திட்டங்கள்",
+      "projects_subtitle": "முன்னேற்றம் & பட்ஜெட் கண்காணிக்க",
+      "view_projects": "திட்டங்களை பார்க்க",
+      "reports": "அறிக்கைகள்",
+      "reports_expense": "திட்ட & செலவு சாரங்கள்",
+      "reports_finance": "நிதி & வருகை சாரங்கள்",
+      "reports_download": "செலவு அறிக்கைகளை பதிவிறக்க",
+      "view_reports": "அறிக்கைகளை பார்க்க",
+      "new_project": "புதிய திட்டம்",
+      "new_project_subtitle": "திட்டத்தை உருவாக்கி குழுவை ஒதுக்குக",
+      "create_project": "திட்டம் உருவாக்கு",
+      "team": "குழு",
+      "team_subtitle": "பணியாளர்கள் & பாத்திரங்களை நிர்வகிக்க",
+      "manage_team": "குழுவை நிர்வகிக்க",
+      "bills_pending": "நிலுவையில் உள்ள பில்கள்",
+      "bills_pending_subtitle": "பில்களை அங்கீகரிக்க & கண்காணிக்க",
+      "view_bills": "பில்களை பார்க்க",
+      "my_salary": "என் சம்பளம்",
+      "my_salary_subtitle": "சமீபத்திய ஊதிய பட்டியல்களைப் பார்க்க",
+      "view_salary": "சம்பளத்தைப் பார்க்க",
+      "tap_attendance": "வருகையைத் தட்டவும்",
+      "tap_attendance_subtitle": "இன்றையத்திற்கு விரைவாக உள்நுழைக",
+      "tap_now": "இப்போது தட்டவும்"
+    },
     "sections": {
+      "quick_actions_title": "விரைவு செயல்கள்",
       "active_projects": "செயலில் திட்டங்கள்",
       "ongoing_projects": "நடப்பில் உள்ள திட்டங்கள்",
-      "projects": "அனைத்து திட்டங்கள்",
+      "projects": "திட்டங்கள்",
       "current_features": "நடப்பு செயல்கள்:",
       "progress": "முன்னேற்றம்"
     },
@@ -38,7 +77,27 @@
         "trial_days": "30-நாள் சோதனை"
       }
     },
-    "feature_coming_soon": "இந்த அம்சம் விரைவில் வரும்"
+    "feature_coming_soon": "இந்த அம்சம் விரைவில் வரும்",
+    "actions": {
+      "new_project": "New Project"
+    },
+    "nudge": {
+      "attendance_title": "வருகை பதிவு செய்க",
+      "attendance_subtitle": "இன்று வருகை பதிவு இல்லை",
+      "go_to_projects": "திட்டங்களுக்கு செல்",
+      "payroll_title": "சம்பள கொடுப்பனவு நிலுவை",
+      "payroll_subtitle": "நிலுவை சம்பளத்தை செயலாக்கவும்",
+      "project_limit_approaching": "திட்ட வரம்பு நெருங்குகிறது",
+      "project_limit_approaching_sub": "உங்கள் திட்ட வரம்பை நெருங்கிவிட்டீர்கள். மேலும் திட்டங்களுக்கு மேம்படுத்தவும்.",
+      "project_limit_reached": "திட்ட வரம்பு எட்டப்பட்டது",
+      "project_limit_reached_sub": "மேலும் திட்டங்கள் சேர்க்க உங்கள் திட்டத்தை மேம்படுத்தவும்.",
+      "view_payroll": "சம்பளம் பார்க்க"
+    },
+    "stats": {
+      "total_projects": "Total Projects",
+      "active": "Active",
+      "completed": "Completed"
+    }
   },
   "auth": {
     "welcome": {
@@ -66,7 +125,9 @@
       "org_name": "நிறுவன பெயர்",
       "phone_no": "தொலைபேசி எண்",
       "promo_code": "விளம்பரக் குறியீடு",
-      "email_or_phone": "மின்னஞ்சல்/தொலைபேசி எண்"
+      "email_or_phone": "மின்னஞ்சல்/தொலைபேசி எண்",
+      "referral_code": "Referral Code (Optional)",
+      "referral_code_helper": "Have a friend's referral code? Enter it here"
     },
     "hints": {
       "phone_number": "9876543210"
@@ -124,7 +185,11 @@
       "send_button": "மீட்டமை OTP அனுப்பு",
       "back_to_login": "உள்நுழைவுக்குத் திரும்பு",
       "success": "மீட்டமை OTP வெற்றிகரமாக அனுப்பப்பட்டது",
-      "error": "OTP அனுப்புதல் தோல்வியடைந்தது"
+      "error": "OTP அனுப்புதல் தோல்வியடைந்தது",
+      "mode_email": "Email",
+      "mode_phone": "Phone",
+      "phone_placeholder": "Enter your 10-digit mobile number",
+      "phone_subtitle": "Enter your phone number to receive reset OTP"
     },
     "reset_password": {
       "title": "கடவுச்சொல் மீட்டமை",
@@ -148,7 +213,9 @@
       "password_too_short": "கடவுச்சொல் குறைந்தது 6 எழுத்துகள் இருக்க வேண்டும்",
       "confirm_password_required": "கடவுச்சொல்லை உறுதிப்படுத்தவும்",
       "passwords_dont_match": "கடவுச்சொற்கள் பொருந்தவில்லை",
-      "otp_required": "முழுமையான 6 இலக்க OTP ஐ உள்ளிடவும்"
+      "otp_required": "முழுமையான 6 இலக்க OTP ஐ உள்ளிடவும்",
+      "email_invalid": "Invalid email address",
+      "phone_10_digits": "Phone number must be 10 digits"
     },
     "strength": {
       "label": "வலிமை",
@@ -181,6 +248,11 @@
       "destination_label": "மின்னஞ்சல் அல்லது தொலைபேசி",
       "destination_hint": "உங்கள் மின்னஞ்சல் அல்லது தொலைபேசி எண்ணை உள்ளிடவும்",
       "destination_required": "தயவுசெய்து மின்னஞ்சல் அல்லது தொலைபேசியை உள்ளிடவும்",
+      "mode_email": "மின்னஞ்சல்",
+      "mode_phone": "தொலைபேசி",
+      "email_hint": "உங்கள் மின்னஞ்சல் முகவரியை உள்ளிடவும்",
+      "phone_hint": "உங்கள் 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்",
+      "phone_required": "தயவுசெய்து தொலைபேசி எண்ணை உள்ளிடவும்",
       "send_otp": "OTP அனுப்பவும்",
       "login_button": "உள்நுழையவும்",
       "resend_otp": "OTP ஐ மீண்டும் அனுப்பவும்",
@@ -207,6 +279,11 @@
       "too_short": "குறைந்தது 6 எழுத்துகள் இருக்க வேண்டும்",
       "different": "புதிய கடவுச்சொல் பழைய கடவுச்சொல்லிலிருந்து வேறுபட்டதாக இருக்க வேண்டும்",
       "passwords_dont_match": "கடவுச்சொற்கள் பொருந்தவில்லை"
+    },
+    "signup_steps": {
+      "account_details": "Account Details",
+      "dashboard": "Choose Plan",
+      "verify_phone": "Verify Phone"
     }
   },
   "attendance": {
@@ -339,65 +416,86 @@
       "pdf_exported": "{period} க்கான PDF வெற்றிகரமாக Export செய்யப்பட்டது",
       "pdf_opened": "PDF வெற்றிகரமாக திறக்கப்பட்டது"
     },
-    "title": "வருகை"
+    "title": "வருகை",
+    "assigned_projects": "Assigned Projects",
+    "capturing_location": "Capturing location...",
+    "location_captured": "Location captured"
   },
   "employee_attendance_tap": {
-    "tabs": {
-      "mark": "பதிவு",
-      "stats": "புள்ளிவிவரம்",
-      "advances": "முன்பணம்",
-      "salary": "சம்பளம்"
-    },
-    "mark": {
-      "select_project": "திட்டத்தைத் தேர்ந்தெடுக்கவும்",
-      "attendance_type": "வருகை வகை",
-      "select_attendance_type": "வருகை வகையைத் தேர்ந்தெடுக்கவும்",
-      "no_assigned_projects": "ஒதுக்கப்பட்ட திட்டங்கள் எதுவும் இல்லை",
-      "limit_reached": " (வரம்பு முடிந்தது)",
-      "already_marked": "இன்று ஏற்கனவே {count} நாட்கள் பதிவு செய்யப்பட்டுள்ளது",
-      "location_captured": "இருப்பிடம் பெறப்பட்டது",
-      "capturing_location": "இருப்பிடம் பெறப்படுகிறது...",
-      "location_not_available": "இருப்பிடம் கிடைக்கவில்லை",
-      "retry_location": "மீண்டும் முயற்சி",
-      "assigned_project": "ஒதுக்கப்பட்ட திட்டம்",
-      "select_type": "வகையைத் தேர்ந்தெடு",
-      "tap_to_mark": "வருகையைப் பதிவு செய்ய தட்டவும்",
-      "today_label": "இன்று: {date}"
+    "dialogs": {
+      "location_disabled": {
+        "title": "இடச் சேவை முடக்கப்பட்டுள்ளது",
+        "content": "வருகையைக் குறிக்க தயவுசெய்து இடச் சேவைகளை இயக்கவும்.",
+        "buttons": {
+          "cancel": "ரத்து செய்",
+          "open_settings": "அமைப்புகளைத் திறக்கவும்"
+        }
+      },
+      "mark_attendance": {
+        "title": "வருகையைக் குறிக்கவும்"
+      }
     },
     "buttons": {
       "full_day": "முழு நாள்",
       "half_day": "அரை நாள்"
     },
+    "hints": {
+      "choose_project": "ஒரு திட்டத்தைத் தேர்வு செய்யவும்"
+    },
+    "tabs": {
+      "mark": "வருகை",
+      "stats": "வருகை புள்ளிவிவரங்கள்",
+      "advances": "முன்பணம்",
+      "salary": "சம்பளம்"
+    },
+    "mark": {
+      "select_project": "திட்டத்தைத் தேர்ந்தெடுக்கவும்",
+      "no_assigned_projects": "உங்களுக்கு திட்டங்கள் எதுவும் ஒதுக்கப்படவில்லை. தயவுசெய்து உங்கள் மேலாண்மையை அணுகவும்.",
+      "attendance_type": "வருகை வகை",
+      "select_attendance_type": "வருகை வகையைத் தேர்ந்தெடுக்கவும்",
+      "limit_reached": " (காலக்கெடு முடிந்தது)",
+      "already_marked": "இந்த திட்டத்திற்காக இன்று நீங்கள் ஏற்கனவே {count} நாட்களைக் குறித்துள்ளீர்கள்.",
+      "location_captured": "இடம் பதிவு செய்யப்பட்டது",
+      "capturing_location": "இடம் பதிவு செய்யப்படுகிறது...",
+      "location_not_available": "இடம் கிடைக்கவில்லை",
+      "retry_location": "மீண்டும் முயல அல்லது GPS ஐ இயக்கத் தட்டவும்",
+      "assigned_project": "ஒதுக்கப்பட்ட திட்டம்",
+      "select_type": "வகையைத் தேர்ந்தெடுக்கவும்",
+      "tap_to_mark": "வருகையைப்\nபதிவு செய்யத்\nதட்டவும்",
+      "today_label": "இன்று: {date}"
+    },
     "stats": {
-      "no_data": "புள்ளிவிவரங்கள் எதுவும் இல்லை",
+      "no_data": "வருகை புள்ளிவிவரங்கள் எதுவும் இல்லை",
       "weekly": "வாரம்",
       "monthly": "மாதம்",
-      "yearly": "வருடம்",
+      "yearly": "ஆண்டு",
       "overall": "மொத்தம்"
     },
     "advances": {
+      "no_data": "சம்பள முன்பணம் எதுவும் இல்லை",
+      "no_status_data": "{status} முன்பணம் எதுவும் இல்லை",
+      "reason_label": "காரணம்:",
+      "total_outstanding": "மொத்த முன்பண பாக்கி",
       "filters": {
         "all": "அனைத்தும்",
         "pending": "நிலுவை",
         "paid": "செலுத்தப்பட்டது"
-      },
-      "no_data": "முன்பணத் தகவல்கள் இல்லை",
-      "no_status_data": "{status} நிலைக்குத் தகவல்கள் இல்லை",
-      "reason_label": "காரணம்"
+      }
     },
     "salary": {
-      "select_dates": "தொடக்க மற்றும் முடிவு தேதியைத் தேர்ந்தெடுக்கவும்",
-      "select_date": "தேதியைத் தேர்ந்தெடுக்கவும்",
+      "title": "சம்பள அறிக்கை",
+      "period": "காலம்",
       "current_week": "இந்த வாரம்",
       "current_month": "இந்த மாதம்",
-      "custom_range": "மற்றொரு காலம்",
-      "period": "காலம்",
+      "custom_range": "தனிப்பயன் வரம்பு",
       "start_date": "தொடக்க தேதி",
       "end_date": "முடிவு தேதி",
-      "retry": "மீண்டும் முயற்சி",
-      "no_data": "{period} காலத்தில் சம்பளத் தகவல்கள் இல்லை",
-      "payments": "செலுத்தல்கள்",
-      "records": "பதிவுகள்"
+      "select_date": "தேதியைத் தேர்ந்தெடுக்கவும்",
+      "select_dates": "தொடக்க மற்றும் முடிவு தேதிகளைத் தேர்ந்தெடுக்கவும்",
+      "retry": "மீண்டும் முயற்சிக்கவும்",
+      "no_data": "{period} க்கான செலுத்தப்பட்ட சம்பளம் இல்லை",
+      "payments": "பணம் செலுத்துதல்கள்",
+      "records": "பணம் செலுத்தல் பதிவுகள்"
     }
   },
   "project": {
@@ -421,8 +519,8 @@
       "start_date_placeholder": "தொடக்க தேதி",
       "end_date": "முடிவு தேதி",
       "end_date_placeholder": "முடிவு தேதி (விருப்பம்)",
-      "supervisor":"மேற்பார்வையாளர்",
-      "supervisor_placeholder":"மேற்பார்வையாளர் தேர்ந்தெடுக்கவும்",
+      "supervisor": "மேற்பார்வையாளர்",
+      "supervisor_placeholder": "மேற்பார்வையாளர் தேர்ந்தெடுக்கவும்",
       "project_type": "திட்ட வகை",
       "project_location": "திட்ட இடம்",
       "project_type_options": {
@@ -436,6 +534,22 @@
     "dialogs": {
       "delete_title": "திட்டம் நீக்கு",
       "delete_message": "நீங்கள் உண்மையில் \"{name}\" ஐ நீக்க விரும்புகிறீர்களா?"
+    },
+    "share": {
+      "title": "திட்டத்தைப் பகிர்",
+      "whatsapp": "WhatsApp",
+      "email": "மின்னஞ்சல்",
+      "sms": "SMS",
+      "error": "பகிர்வுப் பிழை",
+      "whatsapp_not_available": "WhatsApp நிறுவப்படவில்லை",
+      "email_not_available": "மின்னஞ்சல் பயன்பாடு கிடைக்கவில்லை",
+      "sms_not_available": "SMS பயன்பாடு கிடைக்கவில்லை"
+    },
+    "budget": "பட்ஜெட்",
+    "location": "இருப்பிடம்",
+    "type": "வகை",
+    "modules": {
+      "bills": "பில்கள்"
     },
     "states": {
       "no_projects": "திட்டங்கள் கிடைக்கவில்லை.",
@@ -465,7 +579,9 @@
       "name": "பெயர்",
       "budget": "பட்ஜெட்",
       "status": "நிலை",
-      "start_date": "தொடக்க தேதி"
+      "start_date": "தொடக்க தேதி",
+      "location": "இருப்பிடம்",
+      "type": "வகை"
     },
     "labour": {
       "sections": {
@@ -502,7 +618,8 @@
         "monthly": "மாதாந்திர",
         "fixed": "நிர்ணயிக்கப்பட்ட"
       },
-      "management": "தொழிலாளர் மேலாண்மை"
+      "management": "தொழிலாளர் மேலாண்மை",
+      "select_trade_type": "Select Trade Type"
     },
     "expense": {
       "title": "செலவுகள்",
@@ -593,8 +710,24 @@
     },
     "forms": {
       "add_title": "பணியாளரைச் சேர்க்கவும்",
+      "add_subtitle": "குழு உறுப்பினரைச் சேர்க்க விவரங்களை நிரப்பவும்",
       "reactivate_prompt": "இந்த கணக்கு ஏற்கனவே நீக்கப்பட்டது. தற்போதைய விவரங்களுடன் அதை மீண்டும் செயல்படுத்த விரும்புகிறீர்களா?",
-      "reactivate_button": "மீண்டும் செயல்படுத்து"
+      "reactivate_button": "மீண்டும் செயல்படுத்து",
+      "employee_type_section": "பணியாளர் வகை"
+    },
+    "sections": {
+      "personal_info": "தனிப்பட்ட தகவல்",
+      "role_access": "பணி & அணுகல்",
+      "wage_details": "ஊதிய விவரங்கள்",
+      "work_type": "பணி வகை"
+    },
+    "types": {
+      "mason": "கட்டுமான தொழிலாளர்",
+      "finishing": "பூச்சு தொழிலாளர்",
+      "plumber": "குழாய் தொழிலாளர்",
+      "electrition": "மின் தொழிலாளர்",
+      "civil_engineer": "சிவில் பொறியாளர்",
+      "others": "மற்றவர்கள்"
     },
     "fields": {
       "name": "பெயர்",
@@ -603,10 +736,14 @@
       "role": "பதவி",
       "phone": "தொலைபேசி எண்",
       "search": "பணியாளர்களைத் தேடு",
-      "employee_types": "பணியாளர் வகைகள் *"
+      "employee_types": "பணியாளர் வகைகள் *",
+      "password_optional": "Password (Optional)",
+      "password_optional_hint": "Leave blank to keep existing password"
     },
     "hints": {
-      "employee_types": "பணியாளர் வகைகளை தேர்ந்தெடுக்கவும் (எ.கா., மின்சாரம், குழாய் வேலை)"
+      "employee_types": "பணியாளர் வகைகளை தேர்ந்தெடுக்கவும் (எ.கா., மின்சாரம், குழாய் வேலை)",
+      "id_required_hint": "Mobile number or email is required to identify this contractor.",
+      "password_required_hint": "இந்த பதவிக்கு உள்நுழைவு இயக்கப்படும்போது கட்டாயமாகும்"
     },
     "filters": {
       "by_role": "பதவி அடிப்படையில் வடிகட்டுக",
@@ -654,7 +791,9 @@
       "phone_invalid": "செல்லுபடியாகும் 10-15 இலக்க தொலைபேசி எண்ணை உள்ளிடுக",
       "id_required": "மின்னஞ்சல் அல்லது தொலைபேசி எண்ணில் ஒன்று தேவை",
       "types_required": "குறைந்தது ஒரு பணியாளர் வகை தேவை",
-      "wage_required": "ஊதிய தொகை தேவை"
+      "wage_required": "ஊதிய தொகை தேவை",
+      "email_invalid": "Invalid email format",
+      "phone_required": "Phone number is required"
     },
     "actions": {
       "import_contacts": "தொடர்புகளிலிருந்து இறக்குமதி"
@@ -684,7 +823,8 @@
       "mobile": "மொபைல் எண்",
       "email": "மின்னஞ்சல்",
       "gst": "GST எண்",
-      "type": "சப்ளையர் வகை"
+      "type": "சப்ளையர் வகை",
+      "location": "Location"
     },
     "hints": {
       "phone": "எ.கா., 9876543210",
@@ -880,11 +1020,52 @@
       "email_invalid": "தவறான மின்னஞ்சல் வடிவம்",
       "location_label": "இடம்",
       "no_location_set": "இடம் எதுவும் அமைக்கப்படவில்லை"
-    }
+    },
+    "employee_login_settings": "பணியாளர் உள்நுழைவு அமைப்புகள்",
+    "allow_employee_login": "பணியாளர் உள்நுழைவை அனுமதி",
+    "allow_employee_login_subtitle": "பணியாளர்களை பயன்பாட்டில் உள்நுழைய அனுமதி",
+    "employee_login_disabled_info": "பணியாளர் உள்நுழைவு தற்போது முடக்கப்பட்டுள்ளது",
+    "settings_title": "அமைப்புகள்",
+    "language_preference": "மொழி விருப்பம்",
+    "language_subtitle": "உங்கள் காட்சி மொழியை தேர்ந்தெடுக்கவும்",
+    "change_password_subtitle": "உங்கள் கணக்கு கடவுச்சொல்லை புதுப்பிக்கவும்",
+    "role_login_settings": "பதவி உள்நுழைவு அமைப்புகள்",
+    "role_login_settings_subtitle": "எந்த பதவிகள் உள்நுழைய முடியும் என்பதை கட்டுப்படுத்துங்கள்",
+    "role_login_settings_description": "எந்த பதவிகள் பயன்பாட்டில் உள்நுழைய முடியும் என்பதை கட்டுப்படுத்துங்கள்",
+    "allow_manager_login": "மேலாளர் உள்நுழைவை அனுமதி",
+    "allow_manager_login_subtitle": "மேலாளர்களை பயன்பாட்டில் உள்நுழைய அனுமதி",
+    "allow_supervisor_login": "மேற்பார்வையாளர் உள்நுழைவை அனுமதி",
+    "allow_supervisor_login_subtitle": "மேற்பார்வையாளர்களை பயன்பாட்டில் உள்நுழைய அனுமதி",
+    "unsaved_changes": "சேமிக்கப்படாத மாற்றங்கள்",
+    "unsaved_changes_message": "சேமிக்காத மாற்றங்கள் உள்ளன. சேமிக்காமல் விட்டுவிடவா?",
+    "stay": "இங்கே இரு",
+    "discard": "நிராகரி",
+    "talk_to_us_first": "முதலில் எங்களிடம் பேசுங்கள்",
+    "support_nudge": "எங்கள் ஆதரவு குழு சிக்கல்களை சரிசெய்ய, உங்கள் திட்டத்தை சரிசெய்ய அல்லது குறுகிய இடைவெளி வழங்க உதவ முடியும்.\n\nரத்து செய்வதற்கு முன் ஆதரவை தொடர்பு கொள்ள விரும்புகிறீர்களா?",
+    "no_cancel_now": "இல்லை, இப்போது ரத்து செய்",
+    "contact_support": "ஆதரவை தொடர்பு கொள்ளுங்கள்",
+    "confirm_cancellation": "ரத்தை உறுதிப்படுத்துக",
+    "keep_plan": "திட்டத்தை வைத்திரு",
+    "yes_cancel": "ஆம், ரத்து செய்",
+    "subscription_cancelled": "சந்தா ரத்து செய்யப்பட்டது. உங்கள் திட்டம் இலவசமாக மீட்டமைக்கப்பட்டது.",
+    "cancel_failed": "சந்தாவை ரத்து செய்ய முடியவில்லை"
+  },
+  "contact_us": {
+    "title": "எங்களை தொடர்பு கொள்ளுங்கள்",
+    "subtitle": "கேள்விகள் அல்லது உதவி தேவையா? எங்கள் குழுவை தொடர்பு கொள்ளுங்கள்.",
+    "settings_subtitle": "நிறுவன விவரங்கள் மற்றும் ஆதரவு தகவல்",
+    "company_name": "நிறுவனத்தின் பெயர்",
+    "product_name": "தயாரிப்பு பெயர்",
+    "support_email": "ஆதரவு மின்னஞ்சல்",
+    "business_email": "வணிக மின்னஞ்சல்",
+    "website": "வலைத்தளம்",
+    "company_website": "நிறுவன வலைத்தளம்",
+    "address": "நிறுவன முகவரி"
   },
   "notifications": {
     "title": "அறிவிப்புகள்",
     "empty": "அறிவிப்புகள் எதுவும் இல்லை",
+    "see_all": "அனைத்தையும் காண்க",
     "mark_all_read": "அனைத்தையும் படித்ததாகக் குறிக்கவும்",
     "clear_all": "அனைத்தையும் நீக்கு",
     "default_title": "அறிவிப்பு",
@@ -902,7 +1083,11 @@
     "download_success": "கோப்பு வெற்றிகரமாக பதிவிறக்கம் செய்யப்பட்டது",
     "tap_to_open": "{fileName} பதிவிறக்கம் செய்யப்பட்டது. திறக்க தட்டவும்.",
     "idle_title": "இன்னும் அங்கேயே இருக்கிறீர்களா?",
-    "idle_body": "சமீபத்திய திட்ட அறிவிப்புகளுக்கு உங்கள் டாஷ்போர்டைப் பார்க்கவும்."
+    "idle_body": "சமீபத்திய திட்ட அறிவிப்புகளுக்கு உங்கள் டாஷ்போர்டைப் பார்க்கவும்.",
+    "settings": {
+      "title": "Notification Settings",
+      "hint": "Manage your notification preferences"
+    }
   },
   "broadcaster": {
     "title": "ஒலிபரப்பு",
@@ -973,7 +1158,9 @@
     "names": {
       "free": "இலவசம்",
       "basic": "அடிப்படை",
-      "pro": "ப்ரோ"
+      "starter": "ஸ்டார்டர்",
+      "pro": "ப்ரோ",
+      "premium": "பிரீமியம்"
     },
     "dialogs": {
       "upgrade_required": "மேம்படுத்தல் தேவை",
@@ -1103,7 +1290,10 @@
       "launch": "தொடங்கு",
       "reports": "அறிக்கைகள்",
       "stock": "சரக்கு",
-      "profile": "சுயவிவரம்"
+      "profile": "சுயவிவரம்",
+      "contractors": "காண்ட்ராக்டர்கள்",
+      "expenses": "செலவுகள்",
+      "wallet": "வாலட்"
     },
     "drawer": {
       "profile": "சுயவிவரம்",
@@ -1139,10 +1329,11 @@
       "no": "இல்லை",
       "save_changes": "மாற்றங்களை சேமி",
       "refresh": "புதுப்பி",
-      "submit": "சமர்பி"
+      "submit": "சமர்பி",
+      "share": "பகிர்"
     },
     "errors": {
-      "valid_amount": "செல்லுபடியாகும் தொகையை உள்ளிடவும்"
+      "valid_amount": "சரியான தொகையை உள்ளிடவும்"
     },
     "states": {
       "loading": "ஏற்றுகிறது",
@@ -1207,9 +1398,6 @@
     "date": {
       "today": "இன்று"
     },
-    "errors": {
-      "valid_amount": "சரியான தொகையை உள்ளிடவும்"
-    },
     "messages": {
       "error_generic": "ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்.",
       "failed_load_payrolls": "ஊதியப் பட்டியலை ஏற்ற முடியவில்லை",
@@ -1217,6 +1405,10 @@
       "logout_error": "வெளியேறும்போது பிழை ஏற்பட்டது",
       "logout_success": "வெற்றிகரமாக வெளியேறினீர்கள்",
       "storage_permission_denied": "சேமிப்பக அனுமதி மறுக்கப்பட்டது"
+    },
+    "change": "Change",
+    "validation": {
+      "required": "This field is required"
     }
   },
   "validation": {
@@ -1241,8 +1433,9 @@
     }
   },
   "greetings": {
+    "night": "இரவு வணக்கம்",
     "morning": "காலை வணக்கம்",
-    "afternoon": "மாலை வணக்கம்",
+    "afternoon": "மதிய வணக்கம்",
     "evening": "மாலை வணக்கம்",
     "welcome": "வரவேற்கிறோம், {name}!"
   },
@@ -1264,8 +1457,12 @@
   },
   "error": {
     "attendance": {
-      "limit_exceeded": "இன்றைய வருகை வரம்பு (1.5 நாட்கள்) முடிந்துவிட்டது",
-      "already_marked": "வருகை இன்று ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது"
+      "already_marked": "வருகை குறிக்கப்பட்டுள்ளது",
+      "future_date": "எதிர்கால தேதிக்கு முடியாது",
+      "invalid_time": "தவறான நேரம்",
+      "limit_exceeded": "வருகை வரம்பு மீறப்பட்டது",
+      "not_assigned": "இந்த திட்டத்திற்கு ஒதுக்கப்படவில்லை",
+      "location_required": "வருகை குறிக்க இருப்பிடம் தேவை"
     },
     "login": {
       "invalid_credentials": "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்",
@@ -1328,14 +1525,6 @@
     "expense": {
       "not_found": "செலவு இல்லை"
     },
-    "attendance": {
-      "already_marked": "வருகை குறிக்கப்பட்டுள்ளது",
-      "future_date": "எதிர்கால தேதிக்கு முடியாது",
-      "invalid_time": "தவறான நேரம்",
-      "limit_exceeded": "வருகை வரம்பு மீறப்பட்டது",
-      "not_assigned": "இந்த திட்டத்திற்கு ஒதுக்கப்படவில்லை",
-      "location_required": "வருகை குறிக்க இருப்பிடம் தேவை"
-    },
     "upload": {
       "invalid_file_type": "கோப்பு வகை தவறு",
       "file_too_large": "கோப்பு பெரியது",
@@ -1352,7 +1541,7 @@
     },
     "validation": {
       "required": "{field} தேவை",
-      "invalid": "{field} தவறு",
+      "invalid": "தவறான உள்ளீடு. சரிபார்த்து மீண்டும் முயற்சிக்கவும்.",
       "min_length": "{field} குறைந்தபட்சம் {length}",
       "max_length": "{field} அதிகபட்சம் {length}",
       "already_exists": "ஏற்கனவே உள்ளது"
@@ -1589,6 +1778,9 @@
     "payment_success": "பணம் வெற்றிகரமாக செயல்படுத்தப்பட்டது",
     "confirm": "உறுதிப்படுத்தவும்",
     "detail_title": "சம்பள விவரங்கள்",
+    "details": {
+      "title": "சம்பள விவரங்கள்"
+    },
     "calculating": "கணக்கிடப்படுகிறது...",
     "advance": "முன்பணம்",
     "deducted": "கழிக்கப்பட்டது",
@@ -1645,7 +1837,8 @@
       "select_employee": "பணியாளரைத் தேர்வு செய்யவும்",
       "select_at_least_one": "குறைந்தது ஒரு பணியாளரைத் தேர்வு செய்யவும்",
       "invalid_amount": "செல்லுபடியாகாத தொகை",
-      "start_date_after_end": "தொடக்க தேதி முடிவு தேதிக்கு முன்பாக இருக்க வேண்டும்"
+      "start_date_after_end": "தொடக்க தேதி முடிவு தேதிக்கு முன்பாக இருக்க வேண்டும்",
+      "select_both_dates": "Please select both start and end dates for custom range"
     }
   },
   "expense_stats": {
@@ -1697,6 +1890,7 @@
     "waterproofing": "நீர்ப்புகாத் தன்மை",
     "messages": {
       "added_and_assigned": "தொழிலாளர் சேர்க்கப்பட்டு ஒதுக்கப்பட்டார்",
+      "assigned_successfully": "தொழிலாளர் வெற்றிகரமாக ஒதுக்கப்பட்டார்",
       "failed_to_create": "தொழிலாளரை உருவாக்க முடியவில்லை",
       "created_assignment_failed": "உருவாக்கப்பட்டது ஆனால் ஒதுக்குதல் தோல்வியடைந்தது",
       "error_loading": "தொழிலாளர்களை ஏற்ற முடியவில்லை",
@@ -1961,6 +2155,12 @@
     "unlock": "மாற்ற திறக்கவும்",
     "lock": "பூட்டு/மீட்டமை",
     "modules_header": "திட்ட தொகுதிகள்",
+    "groups": {
+      "people": "மக்கள்",
+      "finance": "நிதி",
+      "daily": "தினசரி",
+      "documents": "ஆவணங்கள்"
+    },
     "dialogs": {
       "delete": {
         "title": "திட்டத்தை நீக்கவும்",
@@ -2011,84 +2211,15 @@
       "daily_uploads": {
         "title": "தினசரி செய்திகள்",
         "desc": "தினசரி தள புகைப்படங்கள் மற்றும் முன்னேற்றத்தைக் காண்க"
-      }
-    }
-  },
-  "employee_attendance_tap": {
-    "dialogs": {
-      "location_disabled": {
-        "title": "இடச் சேவை முடக்கப்பட்டுள்ளது",
-        "content": "வருகையைக் குறிக்க தயவுசெய்து இடச் சேவைகளை இயக்கவும்.",
-        "buttons": {
-          "cancel": "ரத்து செய்",
-          "open_settings": "அமைப்புகளைத் திறக்கவும்"
-        }
       },
-      "mark_attendance": {
-        "title": "வருகையைக் குறிக்கவும்"
+      "contractors": {
+        "title": "ஒப்பந்தக்காரர்கள்",
+        "desc": "திட்ட ஒப்பந்தக்காரர்கள் மற்றும் ஒப்பந்தங்களை நிர்வகிக்கவும்"
+      },
+      "stock": {
+        "title": "பங்கு",
+        "desc": "தளத்தில் உள்ள பொருட்கள்"
       }
-    },
-    "buttons": {
-      "full_day": "முழு நாள்",
-      "half_day": "அரை நாள்"
-    },
-    "hints": {
-      "choose_project": "ஒரு திட்டத்தைத் தேர்வு செய்யவும்"
-    },
-    "tabs": {
-      "mark": "வருகை",
-      "stats": "வருகை புள்ளிவிவரங்கள்",
-      "advances": "முன்பணம்",
-      "salary": "சம்பளம்"
-    },
-    "mark": {
-      "select_project": "திட்டத்தைத் தேர்ந்தெடுக்கவும்",
-      "no_assigned_projects": "உங்களுக்கு திட்டங்கள் எதுவும் ஒதுக்கப்படவில்லை. தயவுசெய்து உங்கள் மேலாண்மையை அணுகவும்.",
-      "attendance_type": "வருகை வகை",
-      "select_attendance_type": "வருகை வகையைத் தேர்ந்தெடுக்கவும்",
-      "limit_reached": " (காலக்கெடு முடிந்தது)",
-      "already_marked": "இந்த திட்டத்திற்காக இன்று நீங்கள் ஏற்கனவே {count} நாட்களைக் குறித்துள்ளீர்கள்.",
-      "location_captured": "இடம் பதிவு செய்யப்பட்டது",
-      "capturing_location": "இடம் பதிவு செய்யப்படுகிறது...",
-      "location_not_available": "இடம் கிடைக்கவில்லை",
-      "retry_location": "மீண்டும் முயல அல்லது GPS ஐ இயக்கத் தட்டவும்",
-      "assigned_project": "ஒதுக்கப்பட்ட திட்டம்",
-      "select_type": "வகையைத் தேர்ந்தெடுக்கவும்",
-      "tap_to_mark": "வருகையைப்\nபதிவு செய்யத்\nதட்டவும்",
-      "today_label": "இன்று: {date}"
-    },
-    "stats": {
-      "no_data": "வருகை புள்ளிவிவரங்கள் எதுவும் இல்லை",
-      "weekly": "வாரம்",
-      "monthly": "மாதம்",
-      "yearly": "ஆண்டு",
-      "overall": "மொத்தம்"
-    },
-    "advances": {
-      "no_data": "சம்பள முன்பணம் எதுவும் இல்லை",
-      "no_status_data": "{status} முன்பணம் எதுவும் இல்லை",
-      "reason_label": "காரணம்:",
-      "total_outstanding": "மொத்த முன்பண பாக்கி",
-      "filters": {
-        "all": "அனைத்தும்",
-        "pending": "நிலுவை",
-        "paid": "செலுத்தப்பட்டது"
-      }
-    },
-    "salary": {
-      "title": "சம்பள அறிக்கை",
-      "period": "காலம்",
-      "current_week": "இந்த வாரம்",
-      "current_month": "இந்த மாதம்",
-      "custom_range": "தனிப்பயன் வரம்பு",
-      "start_date": "தொடக்க தேதி",
-      "end_date": "முடிவு தேதி",
-      "select_date": "தேதியைத் தேர்ந்தெடுக்கவும்",
-      "select_dates": "தொடக்க மற்றும் முடிவு தேதிகளைத் தேர்ந்தெடுக்கவும்",
-      "retry": "மீண்டும் முயற்சிக்கவும்",
-      "no_data": "{period} க்கான செலுத்தப்பட்ட சம்பளம் இல்லை",
-      "payments": "பணம் செலுத்துதல்கள்",
-      "records": "பணம் செலுத்தல் பதிவுகள்"
     }
   },
   "employees_screen": {
@@ -2179,7 +2310,8 @@
       "amount": "தொகை",
       "description_optional": "விளக்கம் (விருப்பத்தேர்வு)",
       "full_name": "முழு பெயர்",
-      "project": "திட்டம்"
+      "project": "திட்டம்",
+      "type": "Type"
     },
     "dialogs": {
       "no_projects": "திட்டங்கள் எதுவும் இல்லை",
@@ -2214,21 +2346,6 @@
       "phone": "எ.கா., 9876543210",
       "email": "supplier@example.com",
       "gst": "எ.கா., 27AABCT1332L1Z5"
-    },
-    "fields": {
-      "username": "பயனர்பெயர்",
-      "password": "கடவுச்சொல்",
-      "email": "மின்னஞ்சல்",
-      "type":"வகை",
-      "email_or_phone": "மின்னஞ்சல்/தொலைபேசி எண்",
-      "phone": "தொலைபேசி",
-      "old_password": "பழைய கடவுச்சொல்",
-      "new_password": "புதிய கடவுச்சொல்",
-      "confirm_password": "புதிய கடவுச்சொல் உறுதிப்படுத்தல்",
-      "full_name": "முழு பெயர்",
-      "org_name": "நிறுவன பெயர்",
-      "phone_no": "தொலைபேசி எண்",
-      "promo_code": "விளம்பரக் குறியீடு"
     }
   },
   "tenant_detail": {
@@ -2294,7 +2411,8 @@
       "profitability": "லாபம்",
       "manpower": "மனிதவளம்",
       "salaries": "சம்பளங்கள்",
-      "stock": "பங்கு"
+      "stock": "பங்கு",
+      "overview": "கண்ணோட்டம்"
     },
     "select_project": "திட்டம் தேர்ந்தெடுக்கவும்",
     "no_projects": "திட்டங்கள் இல்லை",
@@ -2393,6 +2511,26 @@
       "daily": "தினசரி",
       "weekly": "வாராந்திர",
       "monthly": "மாதாந்திர"
+    },
+    "pdf": {
+      "financial_summary": "Financial Summary",
+      "total_income": "Total Income",
+      "total_expenses": "Total Expenses",
+      "net_result": "Net Result",
+      "expense_breakdown": "Expense Breakdown",
+      "total": "Total",
+      "category": "Category",
+      "amount": "Amount",
+      "percentage": "Percentage",
+      "manpower": "Manpower",
+      "name": "Name",
+      "total_man_days": "Total Man-Days",
+      "salaries": "Salaries",
+      "wage_type": "Wage Type",
+      "wage_amount": "Wage Amount",
+      "man_days": "Man-Days",
+      "net_payable": "Net Payable",
+      "no_data": "No data available in selected reports."
     }
   },
   "stock": {
@@ -2749,6 +2887,7 @@
     "select_view_access": "பார்க்கும் அனுமதியைத் தேர்ந்தெடுக்கவும்",
     "please_select_project": "திட்டம் தேர்ந்தெடுக்கவும்",
     "file_read_error": "கோப்பு தரவை படிக்க முடியவில்லை",
+    "uploading": "ஆவணம் பதிவேற்றப்படுகிறது...",
     "upload_failed": "பதிவேற்றம் தோல்வியடைந்தது",
     "update_failed": "புதுப்பிப்பு தோல்வியடைந்தது",
     "type_updated": "ஆவண வகை வெற்றிகரமாக புதுப்பிக்கப்பட்டது",
@@ -2759,6 +2898,19 @@
       "file_downloaded": "கோப்பு பதிவிறக்கப்பட்டது",
       "no_url": "ஆவண URL கிடைக்கவில்லை",
       "error_sharing": "ஆவணத்தை பகிர முடியவில்லை"
+    },
+    "select_category": "Select Category",
+    "select_category_hint": "Choose document category",
+    "categories": {
+      "all": "All",
+      "aadhaar": "Aadhaar Card",
+      "pan_card": "PAN Card",
+      "trade_license": "Trade License",
+      "agreement": "Agreement",
+      "invoice": "Invoice",
+      "drawings": "Drawings",
+      "insurance": "Insurance",
+      "other": "Other"
     }
   },
   "daily_notes": {
@@ -2826,7 +2978,7 @@
     "debit_expense": "டெபிட் (செலவு)",
     "credit_income": "கிரெடிட் (வருமானம்)",
     "budget_exceeded": "பட்ஜெட் தாண்டியது",
-    "available_budget": "கிடைக்கும் பட்ஜெட்: \u20b9{amount}",
+    "available_budget": "கிடைக்கும் பட்ஜெட்: ₹{amount}",
     "details_section": "விவரங்கள்",
     "field_name": "பெயர்",
     "field_type": "வகை",
@@ -2879,6 +3031,53 @@
       "labour_only": "தொழிலாளர் மட்டும்",
       "material_only": "பொருள் மட்டும்",
       "other": "மற்றவை"
-    }
+    },
+    "status": {
+      "active": "Active",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "on_hold": "On Hold"
+    },
+    "success": {
+      "created": "Contract created successfully",
+      "updated": "Contract updated successfully",
+      "deleted": "Contract deleted successfully"
+    },
+    "errors": {
+      "load_failed": "Failed to load contracts",
+      "create_failed": "Failed to create contract",
+      "update_failed": "Failed to update contract",
+      "delete_failed": "Failed to delete contract"
+    },
+    "project_tab": "Contracts"
+  },
+  "contracts": {
+    "add_payment": "Add Payment",
+    "assign_contractor": "Assign Contractor",
+    "assign_contractor_desc": "Select a contractor for this contract",
+    "completed_with_active_contracts": "Cannot mark as completed with active contracts",
+    "contract_deleted": "Contract deleted successfully",
+    "delete_contract": "Delete Contract",
+    "delete_contract_confirm": "Are you sure you want to delete this contract?",
+    "due": "Due",
+    "enter_valid_amount": "Please enter a valid amount",
+    "no_contractors_yet": "No contractors added yet",
+    "notes_optional": "Notes (Optional)",
+    "outstanding": "Outstanding",
+    "paid": "Paid",
+    "payment_mode": "Payment Mode",
+    "payment_recorded": "Payment recorded successfully",
+    "record_payment": "Record Payment",
+    "status": {
+      "active": "Active",
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "on_hold": "On Hold"
+    },
+    "total_contract_value": "Total Contract Value",
+    "unknown_contractor": "Unknown Contractor"
+  },
+  "states": {
+    "no_data": "No data available"
   }
 }

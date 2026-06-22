@@ -399,7 +399,7 @@ const ModuleExplore = () => {
                    <div className="pt-4 space-y-4">
                       <div className="flex flex-col sm:flex-row gap-4">
                         <Button size="lg" className="rounded-xl px-8 shadow-lg shadow-primary/20 hover:scale-105 transition-all" asChild>
-                          <a href="/app/index.html">Start Free Trial</a>
+                          <a href="/app/index.html">Login to Briktra</a>
                         </Button>
                       </div>
                       <p className="text-xs text-muted-foreground italic">

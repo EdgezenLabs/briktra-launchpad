@@ -85,7 +85,7 @@ const Hero = () => {
           animate-fade-in opacity-0 sm:flex-row"
           style={{ animationDelay: "0.4s" }}
         >
-          {/* Start Free Trial - Primary (Linked to App) */}
+          {/* Login to Briktra - Primary (Linked to App) */}
           <Button
             size="xl"
             className="px-12 py-6 text-lg font-bold 
@@ -94,7 +94,7 @@ const Hero = () => {
             hover:scale-110 hover:shadow-2xl"
             asChild
           >
-            <a href="/app/index.html">Start Free Trial</a>
+            <a href="/app/index.html">Login to Briktra</a>
           </Button>
         </div>
 
