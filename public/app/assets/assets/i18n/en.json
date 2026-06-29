@@ -938,6 +938,8 @@
     },
     "validation": {
       "company_name_required": "Please enter company name",
+      "company_name_numeric": "Company name cannot be numeric only",
+      "company_name_invalid": "Company name contains invalid characters",
       "gst_length": "GST number must be exactly 15 characters",
       "gst_invalid": "Invalid GST structure or PAN status code",
       "name_required": "Name required",
@@ -1422,7 +1424,7 @@
     },
     "project": {
       "not_found": "Project not found",
-      "already_exists": "Project already exists",
+      "already_exists": "A project with this name already exists. Please choose a different project name.",
       "cannot_delete_active": "Cannot delete active projects",
       "limit_reached": "Project limit reached, Please upgrad your plan",
       "validation": {

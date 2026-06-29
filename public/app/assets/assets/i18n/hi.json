@@ -1101,6 +1101,8 @@
     },
     "validation": {
       "company_name_required": "कृपया कंपनी का नाम दर्ज करें",
+      "company_name_numeric": "कंपनी का नाम केवल संख्यात्मक नहीं हो सकता",
+      "company_name_invalid": "कंपनी के नाम में अमान्य वर्ण हैं",
       "gst_length": "जीएसटी नंबर बिल्कुल 15 वर्णों का होना चाहिए",
       "gst_invalid": "अमान्य जीएसटी संरचना या पैन स्थिति कोड",
       "name_required": "नाम आवश्यक",
@@ -1591,7 +1593,7 @@
     },
     "project": {
       "not_found": "परियोजना नहीं मिली",
-      "already_exists": "परियोजना पहले से मौजूद है",
+      "already_exists": "इस नाम की परियोजना पहले से मौजूद है। कृपया एक अलग परियोजना नाम चुनें।",
       "cannot_delete_active": "सक्रिय परियोजनाओं को हटाया नहीं जा सकता",
       "limit_reached": "Project limit reached, Please upgrad your plan",
       "validation": {

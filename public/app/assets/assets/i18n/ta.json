@@ -1012,6 +1012,8 @@
     },
     "validation": {
       "company_name_required": "நிறுவன பெயரை உள்ளிடவும்",
+      "company_name_numeric": "நிறுவனத்தின் பெயர் எண்களாக மட்டும் இருக்கக்கூடாது",
+      "company_name_invalid": "நிறுவனத்தின் பெயர் தவறான எழுத்துக்களைக் கொண்டுள்ளது",
       "gst_length": "ஜிஎஸ்டி எண் சரியாக 15 எழுத்துக்கள் இருக்க வேண்டும்",
       "gst_invalid": "தவறான ஜிஎஸ்டி அமைப்பு",
       "name_required": "பெயர் தேவை",
@@ -1503,7 +1505,7 @@
     },
     "project": {
       "not_found": "திட்டம் இல்லை",
-      "already_exists": "திட்டம் உள்ளது",
+      "already_exists": "இந்த பெயரில் ஒரு திட்டம் ஏற்கனவே உள்ளது. தயவுசெய்து வேறு திட்ட பெயரைத் தேர்ந்தெடுக்கவும்.",
       "cannot_delete_active": "செயலில் உள்ள திட்டத்தை நீக்க முடியாது",
       "limit_reached": "Project limit reached, Please upgrad your plan",
       "validation": {
