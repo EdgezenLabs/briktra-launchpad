@@ -1,89 +1,87 @@
 import { Link } from "react-router-dom";
 import briktraLogo from "@/assets/briktra-logo.svg";
+import { COMPANY, FOOTER_LINKS, SITE, formatAddressMultiline } from "@/lib/site-config";
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="border-t border-border bg-card py-12">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row align-top">
-          {/* Brand & Contact */}
-          <div className="flex flex-col items-center gap-3 md:items-start max-w-xs text-center md:text-left">
-            <Link to="/" className="flex items-center gap-2 mb-2">
-              <img 
-                src={briktraLogo} 
-                alt="Briktra Logo" 
-                className="h-8 w-auto"
-              />
-            </Link>
-            
-            <p className="text-sm font-semibold text-foreground">
-              Edgezen Labs
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Madurai, Tamilnadu, India<br />
-              <a href="mailto:support@briktra.com" className="transition-colors hover:text-primary">support@briktra.com</a>
-            </p>
-          </div>
-
-          {/* Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <a href="/#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Features
-            </a>
-            <a href="/#app-showcase" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Inside the App
-            </a>
-            <a href="/#why" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Why Briktra
-            </a>
-            <a href="/#workflow" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              How It Works
-            </a>
-            <a href="/#users" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              For Teams
-            </a>
-            <a href="/#pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Pricing
-            </a>
-          </div>
-
+const Footer = () => (
+  <footer className="border-t border-border bg-card py-16" role="contentinfo">
+    <div className="container mx-auto px-4 md:px-6">
+      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <Link to="/" className="mb-4 inline-flex items-center gap-2" aria-label={`${SITE.name} home`}>
+            <img src={briktraLogo} alt={`${SITE.name} logo`} className="h-8 w-auto" width={120} height={32} />
+          </Link>
+          <p className="mb-2 text-sm font-semibold text-foreground">{SITE.name}</p>
+          <p className="mb-4 text-sm text-muted-foreground">{SITE.tagline}</p>
+          <p className="whitespace-pre-line text-xs text-muted-foreground leading-relaxed">
+            {formatAddressMultiline()}
+          </p>
+          <p className="mt-3 text-xs text-muted-foreground">
+            GSTIN: {COMPANY.gstin}
+          </p>
         </div>
 
-        {/* Divider */}
-        <div className="section-divider my-8"></div>
+        <div>
+          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground">Product</h3>
+          <ul className="space-y-2">
+            {FOOTER_LINKS.product.map((link) => (
+              <li key={link.href}>
+                <Link to={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        {/* Bottom row */}
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} Briktra – All rights reserved
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground md:gap-6">
-            <Link to="/privacy-policy" className="transition-colors hover:text-foreground">
-              Privacy Policy
-            </Link>
-            <span className="hidden md:inline">|</span>
-            <Link to="/terms" className="transition-colors hover:text-foreground">
-              Terms
-            </Link>
-            <span className="hidden md:inline">|</span>
-            <Link to="/refund-policy" className="transition-colors hover:text-foreground">
-              Refund Policy
-            </Link>
-            <span className="hidden md:inline">|</span>
-            <a href="/#contact" className="transition-colors hover:text-foreground">
-              Contact
-            </a>
-            <span className="hidden md:inline">|</span>
-            <Link to="/about-us" className="transition-colors hover:text-foreground">
-              About Us
-            </Link>
-          </div>
+        <div>
+          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground">Support</h3>
+          <ul className="space-y-2">
+            {FOOTER_LINKS.support.map((link) => (
+              <li key={link.href}>
+                <Link to={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a href={`mailto:${COMPANY.email}`} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                {COMPANY.email}
+              </a>
+            </li>
+            <li>
+              <a href={`tel:${COMPANY.phoneTel}`} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                {COMPANY.phone}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground">Legal</h3>
+          <ul className="space-y-2">
+            {FOOTER_LINKS.legal.map((link) => (
+              <li key={link.href}>
+                <Link to={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </footer>
-  );
-};
+
+      <div className="section-divider my-10" />
+
+      <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
+        <p className="text-sm text-muted-foreground">
+          © {SITE.copyrightYear} {SITE.name}. All rights reserved.
+        </p>
+        <p className="text-sm text-muted-foreground">
+          Powered by {COMPANY.displayName}
+        </p>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

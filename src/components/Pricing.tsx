@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Check, X, ShieldCheck, Cloud, Heart, Headphones, CreditCard, Sparkles, Building2, HardHat, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PAYMENT, SITE } from "@/lib/site-config";
 import {
   Dialog,
   DialogContent,
@@ -297,20 +299,30 @@ const Features = () => (
   </div>
 );
 
-const Pricing = () => {
+interface PricingProps {
+  standalone?: boolean;
+}
+
+const Pricing = ({ standalone = false }: PricingProps) => {
   const [isYearly, setIsYearly] = useState(true);
 
   return (
-    <section id="pricing" className="py-24 bg-[#fafafa]">
+    <section id="pricing" className={`py-24 ${standalone ? "bg-background" : "bg-[#fafafa]"}`}>
       <div className="container mx-auto px-4 md:px-6">
         
         {/* Header Section */}
         <div className="text-center mb-16 relative">
-          <h2 className="mb-6 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-            Simple Pricing. Powerful Results.
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
-            Choose the plan that fits your team. Upgrade or downgrade at any time.
+          {!standalone && (
+            <h2 className="mb-6 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+              Simple Pricing. Powerful Results.
+            </h2>
+          )}
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-4">
+            Choose the plan that fits your team. Upgrade or downgrade at any time. No hidden charges.
+          </p>
+          <p className="text-sm text-slate-500 max-w-2xl mx-auto mb-10">
+            All prices are exclusive of 18% GST. Tax invoices are generated for every subscription payment.
+            {PAYMENT.disclaimer}
           </p>
 
           {/* Toggle */}
@@ -462,9 +474,12 @@ const Pricing = () => {
                   variant={plan.popular ? 'default' : 'outline'}
                   asChild
                 >
-                  <a href="/app/index.html">Login to Briktra</a>
+                  <a href={SITE.appUrl}>Start Free Trial</a>
                 </Button>
-                <p className="text-xs text-center text-slate-400 mt-3">No credit card required</p>
+                <p className="text-xs text-center text-slate-400 mt-3">
+                  Subscription billed monthly or annually ·{" "}
+                  <Link to="/terms" className="underline hover:text-slate-600">Terms</Link>
+                </p>
               </div>
             </div>
           ))}
@@ -472,6 +487,17 @@ const Pricing = () => {
         </div>
 
         <Features />
+
+        <div className="mt-12 mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-600">
+          <p className="mb-2 font-semibold text-slate-800">Subscription Terms</p>
+          <p>
+            {SITE.name} is a cloud software subscription. Access is provided digitally — no physical products are shipped.
+            Cancel anytime per our{" "}
+            <Link to="/cancellation-policy" className="text-primary underline">Cancellation Policy</Link>.
+            Refunds are governed by our{" "}
+            <Link to="/refund-policy" className="text-primary underline">Refund Policy</Link>.
+          </p>
+        </div>
       </div>
     </section>
   );

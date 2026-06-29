@@ -1,234 +1,130 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
-import { Users, Lightbulb, Target, ArrowRight, Shield, Activity, Smartphone, Gamepad2 } from "lucide-react";
+import PageShell from "@/components/PageShell";
+import { Button } from "@/components/ui/button";
+import { SITE, COMPANY } from "@/lib/site-config";
+import { HardHat, Target, Eye, CheckCircle2, Users, Building2 } from "lucide-react";
 
-const AboutUs = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="About EdgeZen Labs"
-        description="Learn about EdgeZen Labs, the innovators behind Briktra Construction ERP. Our mission is to engineer digital excellence for construction companies."
-        canonical="https://briktra.com/about-us"
-      />
-      <Header />
-      
-      <main className="pt-24 pb-16 md:pt-32 md:pb-24">
-        
-        {/* Intro Section */}
-        <section className="container mx-auto px-4 md:px-6 mb-20 text-center">
-          <div className="mx-auto max-w-4xl">
-            <h1 className="mb-6 font-display text-4xl md:text-6xl font-bold text-foreground">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">EdgeZen Labs</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              We are a team of passionate engineers, designers, and innovators dedicated to building the future of digital experiences.
-            </p>
-          </div>
-        </section>
+const reasons = [
+  "Built specifically for Indian construction site workflows",
+  "Mobile-first design for supervisors and field teams",
+  "Transparent monthly and annual subscription pricing",
+  "Projects, labour, attendance, expenses, and inventory in one platform",
+  "Multilingual support — English, Hindi, and Tamil",
+  "Secure subscription billing with GST invoices",
+];
 
-        {/* Philosophy */}
-        <section className="container mx-auto px-4 md:px-6 mb-24">
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl bg-card border-2 border-border p-8 md:p-12 shadow-xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <h2 className="text-3xl font-bold mb-6 text-foreground flex items-center gap-3">
-              <Lightbulb className="text-primary h-8 w-8" />
-              Our Philosophy
-            </h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                At EdgeZen Labs, we believe technology should be elegant, powerful, and accessible. We don't just write code—we craft experiences.
-              </p>
-              <p>
-                Every project is an opportunity to push boundaries, challenge conventions, and deliver solutions that make a real difference. Whether it's a mobile app, web platform, or cloud service, we approach each challenge with the same rigor and creativity.
-              </p>
-              <p>
-                Our clients trust us because we combine technical excellence with design thinking, ensuring products that are not only functional but delightful to use.
-              </p>
+const audiences = [
+  {
+    icon: HardHat,
+    title: "Independent Contractors",
+    description: "Manage multiple sites, labour, and expenses without spreadsheets.",
+  },
+  {
+    icon: Building2,
+    title: "Construction Companies",
+    description: "Scale operations with role-based access and portfolio reporting.",
+  },
+  {
+    icon: Users,
+    title: "Site Supervisors",
+    description: "Mark attendance, log expenses, and update progress from the field.",
+  },
+];
+
+const AboutUs = () => (
+  <PageShell
+    title="About Briktra"
+    description="Learn what Briktra is, who it is for, and why contractors choose our construction ERP platform."
+    canonical={`${SITE.url}/about`}
+  >
+    <section className="bg-secondary/30 pt-28 pb-16">
+      <div className="container mx-auto px-4 md:px-6 text-center">
+        <h1 className="mb-6 font-display text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
+          About {SITE.name}
+        </h1>
+        <p className="mx-auto max-w-3xl text-xl text-muted-foreground leading-relaxed">
+          {SITE.tagline}. {SITE.name} helps contractors and builders run projects, sites, and teams from one cloud platform.
+        </p>
+      </div>
+    </section>
+
+    <section className="py-20">
+      <div className="container mx-auto max-w-4xl px-4 md:px-6">
+        <h2 className="mb-6 font-display text-3xl font-bold">What is Briktra?</h2>
+        <p className="mb-6 text-lg text-muted-foreground leading-relaxed">
+          {SITE.name} is a subscription-based construction ERP and project management platform. It unifies
+          projects, worksites, labour management, attendance, expenses, procurement, inventory, billing,
+          GST records, dashboards, and analytics — accessible on web and mobile.
+        </p>
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Unlike generic office software adapted for construction, {SITE.name} is designed for real site
+          conditions: quick data entry, multilingual field teams, and live cloud sync for management visibility.
+        </p>
+      </div>
+    </section>
+
+    <section className="bg-foreground py-20 text-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <h2 className="mb-12 text-center font-display text-3xl font-bold">Who is Briktra For?</h2>
+        <div className="grid gap-8 md:grid-cols-3">
+          {audiences.map((item) => (
+            <div key={item.title} className="text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                <item.icon className="h-7 w-7" aria-hidden="true" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
+              <p className="text-background/70">{item.description}</p>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </div>
+    </section>
 
-        {/* Core Values */}
-        <section className="container mx-auto px-4 md:px-6 mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Core Values</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            
-            <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Target className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Mission</h3>
-              <p className="text-muted-foreground">To engineer digital excellence by creating intelligent, scalable solutions that empower businesses and transform user experiences.</p>
-            </div>
+    <section className="py-20">
+      <div className="container mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:px-6">
+        <div className="premium-card p-8">
+          <Target className="mb-4 h-8 w-8 text-primary" aria-hidden="true" />
+          <h2 className="mb-4 font-display text-2xl font-bold">Our Mission</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            To give every construction business — from solo contractors to growing firms — professional-grade
+            tools to manage projects, people, and money with clarity and confidence.
+          </p>
+        </div>
+        <div className="premium-card p-8">
+          <Eye className="mb-4 h-8 w-8 text-primary" aria-hidden="true" />
+          <h2 className="mb-4 font-display text-2xl font-bold">Our Vision</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            To become the most trusted construction ERP for Indian builders, where every site decision is
+            informed by accurate, real-time data.
+          </p>
+        </div>
+      </div>
+    </section>
 
-            <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Lightbulb className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Vision</h3>
-              <p className="text-muted-foreground">To be the global leader in innovative software development, setting new standards for quality, design, and technological advancement.</p>
-            </div>
+    <section className="bg-secondary/30 py-20">
+      <div className="container mx-auto max-w-3xl px-4 md:px-6">
+        <h2 className="mb-8 text-center font-display text-3xl font-bold">Why Contractors Choose Briktra</h2>
+        <ul className="space-y-4">
+          {reasons.map((reason) => (
+            <li key={reason} className="flex items-start gap-3">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <span className="text-foreground">{reason}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
 
-            <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Users className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Passion</h3>
-              <p className="text-muted-foreground">We are driven by a love for technology and a commitment to craft. Every line of code is written with care and precision.</p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Target className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Excellence</h3>
-              <p className="text-muted-foreground">We don't compromise on quality. From architecture to UI/UX, we deliver products that exceed expectations.</p>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Our Approach */}
-        <section className="container mx-auto px-4 md:px-6 mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Approach</h2>
-          </div>
-          <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
-            
-            <div className="flex-1 rounded-2xl p-8 bg-card border border-border relative overflow-hidden group">
-              <span className="absolute -top-4 -right-4 text-9xl font-black text-muted/20 group-hover:text-primary/10 transition-colors duration-500">01</span>
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Design</h3>
-                <p className="text-muted-foreground">We start with deep user research and create beautiful, intuitive interfaces in Figma. Every pixel matters.</p>
-              </div>
-            </div>
-
-            <div className="flex-1 rounded-2xl p-8 bg-card border border-border relative overflow-hidden group">
-              <span className="absolute -top-4 -right-4 text-9xl font-black text-muted/20 group-hover:text-primary/10 transition-colors duration-500">02</span>
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Development</h3>
-                <p className="text-muted-foreground">Using modern tech stacks, we build scalable, secure, and performant applications with clean architecture.</p>
-              </div>
-            </div>
-
-            <div className="flex-1 rounded-2xl p-8 bg-card border border-border relative overflow-hidden group">
-              <span className="absolute -top-4 -right-4 text-9xl font-black text-muted/20 group-hover:text-primary/10 transition-colors duration-500">03</span>
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Deployment</h3>
-                <p className="text-muted-foreground">Cloud-native deployment with CI/CD pipelines, monitoring, and continuous optimization for peak performance.</p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Products Section (Based on Image) */}
-        <section className="container mx-auto px-4 md:px-6 mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Products</h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">Engineering Digital Excellence. Building intelligent, beautiful, and scalable products.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            
-            {/* CredoSafe */}
-            <a href="#" className="group block p-8 rounded-2xl bg-card border border-border hover:border-primary transition-all duration-300 hover:shadow-xl">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-orange-50 rounded-xl">
-                    <Shield className="h-8 w-8 text-orange-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-orange-600">CredoSafe</h3>
-                </div>
-                <ArrowRight className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors transform group-hover:translate-x-1" />
-              </div>
-              <p className="text-muted-foreground">Complete loan processing & ERP system. Mobile-first platform managing applications, verifications, credit checks, approvals & disbursals.</p>
-            </a>
-
-            {/* Briktra */}
-            <a href="#" className="group block p-8 rounded-2xl bg-card border border-primary hover:border-primary/80 transition-all duration-300 shadow-lg shadow-primary/5 hover:shadow-xl">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-primary/10 rounded-xl">
-                    <Smartphone className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Briktra</h3>
-                </div>
-                <ArrowRight className="h-6 w-6 text-primary transition-colors transform group-hover:translate-x-1" />
-              </div>
-              <p className="text-muted-foreground">Construction & Contractor ERP. Field-optimized mobile platform for projects, labour, materials, vendors. Cloud-connected & multilingual.</p>
-            </a>
-
-            {/* Expeniqo */}
-            <a href="#" className="group block p-8 rounded-2xl bg-card border border-border hover:border-yellow-500 transition-all duration-300 hover:shadow-xl">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-slate-900 rounded-xl">
-                    <Activity className="h-8 w-8 text-yellow-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-yellow-600">Expeniqo</h3>
-                </div>
-                <ArrowRight className="h-6 w-6 text-muted-foreground group-hover:text-yellow-500 transition-colors transform group-hover:translate-x-1" />
-              </div>
-              <p className="text-muted-foreground">Smart AI-powered expense tracker. Automatically reads SMS, identifies transactions, categorizes spending, and generates insights.</p>
-            </a>
-
-            {/* Card Clash Legends Arena */}
-            <a href="#" className="group block p-8 rounded-2xl bg-card border border-border hover:border-purple-500 transition-all duration-300 hover:shadow-xl">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-slate-900 rounded-xl">
-                    <Gamepad2 className="h-8 w-8 text-purple-400" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-purple-600">Card Clash Legends Arena</h3>
-                </div>
-                <ArrowRight className="h-6 w-6 text-muted-foreground group-hover:text-purple-500 transition-colors transform group-hover:translate-x-1" />
-              </div>
-              <p className="text-muted-foreground">Competitive PvP collectible card battle game built in Unity. AAA fantasy UI with strategic gameplay and multiplayer modes.</p>
-            </a>
-
-          </div>
-        </section>
-
-        {/* Stats & Trust */}
-        <section className="container mx-auto px-4 md:px-6 mb-24">
-          <div className="mx-auto max-w-5xl rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 shadow-xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-10 divide-y md:divide-y-0 md:divide-x divide-primary-foreground/20">
-              <div className="py-4 md:py-0">
-                <p className="text-5xl font-black mb-2">100+</p>
-                <p className="text-primary-foreground/80 font-medium tracking-wide uppercase">Projects Delivered</p>
-              </div>
-              <div className="py-4 md:py-0">
-                <p className="text-5xl font-black mb-2">50+</p>
-                <p className="text-primary-foreground/80 font-medium tracking-wide uppercase">Happy Clients</p>
-              </div>
-              <div className="py-4 md:py-0">
-                <p className="text-5xl font-black mb-2">10+</p>
-                <p className="text-primary-foreground/80 font-medium tracking-wide uppercase">Years Experience</p>
-              </div>
-            </div>
-            <div className="text-center max-w-3xl mx-auto">
-              <p className="text-xl md:text-2xl font-medium leading-relaxed">
-                We've built a reputation for delivering exceptional results on time, every time. Our team's expertise spans the entire technology stack, from mobile to cloud to AI.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact info */}
-        <section className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-2xl font-bold mb-6">Get in Touch with Us</h2>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-lg text-muted-foreground">
-            <a href="mailto:support@briktra.com" className="hover:text-primary transition-colors hover:underline">support@briktra.com</a>
-          </div>
-        </section>
-
-      </main>
-
-      <Footer />
-    </div>
-  );
-};
+    <section className="py-16 text-center">
+      <div className="container mx-auto px-4 md:px-6">
+        <Button size="lg" asChild>
+          <a href={SITE.appUrl}>Start Free Trial</a>
+        </Button>
+        <p className="mt-6 text-sm text-muted-foreground">
+          Operated by {COMPANY.legalName} · GSTIN {COMPANY.gstin}
+        </p>
+      </div>
+    </section>
+  </PageShell>
+);
 
 export default AboutUs;

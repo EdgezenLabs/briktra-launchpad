@@ -104,12 +104,12 @@ const Features = () => {
 
         {/* Features grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
               key={feature.title}
-              className="group relative h-[220px] w-full [perspective:1000px]"
+              className="group relative h-auto min-h-[220px] w-full [perspective:1000px] motion-reduce:[perspective:none]"
             >
-              <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-2xl">
+              <div className="relative h-full w-full rounded-2xl motion-reduce:[transform:none] transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] motion-reduce:group-hover:[transform:none]">
                 
                 {/* Front Face */}
                 <div className="premium-card absolute inset-0 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] z-20">
@@ -121,8 +121,8 @@ const Features = () => {
                   </h3>
                 </div>
 
-                {/* Back Face */}
-                <div className="premium-card absolute inset-0 flex flex-col items-center justify-center p-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] bg-primary/5 border-primary/30 shadow-inner z-10">
+                {/* Back Face — visible on mobile without hover */}
+                <div className="premium-card absolute inset-0 flex flex-col items-center justify-center p-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] bg-primary/5 border-primary/30 shadow-inner z-10 motion-reduce:static motion-reduce:[transform:none] motion-reduce:opacity-100 md:motion-reduce:static">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <feature.icon className="h-5 w-5" />
                   </div>
