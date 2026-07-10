@@ -83,6 +83,7 @@ export const FOOTER_LINKS = {
     { label: "Cookie Policy", href: "/cookie-policy" },
     { label: "Security Policy", href: "/security-policy" },
     { label: "Data Deletion Policy", href: "/data-deletion-policy" },
+    { label: "Delete Account", href: "/delete-account" },
     { label: "Acceptable Use Policy", href: "/acceptable-use-policy" },
   ],
 } as const;

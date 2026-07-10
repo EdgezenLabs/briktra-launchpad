@@ -14,6 +14,7 @@ import ShippingDeliveryPolicy from "./pages/ShippingDeliveryPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
 import SecurityPolicy from "./pages/SecurityPolicy";
 import DataDeletionPolicy from "./pages/DataDeletionPolicy";
+import DeleteAccount from "./pages/DeleteAccount";
 import AcceptableUsePolicy from "./pages/AcceptableUsePolicy";
 import AboutUs from "./pages/AboutUs";
 import FeaturesPage from "./pages/FeaturesPage";
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/security-policy" element={<SecurityPolicy />} />
             <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
+            <Route path="/delete-account" element={<DeleteAccount />} />
             <Route path="/acceptable-use-policy" element={<AcceptableUsePolicy />} />
             <Route path="/explore" element={<ModuleExplore />} />
             <Route path="/app/*" element={null} />
