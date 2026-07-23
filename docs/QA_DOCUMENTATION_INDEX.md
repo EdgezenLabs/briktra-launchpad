@@ -13,6 +13,8 @@ This folder contains review and QA documentation only. The production audit belo
 |----------|---------|
 | [QA_PRODUCTION_AUDIT_REPORT.md](./QA_PRODUCTION_AUDIT_REPORT.md) | **Primary QA deliverable** — live production test results, scores, issues, journeys, go/no-go |
 | [QA_AUTH_SECURITY_AUDIT_REPORT.md](./QA_AUTH_SECURITY_AUDIT_REPORT.md) | **Auth & security QA** — role-based login, session, RBAC, injection tests (static + manual scripts) |
+| [QA_TEST_CASES_BY_ROLE.md](./QA_TEST_CASES_BY_ROLE.md) | **150+ test cases** per Tenant/Manager/Supervisor/Employee — deep scenarios + live login blocker notes |
+| [role-exploration/](./role-exploration/) | Raw API login probe logs (redacted) from `scripts/explore-roles.mjs` |
 | [WEBSITE_REVIEW_AND_PLAN.md](./WEBSITE_REVIEW_AND_PLAN.md) | Earlier engineering review & implementation plan (pre-deploy enhancements) |
 | [WEBSITE_ENHANCEMENT_REPORT.md](./WEBSITE_ENHANCEMENT_REPORT.md) | Engineering enhancement completion report |
 
