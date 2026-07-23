@@ -12,6 +12,7 @@ This folder contains review and QA documentation only. The production audit belo
 | Document | Purpose |
 |----------|---------|
 | [QA_PRODUCTION_AUDIT_REPORT.md](./QA_PRODUCTION_AUDIT_REPORT.md) | **Primary QA deliverable** — live production test results, scores, issues, journeys, go/no-go |
+| [QA_AUTH_SECURITY_AUDIT_REPORT.md](./QA_AUTH_SECURITY_AUDIT_REPORT.md) | **Auth & security QA** — role-based login, session, RBAC, injection tests (static + manual scripts) |
 | [WEBSITE_REVIEW_AND_PLAN.md](./WEBSITE_REVIEW_AND_PLAN.md) | Earlier engineering review & implementation plan (pre-deploy enhancements) |
 | [WEBSITE_ENHANCEMENT_REPORT.md](./WEBSITE_ENHANCEMENT_REPORT.md) | Engineering enhancement completion report |
 
