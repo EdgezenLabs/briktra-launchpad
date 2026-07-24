@@ -3028,8 +3028,9 @@
   },
   "contracts": {
     "add_payment": "Add Payment",
-    "assign_contractor": "Assign Contractor",
-    "assign_contractor_desc": "Select a contractor for this contract",
+    "assign_contractor": "ठेकेदार नियुक्त करें",
+    "add_contract": "अनुबंध जोड़ें",
+    "assign_contractor_desc": "भुगतान और बकाया राशि ट्रैक करने के लिए पहला अनुबंध जोड़ें",
     "completed_with_active_contracts": "Cannot mark as completed with active contracts",
     "contract_deleted": "Contract deleted successfully",
     "delete_contract": "Delete Contract",

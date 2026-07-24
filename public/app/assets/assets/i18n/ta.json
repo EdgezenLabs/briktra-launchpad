@@ -3055,8 +3055,9 @@
   },
   "contracts": {
     "add_payment": "Add Payment",
-    "assign_contractor": "Assign Contractor",
-    "assign_contractor_desc": "Select a contractor for this contract",
+    "assign_contractor": "ஒப்பந்தக்காரரை செல்லுமாறு",
+    "add_contract": "ஒப்பந்தம் சேர்",
+    "assign_contractor_desc": "கொடுப்பைகளையும் நிலுப்படைகளையும் கண்டறிய முதல் ஒப்பந்தம் சேர்க்கவும்",
     "completed_with_active_contracts": "Cannot mark as completed with active contracts",
     "contract_deleted": "Contract deleted successfully",
     "delete_contract": "Delete Contract",
