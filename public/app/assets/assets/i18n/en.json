@@ -3065,7 +3065,8 @@
   "contracts": {
     "add_payment": "Add Payment",
     "assign_contractor": "Assign Contractor",
-    "assign_contractor_desc": "Select a contractor for this contract",
+    "add_contract": "Add Contract",
+    "assign_contractor_desc": "Add your first contract to track payments and outstanding amounts",
     "completed_with_active_contracts": "Cannot mark as completed with active contracts",
     "contract_deleted": "Contract deleted successfully",
     "delete_contract": "Delete Contract",
