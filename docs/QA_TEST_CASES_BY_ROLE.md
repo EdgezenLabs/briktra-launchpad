@@ -13,12 +13,14 @@
 
 ## 0. Live Login Attempt Results (Blocking Discovery)
 
-| Role | Email | API payload | Result |
-|------|-------|-------------|--------|
-| Tenant | tenant@yopmail.com | `{ username, password }` | **401 Invalid credentials** |
-| Manager | briktramanager@yopmail.com | `{ username, password }` | **401 Invalid credentials** |
-| Supervisor | briktrasupervisor@yopmail.com | `{ username, password }` | **401 Invalid credentials** |
-| Employee | briktraemployee@yopmail.com | `{ username, password }` | **401 Invalid credentials** |
+**Updated:** 24 July 2026
+
+| Role | Email | Account on QA? | Login with shared password |
+|------|-------|----------------|----------------------------|
+| Tenant | tenant@yopmail.com | **YES** (`User already exists`) | **401 Invalid credentials** |
+| Manager | briktramanager@yopmail.com | **YES** | **401 Invalid credentials** |
+| Supervisor | briktrasupervisor@yopmail.com | **YES** | **401 Invalid credentials** |
+| Employee | briktraemployee@yopmail.com | **YES** | **401 Invalid credentials** |
 
 ### Auth contract confirmed against API
 
@@ -27,13 +29,14 @@
 | Correct body keys | `username` + `password` (required) |
 | Wrong field names (`email`, `phone`, …) | **400** — “Email/Phone number and password are required” |
 | Wrong password | **401** — “Invalid credentials” |
-| Wrong credentials (all provided accounts) | **401** — “Invalid credentials” |
+| Register with same email | **400** — “User already exists” (proves accounts exist) |
+| OTP request `{ destination: email }` | **200** — “OTP sent successfully” (tested for tenant) |
+| OTP activate missing destination | **500** — backend SQL binding bug |
 
-**Implication:** Deep UI walkthrough of each role **could not be completed** until accounts exist and passwords work on the **QA** API the production client uses.  
-**Action needed from you:** Confirm these users exist in QA (or provide working QA credentials / switch client to the environment where they exist).
+**Implication:** Accounts exist on QA; **passwords do not match** the shared values. Role UI walkthrough is blocked until passwords are reset or correct secrets are provided.
 
-Raw attempt logs: `docs/role-exploration/*.md`  
-Automation script: `scripts/explore-roles.mjs` (re-run after credentials work)
+See also: `docs/role-exploration/LOGIN_BLOCKER.md`  
+Automation: `node scripts/explore-one-role.mjs <Role>`
 
 ---
 
