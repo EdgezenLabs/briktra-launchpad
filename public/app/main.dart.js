@@ -51625,8 +51625,7 @@ case 1:return A.k(q,r)}})
 return A.l($async$cjW,r)},
 cj4(a){return A.dQ(0,0,0,B.k.am((isNaN(a)||a==1/0||a==-1/0?0:a)*1000),0,0)},
 cLk(){return!0},
-cLj(){var s="https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod"
-return s},
+cLj(){return"https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa"},
 cGw(){return B.arV},
 cEJ(a1,a2){var s,r,q="limit reached",p="error.project.limit_reached",o="error.user.permission_denied",n="user",m="exists",l="error.register.user_exists",k="error.register.invalid_phone",j="error.tenant.not_found",i="supplier",h="error.supplier.already_exists",g="attendance",f="error.attendance.already_marked",e="project",d="error.project.already_exists",c="organization",b="error.validation.invalid",a="error.server.internal_error",a0=a2.toLowerCase()
 if(a1===401){if(B.i.n(a0,"invalid credentials"))return"error.login.invalid_credentials"
