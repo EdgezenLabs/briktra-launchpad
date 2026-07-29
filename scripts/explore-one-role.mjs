@@ -1,7 +1,10 @@
 /**
  * Explore ONE role deeply against QA API.
  * Usage: node scripts/explore-one-role.mjs Tenant
+ *
+ * Login matches Flutter client: GET /auth/login/hint → PBKDF2 hash → POST /auth/login
  */
+import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -9,6 +12,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
 const OUT = path.join(__dirname, '..', 'docs', 'role-exploration');
+const SALT_GUID = 'briktra-password-salt-guid-2026';
 
 const ACCOUNTS = {
   Tenant: { email: 'tenant@yopmail.com', password: 'Tenant@123' },
@@ -16,6 +20,23 @@ const ACCOUNTS = {
   Supervisor: { email: 'briktrasupervisor@yopmail.com', password: 'Supervisor@123' },
   Employee: { email: 'briktraemployee@yopmail.com', password: 'Employee@123' },
 };
+
+function hashPassword(identifier, password) {
+  const salt = crypto.createHash('sha256').update(identifier + SALT_GUID, 'utf8').digest();
+  const derived = crypto.pbkdf2Sync(Buffer.from(password, 'utf8'), salt, 10000, 32, 'sha256');
+  return derived.toString('base64');
+}
+
+async function resolveIdentifier(username) {
+  const hint = await api('GET', '/auth/login/hint', { query: { username } });
+  if (hint.ok) {
+    try {
+      const obj = JSON.parse(hint.body);
+      if (obj.hash_identifier) return String(obj.hash_identifier);
+    } catch {}
+  }
+  return username.includes('@') ? username : username;
+}
 
 const roleArg = process.argv[2] || 'Tenant';
 const account = ACCOUNTS[roleArg];
@@ -53,8 +74,12 @@ function pretty(obj) {
 
 async function api(method, apiPath, { body, token, query } = {}) {
   const url = new URL(`${BASE}${apiPath}`);
-  if (query) Object.entries(query).forEach(([k, v]) => url.searchParams.set(k, v));
-  const headers = { 'Content-Type': 'application/json', Accept: 'application/json' };
+  if (query) Object.entries(query).forEach(([k, v]) => url.searchParams.set(k, String(v)));
+  const headers = {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    'X-Client-Platform': 'flutter',
+  };
   if (token) headers.Authorization = `Bearer ${token}`;
   const res = await fetch(url, {
     method,
@@ -92,18 +117,24 @@ async function main() {
   add(`Local app: http://localhost:4173/app/`);
   add('');
 
-  // Wrong password
+  const identifier = await resolveIdentifier(account.email);
+  add(`hash_identifier: ${identifier}`, '');
+  console.log('hash_identifier:', identifier);
+
+  // Wrong password (hashed with correct identifier — still wrong secret)
+  const badHash = hashPassword(identifier, 'WrongPass@999');
   const bad = await api('POST', '/auth/login', {
-    body: { username: account.email, password: 'WrongPass@999' },
+    body: { username: account.email, password: badHash },
   });
   add('## Incorrect password', `Status: ${bad.status}`, '```json', redact(bad.body), '```', '');
   console.log('Wrong password:', bad.status);
 
-  // Login
+  // Login with client-side PBKDF2 hash (matches Flutter)
+  const hashed = hashPassword(identifier, account.password);
   const login = await api('POST', '/auth/login', {
-    body: { username: account.email, password: account.password },
+    body: { username: account.email, password: hashed },
   });
-  add('## Login', `Status: ${login.status}`, '```json', redact(pretty(login.body)), '```', '');
+  add('## Login (hashed)', `Status: ${login.status}`, '```json', redact(pretty(login.body)), '```', '');
   console.log('Login:', login.status, login.body.slice(0, 200));
 
   if (!login.ok) {
