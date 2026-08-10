@@ -1,15 +1,26 @@
 # Supervisor QA Prompt
 
-Role: **Supervisor** (`supervisor`)
+Role: **Supervisor** (`supervisor`) — Site Supervisor
 
 ## Environment
-Live API: `https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod`  
-UI: https://briktra.com/app/index.html
+- UI: https://briktra.com/app/index.html
+- API: `https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod`
 
 ## Credentials
-Confirm via hashed PROD login before deep testing.
+- `supervisior.briktra@yopmail.com` / `Supervisior@123`  
+  (spelling as stored in PROD — note “supervisior”)
 
-## Flow Sheet focus
-Log Expense, My Projects, site expenses — deny `/tenants`, `/employees` admin, deny project create unless policy allows
+## Site scenario
+Arrive → Mark Attendance → Add Labour → Upload Photos → Daily Progress → Create Expense → Upload Bills → View Assigned Project → Logout
 
-## Prefer UI Playwright with Flutter semantics (see tenant scripts)
+## Restricted (expect DENY)
+Delete/Create Project, Delete Company / Create Tenant, Manage Subscription, Manage Users, Super Admin, Company Settings
+
+## Known open defects
+See `docs/qa-supervisor-regression/github-issues/` — P0 RBAC + no project assignment + expenses route remap
+
+## Scripts
+`node scripts/supervisor-prod-regression.mjs`
+
+## Report
+`docs/qa-supervisor-regression/SUPERVISOR_REGRESSION_REPORT.md`

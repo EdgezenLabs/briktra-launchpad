@@ -1,0 +1,476 @@
+{
+  "me": {
+    "user_id": "f2fe03a3-6cca-475d-8426-4a2ac6bdf0c6",
+    "name": "supervisior",
+    "email": "supervisior.briktra@yopmail.com",
+    "role": "supervisor",
+    "tenant_id": "730dc006-2177-4840-8483-2c5b48bd0912",
+    "tenant_name": "TenantAdmin Builders",
+    "phone_no": null,
+    "avatar_url": null,
+    "tier": "premium",
+    "tier_config": {},
+    "trial_expires_at": "2026-09-02T06:26:12.809Z",
+    "trial_end_date": "2026-09-02T06:26:12.809Z",
+    "is_trial_expired": false,
+    "days_remaining": 22,
+    "wage_amount": 25000,
+    "wage_type": "monthly",
+    "preferred_language": "en",
+    "biometric_settings": {}
+  },
+  "results": [
+    {
+      "id": "SUP-AUTH-01",
+      "area": "Authentication",
+      "check": "PROD hashed login Supervisior@123",
+      "status": "PASS",
+      "detail": "200"
+    },
+    {
+      "id": "SUP-AUTH-02",
+      "area": "Authentication",
+      "check": "Role is supervisor",
+      "status": "PASS",
+      "detail": "role=supervisor name=supervisior"
+    },
+    {
+      "id": "SUP-AUTH-03",
+      "area": "Authentication",
+      "check": "Wrong password rejected",
+      "status": "PASS",
+      "detail": "401"
+    },
+    {
+      "id": "SUP-AUTH-04",
+      "area": "Authentication",
+      "check": "UI Login → Dashboard",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/dashboard"
+    },
+    {
+      "id": "SUP-ATT-01",
+      "area": "Site scenario / Modules",
+      "check": "Attendance - Mark Attendance (#/addAttendance)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/addAttendance"
+    },
+    {
+      "id": "SUP-EMP-01",
+      "area": "Site scenario / Modules",
+      "check": "Employees List / Add Labour (#/employees)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/employees"
+    },
+    {
+      "id": "SUP-DOC-01",
+      "area": "Site scenario / Modules",
+      "check": "Document Wallet / Upload Photos (#/documentWallet)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/documentWallet"
+    },
+    {
+      "id": "SUP-NOTE-01",
+      "area": "Site scenario / Modules",
+      "check": "Daily Notes / Daily Progress (#/dailyNotes)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/documentWallet"
+    },
+    {
+      "id": "SUP-UPD-01",
+      "area": "Site scenario / Modules",
+      "check": "Daily Updates (#/dailyUpdates)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/documentWallet"
+    },
+    {
+      "id": "SUP-EXP-01",
+      "area": "Site scenario / Modules",
+      "check": "Expenses / Create Expense (#/expenses)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/documentWallet"
+    },
+    {
+      "id": "SUP-BILL-01",
+      "area": "Site scenario / Modules",
+      "check": "Bills Management / Upload Bills (#/billsList)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/billsList"
+    },
+    {
+      "id": "SUP-PRJ-01",
+      "area": "Site scenario / Modules",
+      "check": "Project List / Assigned Project (#/projects)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/projects"
+    },
+    {
+      "id": "SUP-SITE-01",
+      "area": "Site scenario / Modules",
+      "check": "Site Details / Project Detail (#/project)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/project"
+    },
+    {
+      "id": "SUP-NOT-01",
+      "area": "Site scenario / Modules",
+      "check": "Dashboard notifications (#/dashboard)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/dashboard"
+    },
+    {
+      "id": "SUP-PRF-01",
+      "area": "Site scenario / Modules",
+      "check": "Profile (#/profile)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/profile"
+    },
+    {
+      "id": "SUP-RPT-01",
+      "area": "Site scenario / Modules",
+      "check": "Project Reports (#/reportsDashboard)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/reportsDashboard"
+    },
+    {
+      "id": "SUP-STK-01",
+      "area": "Site scenario / Modules",
+      "check": "Warehouse Stock (#/stockManagement)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/stockManagement"
+    },
+    {
+      "id": "SUP-CON-01",
+      "area": "Site scenario / Modules",
+      "check": "Contractors List (#/contractors)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/contractors"
+    },
+    {
+      "id": "SUP-SUP-01",
+      "area": "Site scenario / Modules",
+      "check": "Suppliers List (#/suppliers)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/suppliers"
+    },
+    {
+      "id": "SUP-PRJ-02",
+      "area": "Site scenario / Modules",
+      "check": "View Assigned Project (open card)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/projects"
+    },
+    {
+      "id": "SUP-NEG-01",
+      "area": "Restricted",
+      "check": "Delete/Create Project",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/createProject"
+    },
+    {
+      "id": "SUP-NEG-02",
+      "area": "Restricted",
+      "check": "Delete Company / Create Tenant",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/createTenant"
+    },
+    {
+      "id": "SUP-NEG-03",
+      "area": "Restricted",
+      "check": "Manage Tenants",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/tenants"
+    },
+    {
+      "id": "SUP-NEG-04",
+      "area": "Restricted",
+      "check": "Manage Users / Role Mgmt",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/tenantAdmins"
+    },
+    {
+      "id": "SUP-NEG-05",
+      "area": "Restricted",
+      "check": "Super Admin",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/superAdmin"
+    },
+    {
+      "id": "SUP-NEG-06",
+      "area": "Restricted",
+      "check": "Manage Subscription",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/plans"
+    },
+    {
+      "id": "SUP-NEG-07",
+      "area": "Restricted",
+      "check": "Delete/Edit Company",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/company-details"
+    },
+    {
+      "id": "SUP-NEG-08",
+      "area": "Restricted",
+      "check": "Manage Users (employees)",
+      "status": "REVIEW",
+      "detail": "https://briktra.com/app/index.html#/employees"
+    },
+    {
+      "id": "SUP-AUTH-05",
+      "area": "Authentication",
+      "check": "Logout from Profile",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/profile"
+    },
+    {
+      "id": "SUP-AUTH-06",
+      "area": "Security",
+      "check": "Access token after logout",
+      "status": "FAIL",
+      "detail": "logout=200 me=200"
+    }
+  ],
+  "issues": [
+    {
+      "id": "SUP-ISSUE-001",
+      "filename": "SUP-ISSUE-001-supervisor-can-access-restricted-route-delete-create-pr.md",
+      "title": "Supervisor can access restricted route: Delete/Create Project",
+      "severity": "High"
+    },
+    {
+      "id": "SUP-ISSUE-002",
+      "filename": "SUP-ISSUE-002-supervisor-can-access-restricted-route-delete-company-c.md",
+      "title": "Supervisor can access restricted route: Delete Company / Create Tenant",
+      "severity": "Critical"
+    },
+    {
+      "id": "SUP-ISSUE-003",
+      "filename": "SUP-ISSUE-003-supervisor-can-access-restricted-route-manage-tenants.md",
+      "title": "Supervisor can access restricted route: Manage Tenants",
+      "severity": "High"
+    },
+    {
+      "id": "SUP-ISSUE-004",
+      "filename": "SUP-ISSUE-004-supervisor-can-access-restricted-route-manage-users-rol.md",
+      "title": "Supervisor can access restricted route: Manage Users / Role Mgmt",
+      "severity": "Critical"
+    },
+    {
+      "id": "SUP-ISSUE-005",
+      "filename": "SUP-ISSUE-005-supervisor-can-access-restricted-route-super-admin.md",
+      "title": "Supervisor can access restricted route: Super Admin",
+      "severity": "Critical"
+    },
+    {
+      "id": "SUP-ISSUE-006",
+      "filename": "SUP-ISSUE-006-supervisor-can-access-restricted-route-manage-subscript.md",
+      "title": "Supervisor can access restricted route: Manage Subscription",
+      "severity": "High"
+    },
+    {
+      "id": "SUP-ISSUE-007",
+      "filename": "SUP-ISSUE-007-supervisor-can-access-restricted-route-delete-edit-comp.md",
+      "title": "Supervisor can access restricted route: Delete/Edit Company",
+      "severity": "High"
+    },
+    {
+      "id": "SUP-ISSUE-008",
+      "filename": "SUP-ISSUE-008-supervisor-access-jwt-remains-valid-after-logout.md",
+      "title": "Supervisor access JWT remains valid after logout",
+      "severity": "High"
+    }
+  ],
+  "totals": {
+    "PASS": 21,
+    "FAIL": 8,
+    "REVIEW": 1
+  },
+  "apiCalls": [
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/auth/login/hint?username=supervisior.briktra%40yopmail.com"
+    },
+    {
+      "s": 200,
+      "m": "POST",
+      "u": "/prod/auth/login"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/notifications?limit=50&offset=0&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/auth/me?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/banners/active?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&status=active&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/user/f2fe03a3-6cca-475d-8426-4a2ac6bdf0c6/assigned?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/attendance/stats/f2fe03a3-6cca-475d-8426-4a2ac6bdf0c6?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&exclude_role=tenant_admin&limit=100&skip=0"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&exclude_role=tenant_admin&limit=100&skip=0"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/wallet/list?scope=TENANT&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/suppliers?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/bills?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/banners/active?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/auth/me?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/notifications?limit=50&offset=0&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?user_id=f2fe03a3-6cca-475d-8426-4a2ac6bdf0c6&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/stock/summary?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/stock/categories?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/stock/materials?is_active=true&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/contractors?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/suppliers?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?role=supervisor&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&limit=500&skip=0"
+    },
+    {
+      "s": 403,
+      "m": "GET",
+      "u": "/prod/tenants?skip=0&limit=25"
+    },
+    {
+      "s": 403,
+      "m": "GET",
+      "u": "/prod/tenants?skip=0&limit=25"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?role=tenant_admin&limit=500&skip=0"
+    },
+    {
+      "s": 403,
+      "m": "GET",
+      "u": "/prod/tenants?skip=0&limit=25"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/admin/plan-config?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/subscriptions/status?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/tenants/730dc006-2177-4840-8483-2c5b48bd0912?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&exclude_role=tenant_admin&limit=100&skip=0"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?user_id=f2fe03a3-6cca-475d-8426-4a2ac6bdf0c6&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    }
+  ]
+}
