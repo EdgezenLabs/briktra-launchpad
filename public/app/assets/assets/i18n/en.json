@@ -1408,14 +1408,15 @@
       "invalid_token": "Your session has expired. Please log in again.",
       "missing_token": "Authentication required",
       "invalid_bearer": "Invalid token format",
-      "account_deleted": "Your account deleted contact your Admin"
+      "account_deleted": "Your account has been deleted. Please contact your administrator.",
+      "account_already_deleted": "Your account has been deleted. Please contact your administrator."
     },
     "user": {
       "not_found": "User not found",
       "already_exists": "User already exists",
       "permission_denied": "You don't have permission to access this resource",
       "cannot_delete_self": "You cannot delete your own account",
-      "account_already_deleted": "Account already deleted by our end."
+      "account_already_deleted": "Your account has been deleted. Please contact your administrator."
     },
     "tenant": {
       "not_found": "Organization not found",
