@@ -1,0 +1,18 @@
+{
+  "hint": {
+    "hash_identifier": "7ee88e38-61b1-47dc-a13c-bb399c47780d"
+  },
+  "expectedHash": "tw8R+Fq0B82Pv9Q15uN7G8shwh5PiAVSvFN8T29KYRA=",
+  "net": [
+    {
+      "t": "req",
+      "b": "{\"username\":\"employee.briktra@yopmail.com\",\"password\":\"tw8R+Fq0B82Pv9Q15uN7G8shwh5PiAVSvFN8T29KYRA=\"}"
+    },
+    {
+      "t": "res",
+      "s": 200,
+      "body": "{\"user_id\":\"10e860a9-3c56-4bb7-8acd-f2ade5104bc2\",\"session_id\":\"89b3049e-da10-4ba5-96f4-5f6b8fd43058\",\"name\":\"Employee\",\"email\":\"employee.briktra@yopmail.com\",\"role\":\"employee\",\"tenant_id\":\"730dc006-2177-4840-8483-2c5b48bd0912\",\"tenant_name\":\"TenantAdmin Builders\",\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMGU4NjBhOS0zYzU2LTRiYjctOGFjZC1mMmFkZTUxMDRiYzIiLCJ0ZW5hbnRfaWQiOiI3Mz"
+    }
+  ],
+  "url": "https://briktra.com/app/index.html#/employeeAttendanceTap"
+}
