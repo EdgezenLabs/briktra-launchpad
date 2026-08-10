@@ -16,6 +16,9 @@
 | 4 | [Briktra_Bug_Statistics.xlsx](./Briktra_Bug_Statistics.xlsx) | Charts data & distributions |
 | 5 | [Briktra_UI_UX_Review.pdf](./Briktra_UI_UX_Review.pdf) | UI/UX findings |
 | 6 | [Briktra_Release_Readiness_Report.pdf](./Briktra_Release_Readiness_Report.pdf) | GO / NO-GO |
+| 7 | [security/Briktra_Vulnerability_Report.md](./security/Briktra_Vulnerability_Report.md) | Security vulnerability assessment |
+| 8 | [security/Briktra_Vulnerability_Report.pdf](./security/Briktra_Vulnerability_Report.pdf) | Security report (PDF) |
+| 9 | [security/security-probe-results.json](./security/security-probe-results.json) | Raw security probe evidence |
 
 ## Source artifacts (committed)
 
