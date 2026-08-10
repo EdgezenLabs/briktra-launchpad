@@ -1,0 +1,276 @@
+{
+  "results": [
+    {
+      "name": "Dashboard",
+      "hash": "/dashboard",
+      "url": "https://briktra.com/app/index.html#/dashboard",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Dashboard.png"
+    },
+    {
+      "name": "Projects",
+      "hash": "/projects",
+      "url": "https://briktra.com/app/index.html#/projects",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Projects.png"
+    },
+    {
+      "name": "Create-Project",
+      "hash": "/createProject",
+      "url": "https://briktra.com/app/index.html#/createProject",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Create-Project.png"
+    },
+    {
+      "name": "Employees",
+      "hash": "/employees",
+      "url": "https://briktra.com/app/index.html#/employees",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Employees.png"
+    },
+    {
+      "name": "Suppliers",
+      "hash": "/suppliers",
+      "url": "https://briktra.com/app/index.html#/suppliers",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Suppliers.png"
+    },
+    {
+      "name": "Contractors",
+      "hash": "/contractors",
+      "url": "https://briktra.com/app/index.html#/contractors",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Contractors.png"
+    },
+    {
+      "name": "Bills",
+      "hash": "/billsList",
+      "url": "https://briktra.com/app/index.html#/billsList",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Bills.png"
+    },
+    {
+      "name": "Wallet",
+      "hash": "/documentWallet",
+      "url": "https://briktra.com/app/index.html#/documentWallet",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Wallet.png"
+    },
+    {
+      "name": "Reports",
+      "hash": "/reportsDashboard",
+      "url": "https://briktra.com/app/index.html#/reportsDashboard",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Reports.png"
+    },
+    {
+      "name": "Stock",
+      "hash": "/stockManagement",
+      "url": "https://briktra.com/app/index.html#/stockManagement",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Stock.png"
+    },
+    {
+      "name": "Payroll",
+      "hash": "/payrollList",
+      "url": "https://briktra.com/app/index.html#/payrollList",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Payroll.png"
+    },
+    {
+      "name": "Attendance",
+      "hash": "/addAttendance",
+      "url": "https://briktra.com/app/index.html#/addAttendance",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Attendance.png"
+    },
+    {
+      "name": "Profile",
+      "hash": "/profile",
+      "url": "https://briktra.com/app/index.html#/profile",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Profile.png"
+    },
+    {
+      "name": "Plans",
+      "hash": "/plans",
+      "url": "https://briktra.com/app/index.html#/plans",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Plans.png"
+    },
+    {
+      "name": "Company-Details",
+      "hash": "/company-details",
+      "url": "https://briktra.com/app/index.html#/company-details",
+      "status": "PASS",
+      "shot": "C:\\Users\\W11\\Documents\\briktra-launchpad\\docs\\qa-tenant-regression\\screenshots\\prod-Company-Details.png"
+    }
+  ],
+  "apiSample": [
+    {
+      "status": 200,
+      "url": "/prod/auth/login/hint?username=tenant%40yopmail.com",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/auth/login",
+      "method": "POST"
+    },
+    {
+      "status": 200,
+      "url": "/prod/uploads/presigned-url?key=upload%2FTenantAdmin_Builders%2Fprofile%2FTest_Tenant_Admin%2FTest_Tenant_Admin_profile-03-08-2026-063401979.jpg&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/auth/me?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/banners/active?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/notifications?limit=50&offset=0&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/banners/active?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/notifications?limit=50&offset=0&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/auth/me?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/users?role=supervisor&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&limit=500&skip=0",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/users?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&exclude_role=tenant_admin&limit=100&skip=0",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/suppliers?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/contractors?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/bills?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/wallet/list?scope=TENANT&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/stock/summary?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/stock/categories?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/stock/materials?is_active=true&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/payroll?project_id=5087f781-b75c-4927-9b4d-55a193fcebce&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&start_date=2026-08-01&end_date=2026-08-31&_cache_bust=1786357478805",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/attendance/stats/06278008-431e-41d2-a42a-deaa5b97e1ac?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/projects?skip=0&limit=10&status=active&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/users?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&exclude_role=tenant_admin&limit=100&skip=0",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/user/06278008-431e-41d2-a42a-deaa5b97e1ac/assigned?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/users?user_id=06278008-431e-41d2-a42a-deaa5b97e1ac&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/tenants/730dc006-2177-4840-8483-2c5b48bd0912?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/uploads/presigned-url?key=upload%2FTenantAdmin_Builders%2Fprofile%2FTest_Tenant_Admin%2FTest_Tenant_Admin_profile-03-08-2026-063401979.jpg&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/tenants/my-referral-code?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/admin/plan-config?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    },
+    {
+      "status": 200,
+      "url": "/prod/subscriptions/status?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912",
+      "method": "GET"
+    }
+  ]
+}
