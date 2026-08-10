@@ -1,0 +1,469 @@
+{
+  "me": {
+    "user_id": "41cd8023-d7e1-4993-8521-692b92a8b74f",
+    "name": "Manager",
+    "email": "manager.briktra@yopmail.com",
+    "role": "manager",
+    "tenant_id": "730dc006-2177-4840-8483-2c5b48bd0912",
+    "tenant_name": "TenantAdmin Builders",
+    "phone_no": null,
+    "avatar_url": null,
+    "tier": "premium",
+    "tier_config": {},
+    "trial_expires_at": "2026-09-02T06:26:12.809Z",
+    "trial_end_date": "2026-09-02T06:26:12.809Z",
+    "is_trial_expired": false,
+    "days_remaining": 22,
+    "wage_amount": 50000,
+    "wage_type": "monthly",
+    "preferred_language": "en",
+    "biometric_settings": {}
+  },
+  "results": [
+    {
+      "id": "MGR-AUTH-01",
+      "area": "Authentication",
+      "check": "PROD hashed login Manager@123",
+      "status": "PASS",
+      "detail": "200"
+    },
+    {
+      "id": "MGR-AUTH-02",
+      "area": "Authentication",
+      "check": "Role is manager",
+      "status": "PASS",
+      "detail": "role=manager name=Manager tier=premium"
+    },
+    {
+      "id": "MGR-AUTH-03",
+      "area": "Authentication",
+      "check": "Wrong password rejected",
+      "status": "PASS",
+      "detail": "401"
+    },
+    {
+      "id": "MGR-AUTH-04",
+      "area": "Authentication",
+      "check": "UI Login → Dashboard",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/dashboard"
+    },
+    {
+      "id": "MGR-DASH-01",
+      "area": "Morning / Modules",
+      "check": "Dashboard (#/dashboard)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/dashboard"
+    },
+    {
+      "id": "MGR-PRJ-01",
+      "area": "Morning / Modules",
+      "check": "Project List (#/projects)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/projects"
+    },
+    {
+      "id": "MGR-ATT-01",
+      "area": "Morning / Modules",
+      "check": "Attendance - Mark Attendance (#/addAttendance)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/addAttendance"
+    },
+    {
+      "id": "MGR-EXP-01",
+      "area": "Morning / Modules",
+      "check": "Expenses(Project Scope) (#/expenses)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/addAttendance"
+    },
+    {
+      "id": "MGR-DOC-01",
+      "area": "Morning / Modules",
+      "check": "Document Wallet (#/documentWallet)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/documentWallet"
+    },
+    {
+      "id": "MGR-RPT-01",
+      "area": "Morning / Modules",
+      "check": "Project Reports (#/reportsDashboard)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/reportsDashboard"
+    },
+    {
+      "id": "MGR-NOT-01",
+      "area": "Morning / Modules",
+      "check": "Dashboard (#/dashboard)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/dashboard"
+    },
+    {
+      "id": "MGR-PRF-01",
+      "area": "Morning / Modules",
+      "check": "Profile (#/profile)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/profile"
+    },
+    {
+      "id": "MGR-PAY-01",
+      "area": "Morning / Modules",
+      "check": "Payroll Management (#/payrollList)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/payrollList"
+    },
+    {
+      "id": "MGR-STK-01",
+      "area": "Morning / Modules",
+      "check": "Warehouse Stock Management (#/stockManagement)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/stockManagement"
+    },
+    {
+      "id": "MGR-SUP-01",
+      "area": "Morning / Modules",
+      "check": "Suppliers List (#/suppliers)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/suppliers"
+    },
+    {
+      "id": "MGR-CON-01",
+      "area": "Morning / Modules",
+      "check": "Contractors List (#/contractors)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/contractors"
+    },
+    {
+      "id": "MGR-BILL-01",
+      "area": "Morning / Modules",
+      "check": "Bills Management (#/billsList)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/billsList"
+    },
+    {
+      "id": "MGR-PRJ-02",
+      "area": "Morning / Modules",
+      "check": "Open Project (click project card)",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/projects"
+    },
+    {
+      "id": "MGR-LAB-01",
+      "area": "Morning / Modules",
+      "check": "Review Labour / Employees",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/employees"
+    },
+    {
+      "id": "MGR-NEG-01",
+      "area": "Restricted",
+      "check": "Restricted — Create Tenant",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/createTenant"
+    },
+    {
+      "id": "MGR-NEG-02",
+      "area": "Restricted",
+      "check": "Restricted — Tenants / Company",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/tenants"
+    },
+    {
+      "id": "MGR-NEG-03",
+      "area": "Restricted",
+      "check": "Restricted — Role Management",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/tenantAdmins"
+    },
+    {
+      "id": "MGR-NEG-04",
+      "area": "Restricted",
+      "check": "Restricted — Super Admin",
+      "status": "FAIL",
+      "detail": "https://briktra.com/app/index.html#/superAdmin"
+    },
+    {
+      "id": "MGR-NEG-05",
+      "area": "Restricted",
+      "check": "Restricted — Subscription",
+      "status": "REVIEW",
+      "detail": "https://briktra.com/app/index.html#/plans"
+    },
+    {
+      "id": "MGR-NEG-06",
+      "area": "Restricted",
+      "check": "Restricted — Company Settings",
+      "status": "REVIEW",
+      "detail": "https://briktra.com/app/index.html#/company-details"
+    },
+    {
+      "id": "MGR-NEG-07",
+      "area": "Restricted",
+      "check": "Create Project (policy)",
+      "status": "REVIEW",
+      "detail": "https://briktra.com/app/index.html#/createProject"
+    },
+    {
+      "id": "MGR-AUTH-05",
+      "area": "Authentication",
+      "check": "Logout from Profile",
+      "status": "PASS",
+      "detail": "https://briktra.com/app/index.html#/profile"
+    },
+    {
+      "id": "MGR-AUTH-06",
+      "area": "Security",
+      "check": "Access token after logout",
+      "status": "FAIL",
+      "detail": "logout=200 me=200"
+    }
+  ],
+  "issues": [
+    {
+      "id": "MGR-ISSUE-001",
+      "filename": "MGR-ISSUE-001-manager-access-jwt-remains-valid-after-logout.md",
+      "title": "Manager access JWT remains valid after logout",
+      "severity": "High"
+    },
+    {
+      "id": "MGR-ISSUE-002",
+      "filename": "MGR-ISSUE-002-manager-may-access-restricted-route-restricted-create-t.md",
+      "title": "Manager may access restricted route: Restricted — Create Tenant",
+      "severity": "High"
+    },
+    {
+      "id": "MGR-ISSUE-003",
+      "filename": "MGR-ISSUE-003-manager-may-access-restricted-route-restricted-tenants-.md",
+      "title": "Manager may access restricted route: Restricted — Tenants / Company",
+      "severity": "High"
+    },
+    {
+      "id": "MGR-ISSUE-004",
+      "filename": "MGR-ISSUE-004-manager-may-access-restricted-route-restricted-role-man.md",
+      "title": "Manager may access restricted route: Restricted — Role Management",
+      "severity": "High"
+    },
+    {
+      "id": "MGR-ISSUE-005",
+      "filename": "MGR-ISSUE-005-manager-may-access-restricted-route-restricted-super-ad.md",
+      "title": "Manager may access restricted route: Restricted — Super Admin",
+      "severity": "High"
+    }
+  ],
+  "totals": {
+    "PASS": 20,
+    "FAIL": 5,
+    "REVIEW": 3
+  },
+  "apiCalls": [
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/auth/login/hint?username=manager.briktra%40yopmail.com"
+    },
+    {
+      "s": 200,
+      "m": "POST",
+      "u": "/prod/auth/login"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/notifications?limit=50&offset=0&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/banners/active?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/auth/me?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/banners/active?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/notifications?limit=50&offset=0&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/auth/me?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&status=active&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/user/41cd8023-d7e1-4993-8521-692b92a8b74f/assigned?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&exclude_role=tenant_admin&limit=100&skip=0"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/attendance/stats/41cd8023-d7e1-4993-8521-692b92a8b74f?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/wallet/list?scope=TENANT&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/banners/active?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/notifications?limit=50&offset=0&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/auth/me?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?user_id=41cd8023-d7e1-4993-8521-692b92a8b74f&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/payroll?project_id=5087f781-b75c-4927-9b4d-55a193fcebce&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&start_date="
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/stock/materials?is_active=true&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/stock/summary?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/stock/categories?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/suppliers?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/contractors?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/bills?skip=0&limit=25&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/projects?skip=0&limit=10&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&exclude_role=tenant_admin&limit=100&skip=0"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/payroll?project_id=5087f781-b75c-4927-9b4d-55a193fcebce&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&start_date="
+    },
+    {
+      "s": 403,
+      "m": "GET",
+      "u": "/prod/tenants?skip=0&limit=25"
+    },
+    {
+      "s": 403,
+      "m": "GET",
+      "u": "/prod/tenants?skip=0&limit=25"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?role=tenant_admin&limit=500&skip=0"
+    },
+    {
+      "s": 403,
+      "m": "GET",
+      "u": "/prod/tenants?skip=0&limit=25"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/admin/plan-config?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/subscriptions/status?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/tenants/730dc006-2177-4840-8483-2c5b48bd0912?tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?role=supervisor&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&limit=500&skip=0"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/users?user_id=41cd8023-d7e1-4993-8521-692b92a8b74f&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912"
+    },
+    {
+      "s": 200,
+      "m": "GET",
+      "u": "/prod/payroll?project_id=5087f781-b75c-4927-9b4d-55a193fcebce&tenant_id=730dc006-2177-4840-8483-2c5b48bd0912&start_date="
+    }
+  ]
+}

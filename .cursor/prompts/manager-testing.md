@@ -1,19 +1,25 @@
 # Manager QA Prompt
 
-Role: **Manager** (`manager`)
+Role: **Manager** (`manager`) — Construction Project Manager
 
 ## Environment
-Live API: `https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod`  
-UI: https://briktra.com/app/index.html
+- UI: https://briktra.com/app/index.html
+- API: `https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod`
 
 ## Credentials
-Confirm via hashed PROD login before deep testing (do not assume QA passwords).
+- `manager.briktra@yopmail.com` / `Manager@123`
 
-## Flow Sheet focus
-Dashboard (attendance daytime), Projects, Reports (expense), Add Attendance — deny tenant CRUD, deny tenant_admin elevation
+## Morning scenario
+Dashboard → Open Project → Labour → Attendance → Expenses → Reports → Progress → Notifications → Logout
 
-## Prefer UI
-`scripts/ui-login-semantics.mjs` pattern (Flutter semantics Login button)
+## Restricted (expect DENY)
+Create Tenant, Tenants admin, Tenant Admins, Super Admin, Subscription Plans, Company Settings, Delete Users / Role Management
 
-## Defect template
-Same as tenant-testing.md — file to `docs/qa-tenant-regression/github-issues/`
+## Known open defects
+See `docs/qa-manager-regression/github-issues/` — P0 RBAC failures on createTenant / tenantAdmins / superAdmin shell
+
+## Scripts
+`node scripts/manager-prod-regression.mjs`
+
+## Report
+`docs/qa-manager-regression/MANAGER_REGRESSION_REPORT.md`
