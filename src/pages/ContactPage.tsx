@@ -12,29 +12,51 @@ const ContactPage = () => {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = data.get("name");
-    const email = data.get("email");
-    const subject = data.get("subject");
-    const message = data.get("message");
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+    const subject = String(data.get("subject") || "").trim();
+    const message = String(data.get("message") || "").trim();
 
-    const mailto = `mailto:${COMPANY.email}?subject=${encodeURIComponent(
-      `[Briktra Contact] ${subject}`
-    )}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`
-    )}`;
-    window.location.href = mailto;
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || "https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod";
+      const res = await fetch(`${apiUrl}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, subject, message }),
+      });
 
-    toast({
-      title: "Opening your email client",
-      description: "Complete and send the message to reach our support team.",
-    });
-    setSubmitting(false);
-    form.reset();
+      if (res.ok) {
+        toast({
+          title: "Message Sent Successfully! 🎉",
+          description: "Thank you for reaching out. We have received your message and will get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || "Failed to send message.");
+      }
+    } catch (err: unknown) {
+      console.warn("API contact form submission issue, launching mailto backup:", err instanceof Error ? err.message : err);
+      const mailto = `mailto:${COMPANY.email}?subject=${encodeURIComponent(
+        `[Briktra Contact] ${subject}`
+      )}&body=${encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
+      )}`;
+      window.location.href = mailto;
+
+      toast({
+        title: "Opening Email Client",
+        description: "Launching your email application to complete sending your message.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -118,26 +140,32 @@ const ContactPage = () => {
 
           <form onSubmit={handleSubmit} className="premium-card space-y-6 p-8" aria-label="Contact form">
             <h2 className="font-display text-2xl font-bold">Send a Message</h2>
-            <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
-              <Input id="name" name="name" required autoComplete="name" />
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name *</Label>
+                <Input id="name" name="name" required autoComplete="name" placeholder="John Doe" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number (Optional)</Label>
+                <Input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+91 9876543210" />
+              </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" required autoComplete="email" />
+              <Label htmlFor="email">Email Address *</Label>
+              <Input id="email" name="email" type="email" required autoComplete="email" placeholder="john@example.com" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="subject">Subject</Label>
-              <Input id="subject" name="subject" required />
+              <Label htmlFor="subject">Subject *</Label>
+              <Input id="subject" name="subject" required placeholder="Demo Inquiry / Subscription Question" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
-              <Textarea id="message" name="message" rows={5} required />
+              <Label htmlFor="message">Message *</Label>
+              <Textarea id="message" name="message" rows={5} required placeholder="Tell us how we can help you..." />
             </div>
             <Button type="submit" className="w-full" disabled={submitting}>
-              {submitting ? "Opening email…" : "Send Message"}
+              {submitting ? "Sending Message..." : "Send Message"}
             </Button>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-muted-foreground text-center">
               By submitting, you agree to our{" "}
               <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.
             </p>
