@@ -18,7 +18,10 @@ const UI = 'https://briktra.com/app/index.html';
 const SALT_GUID = 'briktra-password-salt-guid-2026';
 const EMAIL = 'tenant@yopmail.com';
 const PASSWORD = process.env.BRIKTRA_PASSWORD || 'Abcd@123';
-const SECRET = process.env.BRIKTRA_SIGNING_SECRET || '';
+const SECRET =
+  process.env.BRIKTRA_SIGNING_SECRET ||
+  process.env.REQUEST_SIGNATURE_SECRET ||
+  'EdgeZen_Briktra_RequestSign_2026_Prod_Key';
 
 const OUT_DIR = path.join(ROOT, 'docs', 'qa-tenant-regression');
 const ISSUES_DIR = path.join(OUT_DIR, 'github-issues');

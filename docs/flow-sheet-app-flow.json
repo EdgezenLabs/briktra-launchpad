@@ -1,5 +1,23 @@
 [
   {
+    "null": 0,
+    "Page": "Language Selection",
+    "Parent Page": "App Launch (first visit)",
+    "Element": "Language options (English / Tamil / Hindi)",
+    "Type": "List",
+    "Leads To": "Login Page",
+    "Notes": "First-time users see language selection before login (`InitialLoadingScreen` → `#/languageSelection`). Skipped after `has_seen_language_selection` is set."
+  },
+  {
+    "null": null,
+    "Page": null,
+    "Parent Page": "Language Selection → selected language",
+    "Element": "Continue",
+    "Type": "Button",
+    "Leads To": "Login Page",
+    "Notes": "Persists locale preference locally; authenticated users can change language later in Profile."
+  },
+  {
     "null": 1,
     "Page": "Login Page",
     "Parent Page": "Login Page → Login Button",
