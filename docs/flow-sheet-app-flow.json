@@ -1,8 +1,35 @@
 [
   {
     "null": 1,
+    "Page": "Language Selection Page",
+    "Parent Page": "App Launch (first run / cleared session)",
+    "Element": "Select Your Language / Subtitle",
+    "Type": "Text/Section Header",
+    "Leads To": null,
+    "Notes": "Shown before Login on first launch or after clearing session storage (route #/languageSelection, isInitialSetup=true)."
+  },
+  {
+    "null": null,
+    "Page": null,
+    "Parent Page": null,
+    "Element": "Language Cards (English / Tamil தமிழ் / Hindi हिंदी)",
+    "Type": "Selectable Cards",
+    "Leads To": null,
+    "Notes": "Tapping a card selects it (highlighted, checkmark shown); does not navigate until Continue is tapped."
+  },
+  {
+    "null": null,
+    "Page": null,
+    "Parent Page": null,
+    "Element": "Continue Button",
+    "Type": "Button",
+    "Leads To": "Login Page",
+    "Notes": "Persists the selected language, then pushReplacementNamed('/login'). Disabled until a language is selected."
+  },
+  {
+    "null": 1,
     "Page": "Login Page",
-    "Parent Page": "Login Page → Login Button",
+    "Parent Page": "Language Selection Page → Continue Button",
     "Element": "Email/Phone Number",
     "Type": "Field",
     "Leads To": null,
