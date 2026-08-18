@@ -11,6 +11,23 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://briktra.com/" />
 
+    <!--
+      WEB-008: partial mitigation only. GitHub Pages cannot send custom
+      HTTP response headers at all, so HSTS, X-Frame-Options, and
+      Permissions-Policy CANNOT be set here -- those genuinely require
+      moving to a host that supports response headers (Netlify/Vercel/
+      Cloudflare Pages/a reverse proxy), which is a hosting decision.
+      Content-Security-Policy and Referrer-Policy DO work as <meta>
+      tags (per the CSP spec, everything except frame-ancestors, which
+      browsers silently ignore outside a real header -- so it's
+      deliberately omitted here rather than included as false comfort).
+      script-src needs 'unsafe-inline' for the inline gtag bootstrap
+      script below; tightening that further would need moving it to a
+      nonced/hashed script, out of scope for this pass.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://maps.google.com https://www.google.com; object-src 'none'; base-uri 'self';" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
