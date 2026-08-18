@@ -79,7 +79,7 @@ const pricingData: Record<PlanKey, PricingPlan> = {
       "Contract Creation & Management",
       "Unlimited Employees",
       "Payroll Management",
-      "Salary Advance Tracking (Karzaa)",
+      "Salary Advance Tracking (Karzaa — advance against wages)",
       "Contractor Management",
       "Inventory & Stock Management",
       "GPS Attendance",
@@ -171,7 +171,7 @@ const detailedFeatures: FeatureCategory[] = [
     items: [
       { name: "Payroll calculation (wages × attendance)", starter: "Partial", pro: true, premium: true },
       { name: "Payroll wizard (guided calculation)", starter: false, pro: true, premium: true },
-      { name: "Salary advance management (Karzaa)", starter: false, pro: true, premium: true },
+      { name: "Salary advance management (Karzaa — advance against wages)", starter: false, pro: true, premium: true },
       { name: "Payroll PDF export", starter: false, pro: true, premium: true },
       { name: "Auto-generate payroll from attendance", starter: false, pro: "Partial", premium: true },
       { name: "Employee salary reports", starter: false, pro: true, premium: true },
@@ -274,7 +274,13 @@ const Features = () => (
     <div className="flex flex-col items-center text-center px-4">
       <ShieldCheck className="w-8 h-8 mb-4 text-green-500" />
       <h4 className="font-semibold mb-2">Secure & Reliable</h4>
-      <p className="text-xs text-muted-foreground">Your data is protected with enterprise-grade security.</p>
+      <p className="text-xs text-muted-foreground">
+        Your data is protected with enterprise-grade security.{" "}
+        <Link to="/security-policy" className="underline hover:text-foreground">
+          See our security practices
+        </Link>
+        .
+      </p>
     </div>
     <div className="flex flex-col items-center text-center px-4 border-t md:border-t-0 md:border-l border-border/50 pt-6 md:pt-0">
       <Cloud className="w-8 h-8 mb-4 text-blue-500" />
@@ -336,7 +342,7 @@ const Pricing = ({ standalone = false }: PricingProps) => {
               </button>
               <button
                 onClick={() => setIsYearly(true)}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${isYearly ? 'bg-[#ff6b00] text-white shadow-md' : 'text-slate-500 hover:text-slate-900'}`}
+                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${isYearly ? 'bg-primary text-primary-foreground shadow-md' : 'text-slate-500 hover:text-slate-900'}`}
               >
                 Yearly
               </button>
@@ -359,10 +365,10 @@ const Pricing = ({ standalone = false }: PricingProps) => {
         <div className="grid lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto items-start">
           
           {Object.values(pricingData).map((plan, index) => (
-            <div key={index} className={`bg-white rounded-3xl p-8 border ${plan.popular ? 'border-2 border-[#ff6b00] shadow-xl hover:shadow-2xl transform lg:-translate-y-4' : 'border-slate-200 shadow-sm hover:shadow-xl'} transition-all duration-300 relative flex flex-col h-full`}>
-              
+            <div key={index} className={`bg-white rounded-3xl p-8 border ${plan.popular ? 'border-2 border-primary shadow-xl hover:shadow-2xl transform lg:-translate-y-4' : 'border-slate-200 shadow-sm hover:shadow-xl'} transition-all duration-300 relative flex flex-col h-full`}>
+
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#ff6b00] text-white px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-lg z-10">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-lg z-10">
                   <Sparkles className="w-4 h-4" /> MOST POPULAR
                 </div>
               )}
@@ -372,7 +378,7 @@ const Pricing = ({ standalone = false }: PricingProps) => {
                   {plan.icon}
                 </div>
                 <div>
-                  <h3 className={`text-2xl font-bold text-${plan.popular ? '[#ff6b00]' : plan.color + '-600 text-slate-900'}`}>{plan.name}</h3>
+                  <h3 className={`text-2xl font-bold ${plan.popular ? 'text-primary' : `text-${plan.color}-600 text-slate-900`}`}>{plan.name}</h3>
                   <p className="text-sm text-slate-500">{plan.subtitle}</p>
                 </div>
               </div>
@@ -387,18 +393,18 @@ const Pricing = ({ standalone = false }: PricingProps) => {
                 {isYearly && <p className="text-sm text-slate-400 mt-1 line-through">{plan.monthlyPrice} / month</p>}
               </div>
 
-              <div className={`mb-8 text-center py-1.5 rounded-full text-sm font-medium ${isYearly ? `bg-${plan.popular ? 'orange' : plan.color}-50 text-${plan.popular ? '[#ff6b00]' : plan.color + '-700'}` : 'opacity-0'}`}>
+              <div className={`mb-8 text-center py-1.5 rounded-full text-sm font-medium ${isYearly ? (plan.popular ? 'bg-primary/10 text-primary' : `bg-${plan.color}-50 text-${plan.color}-700`) : 'opacity-0'}`}>
                 {plan.yearlySavings}
               </div>
 
               <div className="flex-1 space-y-6">
                 <div>
-                  {plan.includesHeader && <p className={`text-sm font-bold text-${plan.popular ? '[#ff6b00]' : plan.color + '-600'} mb-4`}>{plan.includesHeader}</p>}
+                  {plan.includesHeader && <p className={`text-sm font-bold mb-4 ${plan.popular ? 'text-primary' : `text-${plan.color}-600`}`}>{plan.includesHeader}</p>}
                   {!plan.includesHeader && <p className="text-sm font-bold text-green-600 mb-4">Includes:</p>}
                   <ul className="space-y-3">
                     {plan.includes.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-slate-700">
-                        <Check className={`w-5 h-5 shrink-0 ${plan.popular ? 'text-[#ff6b00]' : `text-${plan.color}-500`}`} />
+                        <Check className={`w-5 h-5 shrink-0 ${plan.popular ? 'text-primary' : `text-${plan.color}-500`}`} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -470,7 +476,7 @@ const Pricing = ({ standalone = false }: PricingProps) => {
 
               <div className="mt-6">
                 <Button 
-                  className={`w-full py-6 rounded-xl font-semibold text-base transition-colors ${plan.popular ? 'bg-[#ff6b00] hover:bg-[#e66000] text-white shadow-lg shadow-orange-500/25' : `border-${plan.color}-500 text-${plan.color}-600 hover:bg-${plan.color}-50 hover:text-${plan.color}-700`}`}
+                  className={`w-full py-6 rounded-xl font-semibold text-base transition-colors ${plan.popular ? 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25' : `border-${plan.color}-500 text-${plan.color}-600 hover:bg-${plan.color}-50 hover:text-${plan.color}-700`}`}
                   variant={plan.popular ? 'default' : 'outline'}
                   asChild
                 >

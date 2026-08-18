@@ -30,6 +30,7 @@ const SecurityPolicy = () => (
         <li>Optional biometric login on supported mobile devices</li>
         <li>Role-based access control (admin, supervisor, employee)</li>
         <li>Session management and secure password policies</li>
+        <li>Database-level tenant data isolation, so one company&apos;s projects, employees, and financial records are never visible to another</li>
       </ul>
     </section>
 

@@ -1,5 +1,6 @@
-import { 
-  Users, 
+import { useState } from "react";
+import {
+  Users,
   Wallet,
   FileText,
   Briefcase,
@@ -97,7 +98,7 @@ const Features = () => {
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground">
-            A comprehensive suite of tools mapping directly to your on-site workflows. Hover to reveal more!
+            A comprehensive suite of tools mapping directly to your on-site workflows. Hover, tap, or focus a card to reveal more.
           </p>
 
         </div>
@@ -105,41 +106,72 @@ const Features = () => {
         {/* Features grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group relative h-auto min-h-[220px] w-full [perspective:1000px] motion-reduce:[perspective:none]"
-            >
-              <div className="relative h-full w-full rounded-2xl motion-reduce:[transform:none] transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] motion-reduce:group-hover:[transform:none]">
-                
-                {/* Front Face */}
-                <div className="premium-card absolute inset-0 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] z-20">
-                  <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300">
-                    <feature.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-foreground">
-                    {feature.title}
-                  </h3>
-                </div>
-
-                {/* Back Face — visible on mobile without hover */}
-                <div className="premium-card absolute inset-0 flex flex-col items-center justify-center p-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] bg-primary/5 border-primary/30 shadow-inner z-10 motion-reduce:static motion-reduce:[transform:none] motion-reduce:opacity-100 md:motion-reduce:static">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <feature.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mb-2 font-display text-base font-bold text-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 leading-relaxed font-medium">
-                    {feature.description}
-                  </p>
-                </div>
-
-              </div>
-            </div>
+            <FeatureCard key={feature.title} feature={feature} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+// WEB-006: the flip reveal was hover-only (CSS :hover), so touch and
+// keyboard users could never see a card's description. This tracks an
+// explicit flipped state toggled by click/tap or Enter/Space when
+// focused, in addition to keeping the hover flip for desktop mouse
+// users -- so every input method can reach the same content.
+const FeatureCard = ({
+  feature,
+}: {
+  feature: { icon: typeof Users; title: string; description: string };
+}) => {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      aria-expanded={flipped}
+      aria-label={`${feature.title}: ${flipped ? feature.description : "activate to reveal description"}`}
+      onClick={() => setFlipped((f) => !f)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setFlipped((f) => !f);
+        }
+      }}
+      className="group relative h-auto min-h-[220px] w-full cursor-pointer [perspective:1000px] motion-reduce:[perspective:none] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl"
+    >
+      <div
+        className={`relative h-full w-full rounded-2xl motion-reduce:[transform:none] transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-visible:[transform:rotateY(180deg)] motion-reduce:group-hover:[transform:none] ${
+          flipped ? "[transform:rotateY(180deg)]" : ""
+        }`}
+      >
+
+        {/* Front Face */}
+        <div className="premium-card absolute inset-0 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] z-20">
+          <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300">
+            <feature.icon className="h-8 w-8" />
+          </div>
+          <h3 className="font-display text-lg font-bold text-foreground">
+            {feature.title}
+          </h3>
+        </div>
+
+        {/* Back Face — visible on mobile without hover */}
+        <div className="premium-card absolute inset-0 flex flex-col items-center justify-center p-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] bg-primary/5 border-primary/30 shadow-inner z-10 motion-reduce:static motion-reduce:[transform:none] motion-reduce:opacity-100 md:motion-reduce:static">
+          <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <feature.icon className="h-5 w-5" />
+          </div>
+          <h3 className="mb-2 font-display text-base font-bold text-foreground">
+            {feature.title}
+          </h3>
+          <p className="text-sm text-foreground/80 leading-relaxed font-medium">
+            {feature.description}
+          </p>
+        </div>
+
+      </div>
+    </div>
   );
 };
 

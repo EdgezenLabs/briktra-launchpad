@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { COMPANY, formatAddressMultiline, SITE } from "@/lib/site-config";
+import { COMPANY, formatAddressMultiline, formatAddressSingleLine, SITE } from "@/lib/site-config";
 import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -42,17 +42,17 @@ const ContactPage = () => {
         throw new Error(errData.error || "Failed to send message.");
       }
     } catch (err: unknown) {
-      console.warn("API contact form submission issue, launching mailto backup:", err instanceof Error ? err.message : err);
-      const mailto = `mailto:${COMPANY.email}?subject=${encodeURIComponent(
-        `[Briktra Contact] ${subject}`
-      )}&body=${encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
-      )}`;
-      window.location.href = mailto;
-
+      // Never auto-launch the visitor's local mail client -- that's a
+      // jarring, unreliable UX (it also doesn't work at all for
+      // automated/headless contexts) and this form has a real backend
+      // API for delivery. On failure, show an error and let the
+      // visitor retry or use the email link already on this page
+      // themselves if they choose to.
+      console.error("Contact form submission failed:", err instanceof Error ? err.message : err);
       toast({
-        title: "Opening Email Client",
-        description: "Launching your email application to complete sending your message.",
+        title: "Message Not Sent",
+        description: `Something went wrong sending your message. Please try again, or email us directly at ${COMPANY.email}.`,
+        variant: "destructive",
       });
     } finally {
       setSubmitting(false);
@@ -129,12 +129,18 @@ const ContactPage = () => {
               </dl>
             </div>
 
-            <div
-              className="flex h-48 items-center justify-center rounded-2xl border border-dashed border-border bg-muted/50 text-muted-foreground"
-              role="img"
-              aria-label="Map placeholder for Madurai office location"
-            >
-              Map — Perungudi, Madurai, Tamil Nadu
+            {/* WEB-011: was a dashed placeholder div with static text; now a
+                real embed geocoded from the actual office address, no API
+                key required (Google's legacy no-key query-embed format). */}
+            <div className="overflow-hidden rounded-2xl border border-border">
+              <iframe
+                title="Briktra office location"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(formatAddressSingleLine())}&output=embed`}
+                className="h-48 w-full"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 
