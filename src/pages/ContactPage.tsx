@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { COMPANY, formatAddressMultiline, SITE } from "@/lib/site-config";
+import { COMPANY, formatAddressMultiline, formatAddressSingleLine, SITE } from "@/lib/site-config";
 import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -129,12 +129,18 @@ const ContactPage = () => {
               </dl>
             </div>
 
-            <div
-              className="flex h-48 items-center justify-center rounded-2xl border border-dashed border-border bg-muted/50 text-muted-foreground"
-              role="img"
-              aria-label="Map placeholder for Madurai office location"
-            >
-              Map — Perungudi, Madurai, Tamil Nadu
+            {/* WEB-011: was a dashed placeholder div with static text; now a
+                real embed geocoded from the actual office address, no API
+                key required (Google's legacy no-key query-embed format). */}
+            <div className="overflow-hidden rounded-2xl border border-border">
+              <iframe
+                title="Briktra office location"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(formatAddressSingleLine())}&output=embed`}
+                className="h-48 w-full"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 

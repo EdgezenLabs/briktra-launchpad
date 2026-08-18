@@ -48,6 +48,17 @@ export const formatAddressMultiline = (): string =>
     COMPANY.address.country,
   ].join("\n");
 
+export const formatAddressSingleLine = (): string =>
+  [
+    COMPANY.address.line1,
+    COMPANY.address.line2,
+    COMPANY.address.locality,
+    COMPANY.address.city,
+    COMPANY.address.state,
+    COMPANY.address.pincode,
+    COMPANY.address.country,
+  ].join(", ");
+
 export const PAYMENT = {
   processor: "Cashfree Payments",
   disclaimer:

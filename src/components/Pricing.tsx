@@ -79,7 +79,7 @@ const pricingData: Record<PlanKey, PricingPlan> = {
       "Contract Creation & Management",
       "Unlimited Employees",
       "Payroll Management",
-      "Salary Advance Tracking (Karzaa)",
+      "Salary Advance Tracking (Karzaa — advance against wages)",
       "Contractor Management",
       "Inventory & Stock Management",
       "GPS Attendance",
@@ -171,7 +171,7 @@ const detailedFeatures: FeatureCategory[] = [
     items: [
       { name: "Payroll calculation (wages × attendance)", starter: "Partial", pro: true, premium: true },
       { name: "Payroll wizard (guided calculation)", starter: false, pro: true, premium: true },
-      { name: "Salary advance management (Karzaa)", starter: false, pro: true, premium: true },
+      { name: "Salary advance management (Karzaa — advance against wages)", starter: false, pro: true, premium: true },
       { name: "Payroll PDF export", starter: false, pro: true, premium: true },
       { name: "Auto-generate payroll from attendance", starter: false, pro: "Partial", premium: true },
       { name: "Employee salary reports", starter: false, pro: true, premium: true },

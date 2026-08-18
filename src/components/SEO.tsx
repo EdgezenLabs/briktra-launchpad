@@ -16,7 +16,7 @@ const SEO = ({
   description = SITE.description,
   canonical = SITE.url,
   ogType = "website",
-  ogImage = `${SITE.url}/briktra-favicon.svg`,
+  ogImage = `${SITE.url}/og-image.png`,
   twitterCard = "summary_large_image",
   noindex = false,
 }: SEOProps) => {
@@ -79,6 +79,8 @@ const SEO = ({
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content={canonical} />
       <meta property="og:locale" content="en_IN" />
 
