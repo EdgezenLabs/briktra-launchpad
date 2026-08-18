@@ -274,7 +274,13 @@ const Features = () => (
     <div className="flex flex-col items-center text-center px-4">
       <ShieldCheck className="w-8 h-8 mb-4 text-green-500" />
       <h4 className="font-semibold mb-2">Secure & Reliable</h4>
-      <p className="text-xs text-muted-foreground">Your data is protected with enterprise-grade security.</p>
+      <p className="text-xs text-muted-foreground">
+        Your data is protected with enterprise-grade security.{" "}
+        <Link to="/security-policy" className="underline hover:text-foreground">
+          See our security practices
+        </Link>
+        .
+      </p>
     </div>
     <div className="flex flex-col items-center text-center px-4 border-t md:border-t-0 md:border-l border-border/50 pt-6 md:pt-0">
       <Cloud className="w-8 h-8 mb-4 text-blue-500" />
