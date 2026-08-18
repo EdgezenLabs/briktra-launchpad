@@ -42,17 +42,17 @@ const ContactPage = () => {
         throw new Error(errData.error || "Failed to send message.");
       }
     } catch (err: unknown) {
-      console.warn("API contact form submission issue, launching mailto backup:", err instanceof Error ? err.message : err);
-      const mailto = `mailto:${COMPANY.email}?subject=${encodeURIComponent(
-        `[Briktra Contact] ${subject}`
-      )}&body=${encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
-      )}`;
-      window.location.href = mailto;
-
+      // Never auto-launch the visitor's local mail client -- that's a
+      // jarring, unreliable UX (it also doesn't work at all for
+      // automated/headless contexts) and this form has a real backend
+      // API for delivery. On failure, show an error and let the
+      // visitor retry or use the email link already on this page
+      // themselves if they choose to.
+      console.error("Contact form submission failed:", err instanceof Error ? err.message : err);
       toast({
-        title: "Opening Email Client",
-        description: "Launching your email application to complete sending your message.",
+        title: "Message Not Sent",
+        description: `Something went wrong sending your message. Please try again, or email us directly at ${COMPANY.email}.`,
+        variant: "destructive",
       });
     } finally {
       setSubmitting(false);
