@@ -26,7 +26,7 @@ const Hero = () => (
               className="h-full w-full object-contain"
               width={280}
               height={80}
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </div>
         </div>
