@@ -1,10 +1,15 @@
 /**
  * Tenant flow-sheet driven regression runner.
- * Maps flow sheet pages → routes/APIs, logs PASS/FAIL/BLOCKED per element.
+ * Maps flow sheet pages â†’ routes/APIs, logs PASS/FAIL/BLOCKED per element.
  *
  * Usage:
  *   node scripts/tenant-flow-regression.mjs
- *   BRIKTRA_PASSWORD=Tenant@123 node scripts/tenant-flow-regression.mjs
+ *
+ * Required env vars (put them in scripts/.env or pass inline):
+ *   BRIKTRA_SALT_GUID        â€“ PBKDF2 password-hashing salt GUID
+ *   BRIKTRA_TEST_EMAIL       â€“ Test tenant email address
+ *   BRIKTRA_PASSWORD         â€“ Test tenant password
+ *   BRIKTRA_SIGNING_SECRET / REQUEST_SIGNATURE_SECRET â€“ Request-signing secret
  */
 import crypto from 'crypto';
 import fs from 'fs';
@@ -13,11 +18,37 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
-const UI = 'https://briktra.com/app/index.html';
-const SALT_GUID = 'briktra-password-salt-guid-2026';
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = process.env.BRIKTRA_PASSWORD || 'Abcd@123';
+
+// Load environment variables from .env file if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const UI = process.env.BRIKTRA_UI_URL || '';
+const SALT_GUID = process.env.BRIKTRA_SALT_GUID || '';
+const EMAIL = process.env.BRIKTRA_EMAIL || process.env.TENANT_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || process.env.TENANT_PASSWORD || '';
 const SECRET =
   process.env.BRIKTRA_SIGNING_SECRET ||
   process.env.REQUEST_SIGNATURE_SECRET || '';
@@ -26,7 +57,7 @@ const OUT_DIR = path.join(ROOT, 'docs', 'qa-tenant-regression');
 const ISSUES_DIR = path.join(OUT_DIR, 'github-issues');
 const FLOW_JSON = path.join(ROOT, 'docs', 'flow-sheet-app-flow.json');
 
-// Flow sheet page → app hash route(s)
+// Flow sheet page â†’ app hash route(s)
 const PAGE_ROUTE_MAP = {
   'Login Page': '/login',
   'Dashboard': '/dashboard',
@@ -191,8 +222,8 @@ function writeIssue(issue) {
     '## Acceptance Criteria',
     issue.acceptance,
     '',
-    `**Flow Sheet:** ${issue.flowRef || '—'}`,
-    `**Module:** ${issue.module || '—'}`,
+    `**Flow Sheet:** ${issue.flowRef || 'â€”'}`,
+    `**Module:** ${issue.module || 'â€”'}`,
     `**Detected:** ${new Date().toISOString()}`,
   ].join('\n');
   fs.writeFileSync(path.join(ISSUES_DIR, filename), body);
@@ -225,7 +256,7 @@ async function main() {
   const results = [];
   const pageResults = {};
 
-  console.log('Tenant regression —', EMAIL);
+  console.log('Tenant regression â€”', EMAIL);
   console.log('Password:', PASSWORD.replace(/./g, '*'));
   console.log('Signing secret:', SECRET ? 'YES' : 'NO');
 
@@ -238,7 +269,7 @@ async function main() {
     element: 'Login Button',
     type: 'auth',
     status: authPass ? 'PASS' : 'FAIL',
-    detail: `POST /auth/login → ${loginRes.status}`,
+    detail: `POST /auth/login â†’ ${loginRes.status}`,
   });
 
   if (!authPass) {
@@ -249,15 +280,15 @@ async function main() {
         'Company Owner account tenant@yopmail.com cannot authenticate with password Abcd@123 as specified in QA test plan. API returns 401 Invalid credentials after client-side PBKDF2 hashing (matches production Flutter client).',
       steps: `1. Open ${UI}#/login\n2. Enter email tenant@yopmail.com\n3. Enter password Abcd@123\n4. Click Login\n(or POST /auth/login with hashed password)`,
       expected: '200 OK, redirect to Dashboard, session tokens issued',
-      actual: `401 Invalid credentials — ${loginRes.body.slice(0, 200)}`,
+      actual: `401 Invalid credentials â€” ${loginRes.body.slice(0, 200)}`,
       severity: 'Critical',
       priority: 'P0',
-      screenshots: 'Yes — login screen with error snackbar/dialog',
+      screenshots: 'Yes â€” login screen with error snackbar/dialog',
       rootCause:
         'Password mismatch on QA tenant record, outdated test credentials, or password changed without updating test data',
       acceptance:
         'Abcd@123 successfully logs in tenant@yopmail.com on QA/live, or official credentials doc updated to match DB',
-      flowRef: 'Login Page → Login Button → Dashboard',
+      flowRef: 'Login Page â†’ Login Button â†’ Dashboard',
       module: 'Authentication',
     });
     issues.push(issue);
@@ -271,7 +302,7 @@ async function main() {
         element: 'Login Button',
         type: 'auth',
         status: 'NOTE',
-        detail: 'Tenant@123 works — used for API probes only; not user-specified password',
+        detail: 'Tenant@123 works â€” used for API probes only; not user-specified password',
       });
       loginRes.status = 200;
       loginRes.ok = true;
@@ -343,7 +374,7 @@ async function main() {
       element: 'Access token after logout',
       type: 'api',
       status: logoutRevokeFail ? 'FAIL' : 'PASS',
-      detail: `/auth/me after logout → ${meAfter.status}`,
+      detail: `/auth/me after logout â†’ ${meAfter.status}`,
     });
     if (logoutRevokeFail) {
       const issue = writeIssue({
@@ -353,14 +384,14 @@ async function main() {
           'POST /auth/logout returns 200 but subsequent GET /auth/me with the same access_token still returns 200. Session is not fully terminated server-side.',
         steps:
           '1. Login as tenant@yopmail.com\n2. POST /auth/logout with refresh_token\n3. GET /auth/me with original access_token',
-        expected: '401 Unauthorized — access token revoked or expired',
+        expected: '401 Unauthorized â€” access token revoked or expired',
         actual: `GET /auth/me returns ${meAfter.status} with user profile`,
         severity: 'High',
         priority: 'P1',
-        screenshots: 'Optional — network tab showing 200 after logout',
+        screenshots: 'Optional â€” network tab showing 200 after logout',
         rootCause: 'Access tokens not invalidated on logout; only refresh token may be cleared client-side',
         acceptance: 'After logout, access_token rejected within TTL or explicit revocation list enforced',
-        flowRef: 'Profile → Logout',
+        flowRef: 'Profile â†’ Logout',
         module: 'Authentication',
       });
       issues.push(issue);
@@ -398,7 +429,7 @@ async function main() {
     if (signingBlocked.length > 0 && !SECRET) {
       const issue = writeIssue({
         number: issueNum++,
-        title: 'Web client cannot load module data — missing X-Request-Signature',
+        title: 'Web client cannot load module data â€” missing X-Request-Signature',
         summary:
           `QA API requires X-Request-Signature on ${signingBlocked.length} module endpoints. Published web Flutter build initializes signing secret as empty, so no signature headers are sent. All module screens (Projects, Employees, Bills, Stock, etc.) fail to load data.`,
         steps:
@@ -407,7 +438,7 @@ async function main() {
         actual: '401 {"error":"Missing X-Request-Signature header","detail":"Request signature is required"}',
         severity: 'Critical',
         priority: 'P0',
-        screenshots: 'Yes — empty states / error snackbars on Dashboard, Projects, Employees',
+        screenshots: 'Yes â€” empty states / error snackbars on Dashboard, Projects, Employees',
         rootCause:
           'Web bundle $.b3t="" at bootstrap; API enforces HMAC signing not configured for web deployment',
         acceptance:
@@ -439,8 +470,8 @@ async function main() {
     if (row.Page) currentPage = row.Page;
     const page = row.Page || currentPage;
     if (!page || !TENANT_PAGES.has(page) && page !== 'Login Page') continue;
-    const element = row.Element || '—';
-    const leadsTo = row['Leads To'] || '—';
+    const element = row.Element || 'â€”';
+    const leadsTo = row['Leads To'] || 'â€”';
     const route = PAGE_ROUTE_MAP[page] || PAGE_ROUTE_MAP[leadsTo] || null;
     const key = page;
     if (!pageResults[key]) pageResults[key] = { page, route, elements: [], pass: 0, fail: 0, blocked: 0, pending: 0 };
@@ -480,7 +511,7 @@ async function main() {
 
   // Executive report
   const report = [
-    '# Tenant (Company Administrator) — Regression Report',
+    '# Tenant (Company Administrator) â€” Regression Report',
     '',
     '**Role:** Company Owner (tenant_admin)',
     `**Account:** ${EMAIL}`,
@@ -528,7 +559,7 @@ async function main() {
     '| Page | Route | PASS | FAIL | BLOCKED | Pending UI |',
     '|------|-------|------|------|---------|------------|',
     ...Object.values(pageResults).map(
-      (p) => `| ${p.page} | ${p.route || '—'} | ${p.pass} | ${p.fail} | ${p.blocked} | ${p.pending} |`,
+      (p) => `| ${p.page} | ${p.route || 'â€”'} | ${p.pass} | ${p.fail} | ${p.blocked} | ${p.pending} |`,
     ),
     '',
     '---',
@@ -537,7 +568,7 @@ async function main() {
     '',
     issues.length === 0
       ? 'No issues filed.'
-      : issues.map((i) => `- **${i.id}** — ${i.filename}`).join('\n'),
+      : issues.map((i) => `- **${i.id}** â€” ${i.filename}`).join('\n'),
     '',
     '---',
     '',
@@ -552,20 +583,20 @@ async function main() {
     '',
     '- Login failure with Abcd@123 provides no user guidance if credentials doc is wrong (generic invalid credentials).',
     '- Post-logout session persistence risks confusing users who believe they are signed out.',
-    '- Module-wide API failure likely surfaces as repeated errors — poor UX for Tenant onboarding.',
+    '- Module-wide API failure likely surfaces as repeated errors â€” poor UX for Tenant onboarding.',
     '',
     '## Performance Review',
     '',
     '- Auth endpoints respond in <3s (observed).',
-    '- Module endpoints fail fast with 401 (signature) — no timeout issues detected.',
+    '- Module endpoints fail fast with 401 (signature) â€” no timeout issues detected.',
     '- Full performance profiling deferred until modules load successfully.',
     '',
     '## Security Review',
     '',
-    '- Password hashing client-side (PBKDF2) confirmed — plaintext rejected.',
+    '- Password hashing client-side (PBKDF2) confirmed â€” plaintext rejected.',
     '- **FAIL:** Access token not revoked on logout.',
     '- **BLOCKED:** Cross-tenant isolation tests require signed API calls.',
-    '- Request signing enforced on API but not on web client — inconsistent security posture.',
+    '- Request signing enforced on API but not on web client â€” inconsistent security posture.',
     '',
     '## Suggestions',
     '',

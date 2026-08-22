@@ -1,6 +1,6 @@
-/**
+﻿/**
  * Browser login test matching user video flow:
- * Language Selection → Login → Dashboard
+ * Language Selection â†’ Login â†’ Dashboard
  */
 import { chromium } from 'playwright';
 import fs from 'fs';
@@ -9,8 +9,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, '..', 'docs', 'qa-tenant-regression', 'screenshots');
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = 'Abcd@123';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || '';
 
 async function main() {
   fs.mkdirSync(OUT, { recursive: true });

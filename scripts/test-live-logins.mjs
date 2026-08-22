@@ -2,28 +2,60 @@
  * Test credentials against the live Briktra.com Flutter app API.
  * Run: node scripts/test-live-logins.mjs
  */
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.join(__dirname, '..');
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
 
 const accounts = [
   {
     role: 'Tenant',
-    email: 'tenant@yopmail.com',
-    passwords: ['Tenant@123Manager', 'Tenant@123'],
+    email: process.env.TENANT_EMAIL || process.env.BRIKTRA_TENANT_EMAIL || process.env.BRIKTRA_EMAIL || '',
+    passwords: [process.env.TENANT_PASSWORD || process.env.BRIKTRA_TENANT_PASSWORD || process.env.BRIKTRA_PASSWORD || ''].filter(Boolean),
   },
   {
     role: 'Manager',
-    email: 'briktramanager@yopmail.com',
-    passwords: ['Manager@123SuperVisor', 'Manager@123'],
+    email: process.env.MANAGER_EMAIL || process.env.BRIKTRA_MANAGER_EMAIL || '',
+    passwords: [process.env.MANAGER_PASSWORD || process.env.BRIKTRA_MANAGER_PASSWORD || ''].filter(Boolean),
   },
   {
     role: 'Supervisor',
-    email: 'briktrasupervisor@yopmail.com',
-    passwords: ['Supervisor@123Employee', 'Supervisor@123'],
+    email: process.env.SUPERVISOR_EMAIL || process.env.BRIKTRA_SUPERVISOR_EMAIL || '',
+    passwords: [process.env.SUPERVISOR_PASSWORD || process.env.BRIKTRA_SUPERVISOR_PASSWORD || ''].filter(Boolean),
   },
   {
     role: 'Employee',
-    email: 'briktraemployee@yopmail.com',
-    passwords: ['Employee@123'],
+    email: process.env.EMPLOYEE_EMAIL || process.env.BRIKTRA_EMPLOYEE_EMAIL || '',
+    passwords: [process.env.EMPLOYEE_PASSWORD || process.env.BRIKTRA_EMPLOYEE_PASSWORD || ''].filter(Boolean),
   },
 ];
 
@@ -108,7 +140,7 @@ async function main() {
     console.log(
       r.ok
         ? `PASS ${r.role} (${r.email}) password=${JSON.stringify(r.passwordUsed)} me=${r.meStatus}`
-        : `FAIL ${r.role} (${r.email}) — Invalid credentials`
+        : `FAIL ${r.role} (${r.email}) â€” Invalid credentials`
     );
   }
 }

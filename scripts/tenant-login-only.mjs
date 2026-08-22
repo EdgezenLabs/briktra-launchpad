@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Tenant-only login test (NO register).
  * Tries the passwords the user shared for Tenant.
  */
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
-const email = 'tenant@yopmail.com';
-const passwords = ['Tenant@123Manager', 'Tenant@123'];
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const passwords = process.env.BRIKTRA_PASSWORD  || '';
 
 async function login(password) {
   const res = await fetch(`${BASE}/auth/login`, {

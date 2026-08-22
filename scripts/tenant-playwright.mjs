@@ -1,5 +1,5 @@
-/**
- * Tenant UI smoke — Playwright against live Briktra web app.
+﻿/**
+ * Tenant UI smoke â€” Playwright against live Briktra web app.
  * Requires: npx playwright install chromium (first run)
  */
 import { chromium } from 'playwright';
@@ -9,9 +9,9 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, '..', 'docs', 'qa-tenant-regression', 'screenshots');
-const UI = 'https://briktra.com/app/index.html#/login';
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORDS = ['Abcd@123', 'Tenant@123'];
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORDS = process.env.BRIKTRA_PASSWORD || '';
 
 const ROUTES = [
   { name: 'Dashboard', hash: '/dashboard' },
@@ -39,7 +39,7 @@ async function handleLanguageSelection(page) {
     await page.waitForTimeout(2000);
     return;
   }
-  // Coordinate fallback — orange CTA bottom-right panel
+  // Coordinate fallback â€” orange CTA bottom-right panel
   await page.mouse.click(960, 720);
   await page.waitForTimeout(2000);
 }

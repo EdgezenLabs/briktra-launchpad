@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ISSUES_DIR = path.join(__dirname, '..', 'docs', 'qa-tenant-regression', 'github-issues');
-const REPO = process.env.GITHUB_REPO || 'EdgezenLabs/briktra-launchpad';
+const REPO = process.env.GITHUB_REPO || '';
 const TOKEN = process.env.GITHUB_TOKEN;
 
 if (!TOKEN) {

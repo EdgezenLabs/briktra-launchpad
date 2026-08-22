@@ -1,6 +1,6 @@
 /**
  * Briktra security assessment probes (PROD).
- * Safe authorization/session/header checks only — no injection/exploit payloads.
+ * Safe authorization/session/header checks only â€” no injection/exploit payloads.
  */
 import crypto from 'crypto';
 import fs from 'fs';
@@ -9,9 +9,35 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const BASE = 'https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod';
-const UI = 'https://briktra.com/app/index.html';
-const SALT = 'briktra-password-salt-guid-2026';
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
 const OUT = path.join(ROOT, 'docs', 'QA', 'security');
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -84,10 +110,26 @@ function add(id, category, title, severity, status, evidence, impact, remediatio
 
 async function main() {
   const accounts = [
-    { role: 'tenant_admin', email: 'tenant@yopmail.com', password: 'Abcd@123' },
-    { role: 'manager', email: 'manager.briktra@yopmail.com', password: 'Manager@123' },
-    { role: 'supervisor', email: 'supervisior.briktra@yopmail.com', password: 'Supervisior@123' },
-    { role: 'employee', email: 'employee.briktra@yopmail.com', password: 'Employee@123' },
+    {
+      role: 'tenant_admin',
+      email: process.env.TENANT_EMAIL || process.env.BRIKTRA_TENANT_EMAIL || process.env.BRIKTRA_EMAIL || '',
+      password: process.env.TENANT_PASSWORD || process.env.BRIKTRA_TENANT_PASSWORD || process.env.BRIKTRA_PASSWORD || '',
+    },
+    {
+      role: 'manager',
+      email: process.env.MANAGER_EMAIL || process.env.BRIKTRA_MANAGER_EMAIL || '',
+      password: process.env.MANAGER_PASSWORD || process.env.BRIKTRA_MANAGER_PASSWORD || '',
+    },
+    {
+      role: 'supervisor',
+      email: process.env.SUPERVISOR_EMAIL || process.env.BRIKTRA_SUPERVISOR_EMAIL || '',
+      password: process.env.SUPERVISOR_PASSWORD || process.env.BRIKTRA_SUPERVISOR_PASSWORD || '',
+    },
+    {
+      role: 'employee',
+      email: process.env.EMPLOYEE_EMAIL || process.env.BRIKTRA_EMPLOYEE_EMAIL || '',
+      password: process.env.EMPLOYEE_PASSWORD || process.env.BRIKTRA_EMPLOYEE_PASSWORD || '',
+    },
   ];
 
   const sessions = {};
@@ -142,7 +184,7 @@ async function main() {
     console.log('no-token', m, p, r.status);
   }
 
-  // Broken access control — employee
+  // Broken access control â€” employee
   console.log('=== Employee BAC ===');
   if (empTok) {
     const adminPaths = [
@@ -172,7 +214,7 @@ async function main() {
     }
   }
 
-  // Manager role escalation — create tenant
+  // Manager role escalation â€” create tenant
   if (mgr.access_token) {
     const r = await api('POST', '/tenants', {
       token: mgr.access_token,
@@ -192,7 +234,7 @@ async function main() {
     console.log('mgr POST /tenants', r.status, r.body.slice(0, 100));
   }
 
-  // JWT rejection — malformed/empty/truncated only (no forged signed tokens)
+  // JWT rejection â€” malformed/empty/truncated only (no forged signed tokens)
   console.log('=== JWT invalid token rejection ===');
   for (const [name, tok] of [
     ['empty-bearer', ''],
@@ -214,7 +256,7 @@ async function main() {
     console.log('jwt', name, r.status);
   }
 
-  // Mass assignment — attempt role field update then verify /auth/me
+  // Mass assignment â€” attempt role field update then verify /auth/me
   console.log('=== Mass assignment ===');
   if (empTok && emp.user_id) {
     const r = await api('PUT', `/users/${emp.user_id}`, {
@@ -267,7 +309,9 @@ async function main() {
   // Logout / session
   console.log('=== Logout revoke ===');
   {
-    const re = await login('employee.briktra@yopmail.com', 'Employee@123');
+    const empEmail = process.env.EMPLOYEE_EMAIL || process.env.BRIKTRA_EMPLOYEE_EMAIL || '';
+    const empPass = process.env.EMPLOYEE_PASSWORD || process.env.BRIKTRA_EMPLOYEE_PASSWORD || '';
+    const re = await login(empEmail, empPass);
     const lo = await api('POST', '/auth/logout', {
       token: re.obj.access_token,
       body: { refresh_token: re.obj.refresh_token },
@@ -299,12 +343,12 @@ async function main() {
     console.log('refresh after logout', rf.status, rf.body.slice(0, 100));
   }
 
-  // Expired token — use clearly expired-looking JWT structure without forging signature success path
+  // Expired token â€” use clearly expired-looking JWT structure without forging signature success path
   // We only assert server rejects tokens with invalid signature + old exp claim shape via truncated path above.
   add(
     'SEC-EXP-NOTE',
     'Expired Token',
-    'Native exp claim enforcement — observe JWT exp and require retest with aged token',
+    'Native exp claim enforcement â€” observe JWT exp and require retest with aged token',
     'Medium',
     'REVIEW',
     `alg=${jwtInfo.header?.alg} exp=${jwtInfo.payload?.exp} iat=${jwtInfo.payload?.iat}`,
@@ -374,7 +418,7 @@ async function main() {
     console.log('UI CSP', uh['content-security-policy'], 'XFO', uh['x-frame-options']);
   }
 
-  // Upload discovery — no file bytes uploaded
+  // Upload discovery â€” no file bytes uploaded
   console.log('=== Upload discovery ===');
   for (const p of ['/documents/upload', '/upload', '/files', '/media/upload']) {
     const r = await api('POST', p, {

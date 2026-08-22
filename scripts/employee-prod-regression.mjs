@@ -1,5 +1,5 @@
 /**
- * Employee (Site Employee) PROD regression — Flow Sheet + employee scenario.
+ * Employee (Site Employee) PROD regression â€” Flow Sheet + employee scenario.
  * Login: employee.briktra@yopmail.com / Employee@123
  */
 import crypto from 'crypto';
@@ -10,11 +10,37 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const BASE = 'https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod';
-const UI = 'https://briktra.com/app/index.html';
-const SALT = 'briktra-password-salt-guid-2026';
-const EMAIL = 'employee.briktra@yopmail.com';
-const PASSWORD = 'Employee@123';
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
+const EMAIL = process.env.EMPLOYEE_EMAIL || process.env.BRIKTRA_EMPLOYEE_EMAIL || '';
+const PASSWORD = process.env.EMPLOYEE_PASSWORD || process.env.BRIKTRA_EMPLOYEE_PASSWORD || '';
 const OUT = path.join(ROOT, 'docs', 'qa-employee-regression');
 const SHOTS = path.join(OUT, 'screenshots');
 const ISSUES = path.join(OUT, 'github-issues');
@@ -98,8 +124,8 @@ function writeIssue(num, title, fields) {
     '## Acceptance Criteria',
     fields.acceptance,
     '',
-    `**Flow Sheet:** ${fields.flowRef || '—'}`,
-    `**Module:** ${fields.module || '—'}`,
+    `**Flow Sheet:** ${fields.flowRef || 'â€”'}`,
+    `**Module:** ${fields.module || 'â€”'}`,
     `**Role:** employee`,
     `**API:** ${BASE}`,
     `**Detected:** ${new Date().toISOString()}`,
@@ -289,7 +315,7 @@ async function main() {
         screenshots: 'Yes',
         rootCause: 'Credentials mismatch or account disabled',
         acceptance: 'Employee logs in on PROD',
-        flowRef: 'Login Page → Employee home',
+        flowRef: 'Login Page â†’ Employee home',
         module: 'Authentication',
       }),
     );
@@ -322,7 +348,7 @@ async function main() {
           screenshots: 'Optional',
           rootCause: 'Wrong role assignment',
           acceptance: 'role equals employee',
-          flowRef: 'Login → Home',
+          flowRef: 'Login â†’ Home',
           module: 'RBAC',
         }),
       );
@@ -358,7 +384,7 @@ async function main() {
   results.push({
     id: 'EMP-AUTH-04',
     area: 'Authentication',
-    check: 'UI Login → Employee home',
+    check: 'UI Login â†’ Employee home',
     status: onHome ? 'PASS' : 'FAIL',
     detail: loginUrl,
   });
@@ -380,13 +406,13 @@ async function main() {
         screenshots: 'emp-01-after-login.png',
         rootCause: 'Auth failure or role redirect',
         acceptance: 'Employee lands on allowed home',
-        flowRef: 'Login Button → Home',
+        flowRef: 'Login Button â†’ Home',
         module: 'Authentication',
       }),
     );
   }
 
-  // Business scenario — allowed modules
+  // Business scenario â€” allowed modules
   const allowedRoutes = [
     {
       id: 'EMP-ATT-01',
@@ -415,7 +441,7 @@ async function main() {
       hash: '/projects',
       flow: 'View Assigned Tasks (Projects if assigned)',
       scenario: 'View Assigned Tasks',
-      note: 'Employee may be denied full project list — document either assigned tasks or deny',
+      note: 'Employee may be denied full project list â€” document either assigned tasks or deny',
     },
     {
       id: 'EMP-PRF-01',
@@ -442,12 +468,12 @@ async function main() {
       let status = redirectedLogin ? 'FAIL' : 'PASS';
       let detail = url;
 
-      // Employee should not get full admin project management — if projects fully open with CRUD, flag later in restricted
+      // Employee should not get full admin project management â€” if projects fully open with CRUD, flag later in restricted
       if (r.hash === '/projects') {
         const hasCreate =
           /create project|add project|\+/i.test(text) || url.includes('createProject');
         detail = `${url} | ${text.slice(0, 160)}`;
-        if (redirectedLogin) status = 'PASS'; // treated as deny for tasks — but scenario needs assigned tasks
+        if (redirectedLogin) status = 'PASS'; // treated as deny for tasks â€” but scenario needs assigned tasks
         results.push({
           id: r.id,
           area: 'Business scenario',
@@ -459,7 +485,7 @@ async function main() {
           issues.push(
             writeIssue(issueNum++, 'Employee cannot view assigned tasks / projects route logs out', {
               summary: 'Employee deep-link to projects redirected to login',
-              steps: `Login as employee → open #/projects`,
+              steps: `Login as employee â†’ open #/projects`,
               expected: 'Assigned tasks view or clear empty state',
               actual: url,
               severity: 'High',
@@ -490,7 +516,7 @@ async function main() {
         issues.push(
           writeIssue(issueNum++, `Employee redirected to login on ${r.name}`, {
             summary: `Cannot open ${r.flow}`,
-            steps: `Login → #${r.hash}`,
+            steps: `Login â†’ #${r.hash}`,
             expected: 'Screen loads for employee',
             actual: url,
             severity: 'High',
@@ -542,7 +568,7 @@ async function main() {
       detail: page.url(),
     });
 
-    // Restricted — expect DENY
+    // Restricted â€” expect DENY
     const restricted = [
       { id: 'EMP-NEG-01', name: 'Reports', hash: '/reportsDashboard', label: 'Open Reports' },
       { id: 'EMP-NEG-02', name: 'Company-Settings', hash: '/company-details', label: 'Company Settings' },
@@ -580,12 +606,12 @@ async function main() {
       let status = 'REVIEW';
       if (denied && !adminChrome) status = 'PASS';
       else if (adminChrome || (stayed && !denied)) {
-        // For addAttendance: employee may legitimately mark own attendance — REVIEW unless delete UI
+        // For addAttendance: employee may legitimately mark own attendance â€” REVIEW unless delete UI
         if (r.hash === '/addAttendance') {
           const deleteUi = /delete attendance|remove attendance|manage tab/i.test(text);
           status = deleteUi ? 'FAIL' : 'REVIEW';
         } else if (r.hash === '/projects') {
-          // assigned tasks may use projects — FAIL only if admin create/manage
+          // assigned tasks may use projects â€” FAIL only if admin create/manage
           status = /create project|add project/i.test(text) ? 'FAIL' : 'REVIEW';
         } else if (r.hash === '/expenses') {
           // remap or deny ok; full approval UI is FAIL
@@ -616,21 +642,21 @@ async function main() {
           writeIssue(issueNum++, `Employee can access restricted route: ${r.label}`, {
             summary: `Employee deep-link stayed on ${url} for restricted action "${r.label}"`,
             steps: `1. Login as employee (${EMAIL})\n2. Open ${UI}#${r.hash}\n3. Observe UI`,
-            expected: 'Permission denied / redirect / lock — no admin CRUD',
+            expected: 'Permission denied / redirect / lock â€” no admin CRUD',
             actual: `Remained on ${url}. Semantics: ${text.slice(0, 220)}`,
             severity: critical ? 'Critical' : 'High',
             priority: critical ? 'P0' : 'P1',
-            screenshots: `Yes — emp-neg-${r.name}.png`,
+            screenshots: `Yes â€” emp-neg-${r.name}.png`,
             rootCause: 'Missing RBAC route guard for employee role',
             acceptance: 'Employee cannot use admin-only screens; clear permission denied',
-            flowRef: `Restricted — ${r.label}`,
+            flowRef: `Restricted â€” ${r.label}`,
             module: 'RBAC',
           }),
         );
       }
     }
 
-    // Session check — still authenticated mid-run
+    // Session check â€” still authenticated mid-run
     await gotoRoute(page, '/profile');
     results.push({
       id: 'EMP-SES-01',
@@ -667,7 +693,7 @@ async function main() {
       issues.push(
         writeIssue(issueNum++, 'Employee session persists after logout (UI deep link)', {
           summary: 'After Logout, employeeAttendanceTap still accessible without login screen',
-          steps: 'Login → Profile → Logout → open #/employeeAttendanceTap',
+          steps: 'Login â†’ Profile â†’ Logout â†’ open #/employeeAttendanceTap',
           expected: 'Redirect to login',
           actual: post,
           severity: 'High',
@@ -675,7 +701,7 @@ async function main() {
           screenshots: 'emp-post-logout-attendance.png',
           rootCause: 'Client session not cleared or route not guarded',
           acceptance: 'Unauthenticated deep links force login',
-          flowRef: 'Profile → Logout',
+          flowRef: 'Profile â†’ Logout',
           module: 'Authentication',
         }),
       );
@@ -701,7 +727,7 @@ async function main() {
           issues.push(
             writeIssue(issueNum++, 'Employee access JWT remains valid after logout', {
               summary: 'Logout does not revoke access token for employee on PROD',
-              steps: 'Login → POST /auth/logout → GET /auth/me',
+              steps: 'Login â†’ POST /auth/logout â†’ GET /auth/me',
               expected: '401',
               actual: String(me2.status),
               severity: 'High',
@@ -709,7 +735,7 @@ async function main() {
               screenshots: 'Optional',
               rootCause: 'Access token not revoked server-side',
               acceptance: 'Access token rejected after logout',
-              flowRef: 'Profile → Logout',
+              flowRef: 'Profile â†’ Logout',
               module: 'Authentication',
             }),
           );
@@ -726,7 +752,7 @@ async function main() {
   }, {});
 
   const report = [
-    '# Employee (Site Employee) — Complete Regression Report',
+    '# Employee (Site Employee) â€” Complete Regression Report',
     '',
     `**Date:** ${new Date().toISOString()}`,
     `**Role:** employee (Site Employee)`,
@@ -742,7 +768,7 @@ async function main() {
     '',
     onHome
       ? 'Employee login **succeeded** on PROD. Business scenario (attendance, profile, notifications) and restricted admin deep-links were probed. Screenshot review required for FAIL/REVIEW items.'
-      : 'Employee login **failed** to reach home — deep testing blocked.',
+      : 'Employee login **failed** to reach home â€” deep testing blocked.',
     '',
     '| Metric | Count |',
     '|--------|-------|',
@@ -779,13 +805,13 @@ async function main() {
     '### Business scenario mapping',
     '| Scenario step | Flow Sheet / Route | Status |',
     '|----------------|-------------------|--------|',
-    '| Open App / Login | Login → Home | see EMP-AUTH-04 |',
+    '| Open App / Login | Login â†’ Home | see EMP-AUTH-04 |',
     "| View Today's Attendance | employeeAttendanceTap | see EMP-ATT-01 |",
     '| Mark Attendance | addAttendance / tap | see EMP-ATT-02 / EMP-ATT-04 |',
     '| View Assigned Tasks | projects / tasks | see EMP-TSK-01 |',
     '| Update Profile | Profile | see EMP-PRF-* |',
     '| Read Notifications | Dashboard | see EMP-NOT-01 |',
-    '| Logout | Profile → Logout | see EMP-AUTH-05 |',
+    '| Logout | Profile â†’ Logout | see EMP-AUTH-05 |',
     '| Session | Profile mid-run + post-logout | see EMP-SES-01 / EMP-AUTH-07 |',
     '',
     '---',
@@ -793,7 +819,7 @@ async function main() {
     '## Bug Summary',
     '',
     issues.length
-      ? issues.map((i) => `- **${i.id}** (${i.severity}): ${i.title} — \`${i.filename}\``).join('\n')
+      ? issues.map((i) => `- **${i.id}** (${i.severity}): ${i.title} â€” \`${i.filename}\``).join('\n')
       : 'No new issues filed this run.',
     '',
     '---',
@@ -802,7 +828,7 @@ async function main() {
     '',
     '- Screenshots: `docs/qa-employee-regression/screenshots/emp-*.png`',
     '- Employee home should be attendance-first, not admin dashboard chrome.',
-    '- Restricted routes must show deny — not admin forms.',
+    '- Restricted routes must show deny â€” not admin forms.',
     '',
     '## UX Review',
     '',
@@ -812,7 +838,7 @@ async function main() {
     '',
     '## Performance Review',
     '',
-    '- Auth and route transitions observed ~3–10s headless.',
+    '- Auth and route transitions observed ~3â€“10s headless.',
     '- No dedicated load test.',
     '',
     '## Security Review',

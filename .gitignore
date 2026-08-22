@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local env files for regression scripts — never commit secrets
+.env
+.env*.local
+scripts/.env

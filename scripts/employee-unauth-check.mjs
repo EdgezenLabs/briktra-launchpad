@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Check if employeeAttendanceTap requires auth.
  */
 import { chromium } from 'playwright';
@@ -7,7 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const UI = 'https://briktra.com/app/index.html';
+const UI = process.env.BRIKTRA_UI_BASE || '';
 const OUT = path.join(__dirname, '..', 'docs', 'qa-employee-regression');
 const SHOTS = path.join(OUT, 'screenshots');
 

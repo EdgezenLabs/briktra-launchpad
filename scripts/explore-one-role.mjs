@@ -2,7 +2,7 @@
  * Explore ONE role deeply against QA API.
  * Usage: node scripts/explore-one-role.mjs Tenant
  *
- * Login matches Flutter client: GET /auth/login/hint → PBKDF2 hash → POST /auth/login
+ * Login matches Flutter client: GET /auth/login/hint â†’ PBKDF2 hash â†’ POST /auth/login
  */
 import crypto from 'crypto';
 import fs from 'fs';
@@ -10,15 +10,54 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
+const ROOT = path.join(__dirname, '..');
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
 const OUT = path.join(__dirname, '..', 'docs', 'role-exploration');
-const SALT_GUID = 'briktra-password-salt-guid-2026';
+const SALT_GUID = process.env.BRIKTRA_SALT_GUID || '';
 
 const ACCOUNTS = {
-  Tenant: { email: 'tenant@yopmail.com', password: 'Tenant@123' },
-  Manager: { email: 'briktramanager@yopmail.com', password: 'Manager@123' },
-  Supervisor: { email: 'briktrasupervisor@yopmail.com', password: 'Supervisor@123' },
-  Employee: { email: 'briktraemployee@yopmail.com', password: 'Employee@123' },
+  Tenant: {
+    email: process.env.TENANT_EMAIL || process.env.BRIKTRA_TENANT_EMAIL || process.env.BRIKTRA_EMAIL || '',
+    password: process.env.TENANT_PASSWORD || process.env.BRIKTRA_TENANT_PASSWORD || process.env.BRIKTRA_PASSWORD || '',
+  },
+  Manager: {
+    email: process.env.MANAGER_EMAIL || process.env.BRIKTRA_MANAGER_EMAIL || '',
+    password: process.env.MANAGER_PASSWORD || process.env.BRIKTRA_MANAGER_PASSWORD || '',
+  },
+  Supervisor: {
+    email: process.env.SUPERVISOR_EMAIL || process.env.BRIKTRA_SUPERVISOR_EMAIL || '',
+    password: process.env.SUPERVISOR_PASSWORD || process.env.BRIKTRA_SUPERVISOR_PASSWORD || '',
+  },
+  Employee: {
+    email: process.env.EMPLOYEE_EMAIL || process.env.BRIKTRA_EMPLOYEE_EMAIL || '',
+    password: process.env.EMPLOYEE_PASSWORD || process.env.BRIKTRA_EMPLOYEE_PASSWORD || '',
+  },
 };
 
 function hashPassword(identifier, password) {
@@ -121,7 +160,7 @@ async function main() {
   add(`hash_identifier: ${identifier}`, '');
   console.log('hash_identifier:', identifier);
 
-  // Wrong password (hashed with correct identifier — still wrong secret)
+  // Wrong password (hashed with correct identifier â€” still wrong secret)
   const badHash = hashPassword(identifier, 'WrongPass@999');
   const bad = await api('POST', '/auth/login', {
     body: { username: account.email, password: badHash },
@@ -139,7 +178,7 @@ async function main() {
 
   if (!login.ok) {
     fs.writeFileSync(path.join(OUT, `${roleArg}-live.md`), lines.join('\n'));
-    console.error('LOGIN FAILED — stopping this role');
+    console.error('LOGIN FAILED â€” stopping this role');
     process.exitCode = 2;
     return;
   }
@@ -251,7 +290,7 @@ async function main() {
   for (const [method, p] of negatives) {
     // Never actually DELETE tenant - use OPTIONS or skip destructive
     if (method === 'DELETE') {
-      add(`| ${method} | \`${p}\` | SKIPPED | Destructive — not executed |`);
+      add(`| ${method} | \`${p}\` | SKIPPED | Destructive â€” not executed |`);
       continue;
     }
     const r = await api(method, p, {

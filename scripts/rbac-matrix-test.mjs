@@ -1,13 +1,60 @@
 import crypto from 'crypto';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const BASE_URL = process.env.API_BASE || 'https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod';
-const SALT_GUID = 'briktra-password-salt-guid-2026';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.join(__dirname, '..');
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE_URL = process.env.BRIKTRA_API_BASE || process.env.API_BASE || '';
+const SALT_GUID = process.env.BRIKTRA_SALT_GUID || '';
 
 const ACCOUNTS = [
-  { role: 'tenant_admin', email: 'tenant@yopmail.com', pass: 'Abcd@123' },
-  { role: 'manager', email: 'manager.briktra@yopmail.com', pass: 'Manager@123' },
-  { role: 'supervisor', email: 'supervisior.briktra@yopmail.com', pass: 'Supervisior@123' },
-  { role: 'employee', email: 'employee.briktra@yopmail.com', pass: 'Employee@123' },
+  {
+    role: 'tenant_admin',
+    email: process.env.TENANT_EMAIL || process.env.BRIKTRA_TENANT_EMAIL || process.env.BRIKTRA_EMAIL || '',
+    pass: process.env.TENANT_PASSWORD || process.env.BRIKTRA_TENANT_PASSWORD || process.env.BRIKTRA_PASSWORD || '',
+  },
+  {
+    role: 'manager',
+    email: process.env.MANAGER_EMAIL || process.env.BRIKTRA_MANAGER_EMAIL || '',
+    pass: process.env.MANAGER_PASSWORD || process.env.BRIKTRA_MANAGER_PASSWORD || '',
+  },
+  {
+    role: 'supervisor',
+    email: process.env.SUPERVISOR_EMAIL || process.env.BRIKTRA_SUPERVISOR_EMAIL || '',
+    pass: process.env.SUPERVISOR_PASSWORD || process.env.BRIKTRA_SUPERVISOR_PASSWORD || '',
+  },
+  {
+    role: 'employee',
+    email: process.env.EMPLOYEE_EMAIL || process.env.BRIKTRA_EMPLOYEE_EMAIL || '',
+    pass: process.env.EMPLOYEE_PASSWORD || process.env.BRIKTRA_EMPLOYEE_PASSWORD || '',
+  },
 ];
 
 // Exact same hashing as Flutter client + existing prod regression scripts
@@ -39,7 +86,7 @@ async function loginUser(email, password) {
     const hint = await api('GET', '/auth/login/hint', { query: { username: email } });
     const identifier = hint.json.hash_identifier || email;
 
-    // Step 2: Hash password (SHA256(identifier + SALT_GUID) → PBKDF2)
+    // Step 2: Hash password (SHA256(identifier + SALT_GUID) â†’ PBKDF2)
     const hashedPassword = hashPassword(identifier, password);
 
     // Step 3: Login using username + hashed password (matches prod API contract)
@@ -71,9 +118,9 @@ async function runRbacTests() {
     const sess = await loginUser(acc.email, acc.pass);
     if (sess && sess.token) {
       sessions[acc.role] = sess.token;
-      console.log('✅ PASS');
+      console.log('âœ… PASS');
     } else {
-      console.log('❌ FAIL');
+      console.log('âŒ FAIL');
     }
   }
 
@@ -107,7 +154,7 @@ async function runRbacTests() {
           Role: role,
           Expected: isAllowed ? '2xx/400/404' : '401/403',
           ActualStatus: res.status,
-          Result: pass ? '✅ PASS' : '❌ FAIL',
+          Result: pass ? 'âœ… PASS' : 'âŒ FAIL',
         });
       } catch (err) {
         results.push({
@@ -115,7 +162,7 @@ async function runRbacTests() {
           Role: role,
           Expected: 'Response',
           ActualStatus: 'ERR',
-          Result: '⚠️ ERROR',
+          Result: 'âš ï¸ ERROR',
         });
       }
     }

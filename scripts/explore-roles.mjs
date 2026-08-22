@@ -8,14 +8,41 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
+const ROOT = path.join(__dirname, '..');
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
 const OUT = path.join(__dirname, '..', 'docs', 'role-exploration');
 
 const ACCOUNTS = [
-  { role: 'Tenant', email: 'tenant@yopmail.com', password: 'Tenant@123' },
-  { role: 'Manager', email: 'briktramanager@yopmail.com', password: 'Manager@123' },
-  { role: 'Supervisor', email: 'briktrasupervisor@yopmail.com', password: 'Supervisor@123' },
-  { role: 'Employee', email: 'briktraemployee@yopmail.com', password: 'Employee@123' },
+  { role: 'Tenant',     email: process.env.TENANT_EMAIL || process.env.BRIKTRA_TENANT_EMAIL || process.env.BRIKTRA_TEST_EMAIL || '', password: process.env.TENANT_PASSWORD || process.env.BRIKTRA_TENANT_PASSWORD || process.env.BRIKTRA_PASSWORD || '' },
+  { role: 'Manager',    email: process.env.MANAGER_EMAIL || process.env.BRIKTRA_MANAGER_EMAIL || '', password: process.env.MANAGER_PASSWORD || process.env.BRIKTRA_MANAGER_PASSWORD || '' },
+  { role: 'Supervisor', email: process.env.SUPERVISOR_EMAIL || process.env.BRIKTRA_SUPERVISOR_EMAIL || '', password: process.env.SUPERVISOR_PASSWORD || process.env.BRIKTRA_SUPERVISOR_PASSWORD || '' },
+  { role: 'Employee',   email: process.env.EMPLOYEE_EMAIL || process.env.BRIKTRA_EMPLOYEE_EMAIL || '', password: process.env.EMPLOYEE_PASSWORD || process.env.BRIKTRA_EMPLOYEE_PASSWORD || '' },
 ];
 
 function redact(s) {
