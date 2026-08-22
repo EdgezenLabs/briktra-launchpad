@@ -21,8 +21,7 @@ const OUT = path.join(ROOT, 'docs', 'qa-tenant-regression');
 const SHOTS = path.join(OUT, 'screenshots');
 const SECRET =
   process.env.BRIKTRA_SIGNING_SECRET ||
-  process.env.REQUEST_SIGNATURE_SECRET ||
-  'EdgeZen_Briktra_RequestSign_2026_Prod_Key';
+  process.env.REQUEST_SIGNATURE_SECRET || '';
 
 function hashPassword(identifier, password) {
   const salt = crypto.createHash('sha256').update(identifier + SALT, 'utf8').digest();
