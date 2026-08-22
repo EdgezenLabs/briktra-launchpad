@@ -86,7 +86,7 @@ async function loginUser(email, password) {
     const hint = await api('GET', '/auth/login/hint', { query: { username: email } });
     const identifier = hint.json.hash_identifier || email;
 
-    // Step 2: Hash password (SHA256(identifier + SALT_GUID) â†’ PBKDF2)
+    // Step 2: Hash password (SHA256(identifier + SALT_GUID) → PBKDF2)
     const hashedPassword = hashPassword(identifier, password);
 
     // Step 3: Login using username + hashed password (matches prod API contract)

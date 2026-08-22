@@ -31,6 +31,6 @@ Password mismatch on QA tenant record, outdated test credentials, or password ch
 ## Acceptance Criteria
 Abcd@123 successfully logs in tenant@yopmail.com on QA/live, or official credentials doc updated to match DB
 
-**Flow Sheet:** Login Page â†’ Login Button â†’ Dashboard
+**Flow Sheet:** Login Page → Login Button → Dashboard
 **Module:** Authentication
 **Detected:** 2026-08-22T14:44:52.183Z

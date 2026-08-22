@@ -281,7 +281,7 @@ async function main() {
         screenshots: 'Yes',
         rootCause: 'Credentials mismatch or account disabled',
         acceptance: 'Manager logs in successfully on PROD',
-        flowRef: 'Login Page â†’ Login Button â†’ Dashboard',
+        flowRef: 'Login Page → Login Button → Dashboard',
         module: 'Authentication',
       }),
     );
@@ -314,7 +314,7 @@ async function main() {
           screenshots: 'Optional',
           rootCause: 'Wrong role assignment on user record',
           acceptance: 'role field equals manager',
-          flowRef: 'Login â†’ Dashboard',
+          flowRef: 'Login → Dashboard',
           module: 'RBAC',
         }),
       );
@@ -352,7 +352,7 @@ async function main() {
   results.push({
     id: 'MGR-AUTH-04',
     area: 'Authentication',
-    check: 'UI Login â†’ Dashboard',
+    check: 'UI Login → Dashboard',
     status: onDash ? 'PASS' : 'FAIL',
     detail: loginUrl,
   });
@@ -371,7 +371,7 @@ async function main() {
         screenshots: 'mgr-01-after-login.png',
         rootCause: 'Auth failure, language gate, or role redirect',
         acceptance: 'Manager lands on Dashboard after login',
-        flowRef: 'Login Button â†’ Dashboard',
+        flowRef: 'Login Button → Dashboard',
         module: 'Authentication',
       }),
     );
@@ -414,7 +414,7 @@ async function main() {
         issues.push(
           writeIssue(issueNum++, `Manager redirected to login on ${r.name}`, {
             summary: `Manager cannot open ${r.flow}`,
-            steps: `Login as manager â†’ navigate #${r.hash}`,
+            steps: `Login as manager → navigate #${r.hash}`,
             expected: 'Screen loads for manager role',
             actual: `Redirected to ${url}`,
             severity: 'High',
@@ -522,7 +522,7 @@ async function main() {
           issues.push(
             writeIssue(issueNum++, 'Manager access JWT remains valid after logout', {
               summary: 'Same logout revoke defect for manager role on PROD',
-              steps: 'Login as manager â†’ POST /auth/logout â†’ GET /auth/me',
+              steps: 'Login as manager → POST /auth/logout → GET /auth/me',
               expected: '401',
               actual: String(me2.status),
               severity: 'High',
@@ -530,7 +530,7 @@ async function main() {
               screenshots: 'Optional',
               rootCause: 'Access token not revoked server-side',
               acceptance: 'Access token rejected after logout',
-              flowRef: 'Profile â†’ Logout',
+              flowRef: 'Profile → Logout',
               module: 'Authentication',
             }),
           );
@@ -548,7 +548,7 @@ async function main() {
       issues.push(
         writeIssue(issueNum++, `Manager may access restricted route: ${r.check}`, {
           summary: `Manager deep-link stayed on restricted path: ${r.detail}`,
-          steps: `Login as manager â†’ open ${r.detail}`,
+          steps: `Login as manager → open ${r.detail}`,
           expected: 'Permission denied / redirect / lock screen',
           actual: `Remained on ${r.detail} â€” verify screenshot for deny UI`,
           severity: 'High',
@@ -623,14 +623,14 @@ async function main() {
     '| Scenario step | Flow Sheet / Route | Status |',
     '|----------------|-------------------|--------|',
     '| Review Dashboard | Dashboard `/dashboard` | see MGR-DASH-01 |',
-    '| Open Project | Project List â†’ Project Detail | see MGR-PRJ-* |',
+    '| Open Project | Project List → Project Detail | see MGR-PRJ-* |',
     '| Review Labour | Employees List | see MGR-LAB-01 |',
     '| Check Attendance | Attendance - Mark Attendance | see MGR-ATT-01 |',
     '| Approve Expenses | Expenses | see MGR-EXP-01 |',
     '| View Reports | Project Reports | see MGR-RPT-01 |',
     '| Review Progress | Project Detail / Dashboard | see MGR-PRJ-02 |',
     '| Check Notifications | Dashboard bell | see MGR-NOT-01 |',
-    '| Logout | Profile â†’ Logout | see MGR-AUTH-05 |',
+    '| Logout | Profile → Logout | see MGR-AUTH-05 |',
     '',
     '---',
     '',

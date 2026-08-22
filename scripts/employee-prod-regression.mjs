@@ -315,7 +315,7 @@ async function main() {
         screenshots: 'Yes',
         rootCause: 'Credentials mismatch or account disabled',
         acceptance: 'Employee logs in on PROD',
-        flowRef: 'Login Page â†’ Employee home',
+        flowRef: 'Login Page → Employee home',
         module: 'Authentication',
       }),
     );
@@ -348,7 +348,7 @@ async function main() {
           screenshots: 'Optional',
           rootCause: 'Wrong role assignment',
           acceptance: 'role equals employee',
-          flowRef: 'Login â†’ Home',
+          flowRef: 'Login → Home',
           module: 'RBAC',
         }),
       );
@@ -384,7 +384,7 @@ async function main() {
   results.push({
     id: 'EMP-AUTH-04',
     area: 'Authentication',
-    check: 'UI Login â†’ Employee home',
+    check: 'UI Login → Employee home',
     status: onHome ? 'PASS' : 'FAIL',
     detail: loginUrl,
   });
@@ -406,7 +406,7 @@ async function main() {
         screenshots: 'emp-01-after-login.png',
         rootCause: 'Auth failure or role redirect',
         acceptance: 'Employee lands on allowed home',
-        flowRef: 'Login Button â†’ Home',
+        flowRef: 'Login Button → Home',
         module: 'Authentication',
       }),
     );
@@ -485,7 +485,7 @@ async function main() {
           issues.push(
             writeIssue(issueNum++, 'Employee cannot view assigned tasks / projects route logs out', {
               summary: 'Employee deep-link to projects redirected to login',
-              steps: `Login as employee â†’ open #/projects`,
+              steps: `Login as employee → open #/projects`,
               expected: 'Assigned tasks view or clear empty state',
               actual: url,
               severity: 'High',
@@ -516,7 +516,7 @@ async function main() {
         issues.push(
           writeIssue(issueNum++, `Employee redirected to login on ${r.name}`, {
             summary: `Cannot open ${r.flow}`,
-            steps: `Login â†’ #${r.hash}`,
+            steps: `Login → #${r.hash}`,
             expected: 'Screen loads for employee',
             actual: url,
             severity: 'High',
@@ -693,7 +693,7 @@ async function main() {
       issues.push(
         writeIssue(issueNum++, 'Employee session persists after logout (UI deep link)', {
           summary: 'After Logout, employeeAttendanceTap still accessible without login screen',
-          steps: 'Login â†’ Profile â†’ Logout â†’ open #/employeeAttendanceTap',
+          steps: 'Login → Profile → Logout → open #/employeeAttendanceTap',
           expected: 'Redirect to login',
           actual: post,
           severity: 'High',
@@ -701,7 +701,7 @@ async function main() {
           screenshots: 'emp-post-logout-attendance.png',
           rootCause: 'Client session not cleared or route not guarded',
           acceptance: 'Unauthenticated deep links force login',
-          flowRef: 'Profile â†’ Logout',
+          flowRef: 'Profile → Logout',
           module: 'Authentication',
         }),
       );
@@ -727,7 +727,7 @@ async function main() {
           issues.push(
             writeIssue(issueNum++, 'Employee access JWT remains valid after logout', {
               summary: 'Logout does not revoke access token for employee on PROD',
-              steps: 'Login â†’ POST /auth/logout â†’ GET /auth/me',
+              steps: 'Login → POST /auth/logout → GET /auth/me',
               expected: '401',
               actual: String(me2.status),
               severity: 'High',
@@ -735,7 +735,7 @@ async function main() {
               screenshots: 'Optional',
               rootCause: 'Access token not revoked server-side',
               acceptance: 'Access token rejected after logout',
-              flowRef: 'Profile â†’ Logout',
+              flowRef: 'Profile → Logout',
               module: 'Authentication',
             }),
           );
@@ -805,13 +805,13 @@ async function main() {
     '### Business scenario mapping',
     '| Scenario step | Flow Sheet / Route | Status |',
     '|----------------|-------------------|--------|',
-    '| Open App / Login | Login â†’ Home | see EMP-AUTH-04 |',
+    '| Open App / Login | Login → Home | see EMP-AUTH-04 |',
     "| View Today's Attendance | employeeAttendanceTap | see EMP-ATT-01 |",
     '| Mark Attendance | addAttendance / tap | see EMP-ATT-02 / EMP-ATT-04 |',
     '| View Assigned Tasks | projects / tasks | see EMP-TSK-01 |',
     '| Update Profile | Profile | see EMP-PRF-* |',
     '| Read Notifications | Dashboard | see EMP-NOT-01 |',
-    '| Logout | Profile â†’ Logout | see EMP-AUTH-05 |',
+    '| Logout | Profile → Logout | see EMP-AUTH-05 |',
     '| Session | Profile mid-run + post-logout | see EMP-SES-01 / EMP-AUTH-07 |',
     '',
     '---',

@@ -271,7 +271,7 @@ async function main() {
         screenshots: 'Yes',
         rootCause: 'Credentials mismatch or account disabled',
         acceptance: 'Supervisor logs in on PROD',
-        flowRef: 'Login Page â†’ Dashboard',
+        flowRef: 'Login Page → Dashboard',
         module: 'Authentication',
       }),
     );
@@ -304,7 +304,7 @@ async function main() {
           screenshots: 'Optional',
           rootCause: 'Wrong role assignment',
           acceptance: 'role equals supervisor',
-          flowRef: 'Login â†’ Dashboard',
+          flowRef: 'Login → Dashboard',
           module: 'RBAC',
         }),
       );
@@ -340,7 +340,7 @@ async function main() {
   results.push({
     id: 'SUP-AUTH-04',
     area: 'Authentication',
-    check: 'UI Login â†’ Dashboard',
+    check: 'UI Login → Dashboard',
     status: onDash ? 'PASS' : 'FAIL',
     detail: loginUrl,
   });
@@ -359,7 +359,7 @@ async function main() {
         screenshots: 'sup-01-after-login.png',
         rootCause: 'Auth failure or role redirect',
         acceptance: 'Supervisor lands on Dashboard',
-        flowRef: 'Login Button â†’ Dashboard',
+        flowRef: 'Login Button → Dashboard',
         module: 'Authentication',
       }),
     );
@@ -401,7 +401,7 @@ async function main() {
         issues.push(
           writeIssue(issueNum++, 'Supervisor #/expenses redirects to Attendance', {
             summary: 'Deep link /expenses lands on addAttendance instead of expenses workflow',
-            steps: `Login as supervisor â†’ open #/expenses`,
+            steps: `Login as supervisor → open #/expenses`,
             expected: 'Expenses module per Flow Sheet',
             actual: url,
             severity: 'High',
@@ -426,7 +426,7 @@ async function main() {
         issues.push(
           writeIssue(issueNum++, `Supervisor redirected to login on ${r.name}`, {
             summary: `Cannot open ${r.flow}`,
-            steps: `Login â†’ #${r.hash}`,
+            steps: `Login → #${r.hash}`,
             expected: 'Screen loads',
             actual: url,
             severity: 'High',
@@ -553,7 +553,7 @@ async function main() {
           issues.push(
             writeIssue(issueNum++, 'Supervisor access JWT remains valid after logout', {
               summary: 'Logout does not revoke access token for supervisor on PROD',
-              steps: 'Login â†’ POST /auth/logout â†’ GET /auth/me',
+              steps: 'Login → POST /auth/logout → GET /auth/me',
               expected: '401',
               actual: String(me2.status),
               severity: 'High',
@@ -561,7 +561,7 @@ async function main() {
               screenshots: 'Optional',
               rootCause: 'Access token not revoked server-side',
               acceptance: 'Access token rejected after logout',
-              flowRef: 'Profile â†’ Logout',
+              flowRef: 'Profile → Logout',
               module: 'Authentication',
             }),
           );
@@ -639,7 +639,7 @@ async function main() {
     '| Create Expense | Expenses | see SUP-EXP-01 |',
     '| Upload Bills | Bills Management | see SUP-BILL-01 |',
     '| View Assigned Project | Project List / Detail | see SUP-PRJ-* |',
-    '| Logout | Profile â†’ Logout | see SUP-AUTH-05 |',
+    '| Logout | Profile → Logout | see SUP-AUTH-05 |',
     '',
     '---',
     '',

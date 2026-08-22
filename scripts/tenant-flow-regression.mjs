@@ -1,6 +1,6 @@
 /**
  * Tenant flow-sheet driven regression runner.
- * Maps flow sheet pages â†’ routes/APIs, logs PASS/FAIL/BLOCKED per element.
+ * Maps flow sheet pages → routes/APIs, logs PASS/FAIL/BLOCKED per element.
  *
  * Usage:
  *   node scripts/tenant-flow-regression.mjs
@@ -57,7 +57,7 @@ const OUT_DIR = path.join(ROOT, 'docs', 'qa-tenant-regression');
 const ISSUES_DIR = path.join(OUT_DIR, 'github-issues');
 const FLOW_JSON = path.join(ROOT, 'docs', 'flow-sheet-app-flow.json');
 
-// Flow sheet page â†’ app hash route(s)
+// Flow sheet page → app hash route(s)
 const PAGE_ROUTE_MAP = {
   'Login Page': '/login',
   'Dashboard': '/dashboard',
@@ -269,7 +269,7 @@ async function main() {
     element: 'Login Button',
     type: 'auth',
     status: authPass ? 'PASS' : 'FAIL',
-    detail: `POST /auth/login â†’ ${loginRes.status}`,
+    detail: `POST /auth/login → ${loginRes.status}`,
   });
 
   if (!authPass) {
@@ -288,7 +288,7 @@ async function main() {
         'Password mismatch on QA tenant record, outdated test credentials, or password changed without updating test data',
       acceptance:
         'Abcd@123 successfully logs in tenant@yopmail.com on QA/live, or official credentials doc updated to match DB',
-      flowRef: 'Login Page â†’ Login Button â†’ Dashboard',
+      flowRef: 'Login Page → Login Button → Dashboard',
       module: 'Authentication',
     });
     issues.push(issue);
@@ -374,7 +374,7 @@ async function main() {
       element: 'Access token after logout',
       type: 'api',
       status: logoutRevokeFail ? 'FAIL' : 'PASS',
-      detail: `/auth/me after logout â†’ ${meAfter.status}`,
+      detail: `/auth/me after logout → ${meAfter.status}`,
     });
     if (logoutRevokeFail) {
       const issue = writeIssue({
@@ -391,7 +391,7 @@ async function main() {
         screenshots: 'Optional â€” network tab showing 200 after logout',
         rootCause: 'Access tokens not invalidated on logout; only refresh token may be cleared client-side',
         acceptance: 'After logout, access_token rejected within TTL or explicit revocation list enforced',
-        flowRef: 'Profile â†’ Logout',
+        flowRef: 'Profile → Logout',
         module: 'Authentication',
       });
       issues.push(issue);

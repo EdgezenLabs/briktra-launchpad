@@ -1,6 +1,6 @@
 ﻿/**
  * Browser login test matching user video flow:
- * Language Selection â†’ Login â†’ Dashboard
+ * Language Selection → Login → Dashboard
  */
 import { chromium } from 'playwright';
 import fs from 'fs';

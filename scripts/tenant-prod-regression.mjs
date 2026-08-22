@@ -270,7 +270,7 @@ async function main() {
           screenshots: 'Network tab',
           rootCause: 'Access token not revoked server-side',
           acceptance: 'Access token rejected after logout',
-          flowRef: 'Profile â†’ Logout',
+          flowRef: 'Profile → Logout',
           module: 'Authentication',
         }),
       );
@@ -284,7 +284,7 @@ async function main() {
   const uiOk = await uiLogin(page);
   results.push({
     id: 'AUTH-UI-01',
-    check: 'UI Login â†’ Dashboard',
+    check: 'UI Login → Dashboard',
     status: uiOk ? 'PASS' : 'FAIL',
     detail: page.url(),
   });
@@ -310,7 +310,7 @@ async function main() {
       else if (locked) status = 'FAIL';
       results.push({
         id: `UI-${r.name}`,
-        check: `${r.flow} â†’ ${r.hash}`,
+        check: `${r.flow} → ${r.hash}`,
         status,
         detail: url,
       });
@@ -351,7 +351,7 @@ async function main() {
       '- Wrong: `bybdg06o5b.../qa`',
       '- Correct (live app): `b05vnm4akk.../prod`',
       '',
-      'Confirmed 2026-08-10 via Playwright UI login â†’ Dashboard.',
+      'Confirmed 2026-08-10 via Playwright UI login → Dashboard.',
       '',
       'User: Test Tenant Admin Â· tenant_admin Â· TenantAdmin Builders Â· PREMIUM',
     ].join('\n'),

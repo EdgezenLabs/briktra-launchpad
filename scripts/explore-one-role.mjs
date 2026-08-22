@@ -2,7 +2,7 @@
  * Explore ONE role deeply against QA API.
  * Usage: node scripts/explore-one-role.mjs Tenant
  *
- * Login matches Flutter client: GET /auth/login/hint â†’ PBKDF2 hash â†’ POST /auth/login
+ * Login matches Flutter client: GET /auth/login/hint → PBKDF2 hash → POST /auth/login
  */
 import crypto from 'crypto';
 import fs from 'fs';
