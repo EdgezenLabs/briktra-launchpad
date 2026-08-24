@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+﻿import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -6,9 +6,9 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, '..', 'docs', 'qa-tenant-regression');
 const SHOTS = path.join(OUT, 'screenshots');
-const UI = 'https://briktra.com/app/index.html';
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = 'Abcd@123';
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || '';
 
 const ROUTES = [
   ['Dashboard', '/dashboard'],
@@ -72,7 +72,7 @@ async function main() {
     }
   });
 
-  console.log('Logging in…');
+  console.log('Logging inâ€¦');
   await login(page);
   console.log('Logged in', page.url());
 

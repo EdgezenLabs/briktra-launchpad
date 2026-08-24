@@ -1,4 +1,4 @@
-/**
+﻿/**
  * API login + token inject + route screenshots for Tenant UI review.
  */
 import crypto from 'crypto';
@@ -8,11 +8,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
-const SALT = 'briktra-password-salt-guid-2026';
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
 const OUT = path.join(__dirname, '..', 'docs', 'qa-tenant-regression', 'screenshots');
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = process.env.BRIKTRA_PASSWORD || 'Tenant@123';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || '';
 
 function hash(id, pw) {
   const salt = crypto.createHash('sha256').update(id + SALT, 'utf8').digest();

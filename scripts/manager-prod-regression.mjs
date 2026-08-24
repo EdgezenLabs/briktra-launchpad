@@ -1,5 +1,5 @@
 /**
- * Manager role PROD regression — Flow Sheet + morning scenario.
+ * Manager role PROD regression â€” Flow Sheet + morning scenario.
  * Login: manager.briktra@yopmail.com / Manager@123
  */
 import crypto from 'crypto';
@@ -10,11 +10,37 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const BASE = 'https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod';
-const UI = 'https://briktra.com/app/index.html';
-const SALT = 'briktra-password-salt-guid-2026';
-const EMAIL = 'manager.briktra@yopmail.com';
-const PASSWORD = 'Manager@123';
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
+const EMAIL = process.env.MANAGER_EMAIL || process.env.BRIKTRA_MANAGER_EMAIL || '';
+const PASSWORD = process.env.MANAGER_PASSWORD || process.env.BRIKTRA_MANAGER_PASSWORD || '';
 const OUT = path.join(ROOT, 'docs', 'qa-manager-regression');
 const SHOTS = path.join(OUT, 'screenshots');
 const ISSUES = path.join(OUT, 'github-issues');
@@ -98,8 +124,8 @@ function writeIssue(num, title, fields) {
     '## Acceptance Criteria',
     fields.acceptance,
     '',
-    `**Flow Sheet:** ${fields.flowRef || '—'}`,
-    `**Module:** ${fields.module || '—'}`,
+    `**Flow Sheet:** ${fields.flowRef || 'â€”'}`,
+    `**Module:** ${fields.module || 'â€”'}`,
     `**Role:** manager`,
     `**API:** ${BASE}`,
     `**Detected:** ${new Date().toISOString()}`,
@@ -174,7 +200,7 @@ async function uiLogin(page) {
     else await btn.first().click({ force: true });
   } else {
     // Tamil or coordinate fallback
-    const ta = page.locator('flt-semantics[role="button"]', { hasText: 'உள்நுழைவு' });
+    const ta = page.locator('flt-semantics[role="button"]', { hasText: 'à®‰à®³à¯à®¨à¯à®´à¯ˆà®µà¯' });
     if (await ta.count()) {
       const box = await ta.last().boundingBox();
       if (box) await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
@@ -374,7 +400,7 @@ async function main() {
       await shot(page, `route-${r.name}`);
       const redirected = url.includes('/login');
       // Heuristic: permission denied / locked / no access
-      // Flutter may not expose innerText — use URL + screenshot review
+      // Flutter may not expose innerText â€” use URL + screenshot review
       let status = redirected ? 'FAIL' : 'PASS';
       results.push({
         id: r.id,
@@ -428,14 +454,14 @@ async function main() {
       detail: page.url(),
     });
 
-    // Restricted actions — expect deny / redirect / lock / not for manager
+    // Restricted actions â€” expect deny / redirect / lock / not for manager
     const restricted = [
-      { id: 'MGR-NEG-01', name: 'Create-Tenant', hash: '/createTenant', flow: 'Restricted — Create Tenant' },
-      { id: 'MGR-NEG-02', name: 'Tenants', hash: '/tenants', flow: 'Restricted — Tenants / Company' },
-      { id: 'MGR-NEG-03', name: 'TenantAdmins', hash: '/tenantAdmins', flow: 'Restricted — Role Management' },
-      { id: 'MGR-NEG-04', name: 'SuperAdmin', hash: '/superAdmin', flow: 'Restricted — Super Admin' },
-      { id: 'MGR-NEG-05', name: 'Plans', hash: '/plans', flow: 'Restricted — Subscription' },
-      { id: 'MGR-NEG-06', name: 'Company-Details', hash: '/company-details', flow: 'Restricted — Company Settings' },
+      { id: 'MGR-NEG-01', name: 'Create-Tenant', hash: '/createTenant', flow: 'Restricted â€” Create Tenant' },
+      { id: 'MGR-NEG-02', name: 'Tenants', hash: '/tenants', flow: 'Restricted â€” Tenants / Company' },
+      { id: 'MGR-NEG-03', name: 'TenantAdmins', hash: '/tenantAdmins', flow: 'Restricted â€” Role Management' },
+      { id: 'MGR-NEG-04', name: 'SuperAdmin', hash: '/superAdmin', flow: 'Restricted â€” Super Admin' },
+      { id: 'MGR-NEG-05', name: 'Plans', hash: '/plans', flow: 'Restricted â€” Subscription' },
+      { id: 'MGR-NEG-06', name: 'Company-Details', hash: '/company-details', flow: 'Restricted â€” Company Settings' },
       { id: 'MGR-NEG-07', name: 'Create-Project', hash: '/createProject', flow: 'Create Project (policy)' },
     ];
 
@@ -448,7 +474,7 @@ async function main() {
       let status = 'REVIEW';
       if (url.includes('/login')) status = 'PASS'; // denied via auth
       else if (url.includes('dashboard') && !r.hash.includes('dashboard')) status = 'PASS';
-      else if (stayed) status = 'REVIEW'; // need screenshot — may be allowed or showing lock
+      else if (stayed) status = 'REVIEW'; // need screenshot â€” may be allowed or showing lock
       else status = 'PASS'; // bounced elsewhere = likely denied
       results.push({
         id: r.id,
@@ -517,17 +543,17 @@ async function main() {
 
   // Escalate REVIEW items that look like privilege leaks: createTenant stayed
   for (const r of results.filter((x) => x.area === 'Restricted' && x.status === 'REVIEW')) {
-    // If createTenant / superAdmin / tenantAdmins actually loaded without bounce — file issue for review
+    // If createTenant / superAdmin / tenantAdmins actually loaded without bounce â€” file issue for review
     if (/createTenant|tenantAdmins|superAdmin|tenants/.test(r.detail) && !/login|dashboard/.test(r.detail)) {
       issues.push(
         writeIssue(issueNum++, `Manager may access restricted route: ${r.check}`, {
           summary: `Manager deep-link stayed on restricted path: ${r.detail}`,
           steps: `Login as manager → open ${r.detail}`,
           expected: 'Permission denied / redirect / lock screen',
-          actual: `Remained on ${r.detail} — verify screenshot for deny UI`,
+          actual: `Remained on ${r.detail} â€” verify screenshot for deny UI`,
           severity: 'High',
           priority: 'P1',
-          screenshots: 'Yes — neg-*.png',
+          screenshots: 'Yes â€” neg-*.png',
           rootCause: 'Missing RBAC route guard for manager',
           acceptance: 'Manager cannot use admin-only screens',
           flowRef: r.check,
@@ -544,7 +570,7 @@ async function main() {
   }, {});
 
   const report = [
-    '# Manager (Construction Project Manager) — Regression Report',
+    '# Manager (Construction Project Manager) â€” Regression Report',
     '',
     `**Date:** ${new Date().toISOString()}`,
     `**Role:** manager (Construction Project Manager)`,
@@ -559,7 +585,7 @@ async function main() {
     '',
     onDash
       ? 'Manager login **succeeded** on PROD. Morning module routes were exercised via UI. Restricted admin deep-links were probed for deny behavior.'
-      : 'Manager login **failed** or did not reach Dashboard — regression blocked for deep module testing.',
+      : 'Manager login **failed** or did not reach Dashboard â€” regression blocked for deep module testing.',
     '',
     '| Metric | Count |',
     '|--------|-------|',
@@ -611,7 +637,7 @@ async function main() {
     '## Bug Summary',
     '',
     issues.length
-      ? issues.map((i) => `- **${i.id}** (${i.severity}): ${i.title} — \`${i.filename}\``).join('\n')
+      ? issues.map((i) => `- **${i.id}** (${i.severity}): ${i.title} â€” \`${i.filename}\``).join('\n')
       : 'No new issues filed this run.',
     '',
     '---',
@@ -629,7 +655,7 @@ async function main() {
     '',
     '## Performance Review',
     '',
-    '- Auth and route transitions observed ~3–10s in headless runs.',
+    '- Auth and route transitions observed ~3â€“10s in headless runs.',
     '- No dedicated load test this session.',
     '',
     '## Security Review',

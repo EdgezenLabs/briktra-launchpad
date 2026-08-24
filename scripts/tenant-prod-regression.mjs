@@ -1,5 +1,5 @@
-/**
- * Tenant PROD regression — correct API from live Flutter bundle:
+﻿/**
+ * Tenant PROD regression â€” correct API from live Flutter bundle:
  * https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod
  *
  * Credentials: tenant@yopmail.com / Abcd@123
@@ -12,14 +12,16 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const BASE = 'https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod';
-const UI = 'https://briktra.com/app/index.html';
-const SALT = 'briktra-password-salt-guid-2026';
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = 'Abcd@123';
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || '';
 const OUT = path.join(ROOT, 'docs', 'qa-tenant-regression');
 const SHOTS = path.join(OUT, 'screenshots');
-const SECRET = process.env.BRIKTRA_SIGNING_SECRET || '';
+const SECRET =
+  process.env.BRIKTRA_SIGNING_SECRET ||
+  process.env.REQUEST_SIGNATURE_SECRET || '';
 
 function hashPassword(identifier, password) {
   const salt = crypto.createHash('sha256').update(identifier + SALT, 'utf8').digest();
@@ -153,8 +155,8 @@ function writeIssue(num, title, fields) {
     '## Acceptance Criteria',
     fields.acceptance,
     '',
-    `**Flow Sheet:** ${fields.flowRef || '—'}`,
-    `**Module:** ${fields.module || '—'}`,
+    `**Flow Sheet:** ${fields.flowRef || 'â€”'}`,
+    `**Module:** ${fields.module || 'â€”'}`,
     `**API:** ${BASE}`,
     `**Detected:** ${new Date().toISOString()}`,
   ].join('\n');
@@ -169,7 +171,7 @@ async function main() {
   const issues = [];
   let issueNum = 10; // continue after prior issues
 
-  console.log('PROD API login…');
+  console.log('PROD API loginâ€¦');
   const { login, id } = await loginApi();
   const apiLoginOk = login.ok;
   results.push({
@@ -276,7 +278,7 @@ async function main() {
   }
 
   // UI walkthrough
-  console.log('UI login…');
+  console.log('UI loginâ€¦');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
   const uiOk = await uiLogin(page);
@@ -322,7 +324,7 @@ async function main() {
             actual: redirected ? 'Redirected to login' : 'Lock/error state visible',
             severity: 'High',
             priority: 'P1',
-            screenshots: `Yes — prod-${r.name}.png`,
+            screenshots: `Yes â€” prod-${r.name}.png`,
             rootCause: 'TBD from screenshot',
             acceptance: 'Page loads and matches Flow Sheet',
             flowRef: r.flow,
@@ -338,9 +340,9 @@ async function main() {
   fs.writeFileSync(
     path.join(OUT, 'github-issues', 'ISSUE-001-tenant-login-fails-with-documented-password-abcd-123.md'),
     [
-      '# ISSUE-001 — Tenant login Abcd@123',
+      '# ISSUE-001 â€” Tenant login Abcd@123',
       '',
-      '## Status: **CLOSED — PASS**',
+      '## Status: **CLOSED â€” PASS**',
       '',
       '## Resolution',
       'UI login with `tenant@yopmail.com` / `Abcd@123` **PASS** on production.',
@@ -351,7 +353,7 @@ async function main() {
       '',
       'Confirmed 2026-08-10 via Playwright UI login → Dashboard.',
       '',
-      'User: Test Tenant Admin · tenant_admin · TenantAdmin Builders · PREMIUM',
+      'User: Test Tenant Admin Â· tenant_admin Â· TenantAdmin Builders Â· PREMIUM',
     ].join('\n'),
   );
 

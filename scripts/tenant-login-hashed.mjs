@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tenant login matching Flutter client hashing.
  * salt = SHA256(utf8(identifier + "briktra-password-salt-guid-2026"))
  * password_hash = base64(PBKDF2-HMAC-SHA256(password, salt, 10000, 32))
@@ -9,8 +9,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
-const SALT_GUID = 'briktra-password-salt-guid-2026';
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const SALT_GUID = process.env.BRIKTRA_SALT_GUID || '';
 const OUT = path.join(__dirname, '..', 'docs', 'role-exploration');
 
 function hashPassword(identifier, password) {
@@ -59,7 +59,7 @@ async function resolveIdentifier(username) {
 }
 
 async function loginTenant() {
-  const email = 'tenant@yopmail.com';
+  const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
   const password = 'Tenant@123';
   console.log('UI:', 'https://briktra.com/app/index.html#/login');
   console.log('Account:', email);

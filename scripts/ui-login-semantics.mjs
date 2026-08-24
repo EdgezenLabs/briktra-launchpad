@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Click Flutter semantics Login button after typing credentials.
  */
 import { chromium } from 'playwright';
@@ -9,8 +9,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, '..', 'docs', 'qa-tenant-regression');
 const SHOTS = path.join(OUT, 'screenshots');
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = 'Abcd@123';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || '';
 
 async function main() {
   fs.mkdirSync(SHOTS, { recursive: true });

@@ -1,14 +1,14 @@
-import crypto from 'crypto';
+﻿import crypto from 'crypto';
 
-const BASE = 'https://bybdg06o5b.execute-api.ap-south-1.amazonaws.com/qa';
-const SALT = 'briktra-password-salt-guid-2026';
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
 
 function hash(id, pw) {
   const salt = crypto.createHash('sha256').update(id + SALT, 'utf8').digest();
   return crypto.pbkdf2Sync(Buffer.from(pw, 'utf8'), salt, 10000, 32, 'sha256').toString('base64');
 }
 
-const email = 'tenant@yopmail.com';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
 const hint = await (
   await fetch(BASE + '/auth/login/hint?username=' + encodeURIComponent(email), {
     headers: { 'X-Client-Platform': 'flutter' },

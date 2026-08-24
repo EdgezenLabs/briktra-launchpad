@@ -1,4 +1,4 @@
-/**
+﻿/**
  * UI login with Tamil CTA: tenant@yopmail.com / Abcd@123
  */
 import { chromium } from 'playwright';
@@ -9,8 +9,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, '..', 'docs', 'qa-tenant-regression');
 const SHOTS = path.join(OUT, 'screenshots');
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = 'Abcd@123';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || '';
 
 async function main() {
   fs.mkdirSync(SHOTS, { recursive: true });
@@ -81,12 +81,12 @@ async function main() {
 
   // Click Login in English OR Tamil
   const loginEn = page.getByText(/^Login$/);
-  const loginTa = page.getByText('உள்நுழைவு');
+  const loginTa = page.getByText('à®‰à®³à¯à®¨à¯à®´à¯ˆà®µà¯');
   if (await loginEn.count()) {
     await loginEn.first().click({ force: true });
     console.log('clicked English Login');
   } else if (await loginTa.count()) {
-    // Avoid clicking the title — click the button-sized one (last)
+    // Avoid clicking the title â€” click the button-sized one (last)
     const count = await loginTa.count();
     await loginTa.nth(count - 1).click({ force: true });
     console.log('clicked Tamil Login, count', count);

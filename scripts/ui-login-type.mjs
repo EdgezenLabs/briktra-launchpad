@@ -1,4 +1,4 @@
-/**
+﻿/**
  * UI login via keyboard typing into Flutter fields + orange button click.
  */
 import { chromium } from 'playwright';
@@ -9,8 +9,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, '..', 'docs', 'qa-tenant-regression');
 const SHOTS = path.join(OUT, 'screenshots');
-const EMAIL = 'tenant@yopmail.com';
-const PASSWORD = 'Abcd@123';
+const EMAIL = process.env.BRIKTRA_TEST_EMAIL || '';
+const PASSWORD = process.env.BRIKTRA_PASSWORD || '';
 
 async function main() {
   fs.mkdirSync(SHOTS, { recursive: true });
@@ -106,7 +106,7 @@ async function main() {
   }
   if (net.filter((n) => n.u?.includes('/auth/login')).length === 0) {
     // Try Tamil / English login via aria
-    for (const name of ['Login', 'உள்நுழைவு', 'Sign in']) {
+    for (const name of ['Login', 'à®‰à®³à¯à®¨à¯à®´à¯ˆà®µà¯', 'Sign in']) {
       const el = page.locator(`[aria-label="${name}"], flt-semantics[aria-label="${name}"]`);
       if (await el.count()) {
         await el.last().click({ force: true });

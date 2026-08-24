@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Confirm logout dialog + token revoke for employee.
  */
 import crypto from 'crypto';
@@ -9,9 +9,9 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const BASE = 'https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod';
-const UI = 'https://briktra.com/app/index.html';
-const SALT = 'briktra-password-salt-guid-2026';
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
 const EMAIL = 'employee.briktra@yopmail.com';
 const PASSWORD = 'Employee@123';
 const OUT = path.join(ROOT, 'docs', 'qa-employee-regression');

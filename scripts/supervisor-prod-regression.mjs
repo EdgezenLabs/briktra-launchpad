@@ -1,5 +1,5 @@
 /**
- * Supervisor (Site Supervisor) PROD regression — Flow Sheet + site scenario.
+ * Supervisor (Site Supervisor) PROD regression â€” Flow Sheet + site scenario.
  * Login: supervisior.briktra@yopmail.com / Supervisior@123
  */
 import crypto from 'crypto';
@@ -10,11 +10,37 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const BASE = 'https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod';
-const UI = 'https://briktra.com/app/index.html';
-const SALT = 'briktra-password-salt-guid-2026';
-const EMAIL = 'supervisior.briktra@yopmail.com';
-const PASSWORD = 'Supervisior@123';
+
+// Load environment variables from .env if present
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(envPath);
+  } else {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    for (const line of envContent.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        let val = trimmed.slice(eqIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+
+const BASE = process.env.BRIKTRA_API_BASE || '';
+const UI = process.env.BRIKTRA_UI_BASE || '';
+const SALT = process.env.BRIKTRA_SALT_GUID || '';
+const EMAIL = process.env.SUPERVISOR_EMAIL || process.env.BRIKTRA_SUPERVISOR_EMAIL || '';
+const PASSWORD = process.env.SUPERVISOR_PASSWORD || process.env.BRIKTRA_SUPERVISOR_PASSWORD || '';
 const OUT = path.join(ROOT, 'docs', 'qa-supervisor-regression');
 const SHOTS = path.join(OUT, 'screenshots');
 const ISSUES = path.join(OUT, 'github-issues');
@@ -98,8 +124,8 @@ function writeIssue(num, title, fields) {
     '## Acceptance Criteria',
     fields.acceptance,
     '',
-    `**Flow Sheet:** ${fields.flowRef || '—'}`,
-    `**Module:** ${fields.module || '—'}`,
+    `**Flow Sheet:** ${fields.flowRef || 'â€”'}`,
+    `**Module:** ${fields.module || 'â€”'}`,
     `**Role:** supervisor`,
     `**API:** ${BASE}`,
     `**Detected:** ${new Date().toISOString()}`,
@@ -429,7 +455,7 @@ async function main() {
       detail: page.url(),
     });
 
-    // Restricted — expect DENY
+    // Restricted â€” expect DENY
     const restricted = [
       { id: 'SUP-NEG-01', name: 'Create-Project', hash: '/createProject', expect: 'deny', label: 'Delete/Create Project' },
       { id: 'SUP-NEG-02', name: 'Create-Tenant', hash: '/createTenant', expect: 'deny', label: 'Delete Company / Create Tenant' },
@@ -450,7 +476,7 @@ async function main() {
       if (url.includes('/login')) status = 'PASS';
       else if (url.includes('dashboard') && !r.hash.includes('dashboard')) status = 'PASS';
       else if (stayed && r.expect === 'deny') {
-        // likely privilege leak — confirm via screenshot review later; mark FAIL for admin routes
+        // likely privilege leak â€” confirm via screenshot review later; mark FAIL for admin routes
         if (
           /createTenant|tenantAdmins|superAdmin|plans|company-details|createProject|tenants/.test(
             r.hash,
@@ -479,14 +505,14 @@ async function main() {
           writeIssue(issueNum++, `Supervisor can access restricted route: ${r.label}`, {
             summary: `Supervisor deep-link stayed on ${url} for restricted action "${r.label}"`,
             steps: `1. Login as supervisor\n2. Open ${UI}#${r.hash}\n3. Observe UI`,
-            expected: 'Permission denied / redirect / lock — no admin CRUD',
-            actual: `Remained on ${url} — see screenshot for full admin UI vs deny`,
+            expected: 'Permission denied / redirect / lock â€” no admin CRUD',
+            actual: `Remained on ${url} â€” see screenshot for full admin UI vs deny`,
             severity: /createTenant|tenantAdmins|superAdmin/.test(r.hash) ? 'Critical' : 'High',
             priority: /createTenant|tenantAdmins|superAdmin/.test(r.hash) ? 'P0' : 'P1',
-            screenshots: `Yes — sup-neg-${r.name}.png`,
+            screenshots: `Yes â€” sup-neg-${r.name}.png`,
             rootCause: 'Missing RBAC route guard for supervisor',
             acceptance: 'Supervisor cannot use admin-only screens',
-            flowRef: `Restricted — ${r.label}`,
+            flowRef: `Restricted â€” ${r.label}`,
             module: 'RBAC',
           }),
         );
@@ -552,7 +578,7 @@ async function main() {
   }, {});
 
   const report = [
-    '# Supervisor (Site Supervisor) — Complete Regression Report',
+    '# Supervisor (Site Supervisor) â€” Complete Regression Report',
     '',
     `**Date:** ${new Date().toISOString()}`,
     `**Role:** supervisor (Site Supervisor)`,
@@ -567,8 +593,8 @@ async function main() {
     '## Executive Summary',
     '',
     onDash
-      ? 'Supervisor login **succeeded** on PROD. Site scenario modules were smoke-tested. Restricted admin deep-links were probed for deny behavior — screenshot review required for FAIL items.'
-      : 'Supervisor login **failed** to reach Dashboard — deep testing blocked.',
+      ? 'Supervisor login **succeeded** on PROD. Site scenario modules were smoke-tested. Restricted admin deep-links were probed for deny behavior â€” screenshot review required for FAIL items.'
+      : 'Supervisor login **failed** to reach Dashboard â€” deep testing blocked.',
     '',
     '| Metric | Count |',
     '|--------|-------|',
@@ -620,7 +646,7 @@ async function main() {
     '## Bug Summary',
     '',
     issues.length
-      ? issues.map((i) => `- **${i.id}** (${i.severity}): ${i.title} — \`${i.filename}\``).join('\n')
+      ? issues.map((i) => `- **${i.id}** (${i.severity}): ${i.title} â€” \`${i.filename}\``).join('\n')
       : 'No new issues filed this run.',
     '',
     '---',
@@ -629,7 +655,7 @@ async function main() {
     '',
     '- Screenshots: `docs/qa-supervisor-regression/screenshots/sup-*.png`',
     '- Compare Dashboard role tasks: expect Log Expense + My Projects (not Tenant New Project / Team).',
-    '- Restricted routes must show deny — not admin chrome.',
+    '- Restricted routes must show deny â€” not admin chrome.',
     '',
     '## UX Review',
     '',
@@ -638,7 +664,7 @@ async function main() {
     '',
     '## Performance Review',
     '',
-    '- Auth and route transitions observed ~3–10s headless.',
+    '- Auth and route transitions observed ~3â€“10s headless.',
     '- No dedicated load test.',
     '',
     '## Security Review',
