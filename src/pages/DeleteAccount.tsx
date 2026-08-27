@@ -61,12 +61,17 @@ const DeleteAccount = () => {
                     Method 1: Inside the Mobile App
                   </span>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    You can quickly delete your account directly through the settings inside the Briktra mobile app:
+                    You can quickly delete your account directly through the settings inside the Briktra mobile app.
+                    What you see depends on your role:
                   </p>
                   <ol className="space-y-2 text-xs text-foreground list-decimal pl-4">
                     <li>Open the <strong>Briktra</strong> app on your device.</li>
                     <li>Navigate to your <strong>Profile</strong> (via the bottom navigation or side drawer).</li>
-                    <li>Scroll to the bottom of the page and tap <strong className="text-destructive">"Delete Account"</strong>.</li>
+                    <li>
+                      Scroll to the bottom and tap <strong className="text-destructive">"Delete Organization"</strong> (organization owners
+                      only — this deletes the whole company workspace) or <strong className="text-destructive">"Delete My Account"</strong> (every
+                      other team member — this deletes only your own account, not the organization's data).
+                    </li>
                     <li>Confirm your deletion request on the confirmation dialog.</li>
                   </ol>
                 </div>
@@ -100,25 +105,21 @@ const DeleteAccount = () => {
                     What Data Will Be Deleted
                   </h2>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Upon confirmation, we permanently remove or anonymise your data. This cannot be recovered:
+                    What's removed depends on which action you take:
                   </p>
                   <ul className="space-y-3 text-xs text-muted-foreground list-none">
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                      <span><strong>Personal Profile:</strong> Your name, username, email, phone number, and password hash.</span>
+                      <span><strong>"Delete Organization" (owners only):</strong> Every project, employee record, labour list, attendance log, site expense, purchase order, invoice, and uploaded file (receipts, site photos, PDF bills, voice notes) in the workspace — deleted immediately and permanently, along with every team member's account. Your email/phone/organization name can never be used to register on Briktra again.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                      <span><strong>Workspace Records:</strong> Labour lists, attendance logs, site expense logs, materials tracking, and invoices generated.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                      <span><strong>Uploaded Files:</strong> Receipts, site photos, pdf bills, and voice notes.</span>
+                      <span><strong>"Delete My Account" (team members):</strong> Deactivates your own login and signs you out everywhere. It does not delete the organization's data — your historical entries (attendance, expenses, etc.) are retained as part of your employer's business records, with your account access removed.</span>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-6 pt-4 border-t border-border text-[11px] text-muted-foreground/80 font-medium">
-                  Once deleted, your account workspace cannot be restored.
+                  Organization deletion cannot be undone. Contact your administrator to fully remove an individual account's retained records.
                 </div>
               </div>
 
@@ -163,7 +164,7 @@ const DeleteAccount = () => {
                 <div>
                   <h3 className="font-bold text-foreground mb-1 text-base">Deletion Timeline</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Deletion requests are fully processed, and all personal data permanently purged from our active databases, within <strong>30 calendar days</strong> of identity verification. Data from system backup archives is overwritten over our normal backup rotation cycle.
+                    Organization deletion happens <strong>immediately</strong> — there is no waiting period. Data in system backup archives is overwritten on our normal backup rotation cycle. If you request deletion by email instead of through the app, allow time for us to verify your identity first.
                   </p>
                 </div>
               </div>
