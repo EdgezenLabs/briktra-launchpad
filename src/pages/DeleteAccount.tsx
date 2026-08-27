@@ -61,19 +61,20 @@ const DeleteAccount = () => {
                     Method 1: Inside the Mobile App
                   </span>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    You can quickly delete your account directly through the settings inside the Briktra mobile app.
-                    What you see depends on your role:
+                    Account deletion is available to the <strong>organization owner</strong> (the account that
+                    originally registered the organization) directly through the settings inside the Briktra mobile app:
                   </p>
                   <ol className="space-y-2 text-xs text-foreground list-decimal pl-4">
                     <li>Open the <strong>Briktra</strong> app on your device.</li>
                     <li>Navigate to your <strong>Profile</strong> (via the bottom navigation or side drawer).</li>
-                    <li>
-                      Scroll to the bottom and tap <strong className="text-destructive">"Delete Organization"</strong> (organization owners
-                      only — this deletes the whole company workspace) or <strong className="text-destructive">"Delete My Account"</strong> (every
-                      other team member — this deletes only your own account, not the organization's data).
-                    </li>
+                    <li>Scroll to the bottom of the page and tap <strong className="text-destructive">"Delete Organization"</strong>.</li>
                     <li>Confirm your deletion request on the confirmation dialog.</li>
                   </ol>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Team members are added by the organization owner and don't self-register through the app, so
+                    account removal for a team member is requested from your organization's owner/administrator
+                    rather than self-service in-app.
+                  </p>
                 </div>
 
                 {/* Method 2: Web Support */}
@@ -105,21 +106,21 @@ const DeleteAccount = () => {
                     What Data Will Be Deleted
                   </h2>
                   <p className="text-sm text-muted-foreground mb-4">
-                    What's removed depends on which action you take:
+                    Upon confirmation by the organization owner, deletion is immediate and permanent:
                   </p>
                   <ul className="space-y-3 text-xs text-muted-foreground list-none">
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                      <span><strong>"Delete Organization" (owners only):</strong> Every project, employee record, labour list, attendance log, site expense, purchase order, invoice, and uploaded file (receipts, site photos, PDF bills, voice notes) in the workspace — deleted immediately and permanently, along with every team member's account. Your email/phone/organization name can never be used to register on Briktra again.</span>
+                      <span><strong>Every workspace record:</strong> Projects, employee accounts, labour lists, attendance logs, site expense logs, purchase orders, invoices, and uploaded files (receipts, site photos, PDF bills, voice notes).</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                      <span><strong>"Delete My Account" (team members):</strong> Deactivates your own login and signs you out everywhere. It does not delete the organization's data — your historical entries (attendance, expenses, etc.) are retained as part of your employer's business records, with your account access removed.</span>
+                      <span><strong>Organization identity:</strong> The organization's name and the owner's email/phone number can never be used to register on Briktra again.</span>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-6 pt-4 border-t border-border text-[11px] text-muted-foreground/80 font-medium">
-                  Organization deletion cannot be undone. Contact your administrator to fully remove an individual account's retained records.
+                  Once deleted, the organization cannot be restored.
                 </div>
               </div>
 
