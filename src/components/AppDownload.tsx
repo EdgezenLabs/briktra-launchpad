@@ -1,11 +1,11 @@
-import { Smartphone, Download, Star, Users, ShieldCheck, ArrowRight } from "lucide-react";
+import { Smartphone, Download, Zap, ShieldCheck, ArrowRight, WifiOff } from "lucide-react";
 import dashboardImg from "@/assets/mobile/Screenshot_20260520-235732.png";
+import { SITE } from "@/lib/site-config";
 
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.briktra.app";
-
-const stats = [
-  { icon: Star, label: "Rating", value: "4.8★" },
-  { icon: Users, label: "Active Users", value: "5,000+" },
+// Feature highlights — factual product properties, no unverifiable metrics
+const features = [
+  { icon: Zap, label: "Real-time Sync", value: "Live Updates" },
+  { icon: WifiOff, label: "Works Offline", value: "Field Ready" },
   { icon: ShieldCheck, label: "Secure & Verified", value: "Google Play" },
 ];
 
@@ -77,9 +77,9 @@ const AppDownload = () => (
             </p>
           </div>
 
-          {/* Stats row */}
+          {/* Feature highlights row */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-6">
-            {stats.map(({ icon: Icon, label, value }) => (
+            {features.map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary flex-shrink-0">
                   <Icon className="h-5 w-5" aria-hidden="true" />
@@ -97,7 +97,7 @@ const AppDownload = () => (
             {/* Google Play button */}
             <a
               id="download-google-play-btn"
-              href={PLAY_STORE_URL}
+              href={SITE.playStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 rounded-2xl border-2 border-foreground/20 bg-foreground px-6 py-4 text-background shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 min-w-[200px] justify-center"
