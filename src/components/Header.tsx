@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import briktraLogo from "@/assets/briktra-logo.svg";
 import { Link, useLocation } from "react-router-dom";
 import { NAV_LINKS, SITE } from "@/lib/site-config";
+import AppDownloadBanner from "@/components/AppDownloadBanner";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
+      <AppDownloadBanner />
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2" aria-label={`${SITE.name} home`}>
           <img src={briktraLogo} alt={`${SITE.name} logo`} className="h-8 w-auto" width={120} height={32} />

@@ -1,5 +1,5 @@
 import { Smartphone, Download, Zap, ShieldCheck, ArrowRight, WifiOff } from "lucide-react";
-import dashboardImg from "@/assets/mobile/Screenshot_20260520-235732.png";
+import dashboardImg from "@/assets/dashboard-v2.png";
 import { SITE } from "@/lib/site-config";
 
 // Feature highlights — factual product properties, no unverifiable metrics
