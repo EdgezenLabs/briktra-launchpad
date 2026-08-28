@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import AppShowcase from "@/components/AppShowcase";
+import AppDownload from "@/components/AppDownload";
 import BuiltForField from "@/components/BuiltForField";
 import WorkflowVisualization from "@/components/WorkflowVisualization";
 import WhoUsesBriktra from "@/components/WhoUsesBriktra";
@@ -29,6 +30,7 @@ const Index = () => (
       <Hero />
       <Features />
       <AppShowcase />
+      <AppDownload />
       <BuiltForField />
       <WorkflowVisualization />
       <WhoUsesBriktra />
