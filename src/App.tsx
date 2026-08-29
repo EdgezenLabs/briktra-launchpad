@@ -30,6 +30,7 @@ const PricingPage = lazy(() => import("./pages/PricingPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const ModuleExplore = lazy(() => import("./pages/ModuleExplore"));
+const InvitationHandoff = lazy(() => import("./pages/InvitationHandoff"));
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ const App = () => (
               <Route path="/delete-account" element={<DeleteAccount />} />
               <Route path="/acceptable-use-policy" element={<AcceptableUsePolicy />} />
               <Route path="/explore" element={<ModuleExplore />} />
+              <Route path="/invite" element={<InvitationHandoff />} />
               <Route path="/app/*" element={null} />
               <Route path="*" element={<NotFound />} />
             </Routes>
