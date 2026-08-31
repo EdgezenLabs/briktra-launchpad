@@ -7,10 +7,13 @@ import { Label } from "@/components/ui/label";
 import { COMPANY, formatAddressMultiline, formatAddressSingleLine, SITE } from "@/lib/site-config";
 import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import TurnstileWidget from "@/components/TurnstileWidget";
+import { turnstileEnabled } from "@/lib/turnstile";
 
 const ContactPage = () => {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,7 +31,14 @@ const ContactPage = () => {
       const res = await fetch(`${apiUrl}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, subject, message }),
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          subject,
+          message,
+          ...(turnstileToken ? { turnstile_token: turnstileToken } : {}),
+        }),
       });
 
       if (res.ok) {
@@ -37,6 +47,9 @@ const ContactPage = () => {
           description: "Thank you for reaching out. We have received your message and will get back to you shortly.",
         });
         form.reset();
+        // Turnstile tokens are single-use -- keeping this one would make a
+        // second message fail verification server-side.
+        setTurnstileToken(null);
       } else {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error || "Failed to send message.");
@@ -168,7 +181,15 @@ const ContactPage = () => {
               <Label htmlFor="message">Message *</Label>
               <Textarea id="message" name="message" rows={5} required placeholder="Tell us how we can help you..." />
             </div>
-            <Button type="submit" className="w-full" disabled={submitting}>
+            <TurnstileWidget onToken={setTurnstileToken} />
+            <Button
+              type="submit"
+              className="w-full"
+              // Only gate on the token when Turnstile is actually configured,
+              // so the form stays usable in dev and previews (the API applies
+              // the same rule and skips verification outside production).
+              disabled={submitting || (turnstileEnabled && !turnstileToken)}
+            >
               {submitting ? "Sending Message..." : "Send Message"}
             </Button>
             <p className="text-xs text-muted-foreground text-center">
