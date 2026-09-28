@@ -81,7 +81,7 @@ const DeleteAccount = () => {
                   </p>
                   <ul className="space-y-2 text-xs text-foreground list-disc pl-4">
                     <li>
-                      Send an email to: <a href="mailto:support@edgezenlabs.com" className="font-bold text-foreground hover:text-primary transition-colors underline">support@edgezenlabs.com</a>
+                      Send an email to: <a href="mailto:contact@edgezenlabs.com" className="font-bold text-foreground hover:text-primary transition-colors underline">contact@edgezenlabs.com</a>
                     </li>
                     <li>Please send the request from the <strong>registered email address</strong> associated with your Briktra account.</li>
                     <li>Include your registered <strong>phone number</strong> and <strong>business name</strong> to help us verify your identity.</li>
@@ -176,7 +176,7 @@ const DeleteAccount = () => {
                 <div>
                   <h3 className="font-bold text-foreground mb-1 text-base">Support & Help</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    If you run into issues deleting your account via the app, send an email request to our support team at <a href="mailto:support@edgezenlabs.com" className="font-bold text-foreground hover:text-primary transition-colors underline">support@edgezenlabs.com</a>. We will guide you through and confirm the deletion.
+                    If you run into issues deleting your account via the app, send an email request to our support team at <a href="mailto:contact@edgezenlabs.com" className="font-bold text-foreground hover:text-primary transition-colors underline">contact@edgezenlabs.com</a>. We will guide you through and confirm the deletion.
                   </p>
                 </div>
               </div>

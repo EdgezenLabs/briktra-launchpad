@@ -405,7 +405,7 @@ const PrivacyPolicy = () => {
                   </div>
                   <div className="pt-2 border-t border-border/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-muted-foreground">
                     <p>
-                      Alternatively, you may send a deletion request to: <a href="mailto:support@edgezenlabs.com" className="font-bold text-foreground hover:text-primary transition-colors underline">support@edgezenlabs.com</a>
+                      Alternatively, you may send a deletion request to: <a href="mailto:contact@edgezenlabs.com" className="font-bold text-foreground hover:text-primary transition-colors underline">contact@edgezenlabs.com</a>
                     </p>
                     <div className="px-2.5 py-1 rounded bg-destructive/10 text-destructive font-semibold shrink-0 text-center">
                       Permanent purge within 30 days
@@ -445,8 +445,8 @@ const PrivacyPolicy = () => {
                       <Mail className="h-5 w-5" />
                     </div>
                     <span className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Email</span>
-                    <a href="mailto:support@edgezenlabs.com" className="text-sm font-semibold text-foreground hover:text-primary transition-colors mt-1 hover:underline">
-                      support@edgezenlabs.com
+                    <a href="mailto:contact@edgezenlabs.com" className="text-sm font-semibold text-foreground hover:text-primary transition-colors mt-1 hover:underline">
+                      contact@edgezenlabs.com
                     </a>
                   </div>
                   <div className="p-5 rounded-2xl border border-border bg-card flex flex-col items-center text-center hover:border-primary/20 transition-colors">
