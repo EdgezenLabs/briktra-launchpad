@@ -1,4 +1,5 @@
 import PageShell from "@/components/PageShell";
+import ProductDemoVideo from "@/components/ProductDemoVideo";
 import { PRODUCT_MODULES } from "@/lib/features-data";
 import { SITE } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
@@ -26,7 +27,13 @@ const FeaturesPage = () => (
       </div>
     </section>
 
-    <section className="py-20">
+    <section className="py-16">
+      <div className="container mx-auto flex justify-center px-4 md:px-6">
+        <ProductDemoVideo id="features-product-demo" />
+      </div>
+    </section>
+
+    <section className="pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PRODUCT_MODULES.map((module) => (

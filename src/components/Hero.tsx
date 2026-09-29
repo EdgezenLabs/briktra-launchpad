@@ -1,9 +1,10 @@
-import { HardHat, Play } from "lucide-react";
+import { HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroMobileImg from "@/assets/hero-mobile-v3.png";
 import heroWebImg from "@/assets/hero-web.png";
 import heroReportsImg from "@/assets/hero-reports.png";
 import briktraLogo from "@/assets/briktra-logo.svg";
+import ProductDemoVideo from "@/components/ProductDemoVideo";
 import { SITE } from "@/lib/site-config";
 
 const Hero = () => (
@@ -100,18 +101,8 @@ const Hero = () => (
         ))}
       </div>
 
-      <div
-        className="flex animate-fade-in flex-col items-center gap-4 opacity-0"
-        style={{ animationDelay: "0.6s" }}
-        role="img"
-        aria-label="Product video placeholder"
-      >
-        <div className="flex h-40 w-full max-w-xl items-center justify-center rounded-2xl border border-dashed border-border bg-muted/40">
-          <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <Play className="h-10 w-10 text-primary" aria-hidden="true" />
-            <span className="text-sm font-medium">Product walkthrough video — coming soon</span>
-          </div>
-        </div>
+      <div className="flex w-full animate-fade-in justify-center opacity-0" style={{ animationDelay: "0.6s" }}>
+        <ProductDemoVideo />
       </div>
     </div>
 
