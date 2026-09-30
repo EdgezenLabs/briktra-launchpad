@@ -9,6 +9,13 @@ export const SITE = {
   copyrightYear: 2026,
 } as const;
 
+export const PRODUCT_VIDEO = {
+  id: "KtHkLIc76bo",
+  title: "Briktra Mobile App Complete Guide | Registration, Login & How to Use the App (2026)",
+  watchUrl: "https://www.youtube.com/watch?v=KtHkLIc76bo",
+  embedUrl: "https://www.youtube.com/embed/KtHkLIc76bo",
+} as const;
+
 export const COMPANY = {
   legalName: "EDGEZEN LABS",
   displayName: "EDGEZEN LABS",
