@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Web-app deep links. The Flutter app lives under /app/ and uses clean
+      // URLs (/app/projects, /app/invite?token=...). GitHub Pages has no
+      // rewrites, so a direct visit or refresh on such a path lands on this
+      // site's 404 page (a copy of this file). Hand it to the app's own
+      // index.html, which restores the path from ?p= before Flutter starts.
+      (function () {
+        var path = window.location.pathname;
+        if (path.indexOf('/app/') === 0 && path !== '/app/' && path !== '/app/index.html') {
+          var route = path.slice('/app'.length) + window.location.search;
+          window.location.replace('/app/?p=' + encodeURIComponent(route) + window.location.hash);
+        }
+      })();
+    </script>
     <title>Briktra — Construction Project Management &amp; ERP Platform</title>
 
     <meta name="description" content="Briktra is a cloud-based construction ERP for contractors and builders. Manage projects, sites, labour, attendance, expenses, inventory, billing, and GST from web and mobile." />
