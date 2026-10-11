@@ -15,7 +15,7 @@ const PricingPage = () => (
           Transparent Subscription Pricing
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-          Choose monthly or annual billing. All prices are exclusive of 18% GST unless stated otherwise. No hidden setup fees.
+          Choose monthly or annual billing. All prices include GST. No hidden setup fees.
         </p>
       </div>
     </section>

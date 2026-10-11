@@ -18,7 +18,7 @@ const CancellationPolicy = () => (
     <section>
       <h2>2. How to Cancel</h2>
       <ul>
-        <li><strong>In-app:</strong> Navigate to Settings → Subscription / Billing and select Cancel Subscription.</li>
+        <li><strong>On the Briktra website:</strong> Sign in, open Plan &amp; Billing → Billing &amp; Payments, and select Cancel Subscription. Native mobile apps provide read-only plan information.</li>
         <li><strong>By email:</strong> Send a cancellation request from your registered email to{" "}
           <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> with your account details.</li>
         <li><strong>By phone:</strong> Call <a href={`tel:${COMPANY.phoneTel}`}>{COMPANY.phone}</a> during {COMPANY.businessHours}.</li>
@@ -54,7 +54,7 @@ const CancellationPolicy = () => (
     <section>
       <h2>6. Refunds</h2>
       <p>
-        Cancellation does not automatically entitle you to a refund for the current period. See our{" "}
+        No refund is issued for unused time in the current paid period. See our{" "}
         <a href="/refund-policy">Refund Policy</a> for refund eligibility.
       </p>
     </section>
