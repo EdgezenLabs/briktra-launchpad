@@ -63,7 +63,7 @@ const Hero = () => (
         style={{ animationDelay: "0.4s" }}
       >
         <Button size="xl" className="min-w-[200px] rounded-2xl px-10 py-6 text-lg font-bold shadow-xl" asChild>
-          <a href={SITE.appUrl}>Start Free Trial</a>
+          <a href={SITE.appRegisterUrl}>Start Free Trial</a>
         </Button>
         <Button size="xl" variant="outline" className="min-w-[200px] rounded-2xl px-10 py-6 text-lg font-semibold" asChild>
           <a href={SITE.appUrl}>Login to Briktra</a>

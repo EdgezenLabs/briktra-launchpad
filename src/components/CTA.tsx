@@ -28,7 +28,7 @@ const CTA = () => (
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Button size="lg" className="min-w-[200px] font-bold" asChild>
-                  <a href={SITE.appUrl}>
+                  <a href={SITE.appRegisterUrl}>
                     Start Free Trial
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </a>

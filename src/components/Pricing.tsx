@@ -28,7 +28,7 @@ export default function Pricing({ standalone = false }: { standalone?: boolean }
           <h3 className="text-2xl font-bold">{plan.name}</h3>
           <p className="my-4 text-3xl font-bold">{money(annual ? plan.annual : plan.monthly)}<span className="text-sm font-normal text-muted-foreground"> / {annual ? "year" : "month"}</span></p>
           <ul className="space-y-3">{labels.map((label, index) => <li key={label} className="flex gap-2"><Check className="h-5 w-5 shrink-0 text-primary" /><span>{plan.caps[index].toLocaleString("en-IN")} {label}</span></li>)}<li className="pt-2 font-medium">All product features included</li></ul>
-          <Button asChild className="mt-6 w-full"><a href={SITE.appUrl}>Get started</a></Button>
+          <Button asChild className="mt-6 w-full"><a href={SITE.appRegisterUrl}>Get started</a></Button>
         </article>)}
       </div>
       <div className="mx-auto mt-10 max-w-3xl space-y-3 text-center text-muted-foreground">

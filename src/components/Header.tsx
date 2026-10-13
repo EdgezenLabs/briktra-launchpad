@@ -42,7 +42,7 @@ const Header = () => {
             <a href={SITE.appUrl}>Login to Briktra</a>
           </Button>
           <Button size="sm" className="font-semibold" asChild>
-            <a href={SITE.appUrl}>Start Free Trial</a>
+            <a href={SITE.appRegisterUrl}>Start Free Trial</a>
           </Button>
         </div>
 
@@ -80,7 +80,7 @@ const Header = () => {
                 <a href={SITE.appUrl} onClick={closeMobile}>Login to Briktra</a>
               </Button>
               <Button className="w-full" asChild>
-                <a href={SITE.appUrl} onClick={closeMobile}>Start Free Trial</a>
+                <a href={SITE.appRegisterUrl} onClick={closeMobile}>Start Free Trial</a>
               </Button>
             </div>
           </nav>
