@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // The product app lives at app.briktra.com. An old /app/ address on this
+      // marketing site is sent there with its path and fragment intact, before
+      // any analytics script can see the address.
+      (function () {
+        var path = window.location.pathname;
+        var underApp = path === '/app' || path.indexOf('/app/') === 0;
+        if (!underApp) return;
+        var rest = path.slice('/app'.length);
+        if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
+        window.location.replace(
+          '__BRIKTRA_APP_ORIGIN__' + rest + window.location.search + window.location.hash
+        );
+      })();
+    </script>
     <title>Briktra — Construction Project Management &amp; ERP Platform</title>
 
     <meta name="description" content="Briktra is a cloud-based construction ERP for contractors and builders. Manage projects, sites, labour, attendance, expenses, inventory, billing, and GST from web and mobile." />
@@ -25,7 +40,7 @@
       script below; tightening that further would need moving it to a
       nonced/hashed script, out of scope for this pass.
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://maps.google.com https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' __BRIKTRA_API_ORIGIN__ https://*.google-analytics.com https://*.analytics.google.com; frame-src https://maps.google.com https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self';" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,12 +65,21 @@
     <meta name="twitter:description" content="Cloud construction ERP for projects, labour, attendance, expenses, inventory, and GST." />
     <meta name="twitter:image" content="https://briktra.com/og-image.png" />
   </head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48ME72T521"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-48ME72T521');
+    (function () {
+      if (window.location.pathname === '/app' || window.location.pathname.indexOf('/app/') === 0) {
+        return;
+      }
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-48ME72T521';
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-48ME72T521');
+    })();
   </script>
   <body>
     <div id="root"></div>

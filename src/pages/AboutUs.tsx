@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import { Button } from "@/components/ui/button";
 import { SITE, COMPANY } from "@/lib/site-config";
+import { appLinks } from "@/lib/app-links";
 import { HardHat, Target, Eye, CheckCircle2, Users, Building2 } from "lucide-react";
 
 const reasons = [
@@ -117,7 +118,7 @@ const AboutUs = () => (
     <section className="py-16 text-center">
       <div className="container mx-auto px-4 md:px-6">
         <Button size="lg" asChild>
-          <a href={SITE.appUrl}>Start Free Trial</a>
+          <a href={appLinks.freeTrial}>Start Free Trial</a>
         </Button>
         <p className="mt-6 text-sm text-muted-foreground">
           Operated by {COMPANY.legalName} · GSTIN {COMPANY.gstin}

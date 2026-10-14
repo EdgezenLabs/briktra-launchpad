@@ -4,7 +4,6 @@ export const SITE = {
   description:
     "Briktra is a cloud-based construction ERP for contractors and builders. Manage projects, sites, labour, attendance, expenses, inventory, billing, and GST from web and mobile.",
   url: "https://briktra.com",
-  appUrl: "/app/index.html",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.briktra.app",
   copyrightYear: 2026,
 } as const;

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import briktraLogo from "@/assets/briktra-logo.svg";
 import { Link, useLocation } from "react-router-dom";
 import { NAV_LINKS, SITE } from "@/lib/site-config";
+import { appLinks } from "@/lib/app-links";
 import AppDownloadBanner from "@/components/AppDownloadBanner";
 
 const Header = () => {
@@ -39,10 +40,10 @@ const Header = () => {
 
         <div className="hidden items-center gap-3 md:flex">
           <Button variant="ghost" size="sm" asChild>
-            <a href={SITE.appUrl}>Login to Briktra</a>
+            <a href={appLinks.login}>Login to Briktra</a>
           </Button>
           <Button size="sm" className="font-semibold" asChild>
-            <a href={SITE.appUrl}>Start Free Trial</a>
+            <a href={appLinks.freeTrial}>Start Free Trial</a>
           </Button>
         </div>
 
@@ -77,10 +78,10 @@ const Header = () => {
             ))}
             <div className="mt-4 flex flex-col gap-3 border-t border-border pt-4">
               <Button variant="outline" className="w-full" asChild>
-                <a href={SITE.appUrl} onClick={closeMobile}>Login to Briktra</a>
+                <a href={appLinks.login} onClick={closeMobile}>Login to Briktra</a>
               </Button>
               <Button className="w-full" asChild>
-                <a href={SITE.appUrl} onClick={closeMobile}>Start Free Trial</a>
+                <a href={appLinks.freeTrial} onClick={closeMobile}>Start Free Trial</a>
               </Button>
             </div>
           </nav>

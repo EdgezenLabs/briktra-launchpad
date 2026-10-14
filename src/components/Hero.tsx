@@ -6,6 +6,7 @@ import heroReportsImg from "@/assets/hero-reports.png";
 import briktraLogo from "@/assets/briktra-logo.svg";
 import ProductDemoVideo from "@/components/ProductDemoVideo";
 import { SITE } from "@/lib/site-config";
+import { appLinks } from "@/lib/app-links";
 
 const Hero = () => (
   <section className="relative min-h-screen overflow-hidden bg-background pt-16" aria-labelledby="hero-heading">
@@ -63,10 +64,10 @@ const Hero = () => (
         style={{ animationDelay: "0.4s" }}
       >
         <Button size="xl" className="min-w-[200px] rounded-2xl px-10 py-6 text-lg font-bold shadow-xl" asChild>
-          <a href={SITE.appUrl}>Start Free Trial</a>
+          <a href={appLinks.freeTrial}>Start Free Trial</a>
         </Button>
         <Button size="xl" variant="outline" className="min-w-[200px] rounded-2xl px-10 py-6 text-lg font-semibold" asChild>
-          <a href={SITE.appUrl}>Login to Briktra</a>
+          <a href={appLinks.login}>Login to Briktra</a>
         </Button>
       </div>
 

@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { COMPANY, formatAddressMultiline, formatAddressSingleLine, SITE } from "@/lib/site-config";
+import { API_ORIGIN } from "@/lib/app-links";
 import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -24,8 +25,7 @@ const ContactPage = () => {
     const message = String(data.get("message") || "").trim();
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "https://b05vnm4akk.execute-api.ap-south-1.amazonaws.com/prod";
-      const res = await fetch(`${apiUrl}/contact`, {
+      const res = await fetch(`${API_ORIGIN}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, subject, message }),
