@@ -1,5 +1,6 @@
 // Fails the build when dist/ would publish the retired /app bundle, lose the
-// /app redirect, or send visitors or requests anywhere but production.
+// /app redirect, send visitors or requests anywhere but production, or would
+// answer a sitemap page with 404.
 //   node scripts/verify-dist.mjs dist            (production)
 //   node scripts/verify-dist.mjs dist-qa qa      (QA build)
 import { existsSync, readdirSync, readFileSync } from "node:fs";
@@ -40,6 +41,20 @@ for (const text of forbidden) {
   if (js.includes(text) || indexHtml.includes(text)) failures.push(`the ${mode} build contains "${text}"`);
 }
 if (js.includes("/app/index.html")) failures.push("the bundle still links to /app/index.html");
+
+const sitemapPath = join(dist, "sitemap.xml");
+const routes = existsSync(sitemapPath)
+  ? [...readFileSync(sitemapPath, "utf8").matchAll(/<loc>\s*https:\/\/briktra\.com(\/[^<\s]*)\s*<\/loc>/g)]
+      .map((m) => m[1].replace(/\/+$/, ""))
+      .filter((p) => p !== "")
+  : [];
+if (routes.length === 0) failures.push("sitemap.xml lists no pages");
+for (const route of routes) {
+  const page = join(dist, `${route.slice(1)}.html`);
+  if (!existsSync(page) || readFileSync(page, "utf8") !== indexHtml) {
+    failures.push(`${route} has no ${route.slice(1)}.html app shell, so a direct visit would return 404`);
+  }
+}
 
 if (failures.length) {
   for (const f of failures) console.error(`verify-dist: ${f}`);

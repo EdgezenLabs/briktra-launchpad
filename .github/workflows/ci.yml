@@ -30,8 +30,10 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run build
+      - run: node scripts/write-route-pages.mjs dist
       - run: node scripts/verify-dist.mjs dist
       - name: QA build points only at QA
         run: |
           npx vite build --mode qa --outDir dist-qa
+          node scripts/write-route-pages.mjs dist-qa
           node scripts/verify-dist.mjs dist-qa qa
