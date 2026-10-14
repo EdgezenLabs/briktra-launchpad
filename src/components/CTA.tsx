@@ -1,7 +1,7 @@
 import { ArrowRight, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { SITE } from "@/lib/site-config";
+import { appLinks } from "@/lib/app-links";
 
 const CTA = () => (
   <section id="cta" className="relative bg-background py-24" aria-labelledby="cta-heading">
@@ -28,7 +28,7 @@ const CTA = () => (
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Button size="lg" className="min-w-[200px] font-bold" asChild>
-                  <a href={SITE.appRegisterUrl}>
+                  <a href={appLinks.freeTrial}>
                     Start Free Trial
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </a>

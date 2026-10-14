@@ -31,3 +31,7 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: node scripts/verify-dist.mjs dist
+      - name: QA build points only at QA
+        run: |
+          npx vite build --mode qa --outDir dist-qa
+          node scripts/verify-dist.mjs dist-qa qa
