@@ -30,6 +30,7 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run build
+      - run: node scripts/write-route-pages.mjs dist
       - run: node scripts/verify-dist.mjs dist
       - run: cp dist/index.html dist/404.html
       - name: Release record
@@ -61,3 +62,10 @@ jobs:
             sleep 20
           done
           echo "briktra.com does not serve $GITHUB_SHA (got '${got}')"; exit 1
+      - name: Policy pages answer 200 on a direct visit
+        run: |
+          for path in pricing privacy-policy terms refund-policy data-deletion-policy; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://briktra.com/$path?t=$(date +%s)")
+            echo "/$path $code"
+            [ "$code" = 200 ] || exit 1
+          done

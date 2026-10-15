@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { act, cleanup, render, screen } from "@testing-library/react";
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import App from "@/App";
@@ -84,6 +86,14 @@ describe("navigation and legal reachability", () => {
       ...Object.values(FOOTER_LINKS).flatMap((group) => group.map((l) => l.href)),
     ];
     for (const href of targets) expect(PAGES).toContain(href);
+  });
+
+  // The deploy writes a page per sitemap entry; a page missing here would answer 404.
+  // /delete-account is a static page under public/ and is not listed.
+  it("the sitemap lists every page and nothing else", () => {
+    const xml = readFileSync(resolve(__dirname, "../../public/sitemap.xml"), "utf8");
+    const listed = [...xml.matchAll(/<loc>https:\/\/briktra\.com(\/[^<]*)<\/loc>/g)].map((m) => m[1]);
+    expect([...listed].sort()).toEqual(PAGES.filter((p) => p !== "/delete-account").sort());
   });
 
   // Payment-gateway and Play Store review require every policy one click from any page.
