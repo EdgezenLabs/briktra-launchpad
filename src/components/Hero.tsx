@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site-config";
 import { appLinks } from "@/lib/app-links";
 
 const Hero = () => (
-  <section className="relative min-h-screen overflow-hidden bg-background pt-16" aria-labelledby="hero-heading">
+  <section className="relative min-h-screen overflow-hidden bg-background pt-[9.5rem]" aria-labelledby="hero-heading">
     <div className="absolute inset-0 grid-pattern opacity-30" aria-hidden="true" />
     <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" aria-hidden="true" />
     <div className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-primary/8 blur-[100px]" aria-hidden="true" />

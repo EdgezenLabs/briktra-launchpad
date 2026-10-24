@@ -133,7 +133,7 @@ const PrivacyPolicy = () => {
         canonical="https://briktra.com/privacy-policy"
       />
       <Header />
-      <main className="pt-24 pb-16 md:pt-32 md:pb-24">
+      <main className="pb-16 pt-[9.5rem] md:pb-24">
         {/* Hero Section */}
         <section className="container mx-auto px-4 md:px-6 mb-12">
           <div className="mx-auto max-w-4xl text-center">

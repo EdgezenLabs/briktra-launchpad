@@ -17,7 +17,10 @@ const PageShell = ({ title, description, canonical, children, noindex }: PageShe
     <SEO title={title} description={description} canonical={canonical} noindex={noindex} />
     <SkipLink />
     <Header />
-    <main id="main-content">{children}</main>
+    {/* Offset fixed header (app download banner + nav ≈ 137px). */}
+    <main id="main-content" className="pt-[9.5rem]">
+      {children}
+    </main>
     <Footer />
   </div>
 );
