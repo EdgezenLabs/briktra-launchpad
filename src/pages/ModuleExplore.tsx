@@ -241,7 +241,7 @@ const ModuleExplore = () => {
       />
       <Header />
       
-      <main className="pt-24 pb-32">
+      <main className="pb-32 pt-[9.5rem]">
         <div className="container mx-auto px-4 lg:px-6">
           
           <div className="mb-12">

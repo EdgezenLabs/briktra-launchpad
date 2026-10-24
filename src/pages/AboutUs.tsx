@@ -37,7 +37,7 @@ const AboutUs = () => (
     description="Learn what Briktra is, who it is for, and why contractors choose our construction ERP platform."
     canonical={`${SITE.url}/about`}
   >
-    <section className="bg-secondary/30 pt-28 pb-16">
+    <section className="bg-secondary/30 pb-16 pt-4">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <h1 className="mb-6 font-display text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
           About {SITE.name}

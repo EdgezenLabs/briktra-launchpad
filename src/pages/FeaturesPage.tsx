@@ -12,7 +12,7 @@ const FeaturesPage = () => (
     description="Explore Briktra modules: projects, sites, labour, attendance, expenses, inventory, billing, GST, reports, analytics, and mobile app."
     canonical={`${SITE.url}/features`}
   >
-    <section className="bg-secondary/30 pt-28 pb-16">
+    <section className="bg-secondary/30 pb-16 pt-4">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <span className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-primary">
           <LayoutGrid className="h-5 w-5" aria-hidden="true" />

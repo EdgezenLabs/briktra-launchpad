@@ -65,7 +65,7 @@ const ContactPage = () => {
       description={`Contact Briktra support — ${COMPANY.legalName}, Madurai. Email, phone, and business hours.`}
       canonical={`${SITE.url}/contact`}
     >
-      <section className="bg-secondary/30 pt-28 pb-16">
+      <section className="bg-secondary/30 pb-16 pt-4">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h1 className="mb-4 font-display text-4xl font-bold text-foreground md:text-5xl">
             Contact {SITE.name} Support

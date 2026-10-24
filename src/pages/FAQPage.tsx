@@ -8,7 +8,7 @@ const FAQPage = () => (
     description="Frequently asked questions about Briktra subscriptions, payments, refunds, and support."
     canonical={`${SITE.url}/faq`}
   >
-    <section className="bg-secondary/30 pt-28 pb-8">
+    <section className="bg-secondary/30 pb-8 pt-4">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <h1 className="mb-4 font-display text-4xl font-bold text-foreground md:text-5xl">
           Help &amp; FAQ
