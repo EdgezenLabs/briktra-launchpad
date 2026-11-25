@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, BadgeIndianRupee, CheckCircle2, Clock3, HardHat, Lock, Package, ReceiptText, Sparkles, Wallet } from "lucide-react";
+import { AlertTriangle, ArrowRight, BadgeIndianRupee, BarChart3, Camera, CheckCircle2, Clock3, HardHat, Home, Lock, Package, ReceiptText, Sparkles, Truck, Users, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { appLinks } from "@/lib/app-links";
 import { FEATURE_GROUPS, type ShotKey } from "@/lib/content";
@@ -68,15 +68,88 @@ const CountUp = ({ to, prefix = "", suffix = "" }: { to: number; prefix?: string
 };
 
 /** The hero's modules: each chip shows that module's real screens and links to its page. */
-const HERO_MODULES: { label: string; web: ShotKey; phone: ShotKey; slug: string; screen: string }[] = [
-  { label: "Attendance", web: "dashboard", phone: "attendance", slug: "labour-payroll", screen: "attendance" },
-  { label: "Payroll", web: "payRun", phone: "attendance", slug: "labour-payroll", screen: "the weekly pay run" },
-  { label: "Site Cash", web: "siteCash", phone: "dailyUpdates", slug: "site-management", screen: "site cash and daily updates" },
-  { label: "Purchases", web: "purchase", phone: "stock", slug: "purchase-stock", screen: "purchase orders" },
-  { label: "Stock", web: "purchase", phone: "stock", slug: "purchase-stock", screen: "stock" },
-  { label: "BOQ & Billing", web: "boq", phone: "raBill", slug: "boq-billing", screen: "the BOQ and RA bills" },
-  { label: "Home Buyers", web: "units", phone: "customerApp", slug: "customers", screen: "units and the home buyer app" },
-  { label: "Reports", web: "reports", phone: "dashboard", slug: "control-reports", screen: "reports and the dashboard" },
+type HeroCard = { icon: typeof CheckCircle2; tone: string; title: string; sub: string };
+
+const GREEN = "bg-emerald-500/20 text-emerald-300";
+const ORANGE = "bg-primary/25 text-orange-200";
+const BLUE = "bg-sky-500/20 text-sky-200";
+
+/**
+ * Each module shows its own web and phone screens and three live cards, all
+ * from the demo company, so the cards always match the screen behind them.
+ */
+const HERO_MODULES: { label: string; web: ShotKey; phone: ShotKey; slug: string; screen: string; cards: HeroCard[] }[] = [
+  {
+    label: "Attendance", web: "dashboard", phone: "attendance", slug: "labour-payroll", screen: "attendance",
+    cards: [
+      { icon: CheckCircle2, tone: GREEN, title: "9 of 9 present", sub: "Anna Nagar Villas · 7:58 AM" },
+      { icon: Users, tone: BLUE, title: "32 present today", sub: "4 sites · 100% attendance" },
+      { icon: HardHat, tone: ORANGE, title: "Marked from the site", sub: "On the supervisor's phone" },
+    ],
+  },
+  {
+    label: "Payroll", web: "payRun", phone: "attendance", slug: "labour-payroll", screen: "the weekly pay run",
+    cards: [
+      { icon: CheckCircle2, tone: GREEN, title: "Pay run approved", sub: "32 workers · 4 sites" },
+      { icon: BadgeIndianRupee, tone: ORANGE, title: "₹1,69,965 paid", sub: "Weekly pay run · UPI and cash" },
+      { icon: Wallet, tone: BLUE, title: "Salary on every phone", sub: "Days worked, advances and pay" },
+    ],
+  },
+  {
+    label: "Site Cash", web: "siteCash", phone: "dailyUpdates", slug: "site-management", screen: "site cash and daily updates",
+    cards: [
+      { icon: Wallet, tone: GREEN, title: "₹61,950 cash at site", sub: "Within the ₹75,000 imprest limit" },
+      { icon: ReceiptText, tone: ORANGE, title: "2 bills to approve", sub: "₹1.52 L waiting · all sites" },
+      { icon: Camera, tone: BLUE, title: "Daily update posted", sub: "Anna Nagar Villas · with photos" },
+    ],
+  },
+  {
+    label: "Purchases", web: "purchase", phone: "purchase", slug: "purchase-stock", screen: "purchase orders",
+    cards: [
+      { icon: CheckCircle2, tone: GREEN, title: "Purchase order approved", sub: "600 bags of cement · Tower A" },
+      { icon: BadgeIndianRupee, tone: ORANGE, title: "₹11.3 L on order", sub: "3 orders placed with suppliers" },
+      { icon: Clock3, tone: BLUE, title: "1 draft to send", sub: "Ganapathi Electricals · ₹53.8K" },
+    ],
+  },
+  {
+    label: "Stock", web: "stock", phone: "stock", slug: "purchase-stock", screen: "stock",
+    cards: [
+      { icon: Package, tone: GREEN, title: "₹13.86 L in stock", sub: "6 materials · none running low" },
+      { icon: Truck, tone: BLUE, title: "480 bags allocated", sub: "Cement · Whitefield Heights" },
+      { icon: Truck, tone: ORANGE, title: "9,000 kg steel allocated", sub: "TMT steel · Whitefield Heights" },
+    ],
+  },
+  {
+    label: "BOQ & Billing", web: "boq", phone: "raBill", slug: "boq-billing", screen: "the BOQ and RA bills",
+    cards: [
+      { icon: ReceiptText, tone: BLUE, title: "RA bill approved", sub: "Tower A · ₹1.48 Cr net" },
+      { icon: CheckCircle2, tone: GREEN, title: "BOQ approved", sub: "Numbered and locked" },
+      { icon: BadgeIndianRupee, tone: ORANGE, title: "Retention tracked", sub: "Released when it falls due" },
+    ],
+  },
+  {
+    label: "Home Buyers", web: "units", phone: "customerApp", slug: "customers", screen: "units and the home buyer app",
+    cards: [
+      { icon: Home, tone: GREEN, title: "Villa 1 · 60% built", sub: "58% of instalments paid" },
+      { icon: BadgeIndianRupee, tone: ORANGE, title: "Instalment received", sub: "Linked to the stage completed" },
+      { icon: Users, tone: BLUE, title: "Buyer signed in", sub: "Progress, photos and payments" },
+    ],
+  },
+  {
+    label: "Reports", web: "reports", phone: "dashboard", slug: "control-reports", screen: "reports and the dashboard",
+    cards: [
+      { icon: BarChart3, tone: GREEN, title: "17.0% company margin", sub: "FY 2026-27 · all sites" },
+      { icon: AlertTriangle, tone: ORANGE, title: "2 projects delayed", sub: "Of 4 · see Project Status" },
+      { icon: BadgeIndianRupee, tone: BLUE, title: "₹49.65 L net cash", sub: "All sites this year" },
+    ],
+  },
+];
+
+/** Where the three cards sit around the screens. The third hides on phones. */
+const CARD_PLACE = [
+  "-left-4 top-2 sm:-left-10",
+  "-left-2 bottom-16 sm:-left-14",
+  "right-6 -top-4 hidden sm:block",
 ];
 
 const AUTO_ADVANCE_MS = 3200;
@@ -228,9 +301,10 @@ export const CinematicHero = () => {
               <PhoneFrame priority shotKey={module.phone} alt={`Briktra Android app showing ${module.screen}`} />
             </div>
           </div>
-          <LiveCard icon={CheckCircle2} tone="bg-emerald-500/20 text-emerald-300" title="9 of 9 present" sub="Anna Nagar Villas · 7:58 AM" className="-left-4 top-2 sm:-left-10" delay={300} />
-          <LiveCard icon={BadgeIndianRupee} tone="bg-primary/25 text-orange-200" title="₹1,69,965 paid" sub="Weekly pay run · UPI and cash" className="-left-2 bottom-16 sm:-left-14" delay={900} />
-          <LiveCard icon={ReceiptText} tone="bg-sky-500/20 text-sky-200" title="RA bill approved" sub="Tower A · ₹1.48 Cr net" className="right-6 -top-4 hidden sm:block" delay={1500} />
+          {/* Keyed by module, so the cards pop in again when the module changes. */}
+          {module.cards.map((c, i) => (
+            <LiveCard key={`${module.label}-${i}`} icon={c.icon} tone={c.tone} title={c.title} sub={c.sub} className={CARD_PLACE[i]} delay={200 + i * 250} />
+          ))}
         </div>
       </div>
 
