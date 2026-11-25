@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import briktraLogo from "@/assets/briktra-logo.svg";
-import { COMPANY, FOOTER_LINKS, SITE, formatAddressMultiline } from "@/lib/site-config";
+import CompanyLink from "@/components/CompanyLink";
+import briktraLogo from "@/assets/briktra-logo.webp";
+import { COMPANY, FOOTER_LINKS, SITE, WHATSAPP, formatAddressMultiline } from "@/lib/site-config";
+import { PlayBadge } from "@/components/site/PlayBadge";
 
 const Footer = () => (
   <footer className="border-t border-border bg-card py-16" role="contentinfo">
@@ -8,10 +10,12 @@ const Footer = () => (
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="mb-4 inline-flex items-center gap-2" aria-label={`${SITE.name} home`}>
-            <img src={briktraLogo} alt={`${SITE.name} logo`} className="h-8 w-auto" width={120} height={32} />
+            <img src={briktraLogo} alt={`${SITE.name} logo`} className="h-8 w-auto" width={117} height={32} />
           </Link>
-          <p className="mb-2 text-sm font-semibold text-foreground">{SITE.name}</p>
-          <p className="mb-4 text-sm text-muted-foreground">{SITE.tagline}</p>
+          <p className="mb-4 max-w-xs text-sm text-muted-foreground">
+            Built for the India that builds.
+          </p>
+          <PlayBadge size="sm" className="mb-5" />
           <p className="whitespace-pre-line text-xs text-muted-foreground leading-relaxed">
             {formatAddressMultiline()}
           </p>
@@ -53,6 +57,16 @@ const Footer = () => (
                 {COMPANY.phone}
               </a>
             </li>
+            <li>
+              <a href={WHATSAPP.href()} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                WhatsApp Us
+              </a>
+            </li>
+            <li>
+              <a href={SITE.playStoreUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                Android App on Google Play
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -77,7 +91,7 @@ const Footer = () => (
           © {SITE.copyrightYear} {SITE.name}. All rights reserved.
         </p>
         <p className="text-sm text-muted-foreground">
-          Powered by {COMPANY.displayName}
+          Powered by <CompanyLink className="font-medium text-foreground">{COMPANY.displayName}</CompanyLink>
         </p>
       </div>
     </div>

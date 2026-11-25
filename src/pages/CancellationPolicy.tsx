@@ -4,7 +4,7 @@ import { COMPANY, SITE } from "@/lib/site-config";
 const CancellationPolicy = () => (
   <LegalPageLayout
     title="Cancellation Policy"
-    description="How to cancel your Briktra subscription and what happens after cancellation."
+    description="How to cancel your Briktra subscription, when the cancellation takes effect, and what happens to your company account and data afterwards."
     path="/cancellation-policy"
   >
     <section>

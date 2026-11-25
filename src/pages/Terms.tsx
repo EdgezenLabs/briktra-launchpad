@@ -4,7 +4,7 @@ import { COMPANY, PAYMENT, SITE } from "@/lib/site-config";
 const Terms = () => (
   <LegalPageLayout
     title="Terms & Conditions"
-    description="Terms governing your use of the Briktra construction ERP subscription platform."
+    description="The terms for using Briktra, the construction management app by EDGEZEN LABS: subscriptions, your data, acceptable use, liability and Indian law."
     path="/terms"
   >
     <section>

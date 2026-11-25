@@ -1,74 +1,95 @@
-import PageShell from "@/components/PageShell";
-import ProductDemoVideo from "@/components/ProductDemoVideo";
-import { PRODUCT_MODULES } from "@/lib/features-data";
-import { SITE } from "@/lib/site-config";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { LayoutGrid, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import PageShell from "@/components/PageShell";
+import { FEATURE_GROUPS } from "@/lib/content";
+import { CheckList, CtaBand } from "@/components/site/Blocks";
+import { PhoneFrame, shot } from "@/components/site/Shots";
+import { Reveal } from "@/components/site/Experience";
+import { GROUP_ICON, PageHero } from "@/components/site/PageHero";
 
+/** Everything in Briktra on one page, for people comparing apps. */
 const FeaturesPage = () => (
   <PageShell
-    title="Features"
-    description="Explore Briktra modules: projects, sites, labour, attendance, expenses, inventory, billing, GST, reports, analytics, and mobile app."
-    canonical={`${SITE.url}/features`}
+    title="Construction Management Software Features"
+    description="Every Briktra feature: labour attendance and payroll, site cash, purchase and stock, BOQ and RA billing, a home buyer app and reports. All on every plan."
+    path="/features"
+    crumbs={[{ name: "Features", path: "/features" }]}
   >
-    <section className="bg-secondary/30 pb-16 pt-4">
-      <div className="container mx-auto px-4 md:px-6 text-center">
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-primary/30 bg-primary/10 px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-primary">
-          <LayoutGrid className="h-5 w-5" aria-hidden="true" />
-          Platform Modules
-        </span>
-        <h1 className="mb-6 font-display text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
-          Every Module Your Construction Business Needs
-        </h1>
-        <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-          {SITE.name} is a complete construction ERP — from site attendance to GST-ready billing, unified on web and mobile.
-        </p>
-      </div>
-    </section>
-
-    <section className="py-16">
-      <div className="container mx-auto flex justify-center px-4 md:px-6">
-        <ProductDemoVideo id="features-product-demo" />
-      </div>
-    </section>
-
-    <section className="pb-20">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {PRODUCT_MODULES.map((module) => (
-            <article
-              key={module.title}
-              className="premium-card flex flex-col p-8 transition-all hover:border-primary/30"
+    <PageHero
+      eyebrow="All Features"
+      title="Everything in Briktra,"
+      highlight="on every plan."
+      intro="Six integrated modules for contractors and builders. Every plan includes all of them; plans differ only in the number of sites, workers and logins."
+    >
+      <nav className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-2" aria-label="Modules">
+        {FEATURE_GROUPS.map((g) => {
+          const Icon = GROUP_ICON[g.slug];
+          return (
+            <a
+              key={g.slug}
+              href={`#${g.slug}`}
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 transition-colors hover:border-primary hover:bg-primary/15 hover:text-white"
             >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <module.icon className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h2 className="mb-3 font-display text-xl font-bold text-foreground">{module.title}</h2>
-              <p className="mb-5 flex-1 text-muted-foreground leading-relaxed">{module.description}</p>
-              <ul className="space-y-2">
-                {module.highlights.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+              <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
+              {g.name}
+            </a>
+          );
+        })}
+      </nav>
+    </PageHero>
 
-        <div className="mt-16 flex flex-col items-center gap-4 text-center">
-          <p className="text-muted-foreground">Want a guided tour of each module with screenshots?</p>
-          <Button variant="outline" asChild>
-            <Link to="/explore">
-              Explore Module Screenshots
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </section>
+    {FEATURE_GROUPS.map((g, i) => {
+      const Icon = GROUP_ICON[g.slug];
+      const web = g.shots.web ? shot(g.shots.web, "web") : undefined;
+      const tinted = i % 2 === 1;
+      return (
+        <section
+          key={g.slug}
+          id={g.slug}
+          className={`scroll-mt-32 py-20 ${tinted ? "bg-[hsl(30_33%_97%)]" : ""}`}
+          aria-labelledby={`${g.slug}-heading`}
+        >
+          <div className="container mx-auto grid items-start gap-12 px-4 md:px-6 lg:grid-cols-[1.15fr_1fr]">
+            <div className={tinted ? "lg:order-2" : ""}>
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_10px_24px_-8px_hsl(24_95%_53%/0.8)]">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <div>
+                  <h2 id={`${g.slug}-heading`} className="font-display text-3xl font-bold text-foreground">{g.name}</h2>
+                  <p className="text-muted-foreground">{g.summary}</p>
+                </div>
+              </div>
+              <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                {g.sections.map((s) => (
+                  <div key={s.title}>
+                    <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground/70">{s.title}</h3>
+                    <CheckList items={s.points} />
+                  </div>
+                ))}
+              </div>
+              <Link to={`/${g.slug}`} className="mt-8 inline-flex items-center gap-1 font-semibold text-primary hover:underline">
+                See {g.name} in Detail <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+            <Reveal className={tinted ? "lg:order-1" : ""}>
+              <div className="relative">
+                <div className="h-80 overflow-hidden rounded-3xl border border-border shadow-2xl lg:h-[26rem]">
+                  {web && (
+                    <img src={web} alt={`${g.name} on the web app`} width={1600} height={1000} loading="lazy" className="h-full w-full origin-[85%_20%] scale-[1.25] object-cover object-[88%_18%]" />
+                  )}
+                </div>
+                <div className="absolute -bottom-8 -right-3 w-36 sm:w-40">
+                  <PhoneFrame shotKey={g.shots.phone} alt={`${g.name} on the Android app`} />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      );
+    })}
+
+    <CtaBand title="See it on your own sites" />
   </PageShell>
 );
 

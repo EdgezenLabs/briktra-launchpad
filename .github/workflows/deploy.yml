@@ -32,7 +32,6 @@ jobs:
       - run: npm run build
       - run: node scripts/write-route-pages.mjs dist
       - run: node scripts/verify-dist.mjs dist
-      - run: cp dist/index.html dist/404.html
       - name: Release record
         run: printf '{"sha":"%s","run_id":"%s"}\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > dist/release.json
 

@@ -4,7 +4,7 @@ import { COMPANY, SITE } from "@/lib/site-config";
 const AcceptableUsePolicy = () => (
   <LegalPageLayout
     title="Acceptable Use Policy"
-    description="Rules for acceptable use of the Briktra construction ERP platform."
+    description="The rules for using Briktra fairly and lawfully: what you may store and do on the platform, what is not allowed, and what happens on misuse."
     path="/acceptable-use-policy"
   >
     <section>

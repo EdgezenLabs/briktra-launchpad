@@ -10,37 +10,55 @@ const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item ref={ref} className={cn("border-b", className)} {...props} />
+  <AccordionPrimitive.Item
+    ref={ref}
+    className={cn("border-b", className)}
+    {...props}
+  />
 ));
 AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
+    /** The heading element around the trigger, so it fits the page outline. */
+    headingLevel?: 2 | 3 | 4;
+  }
+>(({ className, children, headingLevel = 3, ...props }, ref) => {
+  const Heading = `h${headingLevel}` as const;
+  return (
+    <AccordionPrimitive.Header asChild>
+      <Heading className="flex">
+        <AccordionPrimitive.Trigger
+          ref={ref}
+          className={cn(
+            "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+            className,
+          )}
+          {...props}
+        >
+          {children}
+          <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+        </AccordionPrimitive.Trigger>
+      </Heading>
+    </AccordionPrimitive.Header>
+  );
+});
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, forceMount, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    forceMount={forceMount}
+    // forceMount keeps closed answers in the HTML (search engines read them);
+    // CSS then hides them, since Radix only unmounts.
+    className={cn(
+      "overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
+      forceMount && "data-[state=closed]:hidden",
+    )}
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>

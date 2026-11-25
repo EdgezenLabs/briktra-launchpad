@@ -4,7 +4,7 @@ import { COMPANY, SITE } from "@/lib/site-config";
 const ShippingDeliveryPolicy = () => (
   <LegalPageLayout
     title="Shipping & Delivery Policy"
-    description="Briktra is a cloud software service — no physical products are shipped."
+    description="Briktra is cloud software, so nothing is shipped. How your subscription is delivered and activated online after payment, and who to contact."
     path="/shipping-delivery-policy"
   >
     <section>

@@ -1,130 +1,100 @@
+import { Building2, Clock, HandCoins, Mail, MapPin, Phone, Smartphone, Users, type LucideIcon } from "lucide-react";
 import PageShell from "@/components/PageShell";
-import { Button } from "@/components/ui/button";
-import { SITE, COMPANY } from "@/lib/site-config";
-import { appLinks } from "@/lib/app-links";
-import { HardHat, Target, Eye, CheckCircle2, Users, Building2 } from "lucide-react";
+import CompanyLink from "@/components/CompanyLink";
+import { COMPANY, formatAddressMultiline } from "@/lib/site-config";
+import { CtaBand, WhatsAppLink } from "@/components/site/Blocks";
+import { Roles } from "@/components/site/Sections";
+import { Reveal } from "@/components/site/Experience";
+import { PageHero } from "@/components/site/PageHero";
 
-const reasons = [
-  "Built specifically for Indian construction site workflows",
-  "Mobile-first design for supervisors and field teams",
-  "Transparent monthly and annual subscription pricing",
-  "Projects, labour, attendance, expenses, and inventory in one platform",
-  "Multilingual support — English, Hindi, and Tamil",
-  "Secure subscription billing with GST invoices",
-];
-
-const audiences = [
-  {
-    icon: HardHat,
-    title: "Independent Contractors",
-    description: "Manage multiple sites, labour, and expenses without spreadsheets.",
-  },
-  {
-    icon: Building2,
-    title: "Construction Companies",
-    description: "Scale operations with role-based access and portfolio reporting.",
-  },
-  {
-    icon: Users,
-    title: "Site Supervisors",
-    description: "Mark attendance, log expenses, and update progress from the field.",
-  },
+const BELIEFS: { icon: LucideIcon; title: string; body: string }[] = [
+  { icon: Smartphone, title: "Built for the site", body: "A supervisor should mark attendance in seconds, from their phone." },
+  { icon: Building2, title: "For every contractor", body: "A contractor without a BOQ deserves the same tools as one with a BOQ." },
+  { icon: HandCoins, title: "Every rupee accounted for", body: "Wages, site cash, bills and collections, all recorded and traceable." },
+  { icon: Users, title: "Simple, honest pricing", body: "Every feature on every plan. You pay only for the size you need." },
 ];
 
 const AboutUs = () => (
   <PageShell
-    title="About Briktra"
-    description="Learn what Briktra is, who it is for, and why contractors choose our construction ERP platform."
-    canonical={`${SITE.url}/about`}
+    title="About Us: Built for the India That Builds"
+    description={`Briktra is construction management software built in ${COMPANY.address.city}, Tamil Nadu by ${COMPANY.legalName} for Indian contractors and builders.`}
+    path="/about"
+    crumbs={[{ name: "About", path: "/about" }]}
   >
-    <section className="bg-secondary/30 pb-16 pt-4">
-      <div className="container mx-auto px-4 md:px-6 text-center">
-        <h1 className="mb-6 font-display text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
-          About {SITE.name}
-        </h1>
-        <p className="mx-auto max-w-3xl text-xl text-muted-foreground leading-relaxed">
-          {SITE.tagline}. {SITE.name} helps contractors and builders run projects, sites, and teams from one cloud platform.
-        </p>
-      </div>
-    </section>
+    <PageHero
+      eyebrow="About Briktra"
+      title="Built for the India"
+      highlight="that builds."
+      intro="Most construction software is designed for the office. Indian sites run on daily-wage crews, weekly wages, site cash and bills awaiting approval. Briktra is designed for how Indian sites actually work."
+    />
 
-    <section className="py-20">
-      <div className="container mx-auto max-w-4xl px-4 md:px-6">
-        <h2 className="mb-6 font-display text-3xl font-bold">What is Briktra?</h2>
-        <p className="mb-6 text-lg text-muted-foreground leading-relaxed">
-          {SITE.name} is a subscription-based construction ERP and project management platform. It unifies
-          projects, worksites, labour management, attendance, expenses, procurement, inventory, billing,
-          GST records, dashboards, and analytics — accessible on web and mobile.
-        </p>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          Unlike generic office software adapted for construction, {SITE.name} is designed for real site
-          conditions: quick data entry, multilingual field teams, and live cloud sync for management visibility.
-        </p>
-      </div>
-    </section>
-
-    <section className="bg-foreground py-20 text-background">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="mb-12 text-center font-display text-3xl font-bold">Who is Briktra For?</h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {audiences.map((item) => (
-            <div key={item.title} className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <item.icon className="h-7 w-7" aria-hidden="true" />
+    <section className="py-24" aria-labelledby="story-heading">
+      <div className="container mx-auto grid max-w-6xl items-center gap-12 px-4 md:px-6 lg:grid-cols-2">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">What Briktra does</p>
+          <h2 id="story-heading" className="mt-3 text-balance font-display text-4xl font-bold leading-tight text-foreground">
+            One system from the first attendance mark to the final bill
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            Attendance, weekly pay, site cash, purchases, stock, BOQ and billing, and an app for your home buyers, all in
+            one place. A small contractor can start in an afternoon, and a builder with twenty sites can run every one of
+            them on it.
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {BELIEFS.map((b, i) => (
+            <Reveal key={b.title} delay={i * 80}>
+              <div className="h-full rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <b.icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-bold text-foreground">{b.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.body}</p>
               </div>
-              <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
-              <p className="text-background/70">{item.description}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Roles />
+
+    <section className="bg-[hsl(30_33%_97%)] py-24" aria-labelledby="company-heading">
+      <div className="container mx-auto max-w-6xl px-4 md:px-6">
+        <div className="grid items-start gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">The company</p>
+            <h2 id="company-heading" className="mt-3 font-display text-4xl font-bold text-foreground">
+              <CompanyLink />
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Briktra is built and supported from {COMPANY.address.city}, {COMPANY.address.state}. Support should be
+              personal and responsive; call or WhatsApp us any working day.
+            </p>
+            <div className="mt-8">
+              <WhatsAppLink />
             </div>
-          ))}
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { icon: MapPin, title: "Registered Address", body: formatAddressMultiline() },
+              { icon: Building2, title: "GSTIN", body: COMPANY.gstin },
+              { icon: Phone, title: "Phone", body: COMPANY.phone },
+              { icon: Mail, title: "Email", body: COMPANY.email },
+              { icon: Clock, title: "Business Hours", body: COMPANY.businessHours },
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="rounded-2xl border border-border bg-card p-5">
+                <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                <p className="mt-3 text-sm font-semibold text-foreground">{title}</p>
+                <p className="mt-1 whitespace-pre-line text-sm text-muted-foreground">{body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
 
-    <section className="py-20">
-      <div className="container mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:px-6">
-        <div className="premium-card p-8">
-          <Target className="mb-4 h-8 w-8 text-primary" aria-hidden="true" />
-          <h2 className="mb-4 font-display text-2xl font-bold">Our Mission</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            To give every construction business — from solo contractors to growing firms — professional-grade
-            tools to manage projects, people, and money with clarity and confidence.
-          </p>
-        </div>
-        <div className="premium-card p-8">
-          <Eye className="mb-4 h-8 w-8 text-primary" aria-hidden="true" />
-          <h2 className="mb-4 font-display text-2xl font-bold">Our Vision</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            To become the most trusted construction ERP for Indian builders, where every site decision is
-            informed by accurate, real-time data.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section className="bg-secondary/30 py-20">
-      <div className="container mx-auto max-w-3xl px-4 md:px-6">
-        <h2 className="mb-8 text-center font-display text-3xl font-bold">Why Contractors Choose Briktra</h2>
-        <ul className="space-y-4">
-          {reasons.map((reason) => (
-            <li key={reason} className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-              <span className="text-foreground">{reason}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-
-    <section className="py-16 text-center">
-      <div className="container mx-auto px-4 md:px-6">
-        <Button size="lg" asChild>
-          <a href={appLinks.freeTrial}>Start Free Trial</a>
-        </Button>
-        <p className="mt-6 text-sm text-muted-foreground">
-          Operated by {COMPANY.legalName} · GSTIN {COMPANY.gstin}
-        </p>
-      </div>
-    </section>
+    <CtaBand />
   </PageShell>
 );
 

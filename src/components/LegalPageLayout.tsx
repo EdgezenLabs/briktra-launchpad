@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
-import SkipLink from "@/components/SkipLink";
-import { COMPANY, LEGAL_LAST_UPDATED, SITE } from "@/lib/site-config";
+import PageShell from "@/components/PageShell";
+import CompanyLink from "@/components/CompanyLink";
+import { PageHero } from "@/components/site/PageHero";
+import { COMPANY, LEGAL_LAST_UPDATED } from "@/lib/site-config";
 
 interface LegalPageLayoutProps {
   title: string;
@@ -12,31 +11,24 @@ interface LegalPageLayoutProps {
   children: ReactNode;
 }
 
+/** Legal pages: the site's page hero, then the policy text in a readable card. */
 const LegalPageLayout = ({ title, description, path, children }: LegalPageLayoutProps) => (
-  <div className="min-h-screen bg-background">
-    <SEO
-      title={title}
-      description={description}
-      canonical={`${SITE.url}${path}`}
-    />
-    <SkipLink />
-    <Header />
-    <main id="main-content" className="container mx-auto px-4 py-24 md:px-6 md:py-32">
-      <article className="mx-auto max-w-3xl">
-        <header className="mb-10 border-b border-border pb-8">
-          <h1 className="mb-4 font-display text-4xl font-bold text-foreground">{title}</h1>
-          <p className="text-sm text-muted-foreground">Last Updated: {LEGAL_LAST_UPDATED}</p>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Operated by {COMPANY.legalName} ({COMPANY.businessType}) · GSTIN: {COMPANY.gstin}
+  <PageShell title={title} description={description} path={path} product={false} crumbs={[{ name: title, path }]}>
+    <PageHero eyebrow="Legal" title={title} intro={`Last updated ${LEGAL_LAST_UPDATED}.`} actions="none" />
+    <section className="relative z-10 -mt-10 pb-24">
+      <div className="container mx-auto max-w-3xl px-4 md:px-6">
+        <article className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_40px_80px_-40px_rgba(0,0,0,0.4)] md:p-10">
+          <p className="mb-8 border-b border-border pb-6 text-sm text-muted-foreground">
+            Operated by <CompanyLink className="font-medium text-foreground" /> ({COMPANY.businessType}) · GSTIN:{" "}
+            {COMPANY.gstin}
           </p>
-        </header>
-        <div className="prose prose-slate max-w-none space-y-8 text-foreground prose-headings:font-display prose-headings:text-foreground prose-a:text-primary">
-          {children}
-        </div>
-      </article>
-    </main>
-    <Footer />
-  </div>
+          <div className="prose prose-slate max-w-none space-y-8 text-foreground prose-headings:font-display prose-headings:text-foreground prose-a:text-primary">
+            {children}
+          </div>
+        </article>
+      </div>
+    </section>
+  </PageShell>
 );
 
 export default LegalPageLayout;

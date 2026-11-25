@@ -4,7 +4,7 @@ import { COMPANY, SITE } from "@/lib/site-config";
 const DataDeletionPolicy = () => (
   <LegalPageLayout
     title="Data Deletion Policy"
-    description="How to request deletion of your Briktra account and associated data."
+    description="How to request deletion of your Briktra account and data, what is deleted, what must be kept by law, and the 30-day processing timeline."
     path="/data-deletion-policy"
   >
     <section>

@@ -18,13 +18,16 @@
         );
       })();
     </script>
-    <title>Briktra — Construction Project Management &amp; ERP Platform</title>
-
-    <meta name="description" content="Briktra is a cloud-based construction ERP for contractors and builders. Manage projects, sites, labour, attendance, expenses, inventory, billing, and GST from web and mobile." />
-    <meta name="keywords" content="Construction ERP, Project Management Software, Labour Tracking, Attendance, Expense Management, Inventory, GST Billing, Briktra, India" />
-    <meta name="author" content="EDGEZEN LABS" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://briktra.com/" />
+    <!--
+      Title, description, robots, canonical, Open Graph, Twitter and JSON-LD
+      come from each page's <SEO> and are written in place of the marker
+      below at build time (scripts/write-route-pages.mjs). Do not add
+      defaults here: Helmet never removes a tag it did not write, so a
+      default here would sit beside the page's own and give every page two
+      canonicals.
+    -->
+    <!--seo-head-->
+    <meta name="theme-color" content="#F36A2D" />
 
     <!--
       WEB-008: partial mitigation only. GitHub Pages cannot send custom
@@ -40,47 +43,31 @@
       script below; tightening that further would need moving it to a
       nonced/hashed script, out of scope for this pass.
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' __BRIKTRA_API_ORIGIN__ https://*.google-analytics.com https://*.analytics.google.com; frame-src https://maps.google.com https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' __BRIKTRA_API_ORIGIN__ https://*.google-analytics.com https://*.analytics.google.com; frame-src https://maps.google.com https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self';" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/briktra-favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-    <link rel="icon" type="image/svg+xml" sizes="192x192" href="/briktra-favicon.svg" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/briktra-favicon.svg" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://briktra.com/" />
-    <meta property="og:title" content="Briktra — Construction Project Management &amp; ERP Platform" />
-    <meta property="og:description" content="Cloud construction ERP for projects, labour, attendance, expenses, inventory, and GST. Start your free trial today." />
-    <meta property="og:image" content="https://briktra.com/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_IN" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://briktra.com/" />
-    <meta name="twitter:title" content="Briktra — Construction Project Management &amp; ERP Platform" />
-    <meta name="twitter:description" content="Cloud construction ERP for projects, labour, attendance, expenses, inventory, and GST." />
-    <meta name="twitter:image" content="https://briktra.com/og-image.png" />
+    <script>
+      (function () {
+        if (window.location.pathname === '/app' || window.location.pathname.indexOf('/app/') === 0) {
+          return;
+        }
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-48ME72T521';
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-48ME72T521');
+      })();
+    </script>
   </head>
-  <script>
-    (function () {
-      if (window.location.pathname === '/app' || window.location.pathname.indexOf('/app/') === 0) {
-        return;
-      }
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-48ME72T521';
-      document.head.appendChild(script);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-48ME72T521');
-    })();
-  </script>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

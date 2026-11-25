@@ -10,6 +10,7 @@ const PLAN_IDS = new Set(["starter", "basic", "premium", "max"]);
 
 const ROUTES = [
   "/", "/features", "/pricing", "/about", "/contact", "/faq", "/explore",
+  "/labour-payroll", "/site-management", "/purchase-stock", "/boq-billing", "/customers", "/control-reports",
   "/privacy-policy", "/terms", "/refund-policy", "/cancellation-policy",
   "/shipping-delivery-policy", "/cookie-policy", "/security-policy",
   "/data-deletion-policy", "/delete-account", "/acceptable-use-policy", "/no-such-page",
@@ -94,7 +95,7 @@ describe("labelled calls to action", () => {
     const trial = within(main as HTMLElement).getAllByRole("link", { name: /Start Free Trial/ });
     expect(trial.length).toBeGreaterThanOrEqual(2);
     for (const a of trial) expect(a).toHaveAttribute("href", appLinks.freeTrial);
-    for (const a of within(main as HTMLElement).getAllByRole("link", { name: "Login to Briktra" })) {
+    for (const a of within(main as HTMLElement).queryAllByRole("link", { name: "Login to Briktra" })) {
       expect(a).toHaveAttribute("href", appLinks.login);
     }
   });

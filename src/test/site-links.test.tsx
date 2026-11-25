@@ -6,7 +6,8 @@ import App from "@/App";
 import { COMPANY, FOOTER_LINKS, NAV_LINKS, SITE } from "@/lib/site-config";
 
 const PAGES = [
-  "/", "/features", "/pricing", "/about", "/contact", "/faq", "/explore",
+  "/", "/features", "/pricing", "/about", "/contact", "/faq",
+  "/labour-payroll", "/site-management", "/purchase-stock", "/boq-billing", "/customers", "/control-reports",
   "/privacy-policy", "/terms", "/refund-policy", "/cancellation-policy",
   "/shipping-delivery-policy", "/cookie-policy", "/security-policy",
   "/data-deletion-policy", "/delete-account", "/acceptable-use-policy",
@@ -74,6 +75,12 @@ describe("navigation and legal reachability", () => {
     expect(isNotFound()).toBe(true);
   });
 
+  it("the old /explore tour lands on All Features", async () => {
+    await renderAt("/explore");
+    expect(window.location.pathname).toBe("/features");
+    expect(isNotFound()).toBe(false);
+  });
+
   it("the old /about-us address lands on About", async () => {
     await renderAt("/about-us");
     expect(window.location.pathname).toBe("/about");
@@ -88,12 +95,11 @@ describe("navigation and legal reachability", () => {
     for (const href of targets) expect(PAGES).toContain(href);
   });
 
-  // The deploy writes a page per sitemap entry; a page missing here would answer 404.
-  // /delete-account is a static page under public/ and is not listed.
+  // The deploy prerenders a page per sitemap entry; a page missing here would answer 404.
   it("the sitemap lists every page and nothing else", () => {
     const xml = readFileSync(resolve(__dirname, "../../public/sitemap.xml"), "utf8");
     const listed = [...xml.matchAll(/<loc>https:\/\/briktra\.com(\/[^<]*)<\/loc>/g)].map((m) => m[1]);
-    expect([...listed].sort()).toEqual(PAGES.filter((p) => p !== "/delete-account").sort());
+    expect([...listed].sort()).toEqual([...PAGES].sort());
   });
 
   // Payment-gateway and Play Store review require every policy one click from any page.

@@ -35,5 +35,5 @@ jobs:
       - name: QA build points only at QA
         run: |
           npx vite build --mode qa --outDir dist-qa
-          node scripts/write-route-pages.mjs dist-qa
+          node scripts/write-route-pages.mjs dist-qa qa
           node scripts/verify-dist.mjs dist-qa qa

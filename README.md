@@ -37,7 +37,7 @@ All app and API origins come from `src/lib/app-links.ts`, and nothing else in `s
 | Variable | Production default | Used for |
 | --- | --- | --- |
 | `VITE_APP_URL` | `https://app.briktra.com` | Login, signup, free-trial and pricing links |
-| `VITE_API_URL` | `https://api.briktra.com` | The contact form (`POST /contact`, which the API exempts from request signing) |
+| `VITE_API_URL` | `https://api.briktra.com` | The contact form (`POST /contact`) and plan prices (`GET /public/plans`), both exempt from request signing |
 
 A production build (`vite build`) uses the defaults unless the variables are set, and fails if either is not an `https://` origin or names a QA, preview or local host. A QA build sets both to the QA hosts with `--mode qa` (`.env.qa`). The app's routes are the Flutter router's: `/login`, `/register`, and `/register?plan=<id>&billing=monthly|annual` from a pricing card (the app preselects that plan only if its catalogue lists it; the price is always the API's).
 
@@ -47,20 +47,25 @@ Old `/app/...` addresses on this site are forwarded to the same path on app.brik
 
 | Path | Purpose |
 | --- | --- |
-| `/` | Homepage, including the mobile app guide video |
-| `/features` | Product modules and the same guide video |
-| `/pricing` | Starter, Basic, Premium and Max plans |
+| `/` | Homepage: hero, the two ways to work, the six feature groups, money rules, roles, pricing, FAQ |
+| `/labour-payroll`, `/site-management`, `/purchase-stock`, `/boq-billing`, `/customers`, `/control-reports` | One page per feature group (`src/pages/FeatureGroupPage.tsx`) |
+| `/features` | All features on one page |
+| `/pricing` | Plans, limits table and pricing questions |
 | `/about` | About Briktra |
-| `/contact` | Support and sales contact form |
-| `/faq` | Subscription, billing, and product questions |
-| `/explore` | Module screenshots |
+| `/contact` | Contact form and WhatsApp |
+| `/faq` | Questions |
+| `/explore` | Redirects to `/features` |
 | `/app/*` | Redirect to app.briktra.com |
 
 Legal pages live under paths such as `/privacy-policy`, `/terms`, `/refund-policy`, and `/cancellation-policy`.
 
-## Product video
+Every product claim is in `src/lib/content.ts`; pages never state features of their own. Testimonials show only when `TESTIMONIALS` there has real, approved quotes.
 
-The homepage and Features page embed the [Briktra mobile app guide](https://www.youtube.com/watch?v=KtHkLIc76bo). `index.html` allows that player in `frame-src` (`https://www.youtube.com` and `https://www.youtube-nocookie.com`). Without those hosts, the browser blocks the embed. The API origin is listed in `connect-src` so the contact form can post.
+## Pricing and screenshots
+
+`/pricing` and the homepage read `GET {VITE_API_URL}/public/plans` (no sign-in, no request signature) and show the built-in catalogue in `src/lib/plans.ts` until it answers or if it fails. Keep that copy in step with the API's plan catalogue.
+
+App screenshots go in `src/assets/shots` as `<key>-phone.png` and `<key>-web.png`, with keys from `ShotKey` in `src/lib/content.ts`. A key with no file shows a drawn stand-in.
 
 ## Deploy
 

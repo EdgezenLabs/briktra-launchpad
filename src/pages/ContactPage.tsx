@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageShell from "@/components/PageShell";
+import CompanyLink from "@/components/CompanyLink";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,6 +9,7 @@ import { COMPANY, formatAddressMultiline, formatAddressSingleLine, SITE } from "
 import { API_ORIGIN } from "@/lib/app-links";
 import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { PageHero } from "@/components/site/PageHero";
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -61,32 +63,32 @@ const ContactPage = () => {
 
   return (
     <PageShell
-      title="Contact"
-      description={`Contact Briktra support — ${COMPANY.legalName}, Madurai. Email, phone, and business hours.`}
-      canonical={`${SITE.url}/contact`}
+      title="Contact Us: Book a Free Demo"
+      description={`Book a free Briktra demo or get help from a real person. Call, WhatsApp or email ${COMPANY.legalName} in Madurai, Monday to Friday.`}
+      path="/contact"
+      crumbs={[{ name: "Contact", path: "/contact" }]}
     >
-      <section className="bg-secondary/30 pb-16 pt-4">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="mb-4 font-display text-4xl font-bold text-foreground md:text-5xl">
-            Contact {SITE.name} Support
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Questions about subscriptions, billing, or the platform? Our team is here to help.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="Talk to a person"
+        highlight={`at ${SITE.name}.`}
+        intro="Want a demo on your own sites, help choosing a plan, or support? WhatsApp us for the quickest reply, or write to us below."
+        actions="contact"
+      />
 
       <section className="py-16">
         <div className="container mx-auto grid gap-12 px-4 md:grid-cols-2 md:px-6">
           <div className="space-y-8">
-            <div className="premium-card p-8">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-[0_30px_60px_-35px_rgba(0,0,0,0.35)]">
               <h2 className="mb-6 font-display text-2xl font-bold">Business Information</h2>
               <dl className="space-y-6">
                 <div className="flex gap-4">
                   <Building2 className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                   <div>
                     <dt className="font-semibold text-foreground">Registered Business Name</dt>
-                    <dd className="text-muted-foreground">{COMPANY.legalName}</dd>
+                    <dd className="text-muted-foreground">
+                      <CompanyLink />
+                    </dd>
                     <dd className="text-sm text-muted-foreground">GSTIN: {COMPANY.gstin}</dd>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import { COMPANY, PAYMENT, SITE } from "@/lib/site-config";
 const SecurityPolicy = () => (
   <LegalPageLayout
     title="Security Policy"
-    description="Security practices for the Briktra construction ERP cloud platform."
+    description="How Briktra protects your company data: encrypted connections, separated company data, role-based access, secure payments and how to report an issue."
     path="/security-policy"
   >
     <section>

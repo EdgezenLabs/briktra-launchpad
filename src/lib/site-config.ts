@@ -1,18 +1,11 @@
 export const SITE = {
   name: "Briktra",
-  tagline: "Construction Project Management & ERP Platform",
+  tagline: "Construction Management App for Contractors",
   description:
-    "Briktra is a cloud-based construction ERP for contractors and builders. Manage projects, sites, labour, attendance, expenses, inventory, billing, and GST from web and mobile.",
+    "Construction management app for Indian contractors and builders: labour attendance, payroll, site cash, purchases, stock and BOQ billing on Android and web.",
   url: "https://briktra.com",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.briktra.app",
   copyrightYear: 2026,
-} as const;
-
-export const PRODUCT_VIDEO = {
-  id: "KtHkLIc76bo",
-  title: "Briktra Mobile App Complete Guide | Registration, Login & How to Use the App (2026)",
-  watchUrl: "https://www.youtube.com/watch?v=KtHkLIc76bo",
-  embedUrl: "https://www.youtube.com/embed/KtHkLIc76bo",
 } as const;
 
 export const COMPANY = {
@@ -20,6 +13,7 @@ export const COMPANY = {
   displayName: "EDGEZEN LABS",
   gstin: "33AAMFE4969Q1ZK",
   businessType: "Partnership",
+  website: "https://edgezenlabs.com",
   email: "contact@edgezenlabs.com",
   phone: "+91 9176738389",
   phoneTel: "+919176738389",
@@ -66,6 +60,17 @@ export const formatAddressSingleLine = (): string =>
     COMPANY.address.country,
   ].join(", ");
 
+/**
+ * "Talk to Us on WhatsApp". The business number; confirm it has WhatsApp
+ * before launch. The message is prefilled so the team knows why they wrote.
+ */
+export const WHATSAPP = {
+  number: "919176738389",
+  message: "Hi, I'd like a demo of Briktra.",
+  href: (): string =>
+    `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.message)}`,
+} as const;
+
 export const PAYMENT = {
   processor: "Cashfree Payments",
   disclaimer:
@@ -75,7 +80,6 @@ export const PAYMENT = {
 export const LEGAL_LAST_UPDATED = "June 29, 2026";
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
@@ -84,13 +88,19 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = {
   product: [
-    { label: "Features", href: "/features" },
+    { label: "Labour & Payroll", href: "/labour-payroll" },
+    { label: "Site & Cash", href: "/site-management" },
+    { label: "Purchase & Stock", href: "/purchase-stock" },
+    { label: "BOQ & Billing", href: "/boq-billing" },
+    { label: "Customers & Units", href: "/customers" },
+    { label: "Reports & Control", href: "/control-reports" },
+    { label: "All Features", href: "/features" },
     { label: "Pricing", href: "/pricing" },
-    { label: "FAQ", href: "/faq" },
   ],
   support: [
-    { label: "Contact", href: "/contact" },
     { label: "About Briktra", href: "/about" },
+    { label: "Contact", href: "/contact" },
+    { label: "FAQ", href: "/faq" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },

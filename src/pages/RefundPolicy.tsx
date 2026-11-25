@@ -4,7 +4,7 @@ import { COMPANY, SITE } from "@/lib/site-config";
 const RefundPolicy = () => (
   <LegalPageLayout
     title="Refund Policy"
-    description="Refund terms for Briktra SaaS subscription payments processed via Cashfree."
+    description="When Briktra subscription payments can be refunded, how to request a refund within 7 days of a charge, and how approved refunds reach your original payment method."
     path="/refund-policy"
   >
     <section>

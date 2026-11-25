@@ -1,7 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
-import SkipLink from "@/components/SkipLink";
+import PageShell from "@/components/PageShell";
+import { PageHero } from "@/components/site/PageHero";
 import { 
   Trash2, 
   Settings, 
@@ -13,36 +11,25 @@ import {
   CheckCircle,
   ShieldAlert
 } from "lucide-react";
-import { COMPANY, SITE } from "@/lib/site-config";
+import { COMPANY } from "@/lib/site-config";
 
 const DeleteAccount = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <SEO
-        title="Delete Account | Briktra"
-        description="Learn how to delete your Briktra account, what data will be deleted, and what records are retained for compliance."
-        canonical={`${SITE.url}/delete-account`}
+    <PageShell
+      title="Delete Your Account"
+      description="How to delete your Briktra account from the app or by email, what data is permanently removed, and which records must be kept for compliance."
+      path="/delete-account"
+      product={false}
+      crumbs={[{ name: "Delete Account", path: "/delete-account" }]}
+    >
+      <PageHero
+        eyebrow="Account Management"
+        title="Delete your"
+        highlight="Briktra account."
+        intro="How to start the deletion, what data is permanently removed, and what we are legally required to keep."
+        actions="none"
       />
-      <SkipLink />
-      <Header />
-      
-      <main id="main-content" className="pb-16 pt-[9.5rem] md:pb-24">
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 md:px-6 mb-12">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/20 text-xs font-semibold text-destructive mb-4 animate-fade-in">
-              <Trash2 className="h-3.5 w-3.5" />
-              Account Management
-            </div>
-            <h1 className="mb-4 font-display text-4xl md:text-5xl font-bold text-foreground">
-              Delete Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-destructive to-orange-500">Briktra Account</span>
-            </h1>
-            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-              We understand you may want to delete your account. Here is a transparent guide on how to initiate the deletion process, what data is permanently removed, and what we are legally required to retain.
-            </p>
-          </div>
-        </section>
-
+      <div className="pb-16 pt-12 md:pb-24">
         {/* Content Layout */}
         <section className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="grid grid-cols-1 gap-8">
@@ -197,10 +184,8 @@ const DeleteAccount = () => {
 
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </PageShell>
   );
 };
 

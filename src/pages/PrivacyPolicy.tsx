@@ -1,6 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
+import PageShell from "@/components/PageShell";
+import { PageHero } from "@/components/site/PageHero";
 import { 
   Shield, 
   Lock, 
@@ -56,7 +55,7 @@ const PrivacyPolicy = () => {
     const el = document.getElementById(id);
     if (el) {
       window.scrollTo({
-        top: el.offsetTop - 100,
+        top: el.offsetTop - 128,
         behavior: "smooth"
       });
       setActiveSection(id);
@@ -126,29 +125,21 @@ const PrivacyPolicy = () => {
     }
   ];
   return (
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="Privacy Policy | Briktra"
-        description="Privacy Policy for Briktra mobile application. Learn about how Edgezen Labs collects, uses, protects, and handles your personal data."
-        canonical="https://briktra.com/privacy-policy"
+    <PageShell
+      title="Privacy Policy"
+      description="How EDGEZEN LABS collects, uses, protects and deletes personal data in the Briktra app and website, and the choices you have."
+      path="/privacy-policy"
+      product={false}
+      crumbs={[{ name: "Privacy Policy", path: "/privacy-policy" }]}
+    >
+      <PageHero
+        eyebrow="Privacy & Trust"
+        title="Privacy policy for"
+        highlight="Briktra."
+        intro="Last updated July 6, 2026. Published by EDGEZEN LABS."
+        actions="none"
       />
-      <Header />
-      <main className="pb-16 pt-[9.5rem] md:pb-24">
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 md:px-6 mb-12">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-4 animate-fade-in">
-              <Shield className="h-3.5 w-3.5" />
-              Privacy & Trust
-            </div>
-            <h1 className="mb-4 font-display text-4xl md:text-5xl font-bold text-foreground">
-              Privacy Policy for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Briktra</span>
-            </h1>
-            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-              Last Updated: July 6, 2026 &bull; Published by Edgezen Labs
-            </p>
-          </div>
-        </section>
+      <div className="pb-16 pt-12 md:pb-24">
         {/* Intro Banner */}
         <section className="container mx-auto px-4 md:px-6 mb-12 max-w-6xl">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm">
@@ -165,7 +156,7 @@ const PrivacyPolicy = () => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
             {/* Sidebar Navigation */}
             <div className="hidden lg:block lg:col-span-1">
-              <div className="sticky top-24 space-y-1">
+              <div className="sticky top-32 space-y-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground px-3 mb-3">Contents</p>
                 {sections.map((section) => (
                   <button
@@ -189,7 +180,7 @@ const PrivacyPolicy = () => {
             <div className="lg:col-span-3 space-y-12">
               
               {/* 1. Information We Collect */}
-              <section id="info-we-collect" className="scroll-mt-24 space-y-6">
+              <section id="info-we-collect" className="scroll-mt-32 space-y-6">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">1. Information We Collect</h2>
                 </div>
@@ -283,7 +274,7 @@ const PrivacyPolicy = () => {
                 </div>
               </section>
               {/* 2. How We Use Your Information */}
-              <section id="how-we-use" className="scroll-mt-24 space-y-4">
+              <section id="how-we-use" className="scroll-mt-32 space-y-4">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">2. How We Use Your Information</h2>
                 </div>
@@ -311,7 +302,7 @@ const PrivacyPolicy = () => {
                 </div>
               </section>
               {/* 3. Data Sharing */}
-              <section id="data-sharing" className="scroll-mt-24 space-y-4">
+              <section id="data-sharing" className="scroll-mt-32 space-y-4">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">3. Data Sharing</h2>
                 </div>
@@ -328,7 +319,7 @@ const PrivacyPolicy = () => {
                 </ul>
               </section>
               {/* 4. Data Security */}
-              <section id="data-security" className="scroll-mt-24 space-y-4">
+              <section id="data-security" className="scroll-mt-32 space-y-4">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">4. Data Security</h2>
                 </div>
@@ -353,7 +344,7 @@ const PrivacyPolicy = () => {
                 </div>
               </section>
               {/* 5. Data Retention */}
-              <section id="data-retention" className="scroll-mt-24 space-y-4">
+              <section id="data-retention" className="scroll-mt-32 space-y-4">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">5. Data Retention</h2>
                 </div>
@@ -362,7 +353,7 @@ const PrivacyPolicy = () => {
                 </p>
               </section>
               {/* 6. Your Rights & Account Deletion */}
-              <section id="user-rights" className="scroll-mt-24 space-y-6">
+              <section id="user-rights" className="scroll-mt-32 space-y-6">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">6. Your Rights & Account Deletion</h2>
                 </div>
@@ -371,15 +362,15 @@ const PrivacyPolicy = () => {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="p-4 rounded-xl border border-border bg-card text-center">
-                    <h4 className="font-bold text-foreground mb-1.5 text-sm">Access</h4>
+                    <h3 className="font-bold text-foreground mb-1.5 text-sm">Access</h3>
                     <p className="text-xs text-muted-foreground">The personal data we hold about you.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-border bg-card text-center">
-                    <h4 className="font-bold text-foreground mb-1.5 text-sm">Correct</h4>
+                    <h3 className="font-bold text-foreground mb-1.5 text-sm">Correct</h3>
                     <p className="text-xs text-muted-foreground">Inaccurate data via the Profile screen in-app.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-border bg-card text-center">
-                    <h4 className="font-bold text-foreground mb-1.5 text-sm">Delete</h4>
+                    <h3 className="font-bold text-foreground mb-1.5 text-sm">Delete</h3>
                     <p className="text-xs text-muted-foreground">Your account and all associated personal data.</p>
                   </div>
                 </div>
@@ -414,7 +405,7 @@ const PrivacyPolicy = () => {
                 </div>
               </section>
               {/* 7. Children's Privacy */}
-              <section id="children-privacy" className="scroll-mt-24 space-y-4">
+              <section id="children-privacy" className="scroll-mt-32 space-y-4">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">7. Children's Privacy</h2>
                 </div>
@@ -423,7 +414,7 @@ const PrivacyPolicy = () => {
                 </p>
               </section>
               {/* 8. Changes to This Policy */}
-              <section id="changes-to-policy" className="scroll-mt-24 space-y-4">
+              <section id="changes-to-policy" className="scroll-mt-32 space-y-4">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">8. Changes to This Policy</h2>
                 </div>
@@ -432,7 +423,7 @@ const PrivacyPolicy = () => {
                 </p>
               </section>
               {/* 9. Contact Us */}
-              <section id="contact-us" className="scroll-mt-24 space-y-6">
+              <section id="contact-us" className="scroll-mt-32 space-y-6">
                 <div className="border-b border-border pb-4">
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">9. Contact Us</h2>
                 </div>
@@ -472,9 +463,8 @@ const PrivacyPolicy = () => {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </PageShell>
   );
 };
 export default PrivacyPolicy;

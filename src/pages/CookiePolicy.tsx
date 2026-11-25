@@ -4,7 +4,7 @@ import { COMPANY, SITE } from "@/lib/site-config";
 const CookiePolicy = () => (
   <LegalPageLayout
     title="Cookie Policy"
-    description="How Briktra uses cookies and similar technologies on its website and application."
+    description="Which cookies and similar technologies the Briktra website and app use, why they are used, and how you can control or turn them off."
     path="/cookie-policy"
   >
     <section>

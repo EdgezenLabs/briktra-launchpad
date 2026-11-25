@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import PageShell from "@/components/PageShell";
 import { Button } from "@/components/ui/button";
-import { SITE } from "@/lib/site-config";
 
 const NotFound = () => (
   <PageShell
     title="Page Not Found"
     description="The page you are looking for does not exist."
-    canonical={`${SITE.url}/404`}
+    path="/404"
     noindex
   >
     <section className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-24 text-center">

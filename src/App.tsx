@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, type ReactNode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
+import { FEATURE_GROUPS } from "./lib/content";
 
 // WEB-009: the production bundle was a single ~545KB chunk (everything
 // eager-loaded up front). Index (the homepage, by far the most common
@@ -29,48 +30,62 @@ const FeaturesPage = lazy(() => import("./pages/FeaturesPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
-const ModuleExplore = lazy(() => import("./pages/ModuleExplore"));
+const FeatureGroupPage = lazy(() => import("./pages/FeatureGroupPage"));
 
 const queryClient = new QueryClient();
 
-const App = () => (
+/** Providers shared by the browser and the build-time prerender (src/entry-server.tsx). */
+export const AppFrame = ({ children, helmetContext }: { children: ReactNode; helmetContext?: object }) => (
   <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter
-          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-        >
-          <ScrollToTop />
-          <Suspense fallback={null}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/features" element={<FeaturesPage />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/about-us" element={<Navigate to="/about" replace />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/faq" element={<FAQPage />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/refund-policy" element={<RefundPolicy />} />
-              <Route path="/cancellation-policy" element={<CancellationPolicy />} />
-              <Route path="/shipping-delivery-policy" element={<ShippingDeliveryPolicy />} />
-              <Route path="/cookie-policy" element={<CookiePolicy />} />
-              <Route path="/security-policy" element={<SecurityPolicy />} />
-              <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
-              <Route path="/delete-account" element={<DeleteAccount />} />
-              <Route path="/acceptable-use-policy" element={<AcceptableUsePolicy />} />
-              <Route path="/explore" element={<ModuleExplore />} />
-              <Route path="/app/*" element={null} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
+        {children}
       </TooltipProvider>
     </HelmetProvider>
   </QueryClientProvider>
+);
+
+export const AppRoutes = () => (
+  <>
+    <ScrollToTop />
+    <Suspense fallback={null}>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/features" element={<FeaturesPage />} />
+        {FEATURE_GROUPS.map((g) => (
+          <Route key={g.slug} path={`/${g.slug}`} element={<FeatureGroupPage slug={g.slug} />} />
+        ))}
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about-us" element={<Navigate to="/about" replace />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+        <Route path="/shipping-delivery-policy" element={<ShippingDeliveryPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/security-policy" element={<SecurityPolicy />} />
+        <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
+        <Route path="/delete-account" element={<DeleteAccount />} />
+        <Route path="/acceptable-use-policy" element={<AcceptableUsePolicy />} />
+        <Route path="/explore" element={<Navigate to="/features" replace />} />
+        <Route path="/app/*" element={null} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
+  </>
+);
+
+const App = () => (
+  <AppFrame>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  </AppFrame>
 );
 
 export default App;
